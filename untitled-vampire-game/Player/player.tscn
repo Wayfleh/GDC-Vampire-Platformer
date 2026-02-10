@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dv8kjhi3m6bl3"]
+
+[ext_resource type="Script" uid="uid://jokywshtfwah" path="res://Player/player.gd" id="1_4ntmi"]
+[ext_resource type="Texture2D" uid="uid://da3l8xf21umod" path="res://Art/Placeholder/spongebob.webp" id="2_btcbx"]
+[ext_resource type="Script" uid="uid://3ug5ledb61c3" path="res://Player/StateMachine/player_sm.gd" id="3_gwnis"]
+[ext_resource type="Script" uid="uid://cvmgnpcu1e2fx" path="res://Player/StateMachine/idle.gd" id="4_gwnis"]
+[ext_resource type="Script" uid="uid://bgueu3iyq1rde" path="res://Player/StateMachine/walk.gd" id="5_k53q1"]
+[ext_resource type="Script" uid="uid://d1lffwqtnbmrr" path="res://Player/StateMachine/jump.gd" id="6_fhl08"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gwnis"]
+radius = 32.0
+height = 96.0
+
+[node name="Player" type="CharacterBody2D" unique_id=644735785]
+script = ExtResource("1_4ntmi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1281633438]
+shape = SubResource("CapsuleShape2D_gwnis")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=723377546]
+scale = Vector2(0.20540541, 0.16552901)
+texture = ExtResource("2_btcbx")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1533651679 node_paths=PackedStringArray("parent", "initial_state")]
+script = ExtResource("3_gwnis")
+parent = NodePath("..")
+initial_state = NodePath("IDLE")
+
+[node name="IDLE" type="Node" parent="StateMachine" unique_id=13350506]
+script = ExtResource("4_gwnis")
+
+[node name="WALK" type="Node" parent="StateMachine" unique_id=1157813153]
+script = ExtResource("5_k53q1")
+
+[node name="JUMP" type="Node" parent="StateMachine" unique_id=479202694]
+script = ExtResource("6_fhl08")
