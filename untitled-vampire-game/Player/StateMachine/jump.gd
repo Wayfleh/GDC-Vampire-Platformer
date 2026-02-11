@@ -5,14 +5,14 @@ func enter_state():
 
 func update(delta: float):
 	gp = (gp as Player) #this is just for autocorrect lol
-	gp.handle_movement(delta)
+	gp.apply_horizontal_movement(delta)
 	if !Input.is_action_pressed("jump"):
-		gp.handle_gravity(delta * 4)
+		gp.apply_gravity(delta * 4)
 	else:
-		gp.handle_gravity(delta)
+		gp.apply_gravity(delta)
 	
 	if gp.is_on_floor() and !Input.is_action_pressed("jump"):
-		transition.emit("IDLE")
+		transitionToState.emit("IDLE")
 
 func exit_state():
 	pass
