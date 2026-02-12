@@ -13,11 +13,12 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	move_and_slide() # this just turns all the velocity bullshit into actual movement
+					# move_and_slide() is a CharacterBody2D Function
 
-func handle_gravity(delta: float) -> void:
+func apply_gravity(delta: float) -> void:
 	if !is_on_floor():
 		velocity.y += GRAVITY * delta
 
-func handle_movement(delta: float):
+func apply_horizontal_movement(delta: float):
 	var direction = Input.get_axis("left", "right")
 	velocity.x = SPEED * 100 * direction * delta

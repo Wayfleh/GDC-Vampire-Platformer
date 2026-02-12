@@ -7,10 +7,10 @@ var states: Dictionary = {}
 @export var initial_state: State
 
 func _ready() -> void:
-	for child in get_children():
-		if child is State:
-			states[child.name] = child
-			child.transition.connect(change_state)
+	for state in get_children(): #children of the statemachine should only be the states themselves
+		if state is State:
+			states[state.name] = state
+			state.transitionToState.connect(change_state)
 	if initial_state:
 		current_state = initial_state
 		initial_state.enter_state()

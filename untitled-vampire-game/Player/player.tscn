@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://jokywshtfwah" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://dinw4bxb85og6" path="res://Art/Placeholder/spongebob vampire.png" id="2_fhl08"]
-[ext_resource type="Script" uid="uid://3ug5ledb61c3" path="res://Player/StateMachine/player_sm.gd" id="3_gwnis"]
+[ext_resource type="Script" uid="uid://3ug5ledb61c3" path="res://Player/StateMachine/player_state_machine.gd" id="3_gwnis"]
 [ext_resource type="Script" uid="uid://cvmgnpcu1e2fx" path="res://Player/StateMachine/idle.gd" id="4_gwnis"]
 [ext_resource type="Script" uid="uid://bgueu3iyq1rde" path="res://Player/StateMachine/walk.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://d1lffwqtnbmrr" path="res://Player/StateMachine/jump.gd" id="6_fhl08"]
