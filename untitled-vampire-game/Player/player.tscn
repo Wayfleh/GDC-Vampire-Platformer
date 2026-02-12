@@ -2,10 +2,15 @@
 
 [ext_resource type="Script" uid="uid://jokywshtfwah" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://dinw4bxb85og6" path="res://Art/Placeholder/spongebob vampire.png" id="2_fhl08"]
-[ext_resource type="Script" uid="uid://3ug5ledb61c3" path="res://Player/StateMachine/player_state_machine.gd" id="3_gwnis"]
-[ext_resource type="Script" uid="uid://cvmgnpcu1e2fx" path="res://Player/StateMachine/idle.gd" id="4_gwnis"]
-[ext_resource type="Script" uid="uid://bgueu3iyq1rde" path="res://Player/StateMachine/walk.gd" id="5_k53q1"]
-[ext_resource type="Script" uid="uid://d1lffwqtnbmrr" path="res://Player/StateMachine/jump.gd" id="6_fhl08"]
+[ext_resource type="Script" uid="uid://b0qyabcc0hn7j" path="res://state_machine.gd" id="3_od3ui"]
+[ext_resource type="Script" uid="uid://k0a7jdb83ch1" path="res://Player/StateMachine/vampire_state.gd" id="4_00tjw"]
+[ext_resource type="Script" uid="uid://cvmgnpcu1e2fx" path="res://Player/StateMachine/Vampire/v_idle.gd" id="4_gwnis"]
+[ext_resource type="Script" uid="uid://bgueu3iyq1rde" path="res://Player/StateMachine/Vampire/v_walk.gd" id="5_k53q1"]
+[ext_resource type="Script" uid="uid://d1lffwqtnbmrr" path="res://Player/StateMachine/Vampire/v_jump.gd" id="6_fhl08"]
+[ext_resource type="Script" uid="uid://cbxp42c2drvct" path="res://Player/StateMachine/Frog/frog_state.gd" id="8_00tjw"]
+[ext_resource type="Script" uid="uid://b56ekyi8jeqru" path="res://Player/StateMachine/Frog/f_idle.gd" id="9_x3vf3"]
+[ext_resource type="Script" uid="uid://d3sjtxr7sc4jo" path="res://Player/StateMachine/Frog/f_walk.gd" id="10_apopc"]
+[ext_resource type="Script" uid="uid://dh0kt6slyvvuv" path="res://Player/StateMachine/Frog/f_jump.gd" id="11_apopc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gwnis"]
 radius = 32.0
@@ -21,16 +26,49 @@ shape = SubResource("CapsuleShape2D_gwnis")
 scale = Vector2(0.20540541, 0.16552901)
 texture = ExtResource("2_fhl08")
 
-[node name="StateMachine" type="Node" parent="." unique_id=1533651679 node_paths=PackedStringArray("parent", "initial_state")]
-script = ExtResource("3_gwnis")
-parent = NodePath("..")
-initial_state = NodePath("IDLE")
+[node name="TransformationSM" type="Node" parent="." unique_id=1077801536 node_paths=PackedStringArray("player", "initial_state")]
+script = ExtResource("3_od3ui")
+player = NodePath("..")
+initial_state = NodePath("VAMPIRE")
+is_initial_machine = true
+metadata/_custom_type_script = "uid://b0qyabcc0hn7j"
 
-[node name="IDLE" type="Node" parent="StateMachine" unique_id=13350506]
+[node name="VAMPIRE" type="Node" parent="TransformationSM" unique_id=117049237]
+script = ExtResource("4_00tjw")
+
+[node name="VampireSM" type="Node" parent="TransformationSM/VAMPIRE" unique_id=1533651679 node_paths=PackedStringArray("player", "initial_state")]
+script = ExtResource("3_od3ui")
+player = NodePath("../../..")
+initial_state = NodePath("V_IDLE")
+is_initial_machine = true
+
+[node name="V_IDLE" type="Node" parent="TransformationSM/VAMPIRE/VampireSM" unique_id=13350506]
 script = ExtResource("4_gwnis")
 
-[node name="WALK" type="Node" parent="StateMachine" unique_id=1157813153]
+[node name="V_WALK" type="Node" parent="TransformationSM/VAMPIRE/VampireSM" unique_id=1157813153]
 script = ExtResource("5_k53q1")
 
-[node name="JUMP" type="Node" parent="StateMachine" unique_id=479202694]
+[node name="V_JUMP" type="Node" parent="TransformationSM/VAMPIRE/VampireSM" unique_id=479202694]
 script = ExtResource("6_fhl08")
+
+[node name="FROG" type="Node" parent="TransformationSM" unique_id=1507179230]
+script = ExtResource("8_00tjw")
+metadata/_custom_type_script = "uid://c68npqqwy1yig"
+
+[node name="FrogSM" type="Node" parent="TransformationSM/FROG" unique_id=1414580571 node_paths=PackedStringArray("player", "initial_state")]
+script = ExtResource("3_od3ui")
+player = NodePath("../../..")
+initial_state = NodePath("F_IDLE")
+metadata/_custom_type_script = "uid://b0qyabcc0hn7j"
+
+[node name="F_IDLE" type="Node" parent="TransformationSM/FROG/FrogSM" unique_id=1504849945]
+script = ExtResource("9_x3vf3")
+metadata/_custom_type_script = "uid://c68npqqwy1yig"
+
+[node name="F_WALK" type="Node" parent="TransformationSM/FROG/FrogSM" unique_id=69525168]
+script = ExtResource("10_apopc")
+metadata/_custom_type_script = "uid://c68npqqwy1yig"
+
+[node name="F_JUMP" type="Node" parent="TransformationSM/FROG/FrogSM" unique_id=688462069]
+script = ExtResource("11_apopc")
+metadata/_custom_type_script = "uid://c68npqqwy1yig"

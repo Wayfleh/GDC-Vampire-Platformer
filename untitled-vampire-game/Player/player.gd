@@ -2,9 +2,9 @@ class_name Player
 extends CharacterBody2D
 
 #change speed, jump height, and gravity
-@export var SPEED: float = 5.0
-@export var JUMP_IMPULSE: float = 5.0
-@export var GRAVITY: float = 5.0
+@export var speed: float = 5.0
+@export var jump_impulse: float = 5.0
+@export var gravity: float = 5.0
 
 @onready var state_machine := $StateMachine
 
@@ -17,8 +17,8 @@ func _physics_process(delta: float) -> void:
 
 func apply_gravity(delta: float) -> void:
 	if !is_on_floor():
-		velocity.y += GRAVITY * delta
+		velocity.y += gravity * delta
 
 func apply_horizontal_movement(delta: float):
 	var direction = Input.get_axis("left", "right")
-	velocity.x = SPEED * 100 * direction * delta
+	velocity.x = speed * 100 * direction * delta

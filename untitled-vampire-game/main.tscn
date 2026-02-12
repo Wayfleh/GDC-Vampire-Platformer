@@ -85,6 +85,3 @@ tile_set = SubResource("TileSet_h2yge")
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("2_0xm2m")]
 position = Vector2(451, 443)
-SPEED = 500.0
-JUMP_IMPULSE = 1400.0
-GRAVITY = 3000.0
