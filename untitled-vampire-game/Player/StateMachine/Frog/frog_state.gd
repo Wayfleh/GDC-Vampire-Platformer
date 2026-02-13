@@ -8,7 +8,7 @@ Frog can:
 	Ability - Big Jump
 			- Regular ah jump, but much taller
 			- Potentially Jump King jump
-	Walk - Walking hops?
+	Walk - Walking hops -> Slides when stopping
 """
 #Constants for frog state
 @export var F_SPEED := 200.0
