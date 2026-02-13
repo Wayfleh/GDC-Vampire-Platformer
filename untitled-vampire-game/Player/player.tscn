@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bgueu3iyq1rde" path="res://Player/StateMachine/Vampire/v_walk.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://d1lffwqtnbmrr" path="res://Player/StateMachine/Vampire/v_jump.gd" id="6_fhl08"]
 [ext_resource type="Script" uid="uid://cbxp42c2drvct" path="res://Player/StateMachine/Frog/frog_state.gd" id="8_00tjw"]
+[ext_resource type="Script" uid="uid://tkya8lcbmcfx" path="res://Player/StateMachine/Vampire/v_bitedash.gd" id="8_5htga"]
 [ext_resource type="Script" uid="uid://b56ekyi8jeqru" path="res://Player/StateMachine/Frog/f_idle.gd" id="9_x3vf3"]
 [ext_resource type="Script" uid="uid://d3sjtxr7sc4jo" path="res://Player/StateMachine/Frog/f_walk.gd" id="10_apopc"]
 [ext_resource type="Script" uid="uid://dh0kt6slyvvuv" path="res://Player/StateMachine/Frog/f_jump.gd" id="11_apopc"]
@@ -50,6 +51,13 @@ script = ExtResource("5_k53q1")
 
 [node name="V_JUMP" type="Node" parent="TransformationSM/VAMPIRE/VampireSM" unique_id=479202694]
 script = ExtResource("6_fhl08")
+
+[node name="V_BITEDASH" type="Node" parent="TransformationSM/VAMPIRE/VampireSM" unique_id=1148363666]
+script = ExtResource("8_5htga")
+humanBiteDashTravelDuration = 0.15
+humanBiteDashSpeed = 2000.0
+humanBiteDashResidualSpeed = 700.0
+metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="FROG" type="Node" parent="TransformationSM" unique_id=1507179230]
 script = ExtResource("8_00tjw")
