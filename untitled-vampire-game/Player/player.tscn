@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dv8kjhi3m6bl3"]
 
 [ext_resource type="Script" uid="uid://jokywshtfwah" path="res://Player/player.gd" id="1_4ntmi"]
-[ext_resource type="Texture2D" uid="uid://dinw4bxb85og6" path="res://Art/Placeholder/spongebob vampire.png" id="2_fhl08"]
+[ext_resource type="Texture2D" uid="uid://bps4qu3p65jpw" path="res://Art/Placeholder/anim_walk1.png" id="2_apopc"]
 [ext_resource type="Script" uid="uid://b0qyabcc0hn7j" path="res://state_machine.gd" id="3_od3ui"]
 [ext_resource type="Script" uid="uid://k0a7jdb83ch1" path="res://Player/StateMachine/vampire_state.gd" id="4_00tjw"]
 [ext_resource type="Script" uid="uid://cvmgnpcu1e2fx" path="res://Player/StateMachine/Vampire/v_idle.gd" id="4_gwnis"]
@@ -13,8 +13,56 @@
 [ext_resource type="Script" uid="uid://dh0kt6slyvvuv" path="res://Player/StateMachine/Frog/f_jump.gd" id="11_apopc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gwnis"]
-radius = 32.0
-height = 96.0
+radius = 12.0
+height = 28.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5htga"]
+atlas = ExtResource("2_apopc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apopc"]
+atlas = ExtResource("2_apopc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5o4e"]
+atlas = ExtResource("2_apopc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gu6f8"]
+atlas = ExtResource("2_apopc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkpta"]
+atlas = ExtResource("2_apopc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p5o4e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5htga")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apopc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5o4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gu6f8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkpta")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D" unique_id=644735785]
 script = ExtResource("1_4ntmi")
@@ -22,9 +70,10 @@ script = ExtResource("1_4ntmi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1281633438]
 shape = SubResource("CapsuleShape2D_gwnis")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=723377546]
-scale = Vector2(0.20540541, 0.16552901)
-texture = ExtResource("2_fhl08")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=980260689]
+scale = Vector2(1.5, 1.215)
+sprite_frames = SubResource("SpriteFrames_p5o4e")
+animation = &"walk"
 
 [node name="TransformationSM" type="Node" parent="." unique_id=1077801536 node_paths=PackedStringArray("player", "initial_state")]
 script = ExtResource("3_od3ui")

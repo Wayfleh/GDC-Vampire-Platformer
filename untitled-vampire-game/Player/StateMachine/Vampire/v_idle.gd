@@ -5,7 +5,8 @@ extends State
 
 #TODO add animations for idle state
 func enter_state():
-	pass
+	player.get_node("AnimatedSprite2D").play("idle")
+	#idle animation
 #slows the player down to a halt
 func update(delta: float):
 	if player.velocity.x != 0:

@@ -2,7 +2,8 @@
 extends State
 
 func enter_state():
-	pass
+	player.get_node("AnimatedSprite2D").play("walk")
+	#walk animation
 
 func update(delta: float):
 	player.velocity.x = lerpf(player.velocity.x, 0.0, delta * 10)
