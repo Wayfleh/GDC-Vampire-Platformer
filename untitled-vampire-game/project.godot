@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Untitled Vampire Game"
-run/main_scene="uid://bulcl67n326lm"
+run/main_scene="uid://b81xfqhj2clb"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
