@@ -4,6 +4,7 @@ extends State
 var F_SPEED := 200.0
 var F_JUMP_IMPULSE := 700.0
 var F_GRAVITY := 3000.0
+var F_FRICTION := 2.0
 @onready var f_machine = $FrogSM
 
 #turn on processing for statemachine
@@ -15,6 +16,7 @@ func enter_state():
 	player.speed = F_SPEED
 	player.jump_impulse = F_JUMP_IMPULSE
 	player.gravity = F_GRAVITY
+	player.friction = F_FRICTION
 	
 func update(delta: float):
 	if Input.is_action_just_pressed("test_frog_transform(REMOVE LATER)"):

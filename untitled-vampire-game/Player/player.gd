@@ -5,8 +5,11 @@ extends CharacterBody2D
 @export var speed: float = 5.0
 @export var jump_impulse: float = 5.0
 @export var gravity: float = 5.0
+@export var friction: float = 10.0
 
 @onready var state_machine := $StateMachine
+@onready var collider := $Collider
+@onready var bite_hitbox := $BiteHitbox
 
 func _ready() -> void:
 	pass
@@ -21,4 +24,7 @@ func apply_gravity(delta: float) -> void:
 
 func apply_horizontal_movement(delta: float):
 	var direction = Input.get_axis("left", "right")
-	velocity.x = speed * 100 * direction * delta
+	if direction == 0.0:
+		velocity.x = lerpf(velocity.x, 0.0, delta * friction)
+	else:
+		velocity.x = speed * 100 * direction * delta

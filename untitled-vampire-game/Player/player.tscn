@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bgueu3iyq1rde" path="res://Player/StateMachine/Vampire/v_walk.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://d1lffwqtnbmrr" path="res://Player/StateMachine/Vampire/v_jump.gd" id="6_fhl08"]
 [ext_resource type="Script" uid="uid://cbxp42c2drvct" path="res://Player/StateMachine/Frog/frog_state.gd" id="8_00tjw"]
+[ext_resource type="Script" uid="uid://bi7ep1o6tvmk5" path="res://Player/StateMachine/v_dash.gd" id="8_5htga"]
 [ext_resource type="Script" uid="uid://b56ekyi8jeqru" path="res://Player/StateMachine/Frog/f_idle.gd" id="9_x3vf3"]
 [ext_resource type="Script" uid="uid://d3sjtxr7sc4jo" path="res://Player/StateMachine/Frog/f_walk.gd" id="10_apopc"]
 [ext_resource type="Script" uid="uid://dh0kt6slyvvuv" path="res://Player/StateMachine/Frog/f_jump.gd" id="11_apopc"]
@@ -19,7 +20,12 @@ height = 96.0
 [node name="Player" type="CharacterBody2D" unique_id=644735785]
 script = ExtResource("1_4ntmi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1281633438]
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=1281633438]
+shape = SubResource("CapsuleShape2D_gwnis")
+
+[node name="BiteHitbox" type="Area2D" parent="." unique_id=903445956]
+
+[node name="BiteHitboxCollider" type="CollisionShape2D" parent="BiteHitbox" unique_id=1419210328]
 shape = SubResource("CapsuleShape2D_gwnis")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=723377546]
@@ -50,6 +56,10 @@ script = ExtResource("5_k53q1")
 
 [node name="V_JUMP" type="Node" parent="TransformationSM/VAMPIRE/VampireSM" unique_id=479202694]
 script = ExtResource("6_fhl08")
+
+[node name="V_DASH" type="Node" parent="TransformationSM/VAMPIRE/VampireSM" unique_id=546964380]
+script = ExtResource("8_5htga")
+metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="FROG" type="Node" parent="TransformationSM" unique_id=1507179230]
 script = ExtResource("8_00tjw")

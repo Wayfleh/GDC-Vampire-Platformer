@@ -5,7 +5,6 @@ func enter_state():
 	pass
 
 func update(delta: float):
-	player.velocity.x = lerpf(player.velocity.x, 0.0, delta * 10)
 	
 	player.apply_horizontal_movement(delta)
 	player.apply_gravity(delta)

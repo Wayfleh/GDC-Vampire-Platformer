@@ -6,7 +6,7 @@ extends State
 #TODO add animations for idle state
 func enter_state():
 	pass
-#slows the player down to a halt
+#slows the player down to a halt if they're not currently moving
 func update(delta: float):
 	if player.velocity.x != 0:
 		player.velocity.x = lerpf(player.velocity.x, 0.0, delta * 10)

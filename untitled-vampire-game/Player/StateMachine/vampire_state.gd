@@ -4,6 +4,7 @@ extends State
 var V_SPEED := 500.0
 var V_JUMP_IMPULSE := 1400.0
 var V_GRAVITY := 3000.0
+var V_FRICTION := 10.0
 @onready var v_machine = $VampireSM
 
 #turn on processing for statemachine
@@ -14,6 +15,7 @@ func enter_state():
 	player.speed = V_SPEED
 	player.jump_impulse = V_JUMP_IMPULSE
 	player.gravity = V_GRAVITY
+	player.friction = V_FRICTION
 	
 func update(delta: float):
 	if Input.is_action_just_pressed("test_frog_transform(REMOVE LATER)"):
