@@ -1,9 +1,9 @@
 extends State
 
 #Constants for vampire state
-var V_SPEED := 500.0
-var V_JUMP_IMPULSE := 1400.0
-var V_GRAVITY := 3000.0
+@export var V_SPEED := 500.0
+@export var V_JUMP_IMPULSE := 1400.0
+@export var V_GRAVITY := 3000.0
 @onready var v_machine = $VampireSM
 
 #turn on processing for statemachine
