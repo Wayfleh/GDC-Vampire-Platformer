@@ -22,9 +22,9 @@ func _physics_process(delta: float) -> void:
 	previousPosition = position
 					# move_and_slide() is a CharacterBody2D Function
 
-func apply_gravity(delta: float) -> void:
+func apply_gravity(delta: float, multiplier: float = 1.0) -> void:
 	if !is_on_floor():
-		velocity.y += gravity * delta
+		velocity.y += gravity * delta * multiplier
 
 func apply_horizontal_movement(delta: float):
 	var direction = Input.get_axis("left", "right")
@@ -42,5 +42,5 @@ func DetermineBiteDashDirection(currPos: Vector2, prevPos: Vector2, biteDashDire
 	if (currPos == prevPos):
 		return biteDashDirection
 	var dir = (currPos - prevPos).normalized()
-	print(dir)
+	# print(dir)
 	return dir
