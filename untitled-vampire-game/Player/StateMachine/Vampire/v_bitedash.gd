@@ -5,7 +5,7 @@ Bite-Dash function in vampire form
 On-press, Alucard should:
 	Begin Bite Dash out of anything (Idle, Walk, Jump -> Bite Dash)
 		Note: We want to keep flow of states between states themselves, so have Bite Dash link out of the three other states.
-	Lunge, travelling in biteDashDirection, attempting to bite something
+	Lunge, travelling in bite_dash_direction, attempting to bite something
 		On beginning BiteDash, set all velocity to zero, and during BiteDash, do not apply gravity
 			(Still allows other acceleration if applied to Alucard from other sources)
 		If he hits an animal, add that animal's charge to the blood thing. Overwrite current charge if applicable.
@@ -18,15 +18,15 @@ On-press, Alucard should:
 		
 """
 
-@export var humanBiteDashTravelDuration = 1.5 # Defines maximum time a bite dash lasts for
-@export var humanBiteDashSpeed = 5.0 # Defines speed of horizontal movement during a Human Bite Dash
-@export var humanBiteDashResidualSpeed = 50.0 # When bite dash ends, retain a flat amount of small momentum
-@export var humanBiteDashAnticipationDuration = 0.2 #Defines how long Alucard will hang in the air before starting dash (for game feel)
-@export var humanBiteDashAnticipationGravityFactor = 0.2 # Alucard gets a tiny bit of gravity during anticipation of bite dash.
-var humanBiteDashAnticipationTime: float
-var humanBiteDashTravelTime: float
-var dashingDirection: Vector2
-var humanDashingState: String
+@export var h_bite_dash_travel_duration = 0.15 # Defines maximum time a bite dash lasts for
+@export var h_bite_dash_speed = 2000.0 # Defines speed of horizontal movement during a Human Bite Dash
+@export var h_bite_dash_residual_speed = 700.0 # When bite dash ends, retain a flat amount of small momentum
+@export var h_bite_dash_anticipation_duration = 0.2 #Defines how long Alucard will hang in the air before starting dash (for game feel)
+@export var h_bite_dash_anticipation_gravity_factor = 0.2 # Alucard gets a tiny bit of gravity during anticipation of bite dash.
+var h_bite_dash_anticipation_time: float
+var h_bite_dash_travel_time: float
+var dashing_direction: Vector2
+var h_dashing_state: String
 	#Use the following strings to handle dashing logic:
 	# "anticipate"		anticipation frames pre-dash
 	# "dashing"			movement portion of dash, the act of dash
@@ -36,42 +36,42 @@ var humanDashingState: String
 
 #TODO add animations for BiteDash (Anticipiation, Travel, Follow-through) state
 func enter_state():
-	dashingDirection = player.biteDashDirection
-	humanBiteDashTravelTime = 0.0
-	humanBiteDashAnticipationTime = 0.0
+	dashing_direction = player.bite_dash_direction
+	h_bite_dash_travel_time = 0.0
+	h_bite_dash_anticipation_time = 0.0
 	player.velocity = Vector2(0,0) ## Beginning the human form bite dash cancels current momentum
-	humanDashingState = "anticipate"
+	h_dashing_state = "anticipate"
 	# print("Human BiteDash Start!")
-	# print("dashing direction: " + str(dashingDirection))
+	# print("dashing direction: " + str(dashing_direction))
 func update(delta: float):
-	if (humanDashingState == "anticipate"):
+	if (h_dashing_state == "anticipate"):
 		AnticipateDash(delta)
-	elif (humanDashingState == "dashing"):
+	elif (h_dashing_state == "dashing"):
 		DoDash(delta)
-	elif (humanDashingState == "exit"):
+	elif (h_dashing_state == "exit"):
 		transitionToState.emit("V_IDLE")
 	else: 
-		print("v_bitedash.gd, update(): Code shouldn't reach here -- Neither AnticipateDash or DoDash?")
+		print("v_bitedash.gd: update() - Code shouldn't reach here -- Neither AnticipateDash or DoDash?")
 		return
 	
 
 func exit_state():
-	player.velocity = dashingDirection * humanBiteDashResidualSpeed
+	player.velocity = dashing_direction * h_bite_dash_residual_speed
 	pass
 
 func DoDash(delta: float):
-	player.velocity = dashingDirection * humanBiteDashSpeed
+	player.velocity = dashing_direction * h_bite_dash_speed
 	# print(player.velocity)
 	
-	humanBiteDashTravelTime = humanBiteDashTravelTime + delta
-	if (humanBiteDashTravelTime >= humanBiteDashTravelDuration):
-		humanDashingState = "exit"
+	h_bite_dash_travel_time = h_bite_dash_travel_time + delta
+	if (h_bite_dash_travel_time >= h_bite_dash_travel_duration):
+		h_dashing_state = "exit"
 	return
 
 func AnticipateDash(delta: float):
-	player.apply_gravity(delta, humanBiteDashAnticipationGravityFactor)
+	player.apply_gravity(delta, h_bite_dash_anticipation_gravity_factor)
 	
-	humanBiteDashAnticipationTime = humanBiteDashAnticipationTime + delta
-	if (humanBiteDashAnticipationTime >= humanBiteDashAnticipationDuration):
-		humanDashingState = "dashing"
+	h_bite_dash_anticipation_time = h_bite_dash_anticipation_time + delta
+	if (h_bite_dash_anticipation_time >= h_bite_dash_anticipation_duration):
+		h_dashing_state = "dashing"
 	return

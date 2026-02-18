@@ -103,9 +103,6 @@ script = ExtResource("6_fhl08")
 
 [node name="V_BITEDASH" type="Node" parent="TransformationSM/VAMPIRE/VampireSM" unique_id=1148363666]
 script = ExtResource("8_5htga")
-humanBiteDashTravelDuration = 0.15
-humanBiteDashSpeed = 2000.0
-humanBiteDashResidualSpeed = 700.0
 metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="FROG" type="Node" parent="TransformationSM" unique_id=1507179230]
