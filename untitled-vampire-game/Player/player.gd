@@ -13,11 +13,19 @@ var previous_position: Vector2 #Velocity value in previous frame. Used for calcu
 @onready var state_machine := $StateMachine
 @onready var collider := $Collider
 @onready var bite_hitbox := $BiteHitbox
+@onready var anim_sprite := $AnimatedSprite2D
+
+signal something(integer: int)
+
+var blood_cache : Array[int] = []
 
 func _ready() -> void:
 	bite_dash_direction = Vector2(1,0)
 	previous_position = Vector2(0,0)
+	bite_hitbox.area_entered.connect(bite_animal)
+	something.connect(test)
 	pass
+
 
 func _physics_process(delta: float) -> void:
 	move_and_slide() # Applies velocity to the in-game object
@@ -36,6 +44,12 @@ func apply_horizontal_movement(delta: float):
 	else:
 		velocity.x = speed * 100 * direction * delta
 
+func bite_animal(area: Area2D):
+	if area is Animal:
+		GlobalData.blood_chamber.push_front(area.type)
+
+func test(integer : int):
+	print(integer)
 # Using player velocity to determine Bite Dash facing direction
 # DetermineBiteDashDirection() takes bite_dash_direction as an argument, so it can 
 #		pass itself (and remain the same) if there is no change in position

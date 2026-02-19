@@ -4,6 +4,7 @@ extends State
 @export var V_SPEED := 500.0
 @export var V_JUMP_IMPULSE := 1400.0
 @export var V_GRAVITY := 3000.0
+@export var V_FRICTION := 10.0
 @onready var v_machine = $VampireSM
 
 #turn on processing for statemachine
@@ -18,7 +19,15 @@ func enter_state():
 	
 func update(delta: float):
 	if Input.is_action_just_pressed("test_frog_transform(REMOVE LATER)"):
-		transitionToState.emit("FROG")
+		# transform vampire into frog if vampire has frog blood and is not
+		#currently a frog
+		if GlobalData.blood_chamber.is_empty():
+			return
+		# remove front of chamber and save it
+		var current_blood = GlobalData.blood_chamber.pop_front() 
+		if (current_blood == GlobalData.Animals.FROG 
+		&& v_machine.current_state != v_machine.states["V_BITEDASH"]):
+			transitionToState.emit("FROG")
 
 #turn off processing for statemachine
 func exit_state():

@@ -14,7 +14,10 @@ Frog can:
 @export var F_SPEED := 200.0
 @export var F_JUMP_IMPULSE := 700.0
 @export var F_GRAVITY := 3000.0
+@export var F_FRICTION := 5.0
 @onready var f_machine = $FrogSM
+
+@export var frog_sprite_sheet: Texture2D
 
 #turn on processing for statemachine
 #set player constants to vampire constants
@@ -26,6 +29,7 @@ func enter_state():
 	player.jump_impulse = F_JUMP_IMPULSE
 	player.gravity = F_GRAVITY
 	player.friction = F_FRICTION
+	player.anim_sprite.play("frog")
 	
 func update(delta: float):
 	if Input.is_action_just_pressed("test_frog_transform(REMOVE LATER)"):

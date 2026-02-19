@@ -11,11 +11,16 @@
 [ext_resource type="Script" uid="uid://tkya8lcbmcfx" path="res://Player/StateMachine/Vampire/v_bitedash.gd" id="8_5htga"]
 [ext_resource type="Script" uid="uid://b56ekyi8jeqru" path="res://Player/StateMachine/Frog/f_idle.gd" id="9_x3vf3"]
 [ext_resource type="Script" uid="uid://d3sjtxr7sc4jo" path="res://Player/StateMachine/Frog/f_walk.gd" id="10_apopc"]
+[ext_resource type="Texture2D" uid="uid://dinw4bxb85og6" path="res://Art/Placeholder/spongebob vampire.png" id="10_p5o4e"]
 [ext_resource type="Script" uid="uid://dh0kt6slyvvuv" path="res://Player/StateMachine/Frog/f_jump.gd" id="11_apopc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gwnis"]
 radius = 12.0
 height = 28.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfmf2"]
+atlas = ExtResource("10_p5o4e")
+region = Rect2(0, 0, 370, 586)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5htga"]
 atlas = ExtResource("2_apopc")
@@ -39,6 +44,14 @@ region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p5o4e"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfmf2")
+}],
+"loop": true,
+"name": &"frog",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5htga")
@@ -72,6 +85,7 @@ script = ExtResource("1_4ntmi")
 shape = SubResource("CapsuleShape2D_gwnis")
 
 [node name="BiteHitbox" type="Area2D" parent="." unique_id=903445956]
+monitoring = false
 
 [node name="BiteHitboxCollider" type="CollisionShape2D" parent="BiteHitbox" unique_id=1419210328]
 shape = SubResource("CapsuleShape2D_gwnis")
@@ -79,7 +93,7 @@ shape = SubResource("CapsuleShape2D_gwnis")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=980260689]
 scale = Vector2(1.5, 1.215)
 sprite_frames = SubResource("SpriteFrames_p5o4e")
-animation = &"walk"
+animation = &"frog"
 
 [node name="TransformationSM" type="Node" parent="." unique_id=1077801536 node_paths=PackedStringArray("player", "initial_state")]
 script = ExtResource("3_od3ui")
@@ -112,6 +126,7 @@ metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="FROG" type="Node" parent="TransformationSM" unique_id=1507179230]
 script = ExtResource("8_00tjw")
+frog_sprite_sheet = ExtResource("10_p5o4e")
 metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="FrogSM" type="Node" parent="TransformationSM/FROG" unique_id=1414580571 node_paths=PackedStringArray("player", "initial_state")]
@@ -131,3 +146,5 @@ metadata/_custom_type_script = "uid://c68npqqwy1yig"
 [node name="F_JUMP" type="Node" parent="TransformationSM/FROG/FrogSM" unique_id=688462069]
 script = ExtResource("11_apopc")
 metadata/_custom_type_script = "uid://c68npqqwy1yig"
+
+[connection signal="area_entered" from="BiteHitbox" to="." method="bite_animal"]

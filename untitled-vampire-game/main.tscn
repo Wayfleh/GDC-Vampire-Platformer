@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dcb8ccdwauc6" path="res://icon.svg" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://cmbmpbhioot37" path="res://Art/Placeholder/frog-placeholder.png" id="3_h2yge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_ig7tw")
@@ -80,8 +81,12 @@ sources/0 = SubResource("TileSetAtlasSource_0xm2m")
 [node name="Main" type="Node2D" unique_id=1955272060]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1134537679]
-tile_map_data = PackedByteArray("AAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAIAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAQAAAAAAAAAAAABAAQAAAAAAAAAAAACAAQAAAAAAAAAAAADAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAHAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAIAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_h2yge")
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("2_0xm2m")]
 position = Vector2(451, 443)
+
+[node name="FrogPlaceholder" type="Sprite2D" parent="." unique_id=1381116572]
+position = Vector2(711, 493)
+texture = ExtResource("3_h2yge")

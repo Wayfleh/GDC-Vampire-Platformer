@@ -27,6 +27,7 @@ var h_bite_dash_anticipation_time: float
 var h_bite_dash_travel_time: float
 var dashing_direction: Vector2
 var h_dashing_state: String
+
 	#Use the following strings to handle dashing logic:
 	# "anticipate"		anticipation frames pre-dash
 	# "dashing"			movement portion of dash, the act of dash
@@ -41,6 +42,8 @@ func enter_state():
 	h_bite_dash_anticipation_time = 0.0
 	player.velocity = Vector2(0,0) ## Beginning the human form bite dash cancels current momentum
 	h_dashing_state = "anticipate"
+	
+	player.bite_hitbox.monitoring = true #turn on bite hitbox
 	# print("Human BiteDash Start!")
 	# print("dashing direction: " + str(dashing_direction))
 func update(delta: float):
@@ -57,11 +60,13 @@ func update(delta: float):
 
 func exit_state():
 	player.velocity = dashing_direction * h_bite_dash_residual_speed
-	pass
+	player.bite_hitbox.monitoring = false
 
 func DoDash(delta: float):
 	player.velocity = dashing_direction * h_bite_dash_speed
 	# print(player.velocity)
+	
+	# Activate collider
 	
 	h_bite_dash_travel_time = h_bite_dash_travel_time + delta
 	if (h_bite_dash_travel_time >= h_bite_dash_travel_duration):
