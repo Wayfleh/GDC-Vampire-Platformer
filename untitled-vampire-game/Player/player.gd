@@ -42,7 +42,7 @@ func DetermineBiteDashDirection(currPos: Vector2, prevPos: Vector2, bite_dash_di
 	if (currPos == prevPos):
 		return bite_dash_direction
 	var dir = (currPos - prevPos).normalized()
-	# print(dir)
+	# print(dir)wd
 	return dir
 	
 func _process(delta):
