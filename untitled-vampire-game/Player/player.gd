@@ -86,5 +86,9 @@ func DetermineBiteDashDirection(currPos: Vector2, prevPos: Vector2, bite_dash_di
 	if (currPos == prevPos):
 		return bite_dash_direction
 	var dir = (currPos - prevPos).normalized()
-	# print(dir)
+	# print(dir)wd
 	return dir
+	
+func _process(delta):
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
