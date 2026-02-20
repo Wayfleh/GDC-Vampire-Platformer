@@ -23,7 +23,7 @@ Frog can:
 #set player constants to vampire constants
 
 func enter_state():
-	f_machine.set_process(true)
+	f_machine.set_physics_process(true)
 	f_machine.begin_state_machine(f_machine.initial_state)
 	player.speed = F_SPEED
 	player.jump_impulse = F_JUMP_IMPULSE
@@ -37,4 +37,4 @@ func update(delta: float):
 
 #turn off processing for statemachine
 func exit_state():
-	f_machine.set_process(false)
+	f_machine.set_physics_process(false)
