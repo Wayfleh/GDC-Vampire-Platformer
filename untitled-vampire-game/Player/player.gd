@@ -10,13 +10,18 @@ extends CharacterBody2D
 @export var bite_dash_direction: Vector2
 var previous_position: Vector2 #Velocity value in previous frame. Used for calculating Bite Dash Direction
 
+
 var direction : int #either forward (1) or backward (-1)
+#---------- For Bite Dash ----------#
 var previous_direction : int = 1
+var bite_dash_used: bool = false
+@onready var bite_hitbox := $BiteHitbox
+@onready var tongue := %Tongue
+@onready var tongue_tip = tongue.tip
 
 @onready var state_machine := $StateMachine
 @onready var collider := $Collider
-@onready var bite_hitbox := $BiteHitbox
-@onready var anim_sprite := $CurrentDirection/AlucardSprite
+@onready var anim_sprite := %AlucardSprite
 
 #---------- Particles ----------#
 @onready var blood_particles := $BloodParticles
@@ -33,7 +38,7 @@ func _ready() -> void:
 	bite_dash_direction = Vector2(1,0)
 	previous_position = Vector2(0,0)
 	bite_hitbox.area_entered.connect(bite_animal)
-	pass
+	
 
 
 func _physics_process(delta: float) -> void:

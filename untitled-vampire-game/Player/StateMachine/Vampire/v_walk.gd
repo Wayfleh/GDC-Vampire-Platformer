@@ -17,7 +17,8 @@ func update(delta: float):
 	if Input.is_action_just_pressed("jump") and player.is_on_floor():
 		transitionToState.emit("V_JUMP")
 	
-	if Input.is_action_just_pressed("bite_dash"):
+	if (Input.is_action_just_pressed("bite_dash") 
+	&& !player.bite_dash_used):
 		transitionToState.emit("V_BITEDASH")
 
 func exit_state():

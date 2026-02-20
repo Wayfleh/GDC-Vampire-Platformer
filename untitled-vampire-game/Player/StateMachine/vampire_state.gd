@@ -28,6 +28,8 @@ func update(delta: float):
 		if (current_blood == GlobalData.Animals.FROG 
 		&& v_machine.current_state != v_machine.states["V_BITEDASH"]):
 			transitionToState.emit("FROG")
+	if player.is_on_floor():
+		player.bite_dash_used = false
 
 #turn off processing for statemachine
 func exit_state():
