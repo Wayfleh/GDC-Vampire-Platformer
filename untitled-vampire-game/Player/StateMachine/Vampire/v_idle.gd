@@ -2,6 +2,7 @@
 extends State
 
 
+var idle_friction_multiplier := 2.0
 
 #TODO add animations for idle state
 func enter_state():
@@ -9,13 +10,11 @@ func enter_state():
 	#idle animation
 #slows the player down to a halt
 func update(delta: float):
-	if player.velocity.x != 0:
-		if (player.velocity.x <= 0.005): #Clamping velocity as it approaches 0 to prevent too many lerpf calls.
-			player.velocity.x = 0
-		else:
-			player.velocity.x = lerpf(player.velocity.x, 0.0, delta * 10)
+	player.apply_friction(delta * idle_friction_multiplier)
 	player.apply_gravity(delta)
 	
+	if player.afterimage_particles.emitting:
+		player.afterimage_particles.emitting = false
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
 		transitionToState.emit("V_WALK")
 	

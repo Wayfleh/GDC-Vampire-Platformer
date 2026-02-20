@@ -6,11 +6,8 @@ func enter_state():
 	#walk animation
 
 func update(delta: float):
-	if (player.velocity.x <= 0.005): #Clamping velocity as it approaches 0 to prevent too many lerpf calls.
-		player.velocity.x = 0
-	else:
-		player.velocity.x = lerpf(player.velocity.x, 0.0, delta * 10)
 	
+	player.apply_friction(delta)
 	player.apply_horizontal_movement(delta)
 	player.apply_gravity(delta)
 	

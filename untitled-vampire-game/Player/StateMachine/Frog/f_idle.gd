@@ -1,13 +1,13 @@
 ## FROG
 extends State
 
+
 #TODO add animations for idle state
 func enter_state():
 	pass
 #slows the player down to a halt
 func update(delta: float):
-	if player.velocity.x != 0:
-		player.velocity.x = lerpf(player.velocity.x, 0.0, delta * 10)
+	player.apply_friction(delta)
 	player.apply_gravity(delta)
 	
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
