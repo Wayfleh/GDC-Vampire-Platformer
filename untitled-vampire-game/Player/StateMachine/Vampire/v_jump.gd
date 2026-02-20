@@ -9,9 +9,9 @@ func enter_state():
 func update(delta: float):
 	player.apply_horizontal_movement(delta)
 	if !Input.is_action_pressed("jump"):
-		player.apply_gravity(delta * fastFallGravityMultiplier)
+		player.apply_gravity(delta, fastFallGravityMultiplier)
 	else:
-		player.apply_gravity(delta)
+		player.apply_gravity(delta, 1)
 	
 	if player.is_on_floor() and !Input.is_action_pressed("jump"):
 		transitionToState.emit("V_IDLE")

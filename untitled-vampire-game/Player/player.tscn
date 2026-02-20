@@ -4,18 +4,29 @@
 [ext_resource type="Texture2D" uid="uid://bps4qu3p65jpw" path="res://Art/Placeholder/anim_walk1.png" id="2_apopc"]
 [ext_resource type="Script" uid="uid://b0qyabcc0hn7j" path="res://state_machine.gd" id="3_od3ui"]
 [ext_resource type="Script" uid="uid://k0a7jdb83ch1" path="res://Player/StateMachine/vampire_state.gd" id="4_00tjw"]
+[ext_resource type="Texture2D" uid="uid://c3pq0s83y2m0c" path="res://Art/Placeholder/Blood.png" id="4_gu6f8"]
 [ext_resource type="Script" uid="uid://cvmgnpcu1e2fx" path="res://Player/StateMachine/Vampire/v_idle.gd" id="4_gwnis"]
+[ext_resource type="Texture2D" uid="uid://dmw65gvnbn2tf" path="res://Art/Placeholder/SingleAlucardRight.png" id="5_dkpta"]
 [ext_resource type="Script" uid="uid://bgueu3iyq1rde" path="res://Player/StateMachine/Vampire/v_walk.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://d1lffwqtnbmrr" path="res://Player/StateMachine/Vampire/v_jump.gd" id="6_fhl08"]
 [ext_resource type="Script" uid="uid://cbxp42c2drvct" path="res://Player/StateMachine/Frog/frog_state.gd" id="8_00tjw"]
 [ext_resource type="Script" uid="uid://tkya8lcbmcfx" path="res://Player/StateMachine/Vampire/v_bitedash.gd" id="8_5htga"]
 [ext_resource type="Script" uid="uid://b56ekyi8jeqru" path="res://Player/StateMachine/Frog/f_idle.gd" id="9_x3vf3"]
 [ext_resource type="Script" uid="uid://d3sjtxr7sc4jo" path="res://Player/StateMachine/Frog/f_walk.gd" id="10_apopc"]
+[ext_resource type="Texture2D" uid="uid://dinw4bxb85og6" path="res://Art/Placeholder/spongebob vampire.png" id="10_p5o4e"]
 [ext_resource type="Script" uid="uid://dh0kt6slyvvuv" path="res://Player/StateMachine/Frog/f_jump.gd" id="11_apopc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gwnis"]
 radius = 12.0
 height = 28.0
+
+[sub_resource type="Gradient" id="Gradient_dkpta"]
+interpolation_mode = 2
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.3529412)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfmf2"]
+atlas = ExtResource("10_p5o4e")
+region = Rect2(0, 0, 370, 586)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5htga"]
 atlas = ExtResource("2_apopc")
@@ -39,6 +50,14 @@ region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p5o4e"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfmf2")
+}],
+"loop": true,
+"name": &"frog",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5htga")
@@ -68,13 +87,44 @@ animations = [{
 [node name="Player" type="CharacterBody2D" unique_id=644735785]
 script = ExtResource("1_4ntmi")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1281633438]
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=1281633438]
 shape = SubResource("CapsuleShape2D_gwnis")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=980260689]
+[node name="BiteHitbox" type="Area2D" parent="." unique_id=903445956]
+monitoring = false
+
+[node name="BiteHitboxCollider" type="CollisionShape2D" parent="BiteHitbox" unique_id=1419210328]
+shape = SubResource("CapsuleShape2D_gwnis")
+
+[node name="AfterimageParticles" type="CPUParticles2D" parent="." unique_id=1799021689]
+emitting = false
+texture = ExtResource("5_dkpta")
+lifetime = 0.3
+gravity = Vector2(0, 0)
+scale_amount_min = 1.3
+scale_amount_max = 1.3
+color = Color(1, 0, 0.101960786, 0.84313726)
+color_ramp = SubResource("Gradient_dkpta")
+
+[node name="CurrentDirection" type="Node2D" parent="." unique_id=30504841]
+
+[node name="AlucardSprite" type="AnimatedSprite2D" parent="CurrentDirection" unique_id=980260689]
 scale = Vector2(1.5, 1.215)
 sprite_frames = SubResource("SpriteFrames_p5o4e")
-animation = &"walk"
+animation = &"idle"
+
+[node name="BloodParticles" type="CPUParticles2D" parent="." unique_id=158508271]
+emitting = false
+amount = 4
+texture = ExtResource("4_gu6f8")
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.9
+randomness = 0.01
+direction = Vector2(0, -1)
+gravity = Vector2(0, 150)
+initial_velocity_min = 50.0
+initial_velocity_max = 70.0
 
 [node name="TransformationSM" type="Node" parent="." unique_id=1077801536 node_paths=PackedStringArray("player", "initial_state")]
 script = ExtResource("3_od3ui")
@@ -85,6 +135,8 @@ metadata/_custom_type_script = "uid://b0qyabcc0hn7j"
 
 [node name="VAMPIRE" type="Node" parent="TransformationSM" unique_id=117049237]
 script = ExtResource("4_00tjw")
+V_JUMP_IMPULSE = 500.0
+V_GRAVITY = 1200.0
 
 [node name="VampireSM" type="Node" parent="TransformationSM/VAMPIRE" unique_id=1533651679 node_paths=PackedStringArray("player", "initial_state")]
 script = ExtResource("3_od3ui")
@@ -107,8 +159,7 @@ metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="FROG" type="Node" parent="TransformationSM" unique_id=1507179230]
 script = ExtResource("8_00tjw")
-F_JUMP_IMPULSE = 250.0
-F_GRAVITY = 1500.0
+frog_sprite_sheet = ExtResource("10_p5o4e")
 metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="FrogSM" type="Node" parent="TransformationSM/FROG" unique_id=1414580571 node_paths=PackedStringArray("player", "initial_state")]
@@ -128,3 +179,5 @@ metadata/_custom_type_script = "uid://c68npqqwy1yig"
 [node name="F_JUMP" type="Node" parent="TransformationSM/FROG/FrogSM" unique_id=688462069]
 script = ExtResource("11_apopc")
 metadata/_custom_type_script = "uid://c68npqqwy1yig"
+
+[connection signal="area_entered" from="BiteHitbox" to="." method="bite_animal"]
