@@ -79,6 +79,10 @@ func bite_animal(area: Area2D):
 		just_bit_animal = true
 		blood_particles.restart()
 		GlobalData.blood_chamber.push_front(area.type)
+		area.queue_free()
+		var level_manager = get_tree().get_first_node_in_group("level_manager")
+		if level_manager:
+			level_manager.animal_bitten()
 
 # Using player velocity to determine Bite Dash facing direction
 # DetermineBiteDashDirection() takes bite_dash_direction as an argument, so it can 

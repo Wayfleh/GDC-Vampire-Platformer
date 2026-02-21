@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="1_t20ai"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="2_mtno4"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="3_tdu8r"]
+[ext_resource type="Script" uid="uid://7wyysqn5kc23" path="res://Levels/LevelManager.gd" id="4_2o7fp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t20ai"]
 texture = ExtResource("1_t20ai")
@@ -59,7 +60,7 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_t20ai")
 
-[node name="Level" type="Node2D" unique_id=1583682183]
+[node name="Level1" type="Node2D" unique_id=1583682183]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=157769378]
 tile_set = SubResource("TileSet_mtno4")
@@ -83,5 +84,8 @@ zoom = Vector2(2, 2)
 
 [node name="Animal" parent="." unique_id=934101410 instance=ExtResource("3_tdu8r")]
 position = Vector2(99, -17)
+
+[node name="LevelManager" type="Node" parent="." unique_id=1664091554]
+script = ExtResource("4_2o7fp")
 
 [editable path="Player"]
