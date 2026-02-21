@@ -10,7 +10,7 @@ var states: Dictionary = {}
 
 func _ready() -> void:
 	await player.ready
-	set_process(is_initial_machine) #machine is not processed (state is not updated) if this is not the initial machine
+	set_physics_process(is_initial_machine) #machine is not processed (state is not updated) if this is not the initial machine
 	for state in get_children(): #children of the statemachine should only be the states themselves
 		if state is State:
 			states[state.name] = state
@@ -19,7 +19,7 @@ func _ready() -> void:
 		begin_state_machine(initial_state)
 
 
-func _process(delta):
+func _physics_process(delta):
 	if current_state:
 		current_state.update(delta)
 

@@ -9,14 +9,16 @@ func enter_state():
 func update(delta: float):
 	player.apply_horizontal_movement(delta)
 	if !Input.is_action_pressed("jump"):
-		player.apply_gravity(delta * fastFallGravityMultiplier)
+		player.apply_gravity(delta, fastFallGravityMultiplier)
 	else:
-		player.apply_gravity(delta)
+		player.apply_gravity(delta, 1)
 	
 	if player.is_on_floor() and !Input.is_action_pressed("jump"):
 		transitionToState.emit("V_IDLE")
 	
-	if Input.is_action_just_pressed("bite_dash"):
+	# can only bite dash once in the air
+	if (Input.is_action_just_pressed("bite_dash") 
+	&& !player.bite_dash_used):
 		transitionToState.emit("V_BITEDASH")
 
 func exit_state():
