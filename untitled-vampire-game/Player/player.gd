@@ -2,9 +2,9 @@ class_name Player
 extends CharacterBody2D
 
 #change speed, jump height, and gravity
-@export var speed: float = 5.0
-@export var jump_impulse: float = 5.0
-@export var gravity: float = 5.0
+var speed: float = 5.0
+var jump_impulse: float = 1.0
+var gravity: float = 5.0
 
 @export var bite_dash_direction: Vector2
 var previous_position: Vector2 #Velocity value in previous frame. Used for calculating Bite Dash Direction

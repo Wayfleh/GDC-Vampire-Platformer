@@ -1,7 +1,7 @@
 ## VAMPIRE
 extends State
 
-@export var fastFallGravityMultiplier = 4 #When the player isn't pressing the jump button, fall faster.
+@export var fastFallGravityMultiplier: float = 1.5 #When the player isn't pressing the jump button, fall faster.
 
 func enter_state():
 	player.velocity.y -= player.jump_impulse

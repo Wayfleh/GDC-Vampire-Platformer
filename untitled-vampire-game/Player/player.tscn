@@ -107,6 +107,8 @@ metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="FROG" type="Node" parent="TransformationSM" unique_id=1507179230]
 script = ExtResource("8_00tjw")
+F_JUMP_IMPULSE = 250.0
+F_GRAVITY = 1500.0
 metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="FrogSM" type="Node" parent="TransformationSM/FROG" unique_id=1414580571 node_paths=PackedStringArray("player", "initial_state")]
