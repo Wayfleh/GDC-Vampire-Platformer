@@ -30,6 +30,8 @@ func update(delta: float):
 			transitionToState.emit("FROG")
 	if player.is_on_floor():
 		player.bite_dash_used = false
+	if v_machine.current_state != v_machine.states["V_BITEDASH"]: #don't apply direction in bitedash
+		player.apply_input_direction(delta)
 
 #turn off processing for statemachine
 func exit_state():

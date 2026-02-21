@@ -16,8 +16,7 @@ var direction : int #either forward (1) or backward (-1)
 var previous_direction : int = 1
 var bite_dash_used: bool = false
 @onready var bite_hitbox := $BiteHitbox
-@onready var tongue := %Tongue
-@onready var tongue_tip = tongue.tip
+@onready var tongue : Tongue = %Tongue #sahur
 
 @onready var state_machine := $StateMachine
 @onready var collider := $Collider
@@ -42,10 +41,6 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	direction = Input.get_axis("left", "right")
-	if direction != 0:
-		$CurrentDirection.scale.x = direction
-		previous_direction = direction
 	
 	if direction == -1:
 		afterimage_particles.texture = left_afterimage
@@ -72,6 +67,12 @@ func apply_friction(delta: float):
 		velocity.x = 0
 	else:
 		velocity.x = lerpf(velocity.x, 0.0, delta * 10)
+
+func apply_input_direction(delta: float):
+	direction = Input.get_axis("left", "right")
+	if direction != 0:
+		$CurrentDirection.scale.x = direction
+		previous_direction = direction
 
 func bite_animal(area: Area2D):
 	if area is Animal:
