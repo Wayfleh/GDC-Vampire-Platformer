@@ -10,13 +10,17 @@ extends CharacterBody2D
 @export var bite_dash_direction: Vector2
 var previous_position: Vector2 #Velocity value in previous frame. Used for calculating Bite Dash Direction
 
+
 var direction : int #either forward (1) or backward (-1)
+#---------- For Bite Dash ----------#
 var previous_direction : int = 1
+var bite_dash_used: bool = false
+@onready var bite_hitbox := $BiteHitbox
+@onready var tongue : Tongue = %Tongue #sahur
 
 @onready var state_machine := $StateMachine
 @onready var collider := $Collider
-@onready var bite_hitbox := $BiteHitbox
-@onready var anim_sprite := $CurrentDirection/AlucardSprite
+@onready var anim_sprite := %AlucardSprite
 
 #---------- Particles ----------#
 @onready var blood_particles := $BloodParticles
@@ -33,14 +37,10 @@ func _ready() -> void:
 	bite_dash_direction = Vector2(1,0)
 	previous_position = Vector2(0,0)
 	bite_hitbox.area_entered.connect(bite_animal)
-	pass
+	
 
 
 func _physics_process(delta: float) -> void:
-	direction = Input.get_axis("left", "right")
-	if direction != 0:
-		$CurrentDirection.scale.x = direction
-		previous_direction = direction
 	
 	if direction == -1:
 		afterimage_particles.texture = left_afterimage
@@ -68,11 +68,21 @@ func apply_friction(delta: float):
 	else:
 		velocity.x = lerpf(velocity.x, 0.0, delta * 10)
 
+func apply_input_direction(delta: float):
+	direction = Input.get_axis("left", "right")
+	if direction != 0:
+		$CurrentDirection.scale.x = direction
+		previous_direction = direction
+
 func bite_animal(area: Area2D):
 	if area is Animal:
 		just_bit_animal = true
 		blood_particles.restart()
 		GlobalData.blood_chamber.push_front(area.type)
+		area.queue_free()
+		var level_manager = get_tree().get_first_node_in_group("level_manager")
+		if level_manager:
+			level_manager.animal_bitten()
 
 # Using player velocity to determine Bite Dash facing direction
 # DetermineBiteDashDirection() takes bite_dash_direction as an argument, so it can 

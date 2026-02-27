@@ -16,7 +16,9 @@ func update(delta: float):
 	if player.is_on_floor() and !Input.is_action_pressed("jump"):
 		transitionToState.emit("V_IDLE")
 	
-	if Input.is_action_just_pressed("bite_dash"):
+	# can only bite dash once in the air
+	if (Input.is_action_just_pressed("bite_dash") 
+	&& !player.bite_dash_used):
 		transitionToState.emit("V_BITEDASH")
 
 func exit_state():

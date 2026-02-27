@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cvmgnpcu1e2fx" path="res://Player/StateMachine/Vampire/v_idle.gd" id="4_gwnis"]
 [ext_resource type="Texture2D" uid="uid://dmw65gvnbn2tf" path="res://Art/Placeholder/SingleAlucardRight.png" id="5_dkpta"]
 [ext_resource type="Script" uid="uid://bgueu3iyq1rde" path="res://Player/StateMachine/Vampire/v_walk.gd" id="5_k53q1"]
+[ext_resource type="Script" uid="uid://bjqu6w4wos8p3" path="res://Player/StateMachine/Frog/tongue.gd" id="5_pisgm"]
 [ext_resource type="Script" uid="uid://d1lffwqtnbmrr" path="res://Player/StateMachine/Vampire/v_jump.gd" id="6_fhl08"]
 [ext_resource type="Script" uid="uid://cbxp42c2drvct" path="res://Player/StateMachine/Frog/frog_state.gd" id="8_00tjw"]
 [ext_resource type="Script" uid="uid://tkya8lcbmcfx" path="res://Player/StateMachine/Vampire/v_bitedash.gd" id="8_5htga"]
@@ -15,6 +16,7 @@
 [ext_resource type="Script" uid="uid://d3sjtxr7sc4jo" path="res://Player/StateMachine/Frog/f_walk.gd" id="10_apopc"]
 [ext_resource type="Texture2D" uid="uid://dinw4bxb85og6" path="res://Art/Placeholder/spongebob vampire.png" id="10_p5o4e"]
 [ext_resource type="Script" uid="uid://dh0kt6slyvvuv" path="res://Player/StateMachine/Frog/f_jump.gd" id="11_apopc"]
+[ext_resource type="Script" uid="uid://pfkhuqvmdxwe" path="res://Player/StateMachine/Frog/f_bitedash.gd" id="16_lfmf2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gwnis"]
 radius = 12.0
@@ -26,7 +28,7 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.3529412)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lfmf2"]
 atlas = ExtResource("10_p5o4e")
-region = Rect2(0, 0, 370, 586)
+region = Rect2(192, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5htga"]
 atlas = ExtResource("2_apopc")
@@ -84,6 +86,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lfmf2"]
+
 [node name="Player" type="CharacterBody2D" unique_id=644735785]
 script = ExtResource("1_4ntmi")
 
@@ -109,9 +113,32 @@ color_ramp = SubResource("Gradient_dkpta")
 [node name="CurrentDirection" type="Node2D" parent="." unique_id=30504841]
 
 [node name="AlucardSprite" type="AnimatedSprite2D" parent="CurrentDirection" unique_id=980260689]
+unique_name_in_owner = true
 scale = Vector2(1.5, 1.215)
 sprite_frames = SubResource("SpriteFrames_p5o4e")
-animation = &"idle"
+animation = &"frog"
+
+[node name="Tongue" type="Node2D" parent="CurrentDirection" unique_id=949118960]
+unique_name_in_owner = true
+visible = false
+rotation = 0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+script = ExtResource("5_pisgm")
+
+[node name="GuideLine" type="Line2D" parent="CurrentDirection/Tongue" unique_id=1718286960]
+points = PackedVector2Array(0, 0, 0, -80)
+width = 4.0
+default_color = Color(0.8666667, 0.32156864, 0.7254902, 1)
+
+[node name="TongueTip" type="Area2D" parent="CurrentDirection/Tongue" unique_id=620725349]
+monitoring = false
+
+[node name="TongueTipCollider" type="CollisionShape2D" parent="CurrentDirection/Tongue/TongueTip" unique_id=1406688466]
+shape = SubResource("CircleShape2D_lfmf2")
+
+[node name="Sprite2D" type="Sprite2D" parent="CurrentDirection/Tongue/TongueTip" unique_id=370410446]
+rotation = 3.1415927
+texture = ExtResource("4_gu6f8")
 
 [node name="BloodParticles" type="CPUParticles2D" parent="." unique_id=158508271]
 emitting = false
@@ -135,8 +162,9 @@ metadata/_custom_type_script = "uid://b0qyabcc0hn7j"
 
 [node name="VAMPIRE" type="Node" parent="TransformationSM" unique_id=117049237]
 script = ExtResource("4_00tjw")
+V_SPEED = 50.0
 V_JUMP_IMPULSE = 500.0
-V_GRAVITY = 1200.0
+V_GRAVITY = 1500.0
 
 [node name="VampireSM" type="Node" parent="TransformationSM/VAMPIRE" unique_id=1533651679 node_paths=PackedStringArray("player", "initial_state")]
 script = ExtResource("3_od3ui")
@@ -152,6 +180,7 @@ script = ExtResource("5_k53q1")
 
 [node name="V_JUMP" type="Node" parent="TransformationSM/VAMPIRE/VampireSM" unique_id=479202694]
 script = ExtResource("6_fhl08")
+fastFallGravityMultiplier = 3.0
 
 [node name="V_BITEDASH" type="Node" parent="TransformationSM/VAMPIRE/VampireSM" unique_id=1148363666]
 script = ExtResource("8_5htga")
@@ -178,6 +207,14 @@ metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="F_JUMP" type="Node" parent="TransformationSM/FROG/FrogSM" unique_id=688462069]
 script = ExtResource("11_apopc")
+metadata/_custom_type_script = "uid://c68npqqwy1yig"
+
+[node name="F_BITEDASH" type="Node" parent="TransformationSM/FROG/FrogSM" unique_id=2142105885]
+script = ExtResource("16_lfmf2")
+tongue_length = 160.0
+rotation_speed = 5.0
+tip_speed = 500.0
+max_angle = 45.0
 metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [connection signal="area_entered" from="BiteHitbox" to="." method="bite_animal"]
