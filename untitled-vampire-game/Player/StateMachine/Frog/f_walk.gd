@@ -6,7 +6,7 @@ func enter_state():
 
 func update(delta: float):
 	
-	player.apply_friction(delta)
+	player.apply_friction(delta, 10)
 	player.apply_horizontal_movement(delta)
 	player.apply_gravity(delta)
 	

@@ -7,7 +7,8 @@ func enter_state():
 	pass
 #slows the player down to a halt
 func update(delta: float):
-	player.apply_friction(delta)
+	var friction_mult = 10 if player.is_on_floor() else 5
+	player.apply_friction(delta, friction_mult)
 	player.apply_gravity(delta)
 	
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):

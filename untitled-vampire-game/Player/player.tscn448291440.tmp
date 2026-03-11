@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://bgueu3iyq1rde" path="res://Player/StateMachine/Vampire/v_walk.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://bjqu6w4wos8p3" path="res://Player/tongue.gd" id="5_pisgm"]
 [ext_resource type="Script" uid="uid://d1lffwqtnbmrr" path="res://Player/StateMachine/Vampire/v_jump.gd" id="6_fhl08"]
-[ext_resource type="Script" uid="uid://b0qyabcc0hn7j" path="res://Player/StateMachine/state_machine.gd" id="7_pisgm"]
+[ext_resource type="Script" uid="uid://b0qyabcc0hn7j" path="res://state_machine.gd" id="7_pisgm"]
 [ext_resource type="Script" uid="uid://cbxp42c2drvct" path="res://Player/StateMachine/Frog/frog_state.gd" id="8_00tjw"]
 [ext_resource type="Script" uid="uid://tkya8lcbmcfx" path="res://Player/StateMachine/Vampire/v_bitedash.gd" id="8_5htga"]
 [ext_resource type="Script" uid="uid://b56ekyi8jeqru" path="res://Player/StateMachine/Frog/f_idle.gd" id="9_x3vf3"]
@@ -88,6 +88,47 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lfmf2"]
 
+[sub_resource type="GDScript" id="GDScript_lfmf2"]
+script/source = "@icon(\"res://Art/Custom Icons/todo-white.svg\")
+class_name StateMachine 
+extends Node
+var current_state: State
+@export var player: Player
+var states: Dictionary = {}
+@export var initial_state: State
+@export var is_initial_machine: bool = false 
+
+func _ready() -> void:
+	await player.ready
+	set_physics_process(is_initial_machine) #machine is not processed (state is not updated) if this is not the initial machine
+	for state in get_children(): #children of the statemachine should only be the states themselves
+		if state is State:
+			states[state.name] = state
+			state.transitionToState.connect(change_state)
+	if initial_state:
+		begin_state_machine(initial_state)
+
+
+func _physics_process(delta):
+	if current_state:
+		current_state.update(delta)
+
+func change_state(next: String):
+	#this is assuming the name is in the dictionary, which it should be
+	var next_state: State = states[next]
+	current_state.exit_state()
+	next_state.enter_state()
+	current_state = next_state
+	print(next)
+
+#sets the start state and enters it
+#can be used to start a statemachine in a state other than initial_state
+# (e.g. walking while transforming starts you in walking state)
+func begin_state_machine(starting_state: State):
+	current_state = starting_state
+	starting_state.enter_state()
+"
+
 [node name="Player" type="CharacterBody2D" unique_id=644735785]
 script = ExtResource("1_4ntmi")
 
@@ -120,6 +161,7 @@ animation = &"idle"
 
 [node name="Tongue" type="Node2D" parent="CurrentDirection" unique_id=949118960]
 unique_name_in_owner = true
+visible = false
 rotation = 0.7853982
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("5_pisgm")
@@ -129,22 +171,15 @@ points = PackedVector2Array(0, 0, 0, -80)
 width = 4.0
 default_color = Color(0.8666667, 0.32156864, 0.7254902, 1)
 
-[node name="TipPivot" type="Node2D" parent="CurrentDirection/Tongue" unique_id=687600060]
-rotation = -0.7853982
-
-[node name="TongueTip" type="Area2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=620725349]
+[node name="TongueTip" type="Area2D" parent="CurrentDirection/Tongue" unique_id=620725349]
 monitoring = false
 
-[node name="TongueTipCollider" type="CollisionShape2D" parent="CurrentDirection/Tongue/TipPivot/TongueTip" unique_id=1406688466]
+[node name="TongueTipCollider" type="CollisionShape2D" parent="CurrentDirection/Tongue/TongueTip" unique_id=1406688466]
 shape = SubResource("CircleShape2D_lfmf2")
 
-[node name="Sprite2D" type="Sprite2D" parent="CurrentDirection/Tongue/TipPivot/TongueTip" unique_id=370410446]
+[node name="Sprite2D" type="Sprite2D" parent="CurrentDirection/Tongue/TongueTip" unique_id=370410446]
 rotation = 3.1415927
 texture = ExtResource("4_gu6f8")
-
-[node name="TipMantleCheck" type="RayCast2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=1556445343]
-position = Vector2(10, -34)
-target_position = Vector2(1, 1)
 
 [node name="BloodParticles" type="CPUParticles2D" parent="." unique_id=158508271]
 emitting = false
@@ -159,11 +194,8 @@ gravity = Vector2(0, 150)
 initial_velocity_min = 50.0
 initial_velocity_max = 70.0
 
-[node name="TransformationSM" type="Node" parent="." unique_id=207322324 node_paths=PackedStringArray("player", "initial_state")]
+[node name="TransformationSM" type="Node" parent="." unique_id=969446015]
 script = ExtResource("7_pisgm")
-player = NodePath("..")
-initial_state = NodePath("VAMPIRE")
-is_initial_machine = true
 
 [node name="VAMPIRE" type="Node" parent="TransformationSM" unique_id=117049237]
 script = ExtResource("4_00tjw")
@@ -172,10 +204,10 @@ V_JUMP_IMPULSE = 500.0
 V_GRAVITY = 1500.0
 
 [node name="VampireSM" type="Node" parent="TransformationSM/VAMPIRE" unique_id=1533651679 node_paths=PackedStringArray("player", "initial_state")]
-script = ExtResource("7_pisgm")
+script = SubResource("GDScript_lfmf2")
+is_initial_machine = true
 player = NodePath("../../..")
 initial_state = NodePath("V_IDLE")
-is_initial_machine = true
 
 [node name="V_IDLE" type="Node" parent="TransformationSM/VAMPIRE/VampireSM" unique_id=13350506]
 script = ExtResource("4_gwnis")
@@ -197,7 +229,7 @@ frog_sprite_sheet = ExtResource("10_p5o4e")
 metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="FrogSM" type="Node" parent="TransformationSM/FROG" unique_id=1414580571 node_paths=PackedStringArray("player", "initial_state")]
-script = ExtResource("7_pisgm")
+script = SubResource("GDScript_lfmf2")
 player = NodePath("../../..")
 initial_state = NodePath("F_IDLE")
 metadata/_custom_type_script = "uid://b0qyabcc0hn7j"
@@ -220,7 +252,14 @@ tongue_length = 160.0
 rotation_speed = 5.0
 tip_speed = 500.0
 max_angle = 45.0
-mantle_impulse = 500.0
 metadata/_custom_type_script = "uid://c68npqqwy1yig"
+
+[node name="MantleRayTop" type="RayCast2D" parent="." unique_id=1235779009]
+position = Vector2(0, -14)
+target_position = Vector2(20, 0)
+
+[node name="MantleRayBottom" type="RayCast2D" parent="." unique_id=1904873517]
+position = Vector2(0, 14)
+target_position = Vector2(20, 0)
 
 [connection signal="area_entered" from="BiteHitbox" to="." method="bite_animal"]
