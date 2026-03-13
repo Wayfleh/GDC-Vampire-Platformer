@@ -66,6 +66,8 @@ tile_map_data = PackedByteArray("AADu//b/AAAEAAQAAADu//f/AAAEAAQAAADu//j/AAAEAAQ
 tile_set = SubResource("TileSet_mtno4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
+position = Vector2(-150, 148)
+zoom = Vector2(2, 2)
 
 [node name="Animal" parent="." unique_id=934101410 instance=ExtResource("3_tdu8r")]
 position = Vector2(-143, 236)
