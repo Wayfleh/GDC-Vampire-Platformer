@@ -87,6 +87,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lfmf2"]
+radius = 15.0
 
 [node name="Player" type="CharacterBody2D" unique_id=644735785]
 script = ExtResource("1_4ntmi")
@@ -143,7 +144,7 @@ rotation = 3.1415927
 texture = ExtResource("4_gu6f8")
 
 [node name="TipMantleCheck" type="RayCast2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=1556445343]
-position = Vector2(10, -34)
+position = Vector2(15, -32)
 target_position = Vector2(1, 1)
 
 [node name="BloodParticles" type="CPUParticles2D" parent="." unique_id=158508271]
@@ -216,11 +217,12 @@ metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="F_BITEDASH" type="Node" parent="TransformationSM/FROG/FrogSM" unique_id=2142105885]
 script = ExtResource("16_lfmf2")
-tongue_length = 160.0
+tongue_length = 200.0
 rotation_speed = 5.0
 tip_speed = 500.0
 max_angle = 45.0
-mantle_impulse = 500.0
+mantle_impulse = 1000.0
+mantle_angle = 25.0
 metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [connection signal="area_entered" from="BiteHitbox" to="." method="bite_animal"]

@@ -39,6 +39,7 @@ func update(delta: float):
 		
 		if Input.is_action_just_pressed("bite_dash"):
 			f_machine.change_state("F_BITEDASH")
+	
 
 #turn off processing for statemachine
 func exit_state():
