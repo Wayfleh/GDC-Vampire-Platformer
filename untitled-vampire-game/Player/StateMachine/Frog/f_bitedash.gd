@@ -21,9 +21,8 @@ var _is_mantling : bool
 func enter_state():
 	#initialize tongue stuff
 	player.tongue.rotation = max_angle
-	player.tongue.tip_area.monitoring = true
-	player.tongue.tip.position.y = 0.0
-	player.tongue.show()
+	player.tongue.show_tongue()
+	player.tongue.tip.position.y = -10
 	_time = 0.0
 	player.tongue.tip_area.body_entered.connect(_tip_touch_surface) #TODO find a way to put this in a _ready() function without node hierarchy shit getting in the way
 	
@@ -59,6 +58,7 @@ func _aim_tongue(delta: float):
 	
 	if Input.is_action_just_released("bite_dash"): #release button to fire tongue
 		_dash_state = "shoot"
+		player.tongue.monitor_tip_area()
 
 # Rapidly moves tongue tip at tongue angle
 # (the whole tongue node is rotated, so the tip's relative y position is moved)
@@ -68,15 +68,18 @@ func _shoot_tongue(delta: float):
 		transitionToState.emit("F_IDLE")
 		
 func _tip_touch_surface(body : Node2D):
-	_pull_direction = Vector2(sin(player.tongue.rotation) * player.previous_direction, -cos(_curr_angle)) 
+	_pull_direction = Vector2(sin(_curr_angle) * player.previous_direction, -cos(_curr_angle)) 
 	if _dash_state == "pull":
 		return
 	if (body is TileMapLayer): # wall or ceiling usually
 		_dash_state = "pull"
-		if !player.tongue.tip_mantle_check.is_colliding(): #angle the velocity higher if grabbing onto a ledge
+		if !player.tongue.is_raycast_colliding(): #angle the velocity higher if grabbing onto a ledge
 			_pull_direction.y -= _curr_angle/2
-			_is_mantling = true
-		_hide_tongue()
+			_is_mantling = true 
+		player.tongue.hide_tongue()
+		print(rad_to_deg(_curr_angle))
+		print(rad_to_deg(_pull_direction.x/_pull_direction.y))
+		print(_is_mantling)
 	if (body is Animal):
 		pass #TODO make it so animals are pulled toward the player
 
@@ -94,10 +97,6 @@ func _pull_frog(delta: float):
 					else Vector2(-cos(_mar), -sin(_mar) ) )
 
 
-# Gets called by above and below functions
-func _hide_tongue():
-	player.tongue.hide()
-	player.tongue.tip_area.monitoring = false
 
 func exit_state():
-	_hide_tongue()
+	player.tongue.hide_tongue()

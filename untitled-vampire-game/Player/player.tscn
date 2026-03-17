@@ -143,9 +143,15 @@ shape = SubResource("CircleShape2D_lfmf2")
 rotation = 3.1415927
 texture = ExtResource("4_gu6f8")
 
-[node name="TipMantleCheck" type="RayCast2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=1556445343]
-position = Vector2(15, -32)
-target_position = Vector2(1, 1)
+[node name="MantleFront" type="RayCast2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=1556445343]
+position = Vector2(15.000002, -32.000004)
+target_position = Vector2(10, 0)
+collide_with_areas = true
+
+[node name="MantleBack" type="RayCast2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=1470586653]
+position = Vector2(-15, -32)
+target_position = Vector2(-10, 0)
+collide_with_areas = true
 
 [node name="BloodParticles" type="CPUParticles2D" parent="." unique_id=158508271]
 emitting = false
