@@ -231,4 +231,9 @@ mantle_impulse = 1000.0
 mantle_angle = 25.0
 metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=156234959]
+position = Vector2(100, 0)
+zoom = Vector2(1.25, 1.25)
+position_smoothing_enabled = true
+
 [connection signal="area_entered" from="BiteHitbox" to="." method="bite_animal"]
