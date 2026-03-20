@@ -20,13 +20,17 @@ var bite_dash_used: bool = false
 
 @onready var state_machine := $StateMachine
 @onready var collider := $Collider
-@onready var anim_sprite := %AlucardSprite
+@onready var anim_sprite : AnimatedSprite2D = %AlucardSprite
 
 #---------- Particles ----------#
 @onready var blood_particles := $BloodParticles
 @onready var afterimage_particles := $AfterimageParticles
 @onready var left_afterimage : Texture2D = preload("res://Art/Placeholder/SingleAlucardLeft.png")
 @onready var right_afterimage : Texture2D = preload("res://Art/Placeholder/SingleAlucardRight.png")
+
+
+#---------- RayCasts ----------#
+@onready var frog_floor_check : RayCast2D = $FrogFloorCheck
 
 
 var just_bit_animal := false
@@ -41,6 +45,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	
 	
 	if direction == -1:
 		afterimage_particles.texture = left_afterimage
@@ -62,11 +67,11 @@ func apply_horizontal_movement(delta: float):
 	else:
 		velocity.x = speed * 100 * direction * delta
 
-func apply_friction(delta: float):
+func apply_friction(delta: float, friction_mult : int):
 	if (-0.005 <= velocity.x && velocity.x <= 0.005): #Clamping velocity as it approaches 0 to prevent too many lerpf calls.
 		velocity.x = 0
 	else:
-		velocity.x = lerpf(velocity.x, 0.0, delta * 10)
+		velocity.x = lerpf(velocity.x, 0.0, delta * friction_mult)
 
 func apply_input_direction(delta: float):
 	direction = Input.get_axis("left", "right")

@@ -2,11 +2,9 @@
 
 [ext_resource type="Script" uid="uid://jokywshtfwah" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://bps4qu3p65jpw" path="res://Art/Placeholder/anim_walk1.png" id="2_apopc"]
-[ext_resource type="Texture2D" uid="uid://xgxnk4efyytx" path="res://Art/Placeholder/frog-sprite_movement_placeholder_RIGHT_FACING.png" id="3_o28un"]
 [ext_resource type="Script" uid="uid://k0a7jdb83ch1" path="res://Player/StateMachine/Vampire/vampire_state.gd" id="4_00tjw"]
 [ext_resource type="Texture2D" uid="uid://c3pq0s83y2m0c" path="res://Art/Placeholder/Blood.png" id="4_gu6f8"]
 [ext_resource type="Script" uid="uid://cvmgnpcu1e2fx" path="res://Player/StateMachine/Vampire/v_idle.gd" id="4_gwnis"]
-[ext_resource type="Texture2D" uid="uid://cc66m3c5e2wgo" path="res://Art/Placeholder/frog-sprite_movement_placeholder.png" id="4_n471f"]
 [ext_resource type="Texture2D" uid="uid://dmw65gvnbn2tf" path="res://Art/Placeholder/SingleAlucardRight.png" id="5_dkpta"]
 [ext_resource type="Script" uid="uid://bgueu3iyq1rde" path="res://Player/StateMachine/Vampire/v_walk.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://bjqu6w4wos8p3" path="res://Player/tongue.gd" id="5_pisgm"]
@@ -28,57 +26,9 @@ height = 28.0
 interpolation_mode = 2
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.3529412)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7emwf"]
-atlas = ExtResource("3_o28un")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hshwv"]
-atlas = ExtResource("4_n471f")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gpjlu"]
-atlas = ExtResource("4_n471f")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8mwp6"]
-atlas = ExtResource("4_n471f")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qemgg"]
-atlas = ExtResource("4_n471f")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8viyr"]
-atlas = ExtResource("4_n471f")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sm0op"]
-atlas = ExtResource("3_o28un")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_76lrf"]
-atlas = ExtResource("3_o28un")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_efx54"]
-atlas = ExtResource("3_o28un")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_755ss"]
-atlas = ExtResource("3_o28un")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bbimk"]
-atlas = ExtResource("3_o28un")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o28un"]
-atlas = ExtResource("3_o28un")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n471f"]
-atlas = ExtResource("3_o28un")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfmf2"]
+atlas = ExtResource("10_p5o4e")
+region = Rect2(192, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5htga"]
 atlas = ExtResource("2_apopc")
@@ -102,63 +52,12 @@ region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p5o4e"]
 animations = [{
-"frames": [],
-"loop": true,
-"name": &"frog_idle_left",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7emwf")
+"texture": SubResource("AtlasTexture_lfmf2")
 }],
 "loop": true,
-"name": &"frog_idle_right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hshwv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gpjlu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8mwp6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qemgg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8viyr")
-}],
-"loop": true,
-"name": &"frog_walk_left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sm0op")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_76lrf")
-}, {
-"duration": 0.7,
-"texture": SubResource("AtlasTexture_efx54")
-}, {
-"duration": 0.3,
-"texture": SubResource("AtlasTexture_755ss")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bbimk")
-}, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_o28un")
-}, {
-"duration": 0.3,
-"texture": SubResource("AtlasTexture_n471f")
-}],
-"loop": true,
-"name": &"frog_walk_right",
+"name": &"frog",
 "speed": 5.0
 }, {
 "frames": [{
@@ -188,7 +87,48 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lfmf2"]
-radius = 15.0
+
+[sub_resource type="GDScript" id="GDScript_lfmf2"]
+script/source = "@icon(\"res://Art/Custom Icons/todo-white.svg\")
+class_name StateMachine 
+extends Node
+
+var current_state: State
+@export var player: Player
+var states: Dictionary = {}
+@export var initial_state: State
+@export var is_initial_machine: bool = false 
+
+func _ready() -> void:
+	await player.ready
+	set_physics_process(is_initial_machine) #machine is not processed (state is not updated) if this is not the initial machine
+	for state in get_children(): #children of the statemachine should only be the states themselves
+		if state is State:
+			states[state.name] = state
+			state.transitionToState.connect(change_state)
+	if initial_state:
+		begin_state_machine(initial_state)
+
+
+func _physics_process(delta):
+	if current_state:
+		current_state.update(delta)
+
+func change_state(next: String):
+	#this is assuming the name is in the dictionary, which it should be
+	var next_state: State = states[next]
+	current_state.exit_state()
+	next_state.enter_state()
+	current_state = next_state
+	print(next)
+
+#sets the start state and enters it
+#can be used to start a statemachine in a state other than initial_state
+# (e.g. walking while transforming starts you in walking state)
+func begin_state_machine(starting_state: State):
+	current_state = starting_state
+	starting_state.enter_state()
+"
 
 [node name="Player" type="CharacterBody2D" unique_id=644735785]
 script = ExtResource("1_4ntmi")
@@ -218,10 +158,11 @@ color_ramp = SubResource("Gradient_dkpta")
 unique_name_in_owner = true
 scale = Vector2(1.5, 1.215)
 sprite_frames = SubResource("SpriteFrames_p5o4e")
-animation = &"frog_idle_left"
+animation = &"idle"
 
 [node name="Tongue" type="Node2D" parent="CurrentDirection" unique_id=949118960]
 unique_name_in_owner = true
+visible = false
 rotation = 0.7853982
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("5_pisgm")
@@ -231,28 +172,15 @@ points = PackedVector2Array(0, 0, 0, -80)
 width = 4.0
 default_color = Color(0.8666667, 0.32156864, 0.7254902, 1)
 
-[node name="TipPivot" type="Node2D" parent="CurrentDirection/Tongue" unique_id=687600060]
-rotation = -0.7853982
-
-[node name="TongueTip" type="Area2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=620725349]
+[node name="TongueTip" type="Area2D" parent="CurrentDirection/Tongue" unique_id=620725349]
 monitoring = false
 
-[node name="TongueTipCollider" type="CollisionShape2D" parent="CurrentDirection/Tongue/TipPivot/TongueTip" unique_id=1406688466]
+[node name="TongueTipCollider" type="CollisionShape2D" parent="CurrentDirection/Tongue/TongueTip" unique_id=1406688466]
 shape = SubResource("CircleShape2D_lfmf2")
 
-[node name="Sprite2D" type="Sprite2D" parent="CurrentDirection/Tongue/TipPivot/TongueTip" unique_id=370410446]
+[node name="Sprite2D" type="Sprite2D" parent="CurrentDirection/Tongue/TongueTip" unique_id=370410446]
 rotation = 3.1415927
 texture = ExtResource("4_gu6f8")
-
-[node name="MantleFront" type="RayCast2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=1556445343]
-position = Vector2(15.000002, -32.000004)
-target_position = Vector2(10, 0)
-collide_with_areas = true
-
-[node name="MantleBack" type="RayCast2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=1470586653]
-position = Vector2(-15, -32)
-target_position = Vector2(-10, 0)
-collide_with_areas = true
 
 [node name="BloodParticles" type="CPUParticles2D" parent="." unique_id=158508271]
 emitting = false
@@ -267,11 +195,9 @@ gravity = Vector2(0, 150)
 initial_velocity_min = 50.0
 initial_velocity_max = 70.0
 
-[node name="TransformationSM" type="Node" parent="." unique_id=207322324 node_paths=PackedStringArray("player", "initial_state")]
+[node name="TransformationSM" type="Node" parent="." unique_id=705341747]
 script = ExtResource("7_pisgm")
-player = NodePath("..")
-initial_state = NodePath("VAMPIRE")
-is_initial_machine = true
+metadata/_custom_type_script = "uid://b0qyabcc0hn7j"
 
 [node name="VAMPIRE" type="Node" parent="TransformationSM" unique_id=117049237]
 script = ExtResource("4_00tjw")
@@ -280,10 +206,10 @@ V_JUMP_IMPULSE = 500.0
 V_GRAVITY = 1500.0
 
 [node name="VampireSM" type="Node" parent="TransformationSM/VAMPIRE" unique_id=1533651679 node_paths=PackedStringArray("player", "initial_state")]
-script = ExtResource("7_pisgm")
+script = SubResource("GDScript_lfmf2")
+is_initial_machine = true
 player = NodePath("../../..")
 initial_state = NodePath("V_IDLE")
-is_initial_machine = true
 
 [node name="V_IDLE" type="Node" parent="TransformationSM/VAMPIRE/VampireSM" unique_id=13350506]
 script = ExtResource("4_gwnis")
@@ -305,7 +231,7 @@ frog_sprite_sheet = ExtResource("10_p5o4e")
 metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="FrogSM" type="Node" parent="TransformationSM/FROG" unique_id=1414580571 node_paths=PackedStringArray("player", "initial_state")]
-script = ExtResource("7_pisgm")
+script = SubResource("GDScript_lfmf2")
 player = NodePath("../../..")
 initial_state = NodePath("F_IDLE")
 metadata/_custom_type_script = "uid://b0qyabcc0hn7j"
@@ -324,16 +250,18 @@ metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="F_BITEDASH" type="Node" parent="TransformationSM/FROG/FrogSM" unique_id=2142105885]
 script = ExtResource("16_lfmf2")
-tongue_length = 200.0
+tongue_length = 160.0
 rotation_speed = 5.0
 tip_speed = 500.0
 max_angle = 45.0
-mantle_impulse = 1000.0
-mantle_angle = 25.0
 metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
-[node name="FrogFloorCheck" type="RayCast2D" parent="." unique_id=1341900899]
+[node name="MantleRayTop" type="RayCast2D" parent="." unique_id=1235779009]
+position = Vector2(0, -14)
+target_position = Vector2(20, 0)
+
+[node name="MantleRayBottom" type="RayCast2D" parent="." unique_id=1904873517]
 position = Vector2(0, 14)
-target_position = Vector2(0, 30)
+target_position = Vector2(20, 0)
 
 [connection signal="area_entered" from="BiteHitbox" to="." method="bite_animal"]

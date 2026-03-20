@@ -11,12 +11,13 @@ Frog can:
 	Walk - Walking hops -> Slides when stopping
 """
 #Constants for frog state
-@export var F_SPEED := 200.0
+@export var F_SPEED := 50.0
 @export var F_JUMP_IMPULSE := 700.0
 @export var F_GRAVITY := 3000.0
 @export var F_FRICTION := 5.0
 @onready var f_machine: StateMachine = $FrogSM
 
+@onready var jump_charges: int
 @export var frog_sprite_sheet: Texture2D
 
 #turn on processing for statemachine
@@ -25,11 +26,11 @@ Frog can:
 func enter_state():
 	f_machine.set_physics_process(true)
 	f_machine.begin_state_machine(f_machine.initial_state)
+	jump_charges = 2
 	player.speed = F_SPEED
 	player.jump_impulse = F_JUMP_IMPULSE
 	player.gravity = F_GRAVITY
 	player.friction = F_FRICTION
-	player.anim_sprite.play("frog")
 	
 func update(delta: float):
 	if Input.is_action_just_pressed("test_frog_transform(REMOVE LATER)"):
@@ -39,6 +40,7 @@ func update(delta: float):
 		
 		if Input.is_action_just_pressed("bite_dash"):
 			f_machine.change_state("F_BITEDASH")
+	
 
 #turn off processing for statemachine
 func exit_state():
