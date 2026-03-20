@@ -60,13 +60,16 @@ func _aim_tongue(delta: float):
 		_dash_state = "shoot"
 		player.tongue.monitor_tip_area()
 
-# Rapidly moves tongue tip at tongue angle
+# Moves tongue tip at tongue angle
 # (the whole tongue node is rotated, so the tip's relative y position is moved)
 func _shoot_tongue(delta: float):
 	player.tongue.move_tip(tip_speed * delta)
 	if player.tongue.tip.position.y <= -tongue_length: #switch to idle if tip hits nothing
 		transitionToState.emit("F_IDLE")
-		
+
+# connected to the tongue tip's area
+# called when the tongue touches a surface
+# initiates pull substate; angles the player higher if tip hits a corner
 func _tip_touch_surface(body : Node2D):
 	_pull_direction = Vector2(sin(_curr_angle) * player.previous_direction, -cos(_curr_angle)) 
 	if _dash_state == "pull":
@@ -80,6 +83,7 @@ func _tip_touch_surface(body : Node2D):
 	if (body is Animal):
 		pass #TODO make it so animals are pulled toward the player
 
+# Moves player in the direction of the tongue
 func _pull_frog(delta: float):
 	player.velocity = player.velocity.move_toward(_pull_direction.normalized() * pull_speed, delta * pull_speed)
 	var _current_distance = _starting_position - player.global_position
