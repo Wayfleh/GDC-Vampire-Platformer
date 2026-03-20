@@ -18,6 +18,7 @@ var _mantle_scalar : float
 var _mantle_vector : Vector2
 var _is_mantling : bool
 
+
 func enter_state():
 	#initialize tongue stuff
 	player.tongue.rotation = max_angle
@@ -47,7 +48,7 @@ func update(delta: float):
 				player.apply_friction(delta, 2)
 				player.apply_gravity(delta * 2)
 			if player.is_on_floor():
-				transitionToState.emit("F_IDLE")
+				_detransform()
 
 func _aim_tongue(delta: float):
 	#awesome cosine function for moving the tongue back and forth
@@ -88,7 +89,7 @@ func _pull_frog(delta: float):
 	player.velocity = player.velocity.move_toward(_pull_direction.normalized() * pull_speed, delta * pull_speed)
 	var _current_distance = _starting_position - player.global_position
 	if player.is_on_wall() || player.is_on_ceiling(): #when a player hits a tile surface
-		transitionToState.emit("F_IDLE")
+		_detransform()
 	if _current_distance.length() >= tongue_length && _is_mantling: #mantle when distance moved is equal to tongue length and you're amntling
 		#.length() is magnitude of a Vector2 btw
 		_dash_state = "mantle"
@@ -97,7 +98,9 @@ func _pull_frog(delta: float):
 		player.velocity = player.velocity.length() * ( Vector2(cos(_mar), -sin(_mar)) if _pull_direction.x > 0
 					else Vector2(-cos(_mar), -sin(_mar) ) )
 
-
+func _detransform():
+		exit_state()
+		player.TransformToVampire()
 
 func exit_state():
 	player.tongue.hide_tongue()

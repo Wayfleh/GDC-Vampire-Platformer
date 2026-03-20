@@ -218,7 +218,7 @@ color_ramp = SubResource("Gradient_dkpta")
 unique_name_in_owner = true
 scale = Vector2(1.5, 1.215)
 sprite_frames = SubResource("SpriteFrames_p5o4e")
-animation = &"frog_idle_left"
+animation = &"walk"
 
 [node name="Tongue" type="Node2D" parent="CurrentDirection" unique_id=949118960]
 unique_name_in_owner = true

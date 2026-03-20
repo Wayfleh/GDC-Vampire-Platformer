@@ -37,6 +37,9 @@ var just_bit_animal := false
 
 var blood_cache : Array[int] = []
 
+
+signal detransform
+
 func _ready() -> void:
 	bite_dash_direction = Vector2(1,0)
 	previous_position = Vector2(0,0)
@@ -103,7 +106,10 @@ func DetermineBiteDashDirection(currPos: Vector2, prevPos: Vector2, bite_dash_di
 	var dir = (currPos - prevPos).normalized()
 	# print(dir)wd
 	return dir
-	
+
+func TransformToVampire():
+	detransform.emit()
+
 func _process(delta):
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()
