@@ -20,7 +20,7 @@ var bite_dash_used: bool = false
 
 @onready var state_machine := $StateMachine
 @onready var collider := $Collider
-@onready var anim_sprite := %AlucardSprite
+@onready var anim_sprite : AnimatedSprite2D = %AlucardSprite
 
 #---------- Particles ----------#
 @onready var blood_particles := $BloodParticles
@@ -28,6 +28,9 @@ var bite_dash_used: bool = false
 @onready var left_afterimage : Texture2D = preload("res://Art/Placeholder/SingleAlucardLeft.png")
 @onready var right_afterimage : Texture2D = preload("res://Art/Placeholder/SingleAlucardRight.png")
 
+
+#---------- RayCasts ----------#
+@onready var frog_floor_check : RayCast2D = $FrogFloorCheck
 
 
 var just_bit_animal := false

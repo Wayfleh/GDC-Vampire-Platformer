@@ -4,7 +4,8 @@ extends State
 @export var _walk_hop_impulse : float = 350.0
 
 func enter_state():
-	pass
+	#TODO fix the current_direction bullshit in player so it doesn't change the scale of the nodes at all, cause that's gonna mess with stuff later
+	player.anim_sprite.play("frog_walk_right")
 
 func update(delta: float):
 	if player.is_on_floor():

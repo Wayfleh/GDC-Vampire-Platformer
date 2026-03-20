@@ -74,12 +74,9 @@ func _tip_touch_surface(body : Node2D):
 	if (body is TileMapLayer): # wall or ceiling usually
 		_dash_state = "pull"
 		if !player.tongue.is_raycast_colliding(): #angle the velocity higher if grabbing onto a ledge
-			_pull_direction.y -= _curr_angle/2
+			_pull_direction.y -= sign(_pull_direction.x) * player.previous_direction * _curr_angle/2
 			_is_mantling = true 
 		player.tongue.hide_tongue()
-		print(rad_to_deg(_curr_angle))
-		print(rad_to_deg(_pull_direction.x/_pull_direction.y))
-		print(_is_mantling)
 	if (body is Animal):
 		pass #TODO make it so animals are pulled toward the player
 

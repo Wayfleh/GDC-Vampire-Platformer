@@ -31,7 +31,6 @@ func enter_state():
 	player.jump_impulse = F_JUMP_IMPULSE
 	player.gravity = F_GRAVITY
 	player.friction = F_FRICTION
-	player.anim_sprite.play("frog")
 	
 func update(delta: float):
 	if Input.is_action_just_pressed("test_frog_transform(REMOVE LATER)"):
