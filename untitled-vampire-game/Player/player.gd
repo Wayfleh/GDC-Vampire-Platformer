@@ -37,6 +37,8 @@ var bite_dash_used: bool = false
 @export var footstep_1: AudioStream
 @export var footstep_2: AudioStream
 @export var footstep_interval: float = 0.35
+@onready var jump_sound_player: AudioStreamPlayer2D = $JumpSound
+@export var jump_sound: AudioStream
 
 var footstep_index: int = 0
 var footstep_timer: float = 0.0
@@ -94,7 +96,14 @@ func play_next_footstep() -> void:
 func stop_footsteps() -> void:
 	footstep_timer = 0.0
 	footstep_player.stop()
+
+func play_jump_sound() -> void:
+	if jump_sound == null:
+		return
 	
+	jump_sound_player.stream = jump_sound
+	jump_sound_player.play()
+
 func apply_gravity(delta: float, multiplier: float = 1.0) -> void:
 	if !is_on_floor():
 		velocity.y += gravity * delta * multiplier

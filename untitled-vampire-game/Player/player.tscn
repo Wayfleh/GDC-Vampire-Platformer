@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Player/StateMachine/Vampire/vampire_state.gd" id="4_00tjw"]
 [ext_resource type="Texture2D" uid="uid://c3pq0s83y2m0c" path="res://Art/Placeholder/Blood.png" id="4_gu6f8"]
 [ext_resource type="Script" uid="uid://cvmgnpcu1e2fx" path="res://Player/StateMachine/Vampire/v_idle.gd" id="4_gwnis"]
+[ext_resource type="AudioStream" uid="uid://cfwjwhpwwe70o" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Jump.wav" id="4_hshwv"]
 [ext_resource type="Texture2D" uid="uid://cc66m3c5e2wgo" path="res://Art/Placeholder/frog-sprite_movement_placeholder.png" id="4_n471f"]
 [ext_resource type="Texture2D" uid="uid://dmw65gvnbn2tf" path="res://Art/Placeholder/SingleAlucardRight.png" id="5_dkpta"]
 [ext_resource type="Script" uid="uid://bgueu3iyq1rde" path="res://Player/StateMachine/Vampire/v_walk.gd" id="5_k53q1"]
@@ -196,6 +197,7 @@ radius = 15.0
 script = ExtResource("1_4ntmi")
 footstep_1 = ExtResource("2_7emwf")
 footstep_2 = ExtResource("3_hshwv")
+jump_sound = ExtResource("4_hshwv")
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1281633438]
 shape = SubResource("CapsuleShape2D_gwnis")
@@ -334,5 +336,7 @@ position = Vector2(0, 14)
 target_position = Vector2(0, 30)
 
 [node name="FootstepPlayer" type="AudioStreamPlayer2D" parent="." unique_id=858939323]
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1704760268]
 
 [connection signal="area_entered" from="BiteHitbox" to="." method="bite_animal"]
