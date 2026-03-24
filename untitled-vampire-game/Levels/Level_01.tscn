@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="1_t20ai"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="2_mtno4"]
+[ext_resource type="Texture2D" uid="uid://dp87gfp0igexm" path="res://Art/Placeholder/frog-sprite_placeholderv2.png" id="3_lkd0j"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="3_tdu8r"]
 [ext_resource type="Script" uid="uid://7wyysqn5kc23" path="res://Levels/LevelManager.gd" id="4_2o7fp"]
 
@@ -77,6 +78,9 @@ V_SPEED = 200.0
 
 [node name="V_BITEDASH" parent="Player/TransformationSM/VAMPIRE/VampireSM" parent_id_path=PackedInt32Array(644735785, 1533651679) index="3" unique_id=1148363666]
 h_bite_dash_speed = 600.0
+
+[node name="FROG" parent="Player/TransformationSM" parent_id_path=PackedInt32Array(644735785, 1077801536) index="1" unique_id=1507179230]
+frog_sprite_sheet = ExtResource("3_lkd0j")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
 offset = Vector2(190, -130)
