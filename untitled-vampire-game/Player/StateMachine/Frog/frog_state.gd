@@ -15,7 +15,7 @@ Frog can:
 @export var F_JUMP_IMPULSE := 700.0
 @export var F_GRAVITY := 3000.0
 @export var F_FRICTION := 5.0
-@onready var f_machine: StateMachine = $FrogSM
+@onready var f_machine: StateMachine = get_parent() as StateMachine
 
 @onready var jump_charges: int
 @export var frog_sprite_sheet: Texture2D

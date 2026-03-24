@@ -5,6 +5,7 @@ extends State
 
 func enter_state():
 	player.velocity.y -= player.jump_impulse
+	player.play_jump_sound()
 
 func update(delta: float):
 	player.apply_horizontal_movement(delta)

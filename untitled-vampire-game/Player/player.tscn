@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://dv8kjhi3m6bl3"]
 
 [ext_resource type="Script" uid="uid://jokywshtfwah" path="res://Player/player.gd" id="1_4ntmi"]
+[ext_resource type="AudioStream" uid="uid://cer4hd0s8uxe3" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Footsteps1.wav" id="2_7emwf"]
 [ext_resource type="Texture2D" uid="uid://bps4qu3p65jpw" path="res://Art/Placeholder/anim_walk1.png" id="2_apopc"]
+[ext_resource type="AudioStream" uid="uid://d0ygej1qkps0r" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Footsteps2.wav" id="3_hshwv"]
 [ext_resource type="Texture2D" uid="uid://xgxnk4efyytx" path="res://Art/Placeholder/frog-sprite_movement_placeholder_RIGHT_FACING.png" id="3_o28un"]
 [ext_resource type="Script" uid="uid://k0a7jdb83ch1" path="res://Player/StateMachine/Vampire/vampire_state.gd" id="4_00tjw"]
 [ext_resource type="Texture2D" uid="uid://c3pq0s83y2m0c" path="res://Art/Placeholder/Blood.png" id="4_gu6f8"]
 [ext_resource type="Script" uid="uid://cvmgnpcu1e2fx" path="res://Player/StateMachine/Vampire/v_idle.gd" id="4_gwnis"]
+[ext_resource type="AudioStream" uid="uid://cfwjwhpwwe70o" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Jump.wav" id="4_hshwv"]
 [ext_resource type="Texture2D" uid="uid://cc66m3c5e2wgo" path="res://Art/Placeholder/frog-sprite_movement_placeholder.png" id="4_n471f"]
 [ext_resource type="Texture2D" uid="uid://dmw65gvnbn2tf" path="res://Art/Placeholder/SingleAlucardRight.png" id="5_dkpta"]
 [ext_resource type="Script" uid="uid://bgueu3iyq1rde" path="res://Player/StateMachine/Vampire/v_walk.gd" id="5_k53q1"]
@@ -192,6 +195,9 @@ radius = 15.0
 
 [node name="Player" type="CharacterBody2D" unique_id=644735785]
 script = ExtResource("1_4ntmi")
+footstep_1 = ExtResource("2_7emwf")
+footstep_2 = ExtResource("3_hshwv")
+jump_sound = ExtResource("4_hshwv")
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1281633438]
 shape = SubResource("CapsuleShape2D_gwnis")
@@ -297,30 +303,24 @@ fastFallGravityMultiplier = 3.0
 
 [node name="V_BITEDASH" type="Node" parent="TransformationSM/VAMPIRE/VampireSM" unique_id=1148363666]
 script = ExtResource("8_5htga")
-metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="FROG" type="Node" parent="TransformationSM" unique_id=1507179230]
 script = ExtResource("8_00tjw")
 frog_sprite_sheet = ExtResource("10_p5o4e")
-metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="FrogSM" type="Node" parent="TransformationSM/FROG" unique_id=1414580571 node_paths=PackedStringArray("player", "initial_state")]
 script = ExtResource("7_pisgm")
 player = NodePath("../../..")
 initial_state = NodePath("F_IDLE")
-metadata/_custom_type_script = "uid://b0qyabcc0hn7j"
 
 [node name="F_IDLE" type="Node" parent="TransformationSM/FROG/FrogSM" unique_id=1504849945]
 script = ExtResource("9_x3vf3")
-metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="F_WALK" type="Node" parent="TransformationSM/FROG/FrogSM" unique_id=69525168]
 script = ExtResource("10_apopc")
-metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="F_JUMP" type="Node" parent="TransformationSM/FROG/FrogSM" unique_id=688462069]
 script = ExtResource("11_apopc")
-metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="F_BITEDASH" type="Node" parent="TransformationSM/FROG/FrogSM" unique_id=2142105885]
 script = ExtResource("16_lfmf2")
@@ -330,10 +330,15 @@ tip_speed = 500.0
 max_angle = 45.0
 mantle_impulse = 1000.0
 mantle_angle = 25.0
-metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="FrogFloorCheck" type="RayCast2D" parent="." unique_id=1341900899]
 position = Vector2(0, 14)
 target_position = Vector2(0, 30)
+
+[node name="FootstepPlayer" type="AudioStreamPlayer2D" parent="." unique_id=858939323]
+stream = ExtResource("2_7emwf")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1704760268]
+stream = ExtResource("4_hshwv")
 
 [connection signal="area_entered" from="BiteHitbox" to="." method="bite_animal"]

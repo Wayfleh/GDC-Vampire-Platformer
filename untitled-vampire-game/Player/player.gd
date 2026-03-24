@@ -32,6 +32,16 @@ var bite_dash_used: bool = false
 #---------- RayCasts ----------#
 @onready var frog_floor_check : RayCast2D = $FrogFloorCheck
 
+#---------- Sounds ----------#
+@onready var footstep_player: AudioStreamPlayer2D = $FootstepPlayer
+@export var footstep_1: AudioStream
+@export var footstep_2: AudioStream
+@export var footstep_interval: float = 0.35
+@onready var jump_sound_player: AudioStreamPlayer2D = $JumpSound
+@export var jump_sound: AudioStream
+
+var footstep_index: int = 0
+var footstep_timer: float = 0.0
 
 var just_bit_animal := false
 
@@ -59,6 +69,40 @@ func _physics_process(delta: float) -> void:
 	#bite_dash_direction = DetermineBiteDashDirection(position, previous_position, bite_dash_direction)
 	#previous_position = position
 					# move_and_slide() is a CharacterBody2D Function
+	if is_walking_on_floor():
+		footstep_timer -= delta
+		if footstep_timer <= 0.0:
+			play_next_footstep()
+			footstep_timer = footstep_interval
+	else:
+		stop_footsteps()
+
+func is_walking_on_floor() -> bool:
+	return is_on_floor() and direction != 0 and abs(velocity.x) > 5
+
+func play_next_footstep() -> void:
+	if footstep_1 == null or footstep_2 == null:
+		return
+	
+	if footstep_index == 0:
+		footstep_player.stream = footstep_1
+		footstep_index = 1
+	else:
+		footstep_player.stream = footstep_2
+		footstep_index = 0
+	
+	footstep_player.play()
+
+func stop_footsteps() -> void:
+	footstep_timer = 0.0
+	footstep_player.stop()
+
+func play_jump_sound() -> void:
+	if jump_sound == null:
+		return
+	
+	jump_sound_player.stream = jump_sound
+	jump_sound_player.play()
 
 func apply_gravity(delta: float, multiplier: float = 1.0) -> void:
 	if !is_on_floor():
