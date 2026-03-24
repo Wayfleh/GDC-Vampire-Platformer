@@ -20,7 +20,7 @@ var bite_dash_used: bool = false
 
 @onready var state_machine := $StateMachine
 @onready var collider := $Collider
-@onready var anim_sprite := %AlucardSprite
+@onready var anim_sprite : AnimatedSprite2D = %AlucardSprite
 
 #---------- Particles ----------#
 @onready var blood_particles := $BloodParticles
@@ -29,9 +29,26 @@ var bite_dash_used: bool = false
 @onready var right_afterimage : Texture2D = preload("res://Art/Placeholder/SingleAlucardRight.png")
 
 
+#---------- RayCasts ----------#
+@onready var frog_floor_check : RayCast2D = $FrogFloorCheck
+
+#---------- Sounds ----------#
+@onready var footstep_player: AudioStreamPlayer2D = $FootstepPlayer
+@export var footstep_1: AudioStream
+@export var footstep_2: AudioStream
+@export var footstep_interval: float = 0.35
+@onready var jump_sound_player: AudioStreamPlayer2D = $JumpSound
+@export var jump_sound: AudioStream
+
+var footstep_index: int = 0
+var footstep_timer: float = 0.0
+
 var just_bit_animal := false
 
 var blood_cache : Array[int] = []
+
+
+signal detransform
 
 func _ready() -> void:
 	bite_dash_direction = Vector2(1,0)
@@ -42,6 +59,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
+	
 	if direction == -1:
 		afterimage_particles.texture = left_afterimage
 	if direction == 1:
@@ -51,6 +69,40 @@ func _physics_process(delta: float) -> void:
 	#bite_dash_direction = DetermineBiteDashDirection(position, previous_position, bite_dash_direction)
 	#previous_position = position
 					# move_and_slide() is a CharacterBody2D Function
+	if is_walking_on_floor():
+		footstep_timer -= delta
+		if footstep_timer <= 0.0:
+			play_next_footstep()
+			footstep_timer = footstep_interval
+	else:
+		stop_footsteps()
+
+func is_walking_on_floor() -> bool:
+	return is_on_floor() and direction != 0 and abs(velocity.x) > 5
+
+func play_next_footstep() -> void:
+	if footstep_1 == null or footstep_2 == null:
+		return
+	
+	if footstep_index == 0:
+		footstep_player.stream = footstep_1
+		footstep_index = 1
+	else:
+		footstep_player.stream = footstep_2
+		footstep_index = 0
+	
+	footstep_player.play()
+
+func stop_footsteps() -> void:
+	footstep_timer = 0.0
+	footstep_player.stop()
+
+func play_jump_sound() -> void:
+	if jump_sound == null:
+		return
+	
+	jump_sound_player.stream = jump_sound
+	jump_sound_player.play()
 
 func apply_gravity(delta: float, multiplier: float = 1.0) -> void:
 	if !is_on_floor():
@@ -62,11 +114,11 @@ func apply_horizontal_movement(delta: float):
 	else:
 		velocity.x = speed * 100 * direction * delta
 
-func apply_friction(delta: float):
+func apply_friction(delta: float, friction_mult : int):
 	if (-0.005 <= velocity.x && velocity.x <= 0.005): #Clamping velocity as it approaches 0 to prevent too many lerpf calls.
 		velocity.x = 0
 	else:
-		velocity.x = lerpf(velocity.x, 0.0, delta * 10)
+		velocity.x = lerpf(velocity.x, 0.0, delta * friction_mult)
 
 func apply_input_direction(delta: float):
 	direction = Input.get_axis("left", "right")
@@ -98,7 +150,10 @@ func DetermineBiteDashDirection(currPos: Vector2, prevPos: Vector2, bite_dash_di
 	var dir = (currPos - prevPos).normalized()
 	# print(dir)wd
 	return dir
-	
+
+func TransformToVampire():
+	detransform.emit()
+
 func _process(delta):
 	if Input.is_action_just_pressed("restart"):
 		get_tree().reload_current_scene()

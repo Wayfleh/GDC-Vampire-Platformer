@@ -10,7 +10,7 @@ func enter_state():
 	#idle animation
 #slows the player down to a halt
 func update(delta: float):
-	player.apply_friction(delta * idle_friction_multiplier)
+	player.apply_friction(delta, idle_friction_multiplier)
 	player.apply_gravity(delta)
 	
 	if player.afterimage_particles.emitting:
