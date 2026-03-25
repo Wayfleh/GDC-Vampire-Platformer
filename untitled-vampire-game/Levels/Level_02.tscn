@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="2_hhbg7"]
 [ext_resource type="Script" uid="uid://7wyysqn5kc23" path="res://Levels/LevelManager.gd" id="3_exfpd"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="5_c8ve7"]
+[ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="6_exfpd"]
+[ext_resource type="PackedScene" uid="uid://diikfmb37a8dg" path="res://Levels/Level_03.tscn" id="7_c8ve7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t20ai"]
 texture = ExtResource("1_c7tlk")
@@ -83,6 +85,13 @@ position = Vector2(-190, 171)
 [node name="F_BITEDASH" parent="Player/TransformationSM/FROG/FrogSM" parent_id_path=PackedInt32Array(644735785, 1414580571) index="3" unique_id=2142105885]
 pull_speed = null
 
+[node name="FootstepPlayer" parent="Player" index="7" unique_id=858939323]
+stream = null
+
 [node name="UI" parent="." unique_id=889175113 instance=ExtResource("5_c8ve7")]
+
+[node name="Door" parent="." unique_id=1512673174 instance=ExtResource("6_exfpd")]
+position = Vector2(373, -166)
+next_level = ExtResource("7_c8ve7")
 
 [editable path="Player"]
