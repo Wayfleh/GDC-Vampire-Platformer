@@ -2,7 +2,7 @@
 extends State
 
 func enter_state():
-	player.anim_sprite.play("walk")
+	player.anim_sprite.play("vampire_walk")
 	#walk animation
 
 func update(delta: float):

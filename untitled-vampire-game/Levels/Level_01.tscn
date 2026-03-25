@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="1_t20ai"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="2_mtno4"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="3_tdu8r"]
-[ext_resource type="Script" path="res://Levels/LevelManager.gd" id="4_2o7fp"]
+[ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="4_2o7fp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t20ai"]
 texture = ExtResource("1_t20ai")
@@ -71,10 +71,10 @@ tile_set = SubResource("TileSet_mtno4")
 [node name="Animal" parent="." unique_id=934101410 instance=ExtResource("3_tdu8r")]
 position = Vector2(-82, 195)
 
-[node name="LevelManager" type="Node" parent="." unique_id=1664091554]
-script = ExtResource("4_2o7fp")
-
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("2_mtno4")]
 position = Vector2(-134, 200)
+
+[node name="Door" parent="." unique_id=1512673174 instance=ExtResource("4_2o7fp")]
+position = Vector2(0, 60)
 
 [editable path="Player"]

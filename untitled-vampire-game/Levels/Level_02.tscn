@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="1_c7tlk"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="2_ce6vd"]
+[ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="3_ce6vd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t20ai"]
 texture = ExtResource("1_c7tlk")
@@ -73,3 +74,6 @@ position = Vector2(-38, -18)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
 offset = Vector2(190, -130)
 zoom = Vector2(1.5, 1.5)
+
+[node name="Animal" parent="." unique_id=934101410 instance=ExtResource("3_ce6vd")]
+position = Vector2(77, -21)

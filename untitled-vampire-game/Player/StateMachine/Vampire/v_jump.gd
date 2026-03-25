@@ -4,6 +4,7 @@ extends State
 @export var fastFallGravityMultiplier: float = 1.5 #When the player isn't pressing the jump button, fall faster.
 
 func enter_state():
+	player.anim_sprite.play("vampire_jump")
 	player.velocity.y -= player.jump_impulse
 
 func update(delta: float):
@@ -15,6 +16,9 @@ func update(delta: float):
 	
 	if player.is_on_floor() and !Input.is_action_pressed("jump"):
 		transitionToState.emit("V_IDLE")
+	
+	if player.velocity.y > 0 && !player.is_on_floor():
+		player.anim_sprite.play("vampire_fall")
 	
 	# can only bite dash once in the air
 	if (Input.is_action_just_pressed("bite_dash") 

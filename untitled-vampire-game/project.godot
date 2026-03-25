@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 GlobalData="*uid://bq1n32qfhnrem"
 
+[global_group]
+
+Animals="The animals in a given level"
+
 [input]
 
 left={
