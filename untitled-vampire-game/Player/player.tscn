@@ -5,18 +5,22 @@
 [ext_resource type="Texture2D" uid="uid://bps4qu3p65jpw" path="res://Art/Placeholder/anim_walk1.png" id="2_apopc"]
 [ext_resource type="AudioStream" uid="uid://d0ygej1qkps0r" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Footsteps2.wav" id="3_hshwv"]
 [ext_resource type="Texture2D" uid="uid://xgxnk4efyytx" path="res://Art/Placeholder/frog-sprite_movement_placeholder_RIGHT_FACING.png" id="3_o28un"]
+[ext_resource type="Texture2D" uid="uid://bcur51a13as4t" path="res://Art/Placeholder/anim_bitedash_outline_afterimage_RIGHT.png" id="2_7emwf"]
+[ext_resource type="Texture2D" uid="uid://bf2tewrmj667e" path="res://Art/Placeholder/vampfrog-sprite_movement_Right.png" id="3_o28un"]
 [ext_resource type="Script" uid="uid://k0a7jdb83ch1" path="res://Player/StateMachine/Vampire/vampire_state.gd" id="4_00tjw"]
 [ext_resource type="Texture2D" uid="uid://c3pq0s83y2m0c" path="res://Art/Placeholder/Blood.png" id="4_gu6f8"]
 [ext_resource type="Script" uid="uid://cvmgnpcu1e2fx" path="res://Player/StateMachine/Vampire/v_idle.gd" id="4_gwnis"]
 [ext_resource type="AudioStream" uid="uid://cfwjwhpwwe70o" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Jump.wav" id="4_hshwv"]
 [ext_resource type="Texture2D" uid="uid://cc66m3c5e2wgo" path="res://Art/Placeholder/frog-sprite_movement_placeholder.png" id="4_n471f"]
-[ext_resource type="Texture2D" uid="uid://dmw65gvnbn2tf" path="res://Art/Placeholder/SingleAlucardRight.png" id="5_dkpta"]
 [ext_resource type="Script" uid="uid://bgueu3iyq1rde" path="res://Player/StateMachine/Vampire/v_walk.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://bjqu6w4wos8p3" path="res://Player/tongue.gd" id="5_pisgm"]
 [ext_resource type="Script" uid="uid://d1lffwqtnbmrr" path="res://Player/StateMachine/Vampire/v_jump.gd" id="6_fhl08"]
+[ext_resource type="Texture2D" uid="uid://cohmv3yh0w0qg" path="res://Art/Placeholder/anim_bitedash_outline.png" id="6_hshwv"]
+[ext_resource type="Texture2D" uid="uid://klemtshlyb88" path="res://Art/Placeholder/anim_jump_outline.png" id="7_gpjlu"]
 [ext_resource type="Script" uid="uid://b0qyabcc0hn7j" path="res://Player/StateMachine/state_machine.gd" id="7_pisgm"]
 [ext_resource type="Script" uid="uid://cbxp42c2drvct" path="res://Player/StateMachine/Frog/frog_state.gd" id="8_00tjw"]
 [ext_resource type="Script" uid="uid://tkya8lcbmcfx" path="res://Player/StateMachine/Vampire/v_bitedash.gd" id="8_5htga"]
+[ext_resource type="Texture2D" uid="uid://balfhfhgdcod0" path="res://Art/Placeholder/anim_walk_outline.png" id="8_8mwp6"]
 [ext_resource type="Script" uid="uid://b56ekyi8jeqru" path="res://Player/StateMachine/Frog/f_idle.gd" id="9_x3vf3"]
 [ext_resource type="Script" uid="uid://d3sjtxr7sc4jo" path="res://Player/StateMachine/Frog/f_walk.gd" id="10_apopc"]
 [ext_resource type="Texture2D" uid="uid://dinw4bxb85og6" path="res://Art/Placeholder/spongebob vampire.png" id="10_p5o4e"]
@@ -31,9 +35,9 @@ height = 28.0
 interpolation_mode = 2
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.3529412)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7emwf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_n471f"]
 atlas = ExtResource("3_o28un")
-region = Rect2(128, 0, 32, 32)
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hshwv"]
 atlas = ExtResource("4_n471f")
@@ -55,52 +59,64 @@ region = Rect2(96, 0, 32, 32)
 atlas = ExtResource("4_n471f")
 region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sm0op"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7emwf"]
 atlas = ExtResource("3_o28un")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sm0op"]
+atlas = ExtResource("3_o28un")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_76lrf"]
 atlas = ExtResource("3_o28un")
-region = Rect2(32, 0, 32, 32)
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_efx54"]
 atlas = ExtResource("3_o28un")
-region = Rect2(64, 0, 32, 32)
+region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_755ss"]
 atlas = ExtResource("3_o28un")
-region = Rect2(96, 0, 32, 32)
+region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbimk"]
 atlas = ExtResource("3_o28un")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o28un"]
-atlas = ExtResource("3_o28un")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n471f"]
-atlas = ExtResource("3_o28un")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5htga"]
-atlas = ExtResource("2_apopc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0h3t"]
+atlas = ExtResource("6_hshwv")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_apopc"]
-atlas = ExtResource("2_apopc")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p5o4e"]
-atlas = ExtResource("2_apopc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4o1l"]
+atlas = ExtResource("6_hshwv")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gu6f8"]
-atlas = ExtResource("2_apopc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2n6q"]
+atlas = ExtResource("7_gpjlu")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ynux"]
+atlas = ExtResource("8_8mwp6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6x0f"]
+atlas = ExtResource("7_gpjlu")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jp1hh"]
+atlas = ExtResource("8_8mwp6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs4pp"]
+atlas = ExtResource("8_8mwp6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyprq"]
+atlas = ExtResource("8_8mwp6")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dkpta"]
-atlas = ExtResource("2_apopc")
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4lon"]
+atlas = ExtResource("8_8mwp6")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p5o4e"]
@@ -112,7 +128,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7emwf")
+"texture": SubResource("AtlasTexture_n471f")
 }],
 "loop": true,
 "name": &"frog_idle_right",
@@ -140,25 +156,25 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sm0op")
+"texture": SubResource("AtlasTexture_7emwf")
 }, {
 "duration": 0.5,
-"texture": SubResource("AtlasTexture_76lrf")
+"texture": SubResource("AtlasTexture_sm0op")
 }, {
 "duration": 0.7,
-"texture": SubResource("AtlasTexture_efx54")
+"texture": SubResource("AtlasTexture_76lrf")
 }, {
 "duration": 0.3,
+"texture": SubResource("AtlasTexture_efx54")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_755ss")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bbimk")
 }, {
-"duration": 0.5,
-"texture": SubResource("AtlasTexture_o28un")
-}, {
 "duration": 0.3,
-"texture": SubResource("AtlasTexture_n471f")
+"texture": SubResource("AtlasTexture_sm0op")
 }],
 "loop": true,
 "name": &"frog_walk_right",
@@ -166,27 +182,54 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5htga")
+"texture": SubResource("AtlasTexture_m0h3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4o1l")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"vampire_dash",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2n6q")
+}],
+"loop": true,
+"name": &"vampire_fall",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_apopc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p5o4e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gu6f8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dkpta")
+"texture": SubResource("AtlasTexture_8ynux")
 }],
 "loop": true,
-"name": &"walk",
+"name": &"vampire_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6x0f")
+}],
+"loop": true,
+"name": &"vampire_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jp1hh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs4pp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyprq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4lon")
+}],
+"loop": true,
+"name": &"vampire_walk",
 "speed": 5.0
 }]
 
@@ -210,7 +253,7 @@ shape = SubResource("CapsuleShape2D_gwnis")
 
 [node name="AfterimageParticles" type="CPUParticles2D" parent="." unique_id=1799021689]
 emitting = false
-texture = ExtResource("5_dkpta")
+texture = ExtResource("2_7emwf")
 lifetime = 0.3
 gravity = Vector2(0, 0)
 scale_amount_min = 1.3
@@ -222,12 +265,14 @@ color_ramp = SubResource("Gradient_dkpta")
 
 [node name="AlucardSprite" type="AnimatedSprite2D" parent="CurrentDirection" unique_id=980260689]
 unique_name_in_owner = true
-scale = Vector2(1.5, 1.215)
+scale = Vector2(1.1, 1.1)
 sprite_frames = SubResource("SpriteFrames_p5o4e")
-animation = &"walk"
+animation = &"vampire_dash"
+offset = Vector2(0, 1)
 
 [node name="Tongue" type="Node2D" parent="CurrentDirection" unique_id=949118960]
 unique_name_in_owner = true
+visible = false
 rotation = 0.7853982
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("5_pisgm")

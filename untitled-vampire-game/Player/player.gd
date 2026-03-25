@@ -25,8 +25,8 @@ var bite_dash_used: bool = false
 #---------- Particles ----------#
 @onready var blood_particles := $BloodParticles
 @onready var afterimage_particles := $AfterimageParticles
-@onready var left_afterimage : Texture2D = preload("res://Art/Placeholder/SingleAlucardLeft.png")
-@onready var right_afterimage : Texture2D = preload("res://Art/Placeholder/SingleAlucardRight.png")
+@onready var left_afterimage : Texture2D = preload("res://Art/Placeholder/anim_bitedash_outline_afterimage_LEFT.png")
+@onready var right_afterimage : Texture2D = preload("res://Art/Placeholder/anim_bitedash_outline_afterimage_RIGHT.png")
 
 
 #---------- RayCasts ----------#
@@ -132,9 +132,7 @@ func bite_animal(area: Area2D):
 		blood_particles.restart()
 		GlobalData.blood_chamber.push_front(area.type)
 		area.queue_free()
-		var level_manager = get_tree().get_first_node_in_group("level_manager")
-		if level_manager:
-			level_manager.animal_bitten()
+		GlobalData.animal_bitten()
 
 # Using player velocity to determine Bite Dash facing direction
 # DetermineBiteDashDirection() takes bite_dash_direction as an argument, so it can 
