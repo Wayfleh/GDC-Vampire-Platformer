@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 GlobalData="*uid://bq1n32qfhnrem"
 
+[display]
+
+window/size/viewport_width=928
+window/size/viewport_height=512
+window/stretch/scale_mode="integer"
+
 [global_group]
 
 Animals="The animals in a given level"

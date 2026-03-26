@@ -264,7 +264,7 @@ color_ramp = SubResource("Gradient_dkpta")
 unique_name_in_owner = true
 scale = Vector2(1.1, 1.1)
 sprite_frames = SubResource("SpriteFrames_p5o4e")
-animation = &"vampire_dash"
+animation = &"vampire_idle"
 offset = Vector2(0, 1)
 
 [node name="Tongue" type="Node2D" parent="CurrentDirection" unique_id=949118960]
