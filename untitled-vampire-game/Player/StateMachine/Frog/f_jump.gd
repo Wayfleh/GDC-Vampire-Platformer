@@ -1,7 +1,7 @@
 ## FROG
 extends State
 
-@export var _max_jump_mult : float = 2.0 #max height of frog jump is twice that of the base frog jump height
+@export var _max_jump_mult : float = 1.5 #max height of frog jump is twice that of the base frog jump height
 @export var _max_charge_time : float = 2.0
 @export var _air_speed : float = 50.0 #frog is faster in the air after jumping
 var _curr_jump_mult : float

@@ -1,11 +1,8 @@
 [gd_scene format=3 uid="uid://dv8kjhi3m6bl3"]
 
 [ext_resource type="Script" uid="uid://jokywshtfwah" path="res://Player/player.gd" id="1_4ntmi"]
-[ext_resource type="AudioStream" uid="uid://cer4hd0s8uxe3" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Footsteps1.wav" id="2_7emwf"]
-[ext_resource type="Texture2D" uid="uid://bps4qu3p65jpw" path="res://Art/Placeholder/anim_walk1.png" id="2_apopc"]
-[ext_resource type="AudioStream" uid="uid://d0ygej1qkps0r" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Footsteps2.wav" id="3_hshwv"]
-[ext_resource type="Texture2D" uid="uid://xgxnk4efyytx" path="res://Art/Placeholder/frog-sprite_movement_placeholder_RIGHT_FACING.png" id="3_o28un"]
 [ext_resource type="Texture2D" uid="uid://bcur51a13as4t" path="res://Art/Placeholder/anim_bitedash_outline_afterimage_RIGHT.png" id="2_7emwf"]
+[ext_resource type="AudioStream" uid="uid://d0ygej1qkps0r" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Footsteps2.wav" id="3_hshwv"]
 [ext_resource type="Texture2D" uid="uid://bf2tewrmj667e" path="res://Art/Placeholder/vampfrog-sprite_movement_Right.png" id="3_o28un"]
 [ext_resource type="Script" uid="uid://k0a7jdb83ch1" path="res://Player/StateMachine/Vampire/vampire_state.gd" id="4_00tjw"]
 [ext_resource type="Texture2D" uid="uid://c3pq0s83y2m0c" path="res://Art/Placeholder/Blood.png" id="4_gu6f8"]
@@ -326,9 +323,6 @@ is_initial_machine = true
 
 [node name="VAMPIRE" type="Node" parent="TransformationSM" unique_id=117049237]
 script = ExtResource("4_00tjw")
-V_SPEED = 50.0
-V_JUMP_IMPULSE = 500.0
-V_GRAVITY = 1500.0
 
 [node name="VampireSM" type="Node" parent="TransformationSM/VAMPIRE" unique_id=1533651679 node_paths=PackedStringArray("player", "initial_state")]
 script = ExtResource("7_pisgm")
@@ -372,7 +366,7 @@ script = ExtResource("16_lfmf2")
 tongue_length = 200.0
 rotation_speed = 5.0
 tip_speed = 500.0
-max_angle = 45.0
+max_angle = 60.0
 mantle_impulse = 1000.0
 mantle_angle = 25.0
 
@@ -381,7 +375,6 @@ position = Vector2(0, 14)
 target_position = Vector2(0, 30)
 
 [node name="FootstepPlayer" type="AudioStreamPlayer2D" parent="." unique_id=858939323]
-stream = ExtResource("2_7emwf")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1704760268]
 stream = ExtResource("4_hshwv")

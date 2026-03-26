@@ -89,12 +89,6 @@ position = Vector2(-343, -112)
 position = Vector2(-1.1920929e-07, -1.1920929e-07)
 rotation = -0.2617994
 
-[node name="F_BITEDASH" parent="Player/TransformationSM/FROG/FrogSM" parent_id_path=PackedInt32Array(644735785, 1414580571) index="3" unique_id=2142105885]
-pull_speed = null
-
-[node name="FootstepPlayer" parent="Player" index="7" unique_id=858939323]
-stream = null
-
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("6_t4xos")]
 position = Vector2(175, 152)
 next_level = ExtResource("7_t4xos")
