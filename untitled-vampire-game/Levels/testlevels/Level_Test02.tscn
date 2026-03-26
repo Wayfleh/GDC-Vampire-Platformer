@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="1_c7tlk"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="2_ce6vd"]
+[ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="3_d5cmw"]
+[ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="4_o68bf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t20ai"]
 texture = ExtResource("1_c7tlk")
@@ -58,7 +60,7 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_t20ai")
 
-[node name="Level2" type="Node2D" unique_id=1583682183]
+[node name="test2" type="Node2D" unique_id=1583682183]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=157769378]
 tile_set = SubResource("TileSet_mtno4")
@@ -73,3 +75,15 @@ position = Vector2(-38, -18)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
 offset = Vector2(190, -130)
 zoom = Vector2(1.5, 1.5)
+
+[node name="Animal" parent="." unique_id=934101410 instance=ExtResource("3_d5cmw")]
+position = Vector2(21, -31)
+
+[node name="Animal2" parent="." unique_id=993759292 instance=ExtResource("3_d5cmw")]
+position = Vector2(85, -19)
+
+[node name="Animal3" parent="." unique_id=1818206106 instance=ExtResource("3_d5cmw")]
+position = Vector2(-143, -25)
+
+[node name="UI" parent="." unique_id=889175113 instance=ExtResource("4_o68bf")]
+unique_name_in_owner = true

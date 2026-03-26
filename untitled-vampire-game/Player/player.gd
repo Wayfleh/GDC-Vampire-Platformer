@@ -43,6 +43,9 @@ var bite_dash_used: bool = false
 var footstep_index: int = 0
 var footstep_timer: float = 0.0
 
+#---------- UI Connections ----------#
+@onready var bloodContainer = %UI/BloodContainer
+
 var just_bit_animal := false
 
 var blood_cache : Array[int] = []
@@ -133,6 +136,8 @@ func bite_animal(area: Area2D):
 		GlobalData.blood_chamber.push_front(area.type)
 		area.queue_free()
 		GlobalData.animal_bitten()
+		UpdateUI()
+		
 
 # Using player velocity to determine Bite Dash facing direction
 # DetermineBiteDashDirection() takes bite_dash_direction as an argument, so it can 
@@ -151,6 +156,9 @@ func DetermineBiteDashDirection(currPos: Vector2, prevPos: Vector2, bite_dash_di
 
 func TransformToVampire():
 	detransform.emit()
+	
+func UpdateUI():
+	bloodContainer.UpdateBloodTokenSprites()
 
 func _process(delta):
 	if Input.is_action_just_pressed("restart"):

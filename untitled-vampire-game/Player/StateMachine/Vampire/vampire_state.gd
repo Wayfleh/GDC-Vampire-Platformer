@@ -7,6 +7,7 @@ extends State
 @export var V_FRICTION := 10.0
 @onready var v_machine = $VampireSM
 
+
 #turn on processing for statemachine
 #set player constants to vampire constants
 func enter_state():
@@ -28,6 +29,7 @@ func update(delta: float):
 		if (current_blood == GlobalData.Animals.FROG 
 		&& v_machine.current_state != v_machine.states["V_BITEDASH"]):
 			transitionToState.emit("FROG")
+		player.UpdateUI()
 	if player.is_on_floor():
 		player.bite_dash_used = false
 	if v_machine.current_state != v_machine.states["V_BITEDASH"]: #don't apply direction in bitedash
