@@ -27,16 +27,14 @@ func update(delta: float):
 
 func _hop():
 	player.velocity.y -= _walk_hop_impulse
+	playHopSound()
 
 func playHopSound():
 	hopIndex = hopIndex + 1
-	match fmod(hopIndex,2):
-		0:
-			sound_f_hop_1.play()
-		1:
-			sound_f_hop_2.play()
-		_:
-			sound_f_hop_1.play()
+	if (hopIndex % 2 == 0):
+		sound_f_hop_1.play()
+	else:
+		sound_f_hop_2.play()
 
 func exit_state():
 	pass
