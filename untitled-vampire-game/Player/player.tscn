@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://jokywshtfwah" path="res://Player/player.gd" id="1_4ntmi"]
 [ext_resource type="Texture2D" uid="uid://bcur51a13as4t" path="res://Art/Placeholder/anim_bitedash_outline_afterimage_RIGHT.png" id="2_7emwf"]
+[ext_resource type="AudioStream" uid="uid://cer4hd0s8uxe3" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Footsteps1.wav" id="2_8viyr"]
 [ext_resource type="AudioStream" uid="uid://d0ygej1qkps0r" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Footsteps2.wav" id="3_hshwv"]
 [ext_resource type="Texture2D" uid="uid://bf2tewrmj667e" path="res://Art/Placeholder/vampfrog-sprite_movement_Right.png" id="3_o28un"]
 [ext_resource type="Script" uid="uid://k0a7jdb83ch1" path="res://Player/StateMachine/Vampire/vampire_state.gd" id="4_00tjw"]
 [ext_resource type="Texture2D" uid="uid://c3pq0s83y2m0c" path="res://Art/Placeholder/Blood.png" id="4_gu6f8"]
 [ext_resource type="Script" uid="uid://cvmgnpcu1e2fx" path="res://Player/StateMachine/Vampire/v_idle.gd" id="4_gwnis"]
-[ext_resource type="AudioStream" uid="uid://cfwjwhpwwe70o" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Jump.wav" id="4_hshwv"]
 [ext_resource type="Texture2D" uid="uid://cc66m3c5e2wgo" path="res://Art/Placeholder/frog-sprite_movement_placeholder.png" id="4_n471f"]
 [ext_resource type="Script" uid="uid://bgueu3iyq1rde" path="res://Player/StateMachine/Vampire/v_walk.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://bjqu6w4wos8p3" path="res://Player/tongue.gd" id="5_pisgm"]
@@ -23,6 +23,9 @@
 [ext_resource type="Texture2D" uid="uid://dinw4bxb85og6" path="res://Art/Placeholder/spongebob vampire.png" id="10_p5o4e"]
 [ext_resource type="Script" uid="uid://dh0kt6slyvvuv" path="res://Player/StateMachine/Frog/f_jump.gd" id="11_apopc"]
 [ext_resource type="Script" uid="uid://pfkhuqvmdxwe" path="res://Player/StateMachine/Frog/f_bitedash.gd" id="16_lfmf2"]
+[ext_resource type="AudioStream" uid="uid://btvej03tmgjeh" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Dash_Pass2(1).wav" id="24_8mwp6"]
+[ext_resource type="AudioStream" uid="uid://b1wu7ixox6b0y" path="res://Sounds/Player Sounds/VampirePlatformerSFX_BiteDeepFried.wav" id="24_8viyr"]
+[ext_resource type="AudioStream" uid="uid://bwr2xvc3k6y6h" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Jump_Pass2.wav" id="24_qemgg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gwnis"]
 radius = 12.0
@@ -235,9 +238,8 @@ radius = 15.0
 
 [node name="Player" type="CharacterBody2D" unique_id=644735785]
 script = ExtResource("1_4ntmi")
-footstep_1 = ExtResource("2_7emwf")
+footstep_1 = ExtResource("2_8viyr")
 footstep_2 = ExtResource("3_hshwv")
-jump_sound = ExtResource("4_hshwv")
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1281633438]
 shape = SubResource("CapsuleShape2D_gwnis")
@@ -375,8 +377,21 @@ position = Vector2(0, 14)
 target_position = Vector2(0, 30)
 
 [node name="FootstepPlayer" type="AudioStreamPlayer2D" parent="." unique_id=858939323]
+volume_db = 8.0
+bus = &"SFX"
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1704760268]
-stream = ExtResource("4_hshwv")
+stream = ExtResource("24_qemgg")
+volume_db = 8.0
+bus = &"SFX"
+
+[node name="SoundV_AnimalBitten" type="AudioStreamPlayer2D" parent="." unique_id=1515482835]
+stream = ExtResource("24_8viyr")
+bus = &"SFX"
+
+[node name="SoundV_BiteDash" type="AudioStreamPlayer2D" parent="." unique_id=1899384871]
+stream = ExtResource("24_8mwp6")
+volume_db = 8.0
+bus = &"SFX"
 
 [connection signal="area_entered" from="BiteHitbox" to="." method="bite_animal"]

@@ -29,6 +29,7 @@ var dashing_direction: Vector2
 var h_dashing_state: String
 
 @onready var afterimages : CPUParticles2D
+@onready var V_BitedashSFX : AudioStreamPlayer2D = $"../../../../SoundV_BiteDash"
 
 	#Use the following strings to handle dashing logic:
 	# "anticipate"		anticipation frames pre-dash
@@ -69,6 +70,7 @@ func exit_state():
 
 func DoDash(delta: float):
 	player.anim_sprite.play("vampire_dash")
+	V_BitedashSFX.play()
 	player.velocity = dashing_direction * h_bite_dash_speed
 	# print(player.velocity)
 	

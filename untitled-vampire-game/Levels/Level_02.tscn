@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="1_c7tlk"]
 [ext_resource type="Texture2D" uid="uid://b1nsq1cs3vntd" path="res://Art/bg1.png" id="1_qy17v"]
+[ext_resource type="Script" uid="uid://v8cmstrdotrt" path="res://Levels/level.gd" id="1_ri7ki"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="2_ce6vd"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="2_hhbg7"]
 [ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="2_ri7ki"]
@@ -118,6 +119,7 @@ sources/0 = SubResource("TileSetAtlasSource_dnsy0")
 sources/1 = SubResource("TileSetAtlasSource_g7h7n")
 
 [node name="Level2" type="Node2D" unique_id=1583682183]
+script = ExtResource("1_ri7ki")
 
 [node name="BGImage" type="Sprite2D" parent="." unique_id=1739098038]
 texture_filter = 1

@@ -39,6 +39,7 @@ var bite_dash_used: bool = false
 @export var footstep_interval: float = 0.35
 @onready var jump_sound_player: AudioStreamPlayer2D = $JumpSound
 @export var jump_sound: AudioStream
+@onready var sound_v_animal_bitten: AudioStreamPlayer2D = $SoundV_AnimalBitten
 
 var footstep_index: int = 0
 var footstep_timer: float = 0.0
@@ -132,6 +133,7 @@ func apply_input_direction(delta: float):
 func bite_animal(area: Area2D):
 	if area is Animal:
 		just_bit_animal = true
+		sound_v_animal_bitten.play()
 		blood_particles.restart()
 		GlobalData.blood_chamber.push_front(area.type)
 		area.queue_free()

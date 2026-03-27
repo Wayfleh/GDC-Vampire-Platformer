@@ -13,8 +13,8 @@ script = ExtResource("1_uahxu")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1240355915]
 layout_mode = 0
-offset_right = 1153.0
-offset_bottom = 648.0
+offset_right = 928.0
+offset_bottom = 512.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=555649148]
 layout_mode = 2
