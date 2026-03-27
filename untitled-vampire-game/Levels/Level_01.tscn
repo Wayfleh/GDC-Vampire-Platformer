@@ -50,6 +50,18 @@ position = Vector2(-109, -164)
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("2_mtno4")]
 position = Vector2(-110, 91)
 
+[node name="FootstepPlayer" parent="Player" index="7" unique_id=858939323]
+volume_db = 12.0
+
+[node name="JumpSound" parent="Player" index="8" unique_id=1704760268]
+volume_db = 15.0
+
+[node name="SoundV_AnimalBitten" parent="Player" index="9" unique_id=1515482835]
+volume_db = 15.0
+
+[node name="SoundV_BiteDash" parent="Player" index="10" unique_id=1899384871]
+volume_db = 10.0
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
 
 [node name="UI" parent="." unique_id=889175113 instance=ExtResource("4_2o7fp")]
