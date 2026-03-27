@@ -10,6 +10,8 @@ script = ExtResource("1_knvsf")
 [node name="Overworld" type="AudioStreamPlayer2D" parent="." unique_id=1487853979]
 stream = ExtResource("2_hfrm7")
 autoplay = true
+parameters/looping = true
 
 [node name="MainMenu" type="AudioStreamPlayer2D" parent="." unique_id=1610948208]
 stream = ExtResource("3_kvrp4")
+parameters/looping = true
