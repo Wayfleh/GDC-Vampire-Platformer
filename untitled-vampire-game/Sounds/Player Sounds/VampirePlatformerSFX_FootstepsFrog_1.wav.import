@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cmpm0k80o6mw8"
+path="res://.godot/imported/VampirePlatformerSFX_FootstepsFrog_1.wav-40d8c0d523c460a39d3f22a22a5313fb.sample"
+
+[deps]
+
+source_file="res://Sounds/Player Sounds/VampirePlatformerSFX_FootstepsFrog_1.wav"
+dest_files=["res://.godot/imported/VampirePlatformerSFX_FootstepsFrog_1.wav-40d8c0d523c460a39d3f22a22a5313fb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -7,6 +7,8 @@ extends State
 @export var V_FRICTION := 10.0
 @onready var v_machine = $VampireSM
 
+@onready var sound_f_transform: AudioStreamPlayer2D = $"../../SoundF_Transform"
+
 
 #turn on processing for statemachine
 #set player constants to vampire constants
@@ -28,6 +30,7 @@ func update(delta: float):
 		var current_blood = GlobalData.blood_chamber.pop_front() 
 		if (current_blood == GlobalData.Animals.FROG 
 		&& v_machine.current_state != v_machine.states["V_BITEDASH"]):
+			sound_f_transform.play()
 			transitionToState.emit("FROG")
 		player.UpdateUI()
 	if player.is_on_floor():

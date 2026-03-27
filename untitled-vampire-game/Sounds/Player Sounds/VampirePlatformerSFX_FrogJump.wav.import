@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cg7n6v22ssnlu"
+path="res://.godot/imported/VampirePlatformerSFX_FrogJump.wav-0c77aaf924c4557d9a5fe6fa134eb9ac.sample"
+
+[deps]
+
+source_file="res://Sounds/Player Sounds/VampirePlatformerSFX_FrogJump.wav"
+dest_files=["res://.godot/imported/VampirePlatformerSFX_FrogJump.wav-0c77aaf924c4557d9a5fe6fa134eb9ac.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
