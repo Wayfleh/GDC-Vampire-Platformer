@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d2lnxbvep06lu"]
+
+[ext_resource type="Script" uid="uid://da0n3omdk852s" path="res://Sounds/Music/music.gd" id="1_knvsf"]
+[ext_resource type="AudioStream" uid="uid://cg5nqisy6njdx" path="res://Sounds/Music/Overworld2.mp3" id="2_hfrm7"]
+[ext_resource type="AudioStream" uid="uid://dwuccp4lkmodr" path="res://Sounds/Music/MainMenu.mp3" id="3_kvrp4"]
+
+[node name="Music" type="Node2D" unique_id=888623492]
+script = ExtResource("1_knvsf")
+
+[node name="Overworld" type="AudioStreamPlayer2D" parent="." unique_id=1487853979]
+stream = ExtResource("2_hfrm7")
+autoplay = true
+parameters/looping = true
+
+[node name="MainMenu" type="AudioStreamPlayer2D" parent="." unique_id=1610948208]
+stream = ExtResource("3_kvrp4")
+parameters/looping = true

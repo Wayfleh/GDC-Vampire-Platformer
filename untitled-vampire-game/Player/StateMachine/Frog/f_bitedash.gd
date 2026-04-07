@@ -1,9 +1,9 @@
 ## FROG
 extends State
 
-@export var tongue_length: float = 80.0
-@export var rotation_speed: float
-@export var tip_speed: float
+@export var tongue_length: float = 280.0
+@export var rotation_speed: float = 3.5
+@export var tip_speed: float = 900.0
 @export_range(0, 90, 0.1, "suffix: deg") var max_angle: float
 @export var pull_speed: float = 2000.0
 @export var mantle_impulse: float = 2000.0

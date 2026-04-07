@@ -2,10 +2,13 @@
 extends State
 
 @export var fastFallGravityMultiplier: float = 1.5 #When the player isn't pressing the jump button, fall faster.
+@onready var jump_sound: AudioStreamPlayer2D = $"../../../../JumpSound"
+
 
 func enter_state():
 	player.anim_sprite.play("vampire_jump")
 	player.velocity.y -= player.jump_impulse
+	jump_sound.play()
 
 func update(delta: float):
 	player.apply_horizontal_movement(delta)

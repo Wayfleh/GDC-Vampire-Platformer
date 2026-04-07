@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b81xfqhj2clb"]
 
 [ext_resource type="Script" uid="uid://diqn6wfdtampl" path="res://UI/main_menu.gd" id="1_uahxu"]
+[ext_resource type="Texture2D" uid="uid://cauwnol1d8fiv" path="res://Art/titlescreen_draft.png" id="2_b37jj"]
 
 [node name="MainMenu" type="Control" unique_id=960027890]
 layout_mode = 3
@@ -11,10 +12,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uahxu")
 
+[node name="TitleBG" type="Sprite2D" parent="." unique_id=1400340256]
+position = Vector2(464.5626, 256.00003)
+scale = Vector2(0.33463544, 0.33463544)
+texture = ExtResource("2_b37jj")
+
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1240355915]
 layout_mode = 0
-offset_right = 1153.0
-offset_bottom = 648.0
+offset_left = -169.0
+offset_top = 1.0
+offset_right = 759.0
+offset_bottom = 513.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=555649148]
 layout_mode = 2
@@ -23,7 +31,7 @@ theme_override_constants/separation = 60
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=274609959]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Vampire Game"
+text = "                           "
 
 [node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1923562459]
 layout_mode = 2

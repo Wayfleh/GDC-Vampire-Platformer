@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwr2xvc3k6y6h"
+path="res://.godot/imported/VampirePlatformerSFX_Jump_Pass2.wav-0a01547702f2ee34f92c628c75289d1c.sample"
+
+[deps]
+
+source_file="res://Sounds/Player Sounds/VampirePlatformerSFX_Jump_Pass2.wav"
+dest_files=["res://.godot/imported/VampirePlatformerSFX_Jump_Pass2.wav-0a01547702f2ee34f92c628c75289d1c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

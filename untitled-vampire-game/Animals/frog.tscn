@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dkvv6omrwiey4" path="res://Animals/animal.gd" id="1_kkmoe"]
 [ext_resource type="Texture2D" uid="uid://cmbmpbhioot37" path="res://Art/Placeholder/frog-placeholder.png" id="2_cby5x"]
+[ext_resource type="SpriteFrames" uid="uid://bnknrp4ydh6we" path="res://Art/Sprites/frogSleepAnimFrames.tres" id="2_o8yfw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cby5x"]
 radius = 16.0
@@ -9,7 +10,14 @@ radius = 16.0
 [node name="Animal" type="Area2D" unique_id=934101410]
 script = ExtResource("1_kkmoe")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=135745891]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1525392828]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("2_o8yfw")
+animation = &"snooze"
+autoplay = "snooze"
+
+[node name="spriteold" type="Sprite2D" parent="." unique_id=135745891]
+visible = false
 position = Vector2(7, -8)
 scale = Vector2(1.5625, 1.5625)
 texture = ExtResource("2_cby5x")

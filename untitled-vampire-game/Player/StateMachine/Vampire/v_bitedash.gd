@@ -18,7 +18,7 @@ On-press, Alucard should:
 		
 """
 
-@export var h_bite_dash_travel_duration = 0.15 # Defines maximum time a bite dash lasts for
+@export var h_bite_dash_travel_duration = 0.075 # Defines maximum time a bite dash lasts for
 @export var h_bite_dash_speed = 1200.0 # Defines speed of horizontal movement during a Human Bite Dash
 @export var h_bite_dash_residual_speed = 700.0 # When bite dash ends, retain a flat amount of small momentum
 @export var h_bite_dash_anticipation_duration = 0.2 #Defines how long Alucard will hang in the air before starting dash (for game feel)
@@ -29,6 +29,7 @@ var dashing_direction: Vector2
 var h_dashing_state: String
 
 @onready var afterimages : CPUParticles2D
+@onready var V_BitedashSFX : AudioStreamPlayer2D = $"../../../../SoundV_BiteDash"
 
 	#Use the following strings to handle dashing logic:
 	# "anticipate"		anticipation frames pre-dash
@@ -69,6 +70,7 @@ func exit_state():
 
 func DoDash(delta: float):
 	player.anim_sprite.play("vampire_dash")
+	V_BitedashSFX.play()
 	player.velocity = dashing_direction * h_bite_dash_speed
 	# print(player.velocity)
 	

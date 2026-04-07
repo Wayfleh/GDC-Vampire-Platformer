@@ -1,11 +1,14 @@
 extends State
 
 #Constants for vampire state
-@export var V_SPEED := 550.0
-@export var V_JUMP_IMPULSE := 900.0
-@export var V_GRAVITY := 3000.0
+@export var V_SPEED := 100.0
+@export var V_JUMP_IMPULSE := 500.0
+@export var V_GRAVITY := 1500.0
 @export var V_FRICTION := 10.0
 @onready var v_machine = $VampireSM
+
+@onready var sound_f_transform: AudioStreamPlayer2D = $"../../SoundF_Transform"
+
 
 #turn on processing for statemachine
 #set player constants to vampire constants
@@ -27,7 +30,9 @@ func update(delta: float):
 		var current_blood = GlobalData.blood_chamber.pop_front() 
 		if (current_blood == GlobalData.Animals.FROG 
 		&& v_machine.current_state != v_machine.states["V_BITEDASH"]):
+			sound_f_transform.play()
 			transitionToState.emit("FROG")
+		player.UpdateUI()
 	if player.is_on_floor():
 		player.bite_dash_used = false
 	if v_machine.current_state != v_machine.states["V_BITEDASH"]: #don't apply direction in bitedash
