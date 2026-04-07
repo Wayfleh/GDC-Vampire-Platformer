@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="2_mtno4"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="3_tdu8r"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="4_2o7fp"]
-[ext_resource type="PackedScene" uid="uid://b0k8exahby8da" path="res://Levels/door.tscn" id="5_lkd0j"]
+[ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="5_lkd0j"]
 [ext_resource type="PackedScene" uid="uid://yxb6hakqw03p" path="res://Levels/Level_02.tscn" id="6_yu5cb"]
 
 [node name="Level1" type="Node2D" unique_id=1583682183]
