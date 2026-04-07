@@ -62,11 +62,13 @@ func update(delta: float):
 	
 
 func exit_state():
+	player.anim_sprite.play("vampire_idle")
 	player.velocity = dashing_direction * h_bite_dash_residual_speed
 	player.bite_hitbox.monitoring = false
 	
 
 func DoDash(delta: float):
+	player.anim_sprite.play("vampire_dash")
 	player.velocity = dashing_direction * h_bite_dash_speed
 	# print(player.velocity)
 	

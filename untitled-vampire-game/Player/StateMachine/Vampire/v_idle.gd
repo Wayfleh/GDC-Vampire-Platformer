@@ -6,13 +6,18 @@ var idle_friction_multiplier := 2.0
 
 #TODO add animations for idle state
 func enter_state():
-	player.anim_sprite.play("idle")
+	if !player.is_on_floor():
+		player.anim_sprite.play("vampire_fall")
+	else:
+		player.anim_sprite.play("vampire_idle")
 	#idle animation
 #slows the player down to a halt
 func update(delta: float):
 	player.apply_friction(delta, idle_friction_multiplier)
 	player.apply_gravity(delta)
 	
+	if player.is_on_floor():
+		player.anim_sprite.play("vampire_idle")
 	if player.afterimage_particles.emitting:
 		player.afterimage_particles.emitting = false
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
