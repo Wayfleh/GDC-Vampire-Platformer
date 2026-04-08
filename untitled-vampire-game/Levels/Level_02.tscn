@@ -2,11 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="1_c7tlk"]
 [ext_resource type="Texture2D" uid="uid://b1nsq1cs3vntd" path="res://Art/bg1.png" id="1_qy17v"]
-[ext_resource type="Script" path="res://Levels/level.gd" id="1_ri7ki"]
+[ext_resource type="Script" uid="uid://v8cmstrdotrt" path="res://Levels/level.gd" id="1_ri7ki"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="2_ce6vd"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="2_hhbg7"]
 [ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="2_ri7ki"]
-[ext_resource type="Script" uid="uid://7wyysqn5kc23" path="res://Levels/LevelManager.gd" id="3_exfpd"]
 [ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="4_sv6oy"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="5_c8ve7"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="6_exfpd"]
@@ -169,8 +168,5 @@ volume_db = 12.0
 unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
-
-[node name="LevelManager" type="Node" parent="." unique_id=1664091554]
-script = ExtResource("3_exfpd")
 
 [editable path="Player"]

@@ -248,12 +248,6 @@ footstep_2 = ExtResource("3_hshwv")
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1281633438]
 shape = SubResource("CapsuleShape2D_gwnis")
 
-[node name="BiteHitbox" type="Area2D" parent="." unique_id=903445956]
-monitoring = false
-
-[node name="BiteHitboxCollider" type="CollisionShape2D" parent="BiteHitbox" unique_id=1419210328]
-shape = SubResource("CapsuleShape2D_gwnis")
-
 [node name="AfterimageParticles" type="CPUParticles2D" parent="." unique_id=1799021689]
 emitting = false
 texture = ExtResource("2_7emwf")
@@ -307,6 +301,14 @@ collide_with_areas = true
 position = Vector2(-15, -32)
 target_position = Vector2(-10, 0)
 collide_with_areas = true
+
+[node name="BiteHitbox" type="Area2D" parent="CurrentDirection" unique_id=903445956]
+position = Vector2(6, 0)
+scale = Vector2(1.8249997, 1)
+monitoring = false
+
+[node name="BiteHitboxCollider" type="CollisionShape2D" parent="CurrentDirection/BiteHitbox" unique_id=1419210328]
+shape = SubResource("CapsuleShape2D_gwnis")
 
 [node name="BloodParticles" type="CPUParticles2D" parent="." unique_id=158508271]
 emitting = false
@@ -411,4 +413,4 @@ volume_db = 8.0
 stream = ExtResource("30_bbimk")
 volume_db = 8.0
 
-[connection signal="area_entered" from="BiteHitbox" to="." method="bite_animal"]
+[connection signal="area_entered" from="CurrentDirection/BiteHitbox" to="." method="bite_animal"]

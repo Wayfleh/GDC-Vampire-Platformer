@@ -83,7 +83,10 @@ position = Vector2(21, -31)
 position = Vector2(85, -19)
 
 [node name="Animal3" parent="." unique_id=1818206106 instance=ExtResource("3_d5cmw")]
-position = Vector2(-143, -25)
+position = Vector2(121, -25)
+
+[node name="Animal4" parent="." unique_id=1585625439 instance=ExtResource("3_d5cmw")]
+position = Vector2(203, -86)
 
 [node name="UI" parent="." unique_id=889175113 instance=ExtResource("4_o68bf")]
 unique_name_in_owner = true
