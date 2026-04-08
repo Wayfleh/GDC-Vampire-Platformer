@@ -15,7 +15,7 @@ var direction : int #either forward (1) or backward (-1)
 #---------- For Bite Dash ----------#
 var previous_direction : int = 1
 var bite_dash_used: bool = false
-@onready var bite_hitbox := $CurrentDirection/BiteHitboxd
+@onready var bite_hitbox := $CurrentDirection/BiteHitbox
 @onready var tongue : Tongue = %Tongue #sahur
 
 @onready var state_machine := $StateMachine
