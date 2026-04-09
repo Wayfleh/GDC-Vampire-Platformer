@@ -18,9 +18,7 @@ var actions_to_rebind: Array[String] = [
 	"transform"
 ]
 
-
 var default_bindings := {}
-
 
 var is_rebinding: bool = false
 var current_rebind_index: int = 0
@@ -49,6 +47,8 @@ func resume() -> void:
 	get_tree().paused = false
 	hide()
 	is_rebinding = false
+	set_menu_buttons_disabled(false)
+	clear_menu_focus()
 	rebind_status.text = ""
 
 
@@ -64,7 +64,7 @@ func main_menu() -> void:
 
 func store_default_bindings() -> void:
 	default_bindings.clear()
-	
+
 	default_bindings["left"] = [make_key_event(KEY_A)]
 	default_bindings["right"] = [make_key_event(KEY_D)]
 	default_bindings["jump"] = [make_key_event(KEY_W)]
@@ -73,6 +73,7 @@ func store_default_bindings() -> void:
 	default_bindings["blood_cycle"] = [make_key_event(KEY_Q)]
 	default_bindings["transform"] = [make_key_event(KEY_E)]
 
+
 func make_key_event(keycode: Key) -> InputEventKey:
 	var event := InputEventKey.new()
 	event.keycode = keycode
@@ -80,15 +81,35 @@ func make_key_event(keycode: Key) -> InputEventKey:
 	return event
 
 
+func set_menu_buttons_disabled(disabled: bool) -> void:
+	resume_button.disabled = disabled
+	restart_button.disabled = disabled
+	main_menu_button.disabled = disabled
+	custom_keybinds_button.disabled = disabled
+	reset_defaults_button.disabled = disabled
+
+
+func clear_menu_focus() -> void:
+	resume_button.release_focus()
+	restart_button.release_focus()
+	main_menu_button.release_focus()
+	custom_keybinds_button.release_focus()
+	reset_defaults_button.release_focus()
+
+
 func start_rebinding() -> void:
 	is_rebinding = true
 	current_rebind_index = 0
+	set_menu_buttons_disabled(true)
+	clear_menu_focus()
 	show_next_action_prompt()
 
 
 func show_next_action_prompt() -> void:
 	if current_rebind_index >= actions_to_rebind.size():
 		is_rebinding = false
+		set_menu_buttons_disabled(false)
+		clear_menu_focus()
 		rebind_status.text = "Rebinding Done."
 		return
 
@@ -100,26 +121,37 @@ func _input(event: InputEvent) -> void:
 	if !is_rebinding:
 		return
 
-	if event is InputEventKey and event.pressed:
+	if event is InputEventKey and event.pressed and !event.echo:
 		rebind_current_action(event)
+		get_viewport().set_input_as_handled()
 	elif event is InputEventJoypadButton and event.pressed:
 		rebind_current_action(event)
+		get_viewport().set_input_as_handled()
 	elif event is InputEventJoypadMotion and abs(event.axis_value) > 0.5:
 		rebind_current_action(event)
+		get_viewport().set_input_as_handled()
 
 
 func rebind_current_action(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.keycode == KEY_ESCAPE:
+			rebind_status.text = "Escape cannot be used. Press another key/button for: " + actions_to_rebind[current_rebind_index]
+			return
+
 	var action_name := actions_to_rebind[current_rebind_index]
 
 	InputMap.action_erase_events(action_name)
-
-	InputMap.action_add_event(action_name, event)
+	InputMap.action_add_event(action_name, event.duplicate())
 
 	current_rebind_index += 1
 	show_next_action_prompt()
-	
+
 
 func reset_to_defaults() -> void:
+	is_rebinding = false
+	set_menu_buttons_disabled(false)
+	clear_menu_focus()
+
 	for action in actions_to_rebind:
 		InputMap.action_erase_events(action)
 
@@ -127,4 +159,3 @@ func reset_to_defaults() -> void:
 			InputMap.action_add_event(action, event.duplicate())
 
 	rebind_status.text = "Controls reset to default."
-	is_rebinding = false
