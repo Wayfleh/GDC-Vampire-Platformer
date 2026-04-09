@@ -23,6 +23,12 @@ func animal_bitten():
 	if animals_remaining <= 0:
 		level_complete = true
 
+func blood_collected(animal : Area2D):
+	blood_chamber.push_front(animal.type)
+	if (blood_chamber.size() > 3):
+		blood_chamber.resize(3)
+	return
+
 func next_level(level : PackedScene):
 	blood_chamber.clear()
 	charges = 0

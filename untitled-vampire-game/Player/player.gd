@@ -15,7 +15,7 @@ var direction : int #either forward (1) or backward (-1)
 #---------- For Bite Dash ----------#
 var previous_direction : int = 1
 var bite_dash_used: bool = false
-@onready var bite_hitbox := $BiteHitbox
+@onready var bite_hitbox := $CurrentDirection/BiteHitbox
 @onready var tongue : Tongue = %Tongue #sahur
 
 @onready var state_machine := $StateMachine
@@ -135,7 +135,7 @@ func bite_animal(area: Area2D):
 		just_bit_animal = true
 		sound_v_animal_bitten.play()
 		blood_particles.restart()
-		GlobalData.blood_chamber.push_front(area.type)
+		GlobalData.blood_collected(area)
 		area.queue_free()
 		GlobalData.animal_bitten()
 		UpdateUI()
@@ -164,4 +164,6 @@ func UpdateUI():
 
 func _process(delta):
 	if Input.is_action_just_pressed("restart"):
+		GlobalData.blood_chamber.clear()
+		UpdateUI()
 		get_tree().reload_current_scene()
