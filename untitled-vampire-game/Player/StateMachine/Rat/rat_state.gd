@@ -1,0 +1,31 @@
+extends State
+
+@export var R_SPEED := 100.0
+@export var R_JUMP_IMPULSE := 200.0
+@export var R_GRAVITY := 1500.0
+@export var R_FRICTION := 10.0
+@onready var r_machine = $RatSM
+
+
+
+#turn on processing for statemachine
+#set player constants to vampire constants
+func enter_state():
+	r_machine.set_physics_process(true)
+	r_machine.begin_state_machine(r_machine.initial_state)
+	player.speed = R_SPEED
+	player.jump_impulse = R_JUMP_IMPULSE
+	player.gravity = R_GRAVITY
+	player.friction = R_FRICTION
+
+func update(delta: float):
+		
+	if (Input.is_action_just_pressed("bite_dash")):
+		r_machine.change_state("R_BITEDASH")
+	if r_machine.current_state != r_machine.states["R_BITEDASH"]: #don't apply direction in bitedash
+		player.apply_input_direction(delta)
+
+
+#turn off processing for statemachine
+func exit_state():
+	r_machine.set_physics_process(false)

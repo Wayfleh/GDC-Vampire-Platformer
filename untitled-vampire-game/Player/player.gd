@@ -1,6 +1,8 @@
 class_name Player
 extends CharacterBody2D
 
+#TODO remember that you commented out the UpdateUI() function
+
 #change speed, jump height, and gravity
 @export var speed: float = 500.0
 @export var jump_impulse: float = 500.0
@@ -158,9 +160,10 @@ func DetermineBiteDashDirection(currPos: Vector2, prevPos: Vector2, bite_dash_di
 
 func TransformToVampire():
 	detransform.emit()
-	
+
 func UpdateUI():
-	bloodContainer.UpdateBloodTokenSprites()
+	#bloodContainer.UpdateBloodTokenSprites()
+	pass
 
 func _process(delta):
 	if Input.is_action_just_pressed("restart"):

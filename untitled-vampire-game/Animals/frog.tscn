@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_cby5x"]
 radius = 16.0
 
-[node name="Animal" type="Area2D" unique_id=934101410]
+[node name="Frog" type="Area2D" unique_id=934101410]
 script = ExtResource("1_kkmoe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1525392828]

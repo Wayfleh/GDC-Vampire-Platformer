@@ -25,8 +25,13 @@
 [ext_resource type="Script" uid="uid://pfkhuqvmdxwe" path="res://Player/StateMachine/Frog/f_bitedash.gd" id="16_lfmf2"]
 [ext_resource type="AudioStream" uid="uid://btvej03tmgjeh" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Dash_Pass2(1).wav" id="24_8mwp6"]
 [ext_resource type="AudioStream" uid="uid://b1wu7ixox6b0y" path="res://Sounds/Player Sounds/VampirePlatformerSFX_BiteDeepFried.wav" id="24_8viyr"]
+[ext_resource type="Script" uid="uid://bvfkkmorxks4j" path="res://Player/StateMachine/Rat/rat_state.gd" id="24_j2n6q"]
 [ext_resource type="AudioStream" uid="uid://bwr2xvc3k6y6h" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Jump_Pass2.wav" id="24_qemgg"]
+[ext_resource type="Script" uid="uid://d1kl88gv13gwb" path="res://Player/StateMachine/Rat/r_idle.gd" id="25_i4o1l"]
+[ext_resource type="Script" uid="uid://b3tu667olgsaf" path="res://Player/StateMachine/Rat/r_walk.gd" id="26_c6x0f"]
 [ext_resource type="AudioStream" uid="uid://4alwcgkpnmgn" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FrogDeepFried.wav" id="27_76lrf"]
+[ext_resource type="Script" uid="uid://b8bgimunhfuf" path="res://Player/StateMachine/Rat/r_jump.gd" id="27_c6x0f"]
+[ext_resource type="Script" uid="uid://bcj6i4xd2x1dw" path="res://Player/StateMachine/Rat/r_bitedash.gd" id="28_c6x0f"]
 [ext_resource type="AudioStream" uid="uid://cg7n6v22ssnlu" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FrogJump.wav" id="28_efx54"]
 [ext_resource type="AudioStream" uid="uid://cmpm0k80o6mw8" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FootstepsFrog_1.wav" id="29_755ss"]
 [ext_resource type="AudioStream" uid="uid://kq0ic1wajuar" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FootstepsFrog_2.wav" id="30_bbimk"]
@@ -375,6 +380,34 @@ tip_speed = 500.0
 max_angle = 60.0
 mantle_impulse = 1000.0
 mantle_angle = 25.0
+
+[node name="RAT" type="Node" parent="TransformationSM" unique_id=1041574165]
+script = ExtResource("24_j2n6q")
+metadata/_custom_type_script = "uid://c68npqqwy1yig"
+
+[node name="RatSM" type="Node" parent="TransformationSM/RAT" unique_id=1273521801 node_paths=PackedStringArray("player", "initial_state")]
+script = ExtResource("7_pisgm")
+player = NodePath("../../..")
+initial_state = NodePath("R_IDLE")
+metadata/_custom_type_script = "uid://b0qyabcc0hn7j"
+
+[node name="R_IDLE" type="Node" parent="TransformationSM/RAT/RatSM" unique_id=1506463112]
+script = ExtResource("25_i4o1l")
+metadata/_custom_type_script = "uid://c68npqqwy1yig"
+
+[node name="R_WALK" type="Node" parent="TransformationSM/RAT/RatSM" unique_id=2087311971]
+script = ExtResource("26_c6x0f")
+metadata/_custom_type_script = "uid://c68npqqwy1yig"
+
+[node name="R_JUMP" type="Node" parent="TransformationSM/RAT/RatSM" unique_id=1230928624]
+script = ExtResource("27_c6x0f")
+metadata/_custom_type_script = "uid://c68npqqwy1yig"
+
+[node name="R_BITEDASH" type="Node" parent="TransformationSM/RAT/RatSM" unique_id=209168566]
+script = ExtResource("28_c6x0f")
+launch_angle = 30.0
+launch_impulse = 1000.0
+metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="FrogFloorCheck" type="RayCast2D" parent="." unique_id=1341900899]
 position = Vector2(0, 14)

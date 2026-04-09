@@ -4,14 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="1_cwbts"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="2_0gwtk"]
 [ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="2_ln1vi"]
-[ext_resource type="Script" uid="uid://7wyysqn5kc23" path="res://Levels/LevelManager.gd" id="3_t4xos"]
 [ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="4_6hhfj"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="4_ckkmn"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="5_ik50e"]
-[ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="6_t4xos"]
+[ext_resource type="PackedScene" uid="uid://b0k8exahby8da" path="res://Levels/door.tscn" id="6_t4xos"]
 [ext_resource type="PackedScene" uid="uid://b81xfqhj2clb" path="res://UI/MainMenu.tscn" id="7_t4xos"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_meo3i"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ik50e"]
 texture = ExtResource("1_cwbts")
 texture_region_size = Vector2i(32, 32)
 2:1/0 = 0
@@ -61,7 +60,7 @@ texture_region_size = Vector2i(32, 32)
 3:4/0 = 0
 3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g01ns"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53jjn"]
 resource_name = "BlueGreenTiles"
 texture = ExtResource("4_6hhfj")
 margins = Vector2i(0, 16)
@@ -114,8 +113,8 @@ margins = Vector2i(0, 16)
 [sub_resource type="TileSet" id="TileSet_cgdeu"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_meo3i")
-sources/1 = SubResource("TileSetAtlasSource_g01ns")
+sources/0 = SubResource("TileSetAtlasSource_ik50e")
+sources/1 = SubResource("TileSetAtlasSource_53jjn")
 
 [node name="Level3" type="Node2D" unique_id=1583682183]
 
@@ -161,9 +160,6 @@ position = Vector2(-132, 46)
 
 [node name="Animal3" parent="." unique_id=97141298 instance=ExtResource("2_0gwtk")]
 position = Vector2(-99, 175)
-
-[node name="LevelManager" type="Node" parent="." unique_id=1664091554]
-script = ExtResource("3_t4xos")
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("4_ckkmn")]
 position = Vector2(-291, 137)
