@@ -28,6 +28,17 @@ func blood_collected(animal : Area2D):
 	if (blood_chamber.size() > 3):
 		blood_chamber.resize(3)
 	return
+	
+func blood_cycle():
+	if (blood_chamber.size() <= 1):
+		print("global_data.gd: blood_cycle() -- attemped to blood_cycle with array <= 1; cycling requires 2 or more tokens")
+		return
+	
+	var token = blood_chamber.pop_front()
+	blood_chamber.push_back(token)
+	# Updating UI currently initiated from the action in Player.gd
+	# Currently unsure if/how to connect the blood_container to this global_data.gd
+	return
 
 func next_level(level : PackedScene):
 	blood_chamber.clear()

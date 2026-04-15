@@ -167,3 +167,8 @@ func _process(delta):
 		GlobalData.blood_chamber.clear()
 		UpdateUI()
 		get_tree().reload_current_scene()
+		return
+	
+	if Input.is_action_just_pressed("blood_cycle"):
+		GlobalData.blood_cycle()
+		return
