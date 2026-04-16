@@ -19,10 +19,12 @@ var previous_direction : int = 1
 var bite_dash_used: bool = false
 @onready var bite_hitbox := $BiteHitbox
 @onready var tongue : Tongue = %Tongue #sahur
+@onready var rat_hole_interactor : Area2D = $RatHoleInteractor
 
 @onready var state_machine := $StateMachine
 @onready var collider := $Collider
 @onready var anim_sprite : AnimatedSprite2D = %AlucardSprite
+
 
 #---------- Particles ----------#
 @onready var blood_particles := $BloodParticles
@@ -160,6 +162,7 @@ func DetermineBiteDashDirection(currPos: Vector2, prevPos: Vector2, bite_dash_di
 
 func TransformToVampire():
 	detransform.emit()
+
 
 func UpdateUI():
 	#bloodContainer.UpdateBloodTokenSprites()

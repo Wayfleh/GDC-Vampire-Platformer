@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="5_2x05f"]
 [ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="6_b3iwr"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="7_msylf"]
+[ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="8_h3nto"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lk1av"]
 texture = ExtResource("3_msylf")
@@ -152,4 +153,12 @@ tile_set = SubResource("TileSet_ar74x")
 position = Vector2(-87, 171)
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("7_msylf")]
-position = Vector2(-281, -19)
+position = Vector2(-195, 59)
+
+[node name="RatHole" parent="." unique_id=1798485280 node_paths=PackedStringArray("other_hole") instance=ExtResource("8_h3nto")]
+position = Vector2(-263, 164)
+other_hole = NodePath("../RatHole2")
+
+[node name="RatHole2" parent="." unique_id=732324240 node_paths=PackedStringArray("other_hole") instance=ExtResource("8_h3nto")]
+position = Vector2(108, 163)
+other_hole = NodePath("../RatHole")

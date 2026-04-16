@@ -40,6 +40,9 @@
 radius = 12.0
 height = 28.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_c6x0f"]
+radius = 16.0
+
 [sub_resource type="Gradient" id="Gradient_dkpta"]
 interpolation_mode = 2
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.3529412)
@@ -246,12 +249,20 @@ animations = [{
 radius = 15.0
 
 [node name="Player" type="CharacterBody2D" unique_id=644735785]
+z_index = 1
 script = ExtResource("1_4ntmi")
 footstep_1 = ExtResource("2_8viyr")
 footstep_2 = ExtResource("3_hshwv")
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1281633438]
 shape = SubResource("CapsuleShape2D_gwnis")
+
+[node name="RatHoleInteractor" type="Area2D" parent="." unique_id=2023625641]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RatHoleInteractor" unique_id=701468909]
+shape = SubResource("CircleShape2D_c6x0f")
 
 [node name="BiteHitbox" type="Area2D" parent="." unique_id=903445956]
 monitoring = false
@@ -405,8 +416,8 @@ metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="R_BITEDASH" type="Node" parent="TransformationSM/RAT/RatSM" unique_id=209168566]
 script = ExtResource("28_c6x0f")
-launch_angle = 30.0
-launch_impulse = 1000.0
+launch_angle = 45.0
+launch_impulse = 650.0
 metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="FrogFloorCheck" type="RayCast2D" parent="." unique_id=1341900899]

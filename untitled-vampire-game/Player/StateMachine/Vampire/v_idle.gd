@@ -2,7 +2,7 @@
 extends State
 
 
-var idle_friction_multiplier := 2.0
+var idle_friction_multiplier := 5.0
 
 #TODO add animations for idle state
 func enter_state():
@@ -13,6 +13,7 @@ func enter_state():
 	#idle animation
 #slows the player down to a halt
 func update(delta: float):
+	idle_friction_multiplier = 5.0 if player.is_on_floor() else 1.0
 	player.apply_friction(delta, idle_friction_multiplier)
 	player.apply_gravity(delta)
 	
