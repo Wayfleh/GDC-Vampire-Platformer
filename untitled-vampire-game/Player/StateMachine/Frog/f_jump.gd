@@ -3,7 +3,7 @@ extends State
 
 @export var _max_jump_mult : float = 1.5 #max height of frog jump is twice that of the base frog jump height
 @export var _max_charge_time : float = 2.0
-@export var _air_speed : float = 50.0 #frog is faster in the air after jumping
+@export var _default_speed : float = 50.0 #TODO change this to grab from GlobalData
 var _curr_jump_mult : float
 var _time : float
 var _speed_snapshot : float
@@ -47,9 +47,10 @@ func _apply_jump_impulse():
 	_curr_jump_mult -= 1.0
 	_curr_jump_mult *= _time/_max_charge_time
 	player.velocity.y -= player.jump_impulse * (_curr_jump_mult + 1.0) # will always jump at least as high as the base jump
-	player.speed = _speed_snapshot
+	player.speed = _speed_snapshot * 1.5
+	player.velocity.x = player.previous_direction * clampf(player.speed, player.speed, ARBITRARY_MAGIC_MAX_AIR_SPEED * 2)
 	sound_f_jump.play()
 	_jump_state = "jumping"
 
 func exit_state():
-	player.speed = _air_speed
+	player.speed = _default_speed

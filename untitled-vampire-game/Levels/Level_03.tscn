@@ -7,10 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="4_6hhfj"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="4_ckkmn"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="5_ik50e"]
-[ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="6_t4xos"]
+[ext_resource type="PackedScene" uid="uid://b0k8exahby8da" path="res://Levels/door.tscn" id="6_t4xos"]
 [ext_resource type="PackedScene" uid="uid://b81xfqhj2clb" path="res://UI/MainMenu.tscn" id="7_t4xos"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_meo3i"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ik50e"]
 texture = ExtResource("1_cwbts")
 texture_region_size = Vector2i(32, 32)
 2:1/0 = 0
@@ -60,7 +60,7 @@ texture_region_size = Vector2i(32, 32)
 3:4/0 = 0
 3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g01ns"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53jjn"]
 resource_name = "BlueGreenTiles"
 texture = ExtResource("4_6hhfj")
 margins = Vector2i(0, 16)
@@ -113,8 +113,8 @@ margins = Vector2i(0, 16)
 [sub_resource type="TileSet" id="TileSet_cgdeu"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_meo3i")
-sources/1 = SubResource("TileSetAtlasSource_g01ns")
+sources/0 = SubResource("TileSetAtlasSource_ik50e")
+sources/1 = SubResource("TileSetAtlasSource_53jjn")
 
 [node name="Level3" type="Node2D" unique_id=1583682183]
 

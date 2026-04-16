@@ -1,6 +1,6 @@
 extends Node
 
-enum Animals {FROG}
+enum Animals {FROG, RAT}
 
 var blood_chamber : Array[Animals]
 var charges : int

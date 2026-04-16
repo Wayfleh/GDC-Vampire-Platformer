@@ -20,7 +20,7 @@ On-press, Alucard should:
 
 @export var h_bite_dash_travel_duration = 0.075 # Defines maximum time a bite dash lasts for
 @export var h_bite_dash_speed = 1200.0 # Defines speed of horizontal movement during a Human Bite Dash
-@export var h_bite_dash_residual_speed = 700.0 # When bite dash ends, retain a flat amount of small momentum
+@export var h_bite_dash_residual_speed = 200.0 # When bite dash ends, retain a flat amount of small momentum
 @export var h_bite_dash_anticipation_duration = 0.2 #Defines how long Alucard will hang in the air before starting dash (for game feel)
 @export var h_bite_dash_anticipation_gravity_factor = 0.2 # Alucard gets a tiny bit of gravity during anticipation of bite dash.
 var h_bite_dash_anticipation_time: float

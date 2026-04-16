@@ -12,6 +12,7 @@ extends State
 var _dash_state : String # aim, shoot, pull
 var _time : float
 var _pull_direction : Vector2 
+var _pull_distance : float
 var _curr_angle : float
 var _starting_position : Vector2
 var _mantle_scalar : float
@@ -47,7 +48,7 @@ func update(delta: float):
 			if abs(player.velocity.x) >= mantle_impulse - 5:
 				player.apply_friction(delta, 2)
 				player.apply_gravity(delta * 2)
-			if player.is_on_floor():
+			if player.is_on_floor() || player.is_on_ceiling() || player.is_on_wall():
 				_detransform()
 
 func _aim_tongue(delta: float):
@@ -80,17 +81,19 @@ func _tip_touch_surface(body : Node2D):
 		if !player.tongue.is_raycast_colliding(): #angle the velocity higher if grabbing onto a ledge
 			_pull_direction.y -= sign(_pull_direction.x) * player.previous_direction * _curr_angle/2
 			_is_mantling = true 
+		_pull_distance = -player.tongue.tip.position.y - 32
 		player.tongue.hide_tongue()
 	if (body is Animal):
 		pass #TODO make it so animals are pulled toward the player
 
 # Moves player in the direction of the tongue
 func _pull_frog(delta: float):
-	player.velocity = player.velocity.move_toward(_pull_direction.normalized() * pull_speed, delta * pull_speed)
 	var _current_distance = _starting_position - player.global_position
-	if player.is_on_wall() || player.is_on_ceiling(): #when a player hits a tile surface
-		_detransform()
-	if _current_distance.length() >= tongue_length && _is_mantling: #mantle when distance moved is equal to tongue length and you're amntling
+	if _current_distance.length() <= _pull_distance:
+		player.velocity = player.velocity.move_toward(_pull_direction.normalized() * pull_speed, delta * pull_speed)
+	elif _current_distance.length() >= _pull_distance && !_is_mantling:
+		_detransform();
+	else: #mantle when distance moved is equal to tongue length and you're mantling
 		#.length() is magnitude of a Vector2 btw
 		_dash_state = "mantle"
 		_mantle_scalar = mantle_impulse if _pull_direction.x > 0 else -mantle_impulse #impulse direction

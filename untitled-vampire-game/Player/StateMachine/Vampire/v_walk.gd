@@ -2,7 +2,10 @@
 extends State
 
 func enter_state():
-	player.anim_sprite.play("vampire_walk")
+	if player.is_on_floor():
+		player.anim_sprite.play("vampire_walk")
+	else:
+		player.anim_sprite.play("vampire_fall")
 	#walk animation
 
 func update(delta: float):
@@ -10,6 +13,9 @@ func update(delta: float):
 	player.apply_friction(delta, 10)
 	player.apply_horizontal_movement(delta)
 	player.apply_gravity(delta)
+	
+	if player.anim_sprite.animation == "vampire_fall" && player.is_on_floor():
+		player.anim_sprite.play("vampire_walk")
 	
 	if player.velocity.x == 0:
 		transitionToState.emit("V_IDLE")

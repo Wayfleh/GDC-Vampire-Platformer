@@ -28,10 +28,13 @@ func update(delta: float):
 			return
 		# remove front of chamber and save it
 		var current_blood = GlobalData.blood_chamber.pop_front() 
-		if (current_blood == GlobalData.Animals.FROG 
-		&& v_machine.current_state != v_machine.states["V_BITEDASH"]):
-			sound_f_transform.play()
-			transitionToState.emit("FROG")
+		if (v_machine.current_state != v_machine.states["V_BITEDASH"]):
+			match current_blood:
+				GlobalData.Animals.FROG:
+					sound_f_transform.play()
+					transitionToState.emit("FROG")
+				GlobalData.Animals.RAT:
+					transitionToState.emit("RAT")
 		player.UpdateUI()
 	if player.is_on_floor():
 		player.bite_dash_used = false

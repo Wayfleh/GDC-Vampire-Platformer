@@ -1,6 +1,8 @@
 class_name Player
 extends CharacterBody2D
 
+#TODO remember that you commented out the UpdateUI() function
+
 #change speed, jump height, and gravity
 @export var speed: float = 500.0
 @export var jump_impulse: float = 500.0
@@ -17,10 +19,12 @@ var previous_direction : int = 1
 var bite_dash_used: bool = false
 @onready var bite_hitbox := $CurrentDirection/BiteHitbox
 @onready var tongue : Tongue = %Tongue #sahur
+@onready var rat_hole_interactor : Area2D = $RatHoleInteractor
 
 @onready var state_machine := $StateMachine
 @onready var collider := $Collider
 @onready var anim_sprite : AnimatedSprite2D = %AlucardSprite
+
 
 #---------- Particles ----------#
 @onready var blood_particles := $BloodParticles
@@ -158,9 +162,11 @@ func DetermineBiteDashDirection(currPos: Vector2, prevPos: Vector2, bite_dash_di
 
 func TransformToVampire():
 	detransform.emit()
-	
+
+
 func UpdateUI():
-	bloodContainer.UpdateBloodTokenSprites()
+	#bloodContainer.UpdateBloodTokenSprites()
+	pass
 
 func _process(delta):
 	if Input.is_action_just_pressed("restart"):

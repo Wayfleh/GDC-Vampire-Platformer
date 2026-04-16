@@ -17,7 +17,7 @@ func update(delta: float):
 	else:
 		player.apply_gravity(delta, 1)
 	
-	if player.is_on_floor() and !Input.is_action_pressed("jump"):
+	if player.is_on_floor() and !Input.is_action_just_pressed("jump"):
 		transitionToState.emit("V_IDLE")
 	
 	if player.velocity.y > 0 && !player.is_on_floor():
