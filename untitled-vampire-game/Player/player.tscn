@@ -303,8 +303,8 @@ target_position = Vector2(-10, 0)
 collide_with_areas = true
 
 [node name="BiteHitbox" type="Area2D" parent="CurrentDirection" unique_id=903445956]
-position = Vector2(6, 0)
-scale = Vector2(1.8249997, 1)
+position = Vector2(4, 0)
+scale = Vector2(1.25, 1)
 monitoring = false
 
 [node name="BiteHitboxCollider" type="CollisionShape2D" parent="CurrentDirection/BiteHitbox" unique_id=1419210328]
