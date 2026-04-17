@@ -29,6 +29,9 @@ func change_state(next: String):
 	current_state.exit_state()
 	next_state.enter_state()
 	current_state = next_state
+	
+	
+	
 	print(next)
 
 #sets the start state and enters it
