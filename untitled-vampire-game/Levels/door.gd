@@ -2,6 +2,8 @@ class_name Door extends Node2D
 
 @onready var door_area: Area2D = $DoorArea
 @onready var animal_number: Label = $AnimalNumber
+@onready var door_sprite: AnimatedSprite2D = $DoorSprite
+@onready var open_sound: AudioStreamPlayer2D = $openSound
 
 @export var next_level: PackedScene #Loads the next level
 ####
@@ -11,17 +13,31 @@ class_name Door extends Node2D
 # another level.
 ####
 
+var door_open: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalData.start_level()
 	GlobalData.update_animals_remaining.connect(update_animal_number)
-	update_animal_number()
 	door_area.body_entered.connect(check_level_complete)
 
-func check_level_complete(body: Node2D):
-	if body is Player && GlobalData.animals_remaining == 0:
-		
+	# start closed
+	door_sprite.play("closed")
+	update_animal_number()
+
+func check_level_complete(body: Node2D) -> void:
+	if body is Player and door_open:
 		GlobalData.next_level(next_level)
 
-func update_animal_number():
+func update_animal_number() -> void:
 	animal_number.text = str(GlobalData.animals_remaining)
+
+	if GlobalData.animals_remaining == 0 and not door_open:
+		open_door()
+		
+
+func open_door() -> void:
+	door_open = true
+	door_sprite.play("open")
+	open_sound.play()
+	print("door opening")
