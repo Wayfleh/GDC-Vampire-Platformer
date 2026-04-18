@@ -9,10 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://c3pq0s83y2m0c" path="res://Art/Placeholder/Blood.png" id="4_gu6f8"]
 [ext_resource type="Script" uid="uid://cvmgnpcu1e2fx" path="res://Player/StateMachine/Vampire/v_idle.gd" id="4_gwnis"]
 [ext_resource type="Texture2D" uid="uid://cc66m3c5e2wgo" path="res://Art/Placeholder/frog-sprite_movement_placeholder.png" id="4_n471f"]
+[ext_resource type="Texture2D" uid="uid://bd4436nmhy81h" path="res://Art/Sprites/VampFrog/vampfrogchargeLEFT.png" id="5_jp1hh"]
 [ext_resource type="Script" uid="uid://bgueu3iyq1rde" path="res://Player/StateMachine/Vampire/v_walk.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://bjqu6w4wos8p3" path="res://Player/tongue.gd" id="5_pisgm"]
 [ext_resource type="Script" uid="uid://d1lffwqtnbmrr" path="res://Player/StateMachine/Vampire/v_jump.gd" id="6_fhl08"]
 [ext_resource type="Texture2D" uid="uid://cohmv3yh0w0qg" path="res://Art/Placeholder/anim_bitedash_outline.png" id="6_hshwv"]
+[ext_resource type="Texture2D" uid="uid://brfknisqitbyx" path="res://Art/Sprites/VampFrog/vampfrogchargeRIGHT.png" id="6_iyprq"]
+[ext_resource type="Texture2D" uid="uid://dit5rxstgak84" path="res://Art/Sprites/VampFrog/vampfrog-sprite_movement.png" id="7_f4lon"]
 [ext_resource type="Texture2D" uid="uid://klemtshlyb88" path="res://Art/Placeholder/anim_jump_outline.png" id="7_gpjlu"]
 [ext_resource type="Script" uid="uid://b0qyabcc0hn7j" path="res://Player/StateMachine/state_machine.gd" id="7_pisgm"]
 [ext_resource type="Script" uid="uid://cbxp42c2drvct" path="res://Player/StateMachine/Frog/frog_state.gd" id="8_00tjw"]
@@ -25,13 +28,13 @@
 [ext_resource type="Script" uid="uid://pfkhuqvmdxwe" path="res://Player/StateMachine/Frog/f_bitedash.gd" id="16_lfmf2"]
 [ext_resource type="AudioStream" uid="uid://btvej03tmgjeh" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Dash_Pass2(1).wav" id="24_8mwp6"]
 [ext_resource type="AudioStream" uid="uid://b1wu7ixox6b0y" path="res://Sounds/Player Sounds/VampirePlatformerSFX_BiteDeepFried.wav" id="24_8viyr"]
-[ext_resource type="Script" uid="uid://bvfkkmorxks4j" path="res://Player/StateMachine/Rat/rat_state.gd" id="24_j2n6q"]
+[ext_resource type="Script" path="res://Player/StateMachine/Rat/rat_state.gd" id="24_j2n6q"]
 [ext_resource type="AudioStream" uid="uid://bwr2xvc3k6y6h" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Jump_Pass2.wav" id="24_qemgg"]
-[ext_resource type="Script" uid="uid://d1kl88gv13gwb" path="res://Player/StateMachine/Rat/r_idle.gd" id="25_i4o1l"]
-[ext_resource type="Script" uid="uid://b3tu667olgsaf" path="res://Player/StateMachine/Rat/r_walk.gd" id="26_c6x0f"]
+[ext_resource type="Script" path="res://Player/StateMachine/Rat/r_idle.gd" id="25_i4o1l"]
+[ext_resource type="Script" path="res://Player/StateMachine/Rat/r_walk.gd" id="26_c6x0f"]
 [ext_resource type="AudioStream" uid="uid://4alwcgkpnmgn" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FrogDeepFried.wav" id="27_76lrf"]
-[ext_resource type="Script" uid="uid://b8bgimunhfuf" path="res://Player/StateMachine/Rat/r_jump.gd" id="27_c6x0f"]
-[ext_resource type="Script" uid="uid://bcj6i4xd2x1dw" path="res://Player/StateMachine/Rat/r_bitedash.gd" id="28_c6x0f"]
+[ext_resource type="Script" path="res://Player/StateMachine/Rat/r_jump.gd" id="27_c6x0f"]
+[ext_resource type="Script" path="res://Player/StateMachine/Rat/r_bitedash.gd" id="28_c6x0f"]
 [ext_resource type="AudioStream" uid="uid://cg7n6v22ssnlu" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FrogJump.wav" id="28_efx54"]
 [ext_resource type="AudioStream" uid="uid://cmpm0k80o6mw8" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FootstepsFrog_1.wav" id="29_755ss"]
 [ext_resource type="AudioStream" uid="uid://kq0ic1wajuar" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FootstepsFrog_2.wav" id="30_bbimk"]
@@ -46,6 +49,18 @@ radius = 16.0
 [sub_resource type="Gradient" id="Gradient_dkpta"]
 interpolation_mode = 2
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.3529412)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d30e8"]
+atlas = ExtResource("5_jp1hh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pogt"]
+atlas = ExtResource("6_iyprq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie76m"]
+atlas = ExtResource("7_f4lon")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n471f"]
 atlas = ExtResource("3_o28un")
@@ -133,7 +148,26 @@ region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p5o4e"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d30e8")
+}],
+"loop": true,
+"name": &"frog_charge_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pogt")
+}],
+"loop": true,
+"name": &"frog_charge_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ie76m")
+}],
 "loop": true,
 "name": &"frog_idle_left",
 "speed": 5.0
@@ -286,7 +320,7 @@ color_ramp = SubResource("Gradient_dkpta")
 unique_name_in_owner = true
 scale = Vector2(1.1, 1.1)
 sprite_frames = SubResource("SpriteFrames_p5o4e")
-animation = &"vampire_idle"
+animation = &"vampire_jump"
 offset = Vector2(0, 1)
 
 [node name="Tongue" type="Node2D" parent="CurrentDirection" unique_id=949118960]
@@ -324,12 +358,12 @@ position = Vector2(-15, -32)
 target_position = Vector2(-10, 0)
 collide_with_areas = true
 
-[node name="BiteHitbox" type="Area2D" parent="CurrentDirection" unique_id=903445956]
+[node name="BiteHitbox" type="Area2D" parent="CurrentDirection" unique_id=457054568]
 position = Vector2(4, 0)
 scale = Vector2(1.25, 1)
 monitoring = false
 
-[node name="BiteHitboxCollider" type="CollisionShape2D" parent="CurrentDirection/BiteHitbox" unique_id=1419210328]
+[node name="BiteHitboxCollider" type="CollisionShape2D" parent="CurrentDirection/BiteHitbox" unique_id=1808482269]
 shape = SubResource("CapsuleShape2D_gwnis")
 
 [node name="BloodParticles" type="CPUParticles2D" parent="." unique_id=158508271]

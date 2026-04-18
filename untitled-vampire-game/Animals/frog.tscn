@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dkvv6omrwiey4" path="res://Animals/animal.gd" id="1_kkmoe"]
 [ext_resource type="Texture2D" uid="uid://cmbmpbhioot37" path="res://Art/Placeholder/frog-placeholder.png" id="2_cby5x"]
-[ext_resource type="SpriteFrames" uid="uid://bnknrp4ydh6we" path="res://Art/Sprites/frogSleepAnimFrames.tres" id="2_o8yfw"]
+[ext_resource type="SpriteFrames" uid="uid://bnknrp4ydh6we" path="res://Art/Sprites/frog animal/frogSleepAnimFrames.tres" id="2_o8yfw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cby5x"]
 radius = 16.0
