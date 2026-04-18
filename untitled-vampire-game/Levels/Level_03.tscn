@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="4_6hhfj"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="4_ckkmn"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="5_ik50e"]
-[ext_resource type="PackedScene" uid="uid://b0k8exahby8da" path="res://Levels/door.tscn" id="6_t4xos"]
+[ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="6_t4xos"]
 [ext_resource type="PackedScene" uid="uid://b81xfqhj2clb" path="res://UI/MainMenu.tscn" id="7_t4xos"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ik50e"]
@@ -163,6 +163,9 @@ position = Vector2(-99, 175)
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("4_ckkmn")]
 position = Vector2(-291, 137)
+
+[node name="AlucardSprite" parent="Player/CurrentDirection" parent_id_path=PackedInt32Array(644735785, 30504841) index="0" unique_id=980260689]
+animation = &"frog_charge_left"
 
 [node name="TongueTipCollider" parent="Player/CurrentDirection/Tongue/TipPivot/TongueTip" parent_id_path=PackedInt32Array(644735785, 620725349) index="0" unique_id=1406688466]
 position = Vector2(-1.1920929e-07, -1.1920929e-07)
