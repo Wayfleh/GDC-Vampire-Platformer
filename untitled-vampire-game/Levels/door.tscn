@@ -1,7 +1,63 @@
 [gd_scene format=3 uid="uid://kjx4sjwtkgui"]
 
 [ext_resource type="Script" uid="uid://deywo0q4v1kj8" path="res://Levels/door.gd" id="1_c5cab"]
-[ext_resource type="Texture2D" uid="uid://drjea6vsif8cw" path="res://Art/Placeholder/door_placeholder.png" id="2_obau8"]
+[ext_resource type="Texture2D" uid="uid://dhf8xaawmn15n" path="res://Art/Custom Icons/anim_gate.png" id="3_o6o21"]
+[ext_resource type="AudioStream" uid="uid://b01i8t583rqe7" path="res://Sounds/enviornment/DoorOpening.wav" id="4_tf1mp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obau8"]
+atlas = ExtResource("3_o6o21")
+region = Rect2(0, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xk5ei"]
+atlas = ExtResource("3_o6o21")
+region = Rect2(0, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ff3j"]
+atlas = ExtResource("3_o6o21")
+region = Rect2(70, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvmb6"]
+atlas = ExtResource("3_o6o21")
+region = Rect2(140, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wj2b2"]
+atlas = ExtResource("3_o6o21")
+region = Rect2(210, 0, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijyei"]
+atlas = ExtResource("3_o6o21")
+region = Rect2(280, 0, 70, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lw0lb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obau8")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xk5ei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ff3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvmb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wj2b2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijyei")
+}],
+"loop": false,
+"name": &"open",
+"speed": 4.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ppseb"]
 size = Vector2(32, 64)
@@ -9,10 +65,11 @@ size = Vector2(32, 64)
 [node name="Door" type="Node2D" unique_id=1512673174]
 script = ExtResource("1_c5cab")
 
-[node name="DoorSprite" type="Sprite2D" parent="." unique_id=663578245]
+[node name="DoorSprite" type="AnimatedSprite2D" parent="." unique_id=705122334]
 position = Vector2(0, 5)
-scale = Vector2(0.4096245, 0.4096245)
-texture = ExtResource("2_obau8")
+scale = Vector2(1.0577452, 1.0652128)
+sprite_frames = SubResource("SpriteFrames_lw0lb")
+animation = &"open"
 
 [node name="AnimalNumber" type="Label" parent="." unique_id=66334771]
 anchors_preset = 8
@@ -34,3 +91,6 @@ horizontal_alignment = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea" unique_id=37752270]
 position = Vector2(-0.5, 4.5)
 shape = SubResource("RectangleShape2D_ppseb")
+
+[node name="openSound" type="AudioStreamPlayer2D" parent="." unique_id=1606020849]
+stream = ExtResource("4_tf1mp")
