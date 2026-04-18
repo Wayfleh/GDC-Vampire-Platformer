@@ -1,6 +1,19 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://bnknrp4ydh6we"]
 
+[ext_resource type="Texture2D" uid="uid://dg1myou1w04f8" path="res://Art/Sprites/frog animal/frog-sprite_ko.png" id="1_ta0x4"]
 [ext_resource type="Texture2D" uid="uid://ru118gflge1i" path="res://Art/Sprites/frog-sprite_sleep.png" id="1_v7fr1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34v5p"]
+atlas = ExtResource("1_ta0x4")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26n40"]
+atlas = ExtResource("1_ta0x4")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksh8s"]
+atlas = ExtResource("1_ta0x4")
+region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0f33c"]
 atlas = ExtResource("1_v7fr1")
@@ -52,6 +65,20 @@ region = Rect2(352, 0, 32, 32)
 
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34v5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26n40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksh8s")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0f33c")
