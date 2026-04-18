@@ -17,6 +17,10 @@ var death_started: bool = false
 func _ready():
 	add_to_group("animals")
 	print("Animal ready:", name, " group_count=", get_tree().get_nodes_in_group("animals").size())
+	if has_node("AnimatedSprite2D"):
+		var sprite = $AnimatedSprite2D
+		if sprite.sprite_frames and sprite.sprite_frames.has_animation("snooze"):
+			sprite.play("snooze")
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
