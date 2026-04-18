@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wurckykebycy"
-path="res://.godot/imported/button.png-5b4276a2e949b2dab55265215c16767e.ctex"
+uid="uid://ch2hmdadbxp3o"
+path="res://.godot/imported/gate.png-84e4b27648725f60c62d5f33babe30ed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/UI/button.png"
-dest_files=["res://.godot/imported/button.png-5b4276a2e949b2dab55265215c16767e.ctex"]
+source_file="res://Art/Custom Icons/gate.png"
+dest_files=["res://.godot/imported/gate.png-84e4b27648725f60c62d5f33babe30ed.ctex"]
 
 [params]
 

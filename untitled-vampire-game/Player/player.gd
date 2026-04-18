@@ -136,13 +136,22 @@ func apply_input_direction(delta: float):
 
 func bite_animal(area: Area2D):
 	if area is Animal:
+		#fix to it counting the animal twice due to death animation
+		if area.is_dead:
+			return
+		
 		just_bit_animal = true
+		bite_hitbox.monitoring = false
 		sound_v_animal_bitten.play()
 		blood_particles.restart()
 		GlobalData.blood_collected(area)
-		area.queue_free()
 		GlobalData.animal_bitten()
 		UpdateUI()
+		
+		if area.has_method("die_from_bite_dash"):
+			area.die_from_bite_dash(previous_direction)
+		else:
+			area.queue_free()
 		
 
 # Using player velocity to determine Bite Dash facing direction

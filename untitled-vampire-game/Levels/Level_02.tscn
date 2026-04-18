@@ -117,7 +117,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ri7ki")
 sources/1 = SubResource("TileSetAtlasSource_sv6oy")
 
-[node name="Level2" type="Node2D" unique_id=1583682183]
+[node name="Level4" type="Node2D" unique_id=1583682183]
 script = ExtResource("1_ri7ki")
 
 [node name="BGImage" type="Sprite2D" parent="." unique_id=1739098038]
