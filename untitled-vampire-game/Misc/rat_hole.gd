@@ -1,4 +1,5 @@
 class_name Hole extends Area2D
+#for overlapping holes, priority is scene tree order
 
 @export var other_hole: Hole
 

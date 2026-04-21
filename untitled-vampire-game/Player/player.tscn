@@ -291,7 +291,6 @@ offset = Vector2(0, 1)
 
 [node name="Tongue" type="Node2D" parent="CurrentDirection" unique_id=949118960]
 unique_name_in_owner = true
-visible = false
 rotation = 0.7853982
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("5_pisgm")
@@ -315,14 +314,32 @@ rotation = 3.1415927
 texture = ExtResource("4_gu6f8")
 
 [node name="MantleFront" type="RayCast2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=1556445343]
-position = Vector2(15.000002, -32.000004)
+position = Vector2(15, -28)
 target_position = Vector2(10, 0)
+hit_from_inside = true
 collide_with_areas = true
 
 [node name="MantleBack" type="RayCast2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=1470586653]
-position = Vector2(-15, -32)
+position = Vector2(-15, -28)
 target_position = Vector2(-10, 0)
+hit_from_inside = true
 collide_with_areas = true
+
+[node name="BackCheck" type="RayCast2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=1817393569]
+position = Vector2(-1, 14)
+target_position = Vector2(-15, 0)
+
+[node name="FrontCheck" type="RayCast2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=1405425635]
+position = Vector2(1, 14)
+target_position = Vector2(15, 0)
+
+[node name="BiteHitbox" type="Area2D" parent="CurrentDirection" unique_id=908817078]
+position = Vector2(4, 0)
+scale = Vector2(1.25, 1)
+monitoring = false
+
+[node name="BiteHitboxCollider" type="CollisionShape2D" parent="CurrentDirection/BiteHitbox" unique_id=1674479944]
+shape = SubResource("CapsuleShape2D_gwnis")
 
 [node name="BloodParticles" type="CPUParticles2D" parent="." unique_id=158508271]
 emitting = false
@@ -389,7 +406,7 @@ tongue_length = 200.0
 rotation_speed = 5.0
 tip_speed = 500.0
 max_angle = 60.0
-mantle_impulse = 1000.0
+mantle_impulse = 300.0
 mantle_angle = 25.0
 
 [node name="RAT" type="Node" parent="TransformationSM" unique_id=1041574165]

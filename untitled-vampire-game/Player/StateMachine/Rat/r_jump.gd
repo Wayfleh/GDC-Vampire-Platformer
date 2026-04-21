@@ -15,7 +15,8 @@ func update(delta: float):
 	
 	if !teleporting:
 		for area in areas:
-			if area is Hole:
+			if area is Hole: 
+				#below block happens only once, so you can just call a method too
 				player.global_position = area.ratTeleport()
 				teleporting = true
 	

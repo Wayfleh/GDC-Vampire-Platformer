@@ -158,10 +158,10 @@ next_level = ExtResource("7_c8ve7")
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("2_ce6vd")]
 position = Vector2(-416, 171)
 
-[node name="SoundF_Transform" parent="Player" index="11" unique_id=290602985]
+[node name="SoundF_Transform" parent="Player" index="12" unique_id=290602985]
 volume_db = 6.0
 
-[node name="SoundF_Jump" parent="Player" index="12" unique_id=284681269]
+[node name="SoundF_Jump" parent="Player" index="13" unique_id=284681269]
 volume_db = 12.0
 
 [node name="UI" parent="." unique_id=889175113 instance=ExtResource("5_c8ve7")]

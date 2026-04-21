@@ -153,12 +153,16 @@ tile_set = SubResource("TileSet_ar74x")
 position = Vector2(-87, 171)
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("7_msylf")]
-position = Vector2(-195, 59)
+position = Vector2(-172, 1)
 
 [node name="RatHole" parent="." unique_id=1798485280 node_paths=PackedStringArray("other_hole") instance=ExtResource("8_h3nto")]
 position = Vector2(-263, 164)
 other_hole = NodePath("../RatHole2")
 
 [node name="RatHole2" parent="." unique_id=732324240 node_paths=PackedStringArray("other_hole") instance=ExtResource("8_h3nto")]
-position = Vector2(108, 163)
+position = Vector2(83, -32)
+other_hole = NodePath("../RatHole")
+
+[node name="RatHole3" parent="." unique_id=951862880 node_paths=PackedStringArray("other_hole") instance=ExtResource("8_h3nto")]
+position = Vector2(32, 161)
 other_hole = NodePath("../RatHole")

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="2_mtno4"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="3_tdu8r"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="4_2o7fp"]
-[ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="5_lkd0j"]
+[ext_resource type="PackedScene" uid="uid://b0k8exahby8da" path="res://Levels/door.tscn" id="5_lkd0j"]
 [ext_resource type="PackedScene" uid="uid://yxb6hakqw03p" path="res://Levels/Level_02.tscn" id="6_yu5cb"]
 
 [node name="Level1" type="Node2D" unique_id=1583682183]
@@ -49,20 +49,9 @@ position = Vector2(-109, -194)
 next_level = ExtResource("6_yu5cb")
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("2_mtno4")]
-position = Vector2(-110, 91)
-
-[node name="FootstepPlayer" parent="Player" index="7" unique_id=858939323]
-volume_db = 12.0
-
-[node name="SoundV_AnimalBitten" parent="Player" index="9" unique_id=1515482835]
-volume_db = 15.0
-
-[node name="SoundV_BiteDash" parent="Player" index="10" unique_id=1899384871]
-volume_db = 10.0
+position = Vector2(-106, 116)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
 
 [node name="UI" parent="." unique_id=889175113 instance=ExtResource("4_2o7fp")]
 unique_name_in_owner = true
-
-[editable path="Player"]
