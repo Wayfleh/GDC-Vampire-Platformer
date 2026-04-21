@@ -26,6 +26,12 @@ func update(delta: float):
 		player.apply_input_direction(delta)
 		if (Input.is_action_just_pressed("bite_dash")):
 			r_machine.change_state("R_BITEDASH")
+	
+	# Detransforming can only be available the frame AFTER pressing the transform button.
+	# Please let me know if there's a better way of doing this. Other solutions I've tried
+	#	end up transforming and detransforming within the same frame.
+	if player.isTransformed == false:
+		player.isTransformed = true
 
 func _transform_to_vampire():
 	transitionToState.emit("VAMPIRE")

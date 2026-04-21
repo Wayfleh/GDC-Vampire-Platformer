@@ -24,6 +24,7 @@ var bite_dash_used: bool = false
 @onready var state_machine := $TransformationSM
 @onready var collider := $Collider
 @onready var anim_sprite : AnimatedSprite2D = %AlucardSprite
+@onready var isTransformed : bool = false #Keep track if Alacarte is an animal for detransformation
 
 
 #---------- Particles ----------#
@@ -174,7 +175,7 @@ func TransformToVampire():
 
 
 func UpdateUI():
-	#bloodContainer.UpdateBloodTokenSprites()
+	bloodContainer.UpdateBloodTokenSprites()
 	pass
 
 func _process(delta):
@@ -189,4 +190,7 @@ func _process(delta):
 		return
 		
 	if Input.is_action_just_pressed("transform") && state_machine.current_state != state_machine.states["VAMPIRE"]:
-		TransformToVampire()
+		if isTransformed == true:
+			TransformToVampire()
+			isTransformed = false
+			return
