@@ -21,7 +21,7 @@ var bite_dash_used: bool = false
 @onready var tongue : Tongue = %Tongue #sahur
 @onready var rat_hole_interactor : Area2D = $RatHoleInteractor
 
-@onready var state_machine := $StateMachine
+@onready var state_machine := $TransformationSM
 @onready var collider := $Collider
 @onready var anim_sprite : AnimatedSprite2D = %AlucardSprite
 
@@ -187,3 +187,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("blood_cycle"):
 		GlobalData.blood_cycle()
 		return
+		
+	if Input.is_action_just_pressed("transform") && state_machine.current_state != state_machine.states["VAMPIRE"]:
+		TransformToVampire()

@@ -18,6 +18,8 @@ func enter_state():
 	player.jump_impulse = R_JUMP_IMPULSE
 	player.gravity = R_GRAVITY
 	player.friction = R_FRICTION
+	
+	player.detransform.connect(_transform_to_vampire)
 
 func update(delta: float):
 	if r_machine.current_state != r_machine.states["R_BITEDASH"]: #don't apply direction in bitedash
@@ -25,6 +27,8 @@ func update(delta: float):
 		if (Input.is_action_just_pressed("bite_dash")):
 			r_machine.change_state("R_BITEDASH")
 
+func _transform_to_vampire():
+	transitionToState.emit("VAMPIRE")
 
 #turn off processing for statemachine
 func exit_state():

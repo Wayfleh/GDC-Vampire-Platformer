@@ -42,7 +42,11 @@ func update(delta: float):
 			f_machine.change_state("F_BITEDASH")
 
 func _transform_to_vampire():
-	transitionToState.emit("VAMPIRE")
+	if f_machine.current_state != f_machine.states["F_BITEDASH"]:
+		transitionToState.emit("VAMPIRE")
+	else:
+		print("frog_state.gd -- _transform_to_vampire(): Cannot detransform during F_BITEDASH")
+	return
 
 #turn off processing for statemachine
 func exit_state():
