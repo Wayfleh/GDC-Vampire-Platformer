@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="5_yvtbi"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="6_8gc7i"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="7_cf272"]
-[ext_resource type="PackedScene" uid="uid://diikfmb37a8dg" path="res://Levels/Level_07.tscn" id="8_dkq1i"]
+[ext_resource type="PackedScene" uid="uid://76ry78xjb2aw" path="res://Levels/Level_07.tscn" id="8_dkq1i"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="9_rjv3q"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="10_h0i70"]
 
