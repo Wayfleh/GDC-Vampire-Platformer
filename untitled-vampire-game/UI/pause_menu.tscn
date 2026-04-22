@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://liqoin2k28fj"]
+[gd_scene format=3 uid="uid://dgn8ajamtynwx"]
 
 [ext_resource type="Script" uid="uid://e62g0m22g3oi" path="res://UI/pause_menu.gd" id="1_ltd3m"]
 
 [node name="Pause Menu" type="Control" unique_id=2101282950]
-process_mode = 3
+process_mode = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,3 +49,18 @@ text = "Restart"
 [node name="Main Menu" type="Button" parent="Buttons" unique_id=1171522702]
 layout_mode = 2
 text = "Main Menu"
+
+[node name="CustomKeybinds" type="Button" parent="Buttons" unique_id=2055838474]
+layout_mode = 2
+text = "Customize Keybinds"
+
+[node name="ResetDefaults" type="Button" parent="Buttons" unique_id=1675966085]
+layout_mode = 2
+text = "Reset Defaults"
+
+[node name="RebindStatus" type="Label" parent="." unique_id=1878967351]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 332.0
+offset_right = 546.0
+offset_bottom = 355.0

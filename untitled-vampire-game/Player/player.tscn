@@ -9,10 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://c3pq0s83y2m0c" path="res://Art/Placeholder/Blood.png" id="4_gu6f8"]
 [ext_resource type="Script" uid="uid://cvmgnpcu1e2fx" path="res://Player/StateMachine/Vampire/v_idle.gd" id="4_gwnis"]
 [ext_resource type="Texture2D" uid="uid://cc66m3c5e2wgo" path="res://Art/Placeholder/frog-sprite_movement_placeholder.png" id="4_n471f"]
+[ext_resource type="Texture2D" uid="uid://bd4436nmhy81h" path="res://Art/Sprites/VampFrog/vampfrogchargeLEFT.png" id="5_jp1hh"]
 [ext_resource type="Script" uid="uid://bgueu3iyq1rde" path="res://Player/StateMachine/Vampire/v_walk.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://bjqu6w4wos8p3" path="res://Player/tongue.gd" id="5_pisgm"]
 [ext_resource type="Script" uid="uid://d1lffwqtnbmrr" path="res://Player/StateMachine/Vampire/v_jump.gd" id="6_fhl08"]
 [ext_resource type="Texture2D" uid="uid://cohmv3yh0w0qg" path="res://Art/Placeholder/anim_bitedash_outline.png" id="6_hshwv"]
+[ext_resource type="Texture2D" uid="uid://brfknisqitbyx" path="res://Art/Sprites/VampFrog/vampfrogchargeRIGHT.png" id="6_iyprq"]
+[ext_resource type="Texture2D" uid="uid://dit5rxstgak84" path="res://Art/Sprites/VampFrog/vampfrog-sprite_movement.png" id="7_f4lon"]
 [ext_resource type="Texture2D" uid="uid://klemtshlyb88" path="res://Art/Placeholder/anim_jump_outline.png" id="7_gpjlu"]
 [ext_resource type="Script" uid="uid://b0qyabcc0hn7j" path="res://Player/StateMachine/state_machine.gd" id="7_pisgm"]
 [ext_resource type="Script" uid="uid://cbxp42c2drvct" path="res://Player/StateMachine/Frog/frog_state.gd" id="8_00tjw"]
@@ -46,6 +49,18 @@ radius = 16.0
 [sub_resource type="Gradient" id="Gradient_dkpta"]
 interpolation_mode = 2
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.3529412)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d30e8"]
+atlas = ExtResource("5_jp1hh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6pogt"]
+atlas = ExtResource("6_iyprq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie76m"]
+atlas = ExtResource("7_f4lon")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n471f"]
 atlas = ExtResource("3_o28un")
@@ -133,7 +148,26 @@ region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p5o4e"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d30e8")
+}],
+"loop": true,
+"name": &"frog_charge_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6pogt")
+}],
+"loop": true,
+"name": &"frog_charge_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ie76m")
+}],
 "loop": true,
 "name": &"frog_idle_left",
 "speed": 5.0
@@ -286,7 +320,7 @@ color_ramp = SubResource("Gradient_dkpta")
 unique_name_in_owner = true
 scale = Vector2(1.1, 1.1)
 sprite_frames = SubResource("SpriteFrames_p5o4e")
-animation = &"vampire_idle"
+animation = &"vampire_jump"
 offset = Vector2(0, 1)
 
 [node name="Tongue" type="Node2D" parent="CurrentDirection" unique_id=949118960]
@@ -472,4 +506,4 @@ volume_db = 8.0
 stream = ExtResource("30_bbimk")
 volume_db = 8.0
 
-[connection signal="area_entered" from="BiteHitbox" to="." method="bite_animal"]
+[connection signal="area_entered" from="CurrentDirection/BiteHitbox" to="." method="bite_animal"]

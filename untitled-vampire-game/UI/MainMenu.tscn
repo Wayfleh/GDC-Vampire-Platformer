@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://diqn6wfdtampl" path="res://UI/main_menu.gd" id="1_uahxu"]
 [ext_resource type="Texture2D" uid="uid://cauwnol1d8fiv" path="res://Art/titlescreen_draft.png" id="2_b37jj"]
+[ext_resource type="Texture2D" uid="uid://c4sg6kquxb5te" path="res://Art/UI/buttons/start_button.png" id="3_8aown"]
+[ext_resource type="Texture2D" uid="uid://dprwbakel8t78" path="res://Art/UI/buttons/quitButton.png" id="4_t6syg"]
+[ext_resource type="Texture2D" uid="uid://dt0umpmv2pm48" path="res://Art/UI/buttons/CreditsButton.png" id="5_y6s48"]
 
 [node name="MainMenu" type="Control" unique_id=960027890]
 layout_mode = 3
@@ -19,10 +22,11 @@ texture = ExtResource("2_b37jj")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1240355915]
 layout_mode = 0
-offset_left = -169.0
-offset_top = 1.0
-offset_right = 759.0
-offset_bottom = 513.0
+offset_left = -138.0
+offset_top = 51.0
+offset_right = 790.0
+offset_bottom = 670.0
+scale = Vector2(0.7022475, 0.70475435)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=555649148]
 layout_mode = 2
@@ -33,21 +37,17 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "                           "
 
-[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1923562459]
+[node name="PlayButton" type="TextureButton" parent="CenterContainer/VBoxContainer" unique_id=1059689758]
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
-text = "Play"
+texture_normal = ExtResource("3_8aown")
 
-[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=897737868]
+[node name="QuitButton2" type="TextureButton" parent="CenterContainer/VBoxContainer" unique_id=207464797]
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
-text = "Quit"
+texture_normal = ExtResource("4_t6syg")
 
-[node name="CreditsButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=464969344]
+[node name="CreditsButton" type="TextureButton" parent="CenterContainer/VBoxContainer" unique_id=1248020181]
 layout_mode = 2
-theme_override_font_sizes/font_size = 34
-text = "Credits"
+texture_normal = ExtResource("5_y6s48")
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton2" to="." method="_on_quit_button_2_pressed"]

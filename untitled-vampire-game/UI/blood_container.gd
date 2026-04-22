@@ -40,6 +40,7 @@ func _process(delta: float) -> void:
 		return
 
 func PerformCycleAnimation():
+	#TODO: Add animations here
 	UpdateBloodTokenSprites()
 	pass
 

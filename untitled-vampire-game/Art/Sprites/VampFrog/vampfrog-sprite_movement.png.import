@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ru118gflge1i"
-path="res://.godot/imported/frog-sprite_sleep.png-fb0f8cb78ca8f258e0971f225f852e5b.ctex"
+uid="uid://dit5rxstgak84"
+path="res://.godot/imported/vampfrog-sprite_movement.png-2e00c5ee50b0630976c2fdd09823b6e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Sprites/frog-sprite_sleep.png"
-dest_files=["res://.godot/imported/frog-sprite_sleep.png-fb0f8cb78ca8f258e0971f225f852e5b.ctex"]
+source_file="res://Art/Sprites/VampFrog/vampfrog-sprite_movement.png"
+dest_files=["res://.godot/imported/vampfrog-sprite_movement.png-2e00c5ee50b0630976c2fdd09823b6e4.ctex"]
 
 [params]
 

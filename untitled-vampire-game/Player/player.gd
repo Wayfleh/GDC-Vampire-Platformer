@@ -17,13 +17,14 @@ var direction : int #either forward (1) or backward (-1)
 #---------- For Bite Dash ----------#
 var previous_direction : int = 1
 var bite_dash_used: bool = false
-@onready var bite_hitbox := $BiteHitbox
+@onready var bite_hitbox := $CurrentDirection/BiteHitbox
 @onready var tongue : Tongue = %Tongue #sahur
 @onready var rat_hole_interactor : Area2D = $RatHoleInteractor
 
-@onready var state_machine := $StateMachine
+@onready var state_machine := $TransformationSM
 @onready var collider := $Collider
 @onready var anim_sprite : AnimatedSprite2D = %AlucardSprite
+@onready var isTransformed : bool = false #Keep track if Alacarte is an animal for detransformation
 
 
 #---------- Particles ----------#
@@ -136,13 +137,22 @@ func apply_input_direction(delta: float):
 
 func bite_animal(area: Area2D):
 	if area is Animal:
+		#fix to it counting the animal twice due to death animation
+		if area.is_dead:
+			return
+		
 		just_bit_animal = true
+		bite_hitbox.monitoring = false
 		sound_v_animal_bitten.play()
 		blood_particles.restart()
-		GlobalData.blood_chamber.push_front(area.type)
-		area.queue_free()
+		GlobalData.blood_collected(area)
 		GlobalData.animal_bitten()
 		UpdateUI()
+		
+		if area.has_method("die_from_bite_dash"):
+			area.die_from_bite_dash(previous_direction)
+		else:
+			area.queue_free()
 		
 
 # Using player velocity to determine Bite Dash facing direction
@@ -165,9 +175,22 @@ func TransformToVampire():
 
 
 func UpdateUI():
-	#bloodContainer.UpdateBloodTokenSprites()
+	bloodContainer.UpdateBloodTokenSprites()
 	pass
 
 func _process(delta):
 	if Input.is_action_just_pressed("restart"):
+		GlobalData.blood_chamber.clear()
+		UpdateUI()
 		get_tree().reload_current_scene()
+		return
+	
+	if Input.is_action_just_pressed("blood_cycle"):
+		GlobalData.blood_cycle()
+		return
+		
+	if Input.is_action_just_pressed("transform") && state_machine.current_state != state_machine.states["VAMPIRE"]:
+		if isTransformed == true:
+			TransformToVampire()
+			isTransformed = false
+			return
