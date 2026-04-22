@@ -18,7 +18,7 @@ var _blink_timer: float = 0.0
 var _show_charge_frame: bool = false
 
 @onready var sound_f_jump: AudioStreamPlayer2D = $"../../../../SoundF_Jump"
-@onready var frog_sprite: AnimatedSprite2D = $"../../../../CurrentDirection/AlucardSprite"
+@onready var frog_sprite: AnimatedSprite2D
 
 # TODO remove this shit later,
 var ARBITRARY_MAGIC_MAX_AIR_SPEED: float = 300.0
@@ -33,20 +33,15 @@ func enter_state():
 	_time = 0.0
 	_jump_state = "charge"
 	_curr_jump_mult = _max_jump_mult
-	var dir : float = sign(float(player.previous_direction))
-	if dir == 0:
-		dir = 1
-	_jump_facing_direction = int(dir)
 	
-	frog_sprite.flip_h = false
-	frog_sprite.scale.x = abs(frog_sprite.scale.x)
 
-	print("previous_direction = ", player.previous_direction)
-	print("saved jump facing = ", _jump_facing_direction)
 
 	_blink_timer = slow_blink_interval
 	_show_charge_frame = false
-	frog_sprite.play(_get_frog_idle_animation())
+	frog_sprite = player.anim_sprite
+	
+	#frog_sprite.play(_get_frog_idle_animation())
+	
 
 
 func update(delta: float):
@@ -76,30 +71,18 @@ func _update_charge_blink(delta: float):
 
 	if _blink_timer <= 0.0:
 		_show_charge_frame = !_show_charge_frame
-		frog_sprite.flip_h = false
-		frog_sprite.scale.x = abs(frog_sprite.scale.x)
 
+		var animation: String
 		if _show_charge_frame:
-			frog_sprite.play(_get_frog_charge_animation())
+			animation = "frog_charge_right"
 		else:
-			frog_sprite.play(_get_frog_idle_animation())
+			animation = "frog_idle_right"
 
+		frog_sprite.play(animation)
 		var current_interval := lerpf(slow_blink_interval, fast_blink_interval, charge_ratio)
 		_blink_timer = current_interval
 
 
-func _get_frog_idle_animation() -> String:
-	if _jump_facing_direction < 0:
-		return "frog_idle_left"
-	else:
-		return "frog_idle_right"
-
-
-func _get_frog_charge_animation() -> String:
-	if _jump_facing_direction < 0:
-		return "frog_charge_left"
-	else:
-		return "frog_charge_right"
 
 
 func _apply_jump_impulse():
@@ -107,7 +90,7 @@ func _apply_jump_impulse():
 	_curr_jump_mult *= _time / _max_charge_time
 	player.velocity.y -= player.jump_impulse * (_curr_jump_mult + 1.0) # will always jump at least as high as the base jump
 	player.speed = _speed_snapshot * 1.5
-	player.velocity.x = _jump_facing_direction * clampf(player.speed, player.speed, ARBITRARY_MAGIC_MAX_AIR_SPEED * 2)
+	player.velocity.x = player.previous_direction * clampf(player.speed, player.speed, ARBITRARY_MAGIC_MAX_AIR_SPEED * 2)
 
 	sound_f_jump.play()
 	_jump_state = "jumping"
