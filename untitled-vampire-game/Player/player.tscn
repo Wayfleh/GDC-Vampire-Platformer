@@ -325,6 +325,7 @@ offset = Vector2(0, 1)
 
 [node name="Tongue" type="Node2D" parent="CurrentDirection" unique_id=949118960]
 unique_name_in_owner = true
+visible = false
 rotation = 0.7853982
 scale = Vector2(0.99999994, 0.99999994)
 script = ExtResource("5_pisgm")

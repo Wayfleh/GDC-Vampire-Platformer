@@ -48,11 +48,7 @@ func update(delta: float):
 		player.isTransformed = true
 
 func _transform_to_vampire():
-	if f_machine.current_state != f_machine.states["F_BITEDASH"]:
-		transitionToState.emit("VAMPIRE")
-	else:
-		print("frog_state.gd -- _transform_to_vampire(): Cannot detransform during F_BITEDASH")
-	return
+	transitionToState.emit("VAMPIRE")
 
 #turn off processing for statemachine
 func exit_state():

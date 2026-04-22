@@ -16,7 +16,6 @@ var _pull_distance : float
 var _curr_angle : float
 var _starting_position : Vector2
 var _mantle_scalar : float
-var _mantle_vector : Vector2
 var _is_mantling : bool
 var _tongue: Tongue
 
