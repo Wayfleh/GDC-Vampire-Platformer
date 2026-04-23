@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="6_8gc7i"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="7_cf272"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="9_rjv3q"]
-[ext_resource type="PackedScene" uid="uid://b81xfqhj2clb" path="res://UI/MainMenu.tscn" id="9_vqyuv"]
+[ext_resource type="PackedScene" uid="uid://delij1br4l4g4" path="res://Levels/Level_09.tscn" id="9_w3hw2"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="10_h0i70"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ik50e"]
@@ -170,6 +170,6 @@ rotation = -0.2617994
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("7_cf272")]
 position = Vector2(159, -176)
-next_level = ExtResource("9_vqyuv")
+next_level = ExtResource("9_w3hw2")
 
 [editable path="Player"]
