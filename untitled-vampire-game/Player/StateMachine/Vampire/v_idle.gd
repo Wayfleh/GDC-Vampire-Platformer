@@ -11,6 +11,7 @@ func enter_state():
 	else:
 		player.anim_sprite.play("vampire_idle")
 	#idle animation
+	player.isTransformed = false
 #slows the player down to a halt
 func update(delta: float):
 	idle_friction_multiplier = 5.0 if player.is_on_floor() else 1.0

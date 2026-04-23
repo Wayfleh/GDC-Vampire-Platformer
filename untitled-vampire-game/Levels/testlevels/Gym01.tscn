@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="5_xda70"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="6_52y0o"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="7_nnin2"]
+[ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="8_jirgr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_meo3i"]
 texture = ExtResource("3_ba3a8")
@@ -170,5 +171,8 @@ position = Vector2(-290, 98)
 [node name="TongueTipCollider" parent="Player/CurrentDirection/Tongue/TipPivot/TongueTip" parent_id_path=PackedInt32Array(644735785, 620725349) index="0" unique_id=1406688466]
 position = Vector2(-1.1920929e-07, -1.1920929e-07)
 rotation = -0.2617994
+
+[node name="Rat" parent="." unique_id=1621375151 instance=ExtResource("8_jirgr")]
+position = Vector2(-139, 134)
 
 [editable path="Player"]
