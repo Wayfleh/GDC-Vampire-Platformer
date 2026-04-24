@@ -26,9 +26,9 @@ func update(delta: float):
 		#currently a frog
 		if GlobalData.blood_chamber.is_empty():
 			return
-		# remove front of chamber and save it
-		var current_blood = GlobalData.blood_chamber.pop_front() 
 		if (v_machine.current_state != v_machine.states["V_BITEDASH"]):
+			# remove front of chamber and save it
+			var current_blood = GlobalData.blood_chamber.pop_front() 
 			match current_blood:
 				GlobalData.Animals.FROG:
 					sound_f_transform.play()

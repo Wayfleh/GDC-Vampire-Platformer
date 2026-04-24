@@ -189,8 +189,10 @@ func _process(delta):
 		GlobalData.blood_cycle()
 		return
 		
-	if Input.is_action_just_pressed("transform") && state_machine.current_state != state_machine.states["VAMPIRE"]:
-		if isTransformed == true:
+	if state_machine.current_state != state_machine.states["VAMPIRE"]:
+		if Input.is_action_just_released("transform"):
+			isTransformed = true
+		elif Input.is_action_just_pressed("transform") && isTransformed == true:
 			TransformToVampire()
 			isTransformed = false
 			return

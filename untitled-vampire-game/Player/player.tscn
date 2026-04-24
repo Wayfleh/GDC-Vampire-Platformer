@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://d3sjtxr7sc4jo" path="res://Player/StateMachine/Frog/f_walk.gd" id="10_apopc"]
 [ext_resource type="Texture2D" uid="uid://dinw4bxb85og6" path="res://Art/Placeholder/spongebob vampire.png" id="10_p5o4e"]
 [ext_resource type="Script" uid="uid://dh0kt6slyvvuv" path="res://Player/StateMachine/Frog/f_jump.gd" id="11_apopc"]
+[ext_resource type="Texture2D" uid="uid://d1jvvc1e8t3k2" path="res://Art/Placeholder/transparentCircle(2).png" id="14_f4lon"]
 [ext_resource type="Script" uid="uid://pfkhuqvmdxwe" path="res://Player/StateMachine/Frog/f_bitedash.gd" id="16_lfmf2"]
 [ext_resource type="AudioStream" uid="uid://btvej03tmgjeh" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Dash_Pass2(1).wav" id="24_8mwp6"]
 [ext_resource type="AudioStream" uid="uid://b1wu7ixox6b0y" path="res://Sounds/Player Sounds/VampirePlatformerSFX_BiteDeepFried.wav" id="24_8viyr"]
@@ -335,6 +336,10 @@ points = PackedVector2Array(0, 0, 0, -80)
 width = 4.0
 default_color = Color(0.8666667, 0.32156864, 0.7254902, 1)
 
+[node name="TipCircle" type="Sprite2D" parent="CurrentDirection/Tongue" unique_id=1504127840]
+position = Vector2(0, -89.00001)
+texture = ExtResource("14_f4lon")
+
 [node name="TipPivot" type="Node2D" parent="CurrentDirection/Tongue" unique_id=687600060]
 rotation = -0.7853982
 
@@ -342,6 +347,7 @@ rotation = -0.7853982
 monitoring = false
 
 [node name="TongueTipCollider" type="CollisionShape2D" parent="CurrentDirection/Tongue/TipPivot/TongueTip" unique_id=1406688466]
+visible = false
 shape = SubResource("CircleShape2D_lfmf2")
 
 [node name="Sprite2D" type="Sprite2D" parent="CurrentDirection/Tongue/TipPivot/TongueTip" unique_id=370410446]
@@ -367,6 +373,14 @@ target_position = Vector2(-15, 0)
 [node name="FrontCheck" type="RayCast2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=1405425635]
 position = Vector2(1, 14)
 target_position = Vector2(15, 0)
+
+[node name="SurfaceCheck2" type="RayCast2D" parent="CurrentDirection/Tongue" unique_id=226353535]
+position = Vector2(-15, 0)
+target_position = Vector2(0, -200)
+
+[node name="SurfaceCheck1" type="RayCast2D" parent="CurrentDirection/Tongue" unique_id=1007837983]
+position = Vector2(15, 0)
+target_position = Vector2(0, -200)
 
 [node name="BiteHitbox" type="Area2D" parent="CurrentDirection" unique_id=908817078]
 position = Vector2(4, 0)
@@ -438,7 +452,7 @@ script = ExtResource("11_apopc")
 [node name="F_BITEDASH" type="Node" parent="TransformationSM/FROG/FrogSM" unique_id=2142105885]
 script = ExtResource("16_lfmf2")
 tongue_length = 200.0
-rotation_speed = 5.0
+rotation_speed = 2.0
 tip_speed = 500.0
 max_angle = 60.0
 mantle_impulse = 300.0

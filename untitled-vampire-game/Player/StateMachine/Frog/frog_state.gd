@@ -44,8 +44,8 @@ func update(delta: float):
 	# Detransforming can only be available the frame AFTER pressing the transform button.
 	# Please let me know if there's a better way of doing this. Other solutions I've tried
 	#	end up transforming and detransforming within the same frame.
-	if player.isTransformed == false:
-		player.isTransformed = true
+	#if player.isTransformed == false:
+	#	player.isTransformed = true
 
 func _transform_to_vampire():
 	transitionToState.emit("VAMPIRE")
