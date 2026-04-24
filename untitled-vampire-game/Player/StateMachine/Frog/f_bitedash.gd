@@ -27,6 +27,8 @@ func enter_state():
 	_tongue.rotation = max_angle
 	_tongue.show_tongue()
 	_tongue.tip.position.y = -10
+	_tongue.surface_check1.set_target_position(Vector2(0, -tongue_length))
+	_tongue.surface_check2.set_target_position(Vector2(0, -tongue_length))
 	_time = 0.0
 	_tongue.tip_area.body_entered.connect(_tip_touch_surface) #TODO find a way to put this in a _ready() function without node hierarchy shit getting in the way
 	
@@ -61,9 +63,11 @@ func _aim_tongue(delta: float):
 	_curr_angle = cos(_time * rotation_speed) * deg_to_rad(max_angle)
 	_tongue.rotation = _curr_angle
 	_tongue.tip.rotation = -_curr_angle #tip faces straight up
+	_tongue.check_surface()
 	
 	if Input.is_action_just_released("bite_dash"): #release button to fire tongue
 		_dash_state = "shoot"
+		_tongue.tip_circle.hide()
 
 # Moves tongue tip at tongue angle
 # (the whole tongue node is rotated, so the tip's relative y position is moved)

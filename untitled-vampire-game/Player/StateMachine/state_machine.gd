@@ -30,8 +30,6 @@ func change_state(next: String):
 	next_state.enter_state()
 	current_state = next_state
 	
-	
-	
 	print(next)
 
 #sets the start state and enters it
