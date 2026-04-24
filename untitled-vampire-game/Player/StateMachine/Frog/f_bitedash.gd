@@ -67,6 +67,7 @@ func _aim_tongue(delta: float):
 	
 	if Input.is_action_just_released("bite_dash"): #release button to fire tongue
 		_dash_state = "shoot"
+		_tongue.tip_circle.hide()
 
 # Moves tongue tip at tongue angle
 # (the whole tongue node is rotated, so the tip's relative y position is moved)

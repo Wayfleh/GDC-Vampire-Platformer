@@ -18,6 +18,7 @@ extends Node2D
 
 func move_tip(speed: float):
 	tip.position.y -= speed
+	guide_line.set_point_position(1, Vector2(0, tip.position.y))
 
 
 func hide_tongue():
@@ -46,10 +47,10 @@ func check_surface() -> void:
 	if surface_check2.is_colliding():
 		s2_cd = (surface_check2.get_collision_point() - global_position).length()
 	collision_distance = minf(s1_cd, s2_cd) + (15/abs(tan(rotation)))
+	
 	guide_line.set_point_position(1, Vector2(0, -collision_distance + 30))
 	tip_circle.show()
 	tip_circle.position = Vector2(0, -collision_distance + 15)
-	print(collision_distance)
 	
 	
 

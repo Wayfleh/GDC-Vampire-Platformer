@@ -171,6 +171,7 @@ func DetermineBiteDashDirection(currPos: Vector2, prevPos: Vector2, bite_dash_di
 	return dir
 
 func TransformToVampire():
+	isTransformed = false
 	detransform.emit()
 
 
@@ -194,5 +195,4 @@ func _process(delta):
 			isTransformed = true
 		elif Input.is_action_just_pressed("transform") && isTransformed == true:
 			TransformToVampire()
-			isTransformed = false
 			return

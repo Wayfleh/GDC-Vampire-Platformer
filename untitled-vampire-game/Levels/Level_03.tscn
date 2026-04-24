@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b1nsq1cs3vntd" path="res://Art/bg1.png" id="1_53jjn"]
 [ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="1_cwbts"]
-[ext_resource type="Script" path="res://Levels/level.gd" id="1_ln1vi"]
+[ext_resource type="Script" uid="uid://v8cmstrdotrt" path="res://Levels/level.gd" id="1_ln1vi"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="2_0gwtk"]
 [ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="2_ln1vi"]
 [ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="4_6hhfj"]
