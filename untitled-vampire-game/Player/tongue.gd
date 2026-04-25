@@ -36,17 +36,22 @@ func latch_direction() -> int:
 
 func check_surface() -> void:
 	var collision_distance: float
-	var s1_cd: float = INF
-	var s2_cd: float = INF
-	if !surface_check1.is_colliding() && !surface_check2.is_colliding():
+	var collision_normal: Vector2
+	var s1_cv: Vector2 = Vector2(INF, -INF)
+	var s2_cv: Vector2 = Vector2(INF, -INF)
+	if surface_check1.is_colliding():
+		s1_cv = (surface_check1.get_collision_point() - global_position)
+		collision_normal = surface_check1.get_collision_normal()
+	if surface_check2.is_colliding():
+		s2_cv = (surface_check2.get_collision_point() - global_position)
+		collision_normal = surface_check2.get_collision_normal()
+	if s1_cv == Vector2(INF, -INF) && s2_cv == Vector2(INF, -INF):
 		tip_circle.hide()
 		guide_line.set_point_position(1, surface_check1.get_target_position())
 		return
-	if surface_check1.is_colliding():
-		s1_cd = (surface_check1.get_collision_point() - global_position).length()
-	if surface_check2.is_colliding():
-		s2_cd = (surface_check2.get_collision_point() - global_position).length()
-	collision_distance = minf(s1_cd, s2_cd) + (15/abs(tan(rotation)))
+	var collision_vector: Vector2 = s1_cv if s1_cv.x < s2_cv.x && s1_cv.y > s2_cv.y else s2_cv
+	var offset_angle: float = PI/2 + abs(rotation) if (Vector2.DOWN == collision_normal) else -abs(rotation)
+	collision_distance = collision_vector.length() + (15/tan(offset_angle))
 	
 	guide_line.set_point_position(1, Vector2(0, -collision_distance + 30))
 	tip_circle.show()
