@@ -286,8 +286,14 @@ animations = [{
 [node name="Player" type="CharacterBody2D" unique_id=644735785]
 z_index = 1
 script = ExtResource("1_4ntmi")
+speed = null
+jump_impulse = null
+gravity = null
+friction = null
+bite_dash_direction = null
 footstep_1 = ExtResource("2_8viyr")
 footstep_2 = ExtResource("3_hshwv")
+footstep_interval = null
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1281633438]
 shape = SubResource("CapsuleShape2D_gwnis")
@@ -319,6 +325,7 @@ color_ramp = SubResource("Gradient_dkpta")
 
 [node name="Tongue" type="Node2D" parent="CurrentDirection" unique_id=949118960]
 unique_name_in_owner = true
+visible = false
 rotation = 0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 script = ExtResource("5_pisgm")
@@ -331,6 +338,9 @@ default_color = Color(0.8666667, 0.32156864, 0.7254902, 1)
 [node name="TipCircle" type="Sprite2D" parent="CurrentDirection/Tongue" unique_id=1504127840]
 position = Vector2(0, -89.00001)
 texture = ExtResource("14_f4lon")
+
+[node name="RayCast2D" type="RayCast2D" parent="CurrentDirection/Tongue/TipCircle" unique_id=817405671]
+enabled = false
 
 [node name="TipPivot" type="Node2D" parent="CurrentDirection/Tongue" unique_id=687600060]
 rotation = -0.7853982
@@ -368,6 +378,9 @@ target_position = Vector2(15, 0)
 
 [node name="SurfaceCheck2" type="RayCast2D" parent="CurrentDirection/Tongue" unique_id=226353535]
 position = Vector2(-15, 0)
+target_position = Vector2(0, -200)
+
+[node name="MidSC" type="RayCast2D" parent="CurrentDirection/Tongue" unique_id=1473734040]
 target_position = Vector2(0, -200)
 
 [node name="SurfaceCheck1" type="RayCast2D" parent="CurrentDirection/Tongue" unique_id=1007837983]

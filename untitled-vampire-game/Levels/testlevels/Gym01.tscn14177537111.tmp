@@ -164,12 +164,6 @@ position = Vector2(105, 135)
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("7_nnin2")]
 position = Vector2(-309, 130)
-speed = null
-jump_impulse = null
-gravity = null
-friction = null
-bite_dash_direction = null
-footstep_interval = null
 
 [node name="Rat" parent="." unique_id=1621375151 instance=ExtResource("8_jirgr")]
 position = Vector2(-281, -89)
