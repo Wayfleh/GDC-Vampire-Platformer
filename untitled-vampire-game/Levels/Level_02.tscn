@@ -168,4 +168,11 @@ unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
 
+[node name="placeholderlabelBite" type="Label" parent="." unique_id=2120118111]
+offset_left = 120.0
+offset_top = 100.0
+offset_right = 160.0
+offset_bottom = 123.0
+text = "J"
+
 [editable path="Player"]

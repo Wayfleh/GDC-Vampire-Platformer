@@ -23,7 +23,15 @@ func _ready() -> void:
 
 	# start closed
 	door_sprite.play("closed")
+	# if there are no animals at start of level, start the level with door open and skip opening sound
+	if (GlobalData.animals_remaining == 0 and not door_open):
+		door_open = true
+		door_sprite.play("open")
+		print("door opening -- no Animals in level")
+
 	update_animal_number()
+	
+	
 
 func check_level_complete(body: Node2D) -> void:
 	if body is Player and door_open:
