@@ -286,8 +286,14 @@ animations = [{
 [node name="Player" type="CharacterBody2D" unique_id=644735785]
 z_index = 1
 script = ExtResource("1_4ntmi")
+speed = null
+jump_impulse = null
+gravity = null
+friction = null
+bite_dash_direction = null
 footstep_1 = ExtResource("2_8viyr")
 footstep_2 = ExtResource("3_hshwv")
+footstep_interval = null
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1281633438]
 shape = SubResource("CapsuleShape2D_gwnis")
@@ -319,6 +325,7 @@ color_ramp = SubResource("Gradient_dkpta")
 
 [node name="Tongue" type="Node2D" parent="CurrentDirection" unique_id=949118960]
 unique_name_in_owner = true
+visible = false
 rotation = 0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 script = ExtResource("5_pisgm")
