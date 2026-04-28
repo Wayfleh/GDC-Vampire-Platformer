@@ -332,6 +332,9 @@ default_color = Color(0.8666667, 0.32156864, 0.7254902, 1)
 position = Vector2(0, -89.00001)
 texture = ExtResource("14_f4lon")
 
+[node name="RayCast2D" type="RayCast2D" parent="CurrentDirection/Tongue/TipCircle" unique_id=817405671]
+enabled = false
+
 [node name="TipPivot" type="Node2D" parent="CurrentDirection/Tongue" unique_id=687600060]
 rotation = -0.7853982
 
@@ -368,6 +371,9 @@ target_position = Vector2(15, 0)
 
 [node name="SurfaceCheck2" type="RayCast2D" parent="CurrentDirection/Tongue" unique_id=226353535]
 position = Vector2(-15, 0)
+target_position = Vector2(0, -200)
+
+[node name="MidSC" type="RayCast2D" parent="CurrentDirection/Tongue" unique_id=1473734040]
 target_position = Vector2(0, -200)
 
 [node name="SurfaceCheck1" type="RayCast2D" parent="CurrentDirection/Tongue" unique_id=1007837983]
