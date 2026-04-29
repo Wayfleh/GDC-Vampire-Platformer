@@ -177,6 +177,12 @@ offset_right = -69.0
 offset_bottom = 184.0
 text = "R"
 
+[node name="placeholderlabelGrapple" type="Label" parent="." unique_id=503284623]
+offset_left = -207.0
+offset_top = -190.0
+offset_right = -167.0
+offset_bottom = -167.0
+text = "J"
 [node name="Animal2" parent="." unique_id=1220351439 instance=ExtResource("6_8gc7i")]
 position = Vector2(-132, 46)
 
