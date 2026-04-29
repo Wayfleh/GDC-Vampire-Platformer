@@ -20,4 +20,4 @@ func update(delta : float):
 	
 	if player.is_on_floor() && _dash_state == "falling":
 		player.velocity.x = player.speed * player.previous_direction
-		transitionToState.emit("R_IDLE")
+		player.TransformToVampire()

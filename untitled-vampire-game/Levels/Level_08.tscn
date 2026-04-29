@@ -177,11 +177,27 @@ offset_right = -69.0
 offset_bottom = 184.0
 text = "R"
 
-[node name="placeholderlabelGrapple" type="Label" parent="." unique_id=503284623]
-offset_left = -207.0
-offset_top = -190.0
-offset_right = -167.0
-offset_bottom = -167.0
-text = "J"
+[node name="Animal2" parent="." unique_id=1220351439 instance=ExtResource("6_8gc7i")]
+position = Vector2(-132, 46)
+
+[node name="Animal3" parent="." unique_id=97141298 instance=ExtResource("6_8gc7i")]
+position = Vector2(-99, 175)
+
+[node name="Player" parent="." unique_id=644735785 instance=ExtResource("9_rjv3q")]
+position = Vector2(-291, 137)
+speed = 500.0
+jump_impulse = 500.0
+gravity = 200.0
+friction = 10.0
+bite_dash_direction = Vector2(0, 0)
+footstep_interval = 0.35
+
+[node name="TongueTipCollider" parent="Player/CurrentDirection/Tongue/TipPivot/TongueTip" parent_id_path=PackedInt32Array(644735785, 620725349) index="0" unique_id=1406688466]
+position = Vector2(-1.1920929e-07, -1.1920929e-07)
+rotation = -0.2617994
+
+[node name="Door" parent="." unique_id=1512673174 instance=ExtResource("7_cf272")]
+position = Vector2(159, -176)
+next_level = ExtResource("9_vqyuv")
 
 [editable path="Player"]

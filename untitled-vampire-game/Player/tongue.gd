@@ -16,6 +16,7 @@ extends Node2D
 @onready var mid_check := $MidSC
 @onready var surface_check2 := $SurfaceCheck2
 @onready var tip_circle: Sprite2D = $TipCircle
+var indicator_on_previously: bool = false
 
 func move_tip(speed: float):
 	tip.position.y -= speed
@@ -30,6 +31,7 @@ func hide_tongue():
 func show_tongue():
 	show()
 	tip_circle.hide()
+	tip_area.hide()
 
 #returns the direction of the thing that enters the tip area
 func latch_direction() -> int:
@@ -68,6 +70,7 @@ func check_surface() -> void:
 	if s1_cv == Vector2(INF, -INF) && s2_cv == Vector2(INF, -INF):
 		tip_circle.hide()
 		guide_line.set_point_position(1, surface_check1.get_target_position())
+		indicator_on_previously = false
 		return
 		
 	var offset_angle: float
@@ -78,6 +81,7 @@ func check_surface() -> void:
 	
 	$TipCircle/RayCast2D.rotation = offset_angle #This is just to visualize the angle
 	collision_distance = clampf(collision_vector.length() + (15/tan(offset_angle)), 30, -surface_check1.get_target_position().y)
+	
 	guide_line.set_point_position(1, Vector2(0, -collision_distance + 30))
 	tip_circle.show()
 	tip_circle.position = Vector2(0, -collision_distance + 15)
