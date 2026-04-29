@@ -43,23 +43,18 @@ tile_set = ExtResource("2_6drxt")
 position = Vector2(-109, -194)
 next_level = ExtResource("4_yu5cb")
 
-[node name="Door2" parent="." unique_id=556641730 instance=ExtResource("5_lkd0j")]
-position = Vector2(-109, -194)
-next_level = ExtResource("4_yu5cb")
-
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("2_mtno4")]
 position = Vector2(-110, 91)
-
-[node name="FootstepPlayer" parent="Player" index="8" unique_id=858939323]
-volume_db = 12.0
-
-[node name="SoundV_AnimalBitten" parent="Player" index="10" unique_id=1515482835]
-volume_db = 15.0
-
-[node name="SoundV_BiteDash" parent="Player" index="11" unique_id=1899384871]
-volume_db = 10.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
 
 [node name="UI" parent="." unique_id=889175113 instance=ExtResource("4_2o7fp")]
 unique_name_in_owner = true
+
+[node name="placeholderlabelcontrols" type="Label" parent="." unique_id=212978863]
+offset_left = -140.0
+offset_top = 178.0
+offset_right = -83.0
+offset_bottom = 227.0
+text = "     W
+A   S   D"
