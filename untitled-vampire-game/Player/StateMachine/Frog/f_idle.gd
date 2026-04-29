@@ -14,7 +14,6 @@ func update(delta: float):
 	player.apply_friction(delta, friction_mult)
 	player.apply_gravity(delta)
 	
-	
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
 		transitionToState.emit("F_WALK")
 	

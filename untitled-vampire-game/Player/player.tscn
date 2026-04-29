@@ -346,6 +346,7 @@ enabled = false
 rotation = -0.7853982
 
 [node name="TongueTip" type="Area2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=620725349]
+visible = false
 monitoring = false
 
 [node name="TongueTipCollider" type="CollisionShape2D" parent="CurrentDirection/Tongue/TipPivot/TongueTip" unique_id=1406688466]

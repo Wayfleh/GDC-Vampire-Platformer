@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var speed: float = 500.0
 @export var jump_impulse: float = 500.0
 @export var gravity: float = 200.0
+@export var max_gravity: float = 300.0
 @export var friction: float = 10.0
 
 @export var bite_dash_direction: Vector2
@@ -24,8 +25,10 @@ var bite_dash_used: bool = false
 @onready var state_machine := $TransformationSM
 @onready var collider := $Collider
 @onready var anim_sprite : AnimatedSprite2D = %AlucardSprite
-@onready var isTransformed : bool = false #Keep track if Alacarte is an animal for detransformation
 
+
+@onready var isTransformed : bool = false #Keep track if Alacarte is an animal for detransformation
+var can_jump : bool #used for coyote time in vampire state
 
 #---------- Particles ----------#
 @onready var blood_particles := $BloodParticles
@@ -130,7 +133,7 @@ func apply_friction(delta: float, friction_mult : int):
 		velocity.x = lerpf(velocity.x, 0.0, delta * friction_mult)
 
 func apply_input_direction(delta: float):
-	direction = Input.get_axis("left", "right")
+	direction = sign(Input.get_axis("left", "right"))
 	if direction != 0:
 		$CurrentDirection.scale.x = direction
 		previous_direction = direction

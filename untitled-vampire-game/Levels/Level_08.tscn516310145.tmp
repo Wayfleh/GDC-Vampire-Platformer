@@ -163,12 +163,6 @@ position = Vector2(-99, 175)
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("9_rjv3q")]
 position = Vector2(-291, 137)
-speed = 500.0
-jump_impulse = 500.0
-gravity = 200.0
-friction = 10.0
-bite_dash_direction = Vector2(0, 0)
-footstep_interval = 0.35
 
 [node name="TongueTipCollider" parent="Player/CurrentDirection/Tongue/TipPivot/TongueTip" parent_id_path=PackedInt32Array(644735785, 620725349) index="0" unique_id=1406688466]
 position = Vector2(-1.1920929e-07, -1.1920929e-07)
