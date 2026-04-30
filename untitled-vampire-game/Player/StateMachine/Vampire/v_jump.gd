@@ -43,3 +43,4 @@ func _jump_timer_stopped():
 
 func exit_state():
 	player.can_jump = true
+	player.anim_sprite.stop()

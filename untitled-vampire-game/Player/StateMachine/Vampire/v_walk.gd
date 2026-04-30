@@ -45,3 +45,4 @@ func _on_coyote_timer_timeout():
 
 func exit_state():
 	coyote_timer.queue_free()
+	player.anim_sprite.stop()

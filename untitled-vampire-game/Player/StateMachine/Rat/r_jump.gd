@@ -26,3 +26,4 @@ func update(delta: float):
 
 func exit_state():
 	teleporting = false
+	player.anim_sprite.stop()

@@ -174,9 +174,12 @@ func DetermineBiteDashDirection(currPos: Vector2, prevPos: Vector2, bite_dash_di
 	return dir
 
 func TransformToVampire():
+	playPoofParticle()
 	isTransformed = false
 	detransform.emit()
 
+func playPoofParticle():
+	$PoofParticles.emitting = true
 
 func UpdateUI():
 	bloodContainer.UpdateBloodTokenSprites()

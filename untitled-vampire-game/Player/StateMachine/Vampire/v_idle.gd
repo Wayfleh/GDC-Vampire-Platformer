@@ -34,4 +34,4 @@ func update(delta: float):
 		transitionToState.emit("V_BITEDASH")
 
 func exit_state():
-	pass
+	player.anim_sprite.stop()

@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://bkaxjk8fwkc8f" path="res://Art/Placeholder/anim_vampmouse_yeet.png" id="13_d30e8"]
 [ext_resource type="Texture2D" uid="uid://0ftjg1q8lmjm" path="res://Art/Placeholder/anim_vampmousewalk_rev.png" id="14_6pogt"]
 [ext_resource type="Texture2D" uid="uid://d1jvvc1e8t3k2" path="res://Art/Placeholder/transparentCircle(2).png" id="14_f4lon"]
+[ext_resource type="Texture2D" uid="uid://btyy331d02vos" path="res://Art/Placeholder/anim_vampmouseidle.png" id="14_ie76m"]
 [ext_resource type="Script" uid="uid://pfkhuqvmdxwe" path="res://Player/StateMachine/Frog/f_bitedash.gd" id="16_lfmf2"]
 [ext_resource type="AudioStream" uid="uid://btvej03tmgjeh" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Dash_Pass2(1).wav" id="24_8mwp6"]
 [ext_resource type="AudioStream" uid="uid://b1wu7ixox6b0y" path="res://Sounds/Player Sounds/VampirePlatformerSFX_BiteDeepFried.wav" id="24_8viyr"]
@@ -41,6 +42,7 @@
 [ext_resource type="AudioStream" uid="uid://cg7n6v22ssnlu" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FrogJump.wav" id="28_efx54"]
 [ext_resource type="AudioStream" uid="uid://cmpm0k80o6mw8" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FootstepsFrog_1.wav" id="29_755ss"]
 [ext_resource type="AudioStream" uid="uid://kq0ic1wajuar" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FootstepsFrog_2.wav" id="30_bbimk"]
+[ext_resource type="Texture2D" uid="uid://dicek02mq4nym" path="res://Art/Placeholder/anim_transformationpoof.png" id="42_6pogt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gwnis"]
 radius = 12.0
@@ -137,8 +139,12 @@ atlas = ExtResource("13_d30e8")
 region = Rect2(0, 0, 40, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wvbyc"]
-atlas = ExtResource("14_6pogt")
-region = Rect2(88, 0, 44, 21)
+atlas = ExtResource("14_ie76m")
+region = Rect2(0, 0, 44, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7v2uk"]
+atlas = ExtResource("14_ie76m")
+region = Rect2(44, 0, 44, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gvnt1"]
 atlas = ExtResource("14_6pogt")
@@ -295,6 +301,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wvbyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7v2uk")
 }],
 "loop": true,
 "name": &"rat_idle",
@@ -370,17 +379,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ie76m"]
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
 [node name="Player" type="CharacterBody2D" unique_id=644735785]
 z_index = 1
 script = ExtResource("1_4ntmi")
-speed = null
-jump_impulse = null
-gravity = null
-friction = null
-bite_dash_direction = null
 footstep_1 = ExtResource("2_8viyr")
 footstep_2 = ExtResource("3_hshwv")
-footstep_interval = null
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1281633438]
 shape = SubResource("CapsuleShape2D_gwnis")
@@ -479,7 +488,8 @@ target_position = Vector2(0, -200)
 unique_name_in_owner = true
 scale = Vector2(1.0954546, 1.1)
 sprite_frames = SubResource("SpriteFrames_p5o4e")
-animation = &"rat_dash"
+animation = &"rat_idle"
+frame_progress = 0.8402324
 offset = Vector2(0, 1)
 
 [node name="BiteHitbox" type="Area2D" parent="CurrentDirection" unique_id=908817078]
@@ -620,5 +630,16 @@ volume_db = 8.0
 [node name="SoundF_Hop2" type="AudioStreamPlayer2D" parent="." unique_id=115468940]
 stream = ExtResource("30_bbimk")
 volume_db = 8.0
+
+[node name="PoofParticles" type="CPUParticles2D" parent="." unique_id=534726201]
+material = SubResource("CanvasItemMaterial_ie76m")
+emitting = false
+amount = 1
+texture = ExtResource("42_6pogt")
+lifetime = 0.5
+one_shot = true
+gravity = Vector2(0, 0)
+anim_speed_min = 1.0
+anim_speed_max = 1.0
 
 [connection signal="area_entered" from="CurrentDirection/BiteHitbox" to="." method="bite_animal"]

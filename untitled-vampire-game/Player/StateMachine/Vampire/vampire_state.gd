@@ -27,6 +27,7 @@ func update(delta: float):
 		if GlobalData.blood_chamber.is_empty():
 			return
 		if (v_machine.current_state != v_machine.states["V_BITEDASH"]):
+			player.playPoofParticle()
 			# remove front of chamber and save it
 			var current_blood = GlobalData.blood_chamber.pop_front() 
 			match current_blood:

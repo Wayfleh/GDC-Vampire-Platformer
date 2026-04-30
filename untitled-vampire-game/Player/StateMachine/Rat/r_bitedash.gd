@@ -26,3 +26,4 @@ func update(delta : float):
 
 func exit_state():
 	player.anim_sprite.set_offset(Vector2(-5, 3))
+	player.anim_sprite.stop()
