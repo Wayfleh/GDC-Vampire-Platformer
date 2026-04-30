@@ -18,9 +18,11 @@ func enter_state():
 	player.jump_impulse = R_JUMP_IMPULSE
 	player.gravity = R_GRAVITY
 	player.friction = R_FRICTION
+	player.collider.disabled = true
+	player.collider_rat.disabled = false
 	
 	player.detransform.connect(_transform_to_vampire)
-	player.anim_sprite.set_offset(Vector2(-5, 3))
+	player.anim_sprite.set_offset(Vector2(-5, -1))
 
 func update(delta: float):
 	if r_machine.current_state != r_machine.states["R_BITEDASH"]: #don't apply direction in bitedash

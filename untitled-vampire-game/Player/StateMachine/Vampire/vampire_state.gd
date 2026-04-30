@@ -19,6 +19,10 @@ func enter_state():
 	player.jump_impulse = V_JUMP_IMPULSE
 	player.gravity = V_GRAVITY
 	player.friction = V_FRICTION
+	player.collider.disabled = false
+	player.collider_rat.disabled = true
+	
+	
 	
 func update(delta: float):
 	if Input.is_action_just_pressed("transform"):
