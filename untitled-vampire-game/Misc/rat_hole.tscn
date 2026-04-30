@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cvsfc0rgfdeih"]
 
 [ext_resource type="Script" uid="uid://d1rw8lxuf5i44" path="res://Misc/rat_hole.gd" id="1_fmhc0"]
-[ext_resource type="Texture2D" uid="uid://c18yd72vx5ah5" path="res://Art/Placeholder/dirtmound2r.png" id="2_fmhc0"]
+[ext_resource type="Texture2D" uid="uid://dpvd3hyuc5ayw" path="res://Art/Sprites/VampRat/dirtmound_outline.png" id="2_fmhc0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g67rg"]
 radius = 16.0
@@ -11,7 +11,6 @@ script = ExtResource("1_fmhc0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=379665847]
 position = Vector2(0, -9.536743e-07)
-scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_fmhc0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=299113441]

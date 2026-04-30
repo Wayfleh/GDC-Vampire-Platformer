@@ -175,7 +175,6 @@ func DetermineBiteDashDirection(currPos: Vector2, prevPos: Vector2, bite_dash_di
 
 func TransformToVampire():
 	playPoofParticle()
-	isTransformed = false
 	detransform.emit()
 
 func playPoofParticle():
@@ -195,10 +194,3 @@ func _process(delta):
 	if Input.is_action_just_pressed("blood_cycle"):
 		GlobalData.blood_cycle()
 		return
-		
-	if state_machine.current_state != state_machine.states["VAMPIRE"]:
-		if Input.is_action_just_released("transform"):
-			isTransformed = true
-		elif Input.is_action_just_pressed("transform") && isTransformed == true:
-			TransformToVampire()
-			return

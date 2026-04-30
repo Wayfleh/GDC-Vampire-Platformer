@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0ftjg1q8lmjm"
-path="res://.godot/imported/anim_vampmousewalk_rev.png-e54f063b32a9ca1101ab1b1ee1a191ce.ctex"
+uid="uid://btyy331d02vos"
+path="res://.godot/imported/anim_vampmouseidle.png-9a89d3d043dc0120fc317a0af92bf50a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Placeholder/anim_vampmousewalk_rev.png"
-dest_files=["res://.godot/imported/anim_vampmousewalk_rev.png-e54f063b32a9ca1101ab1b1ee1a191ce.ctex"]
+source_file="res://Art/Sprites/VampRat/anim_vampmouseidle.png"
+dest_files=["res://.godot/imported/anim_vampmouseidle.png-9a89d3d043dc0120fc317a0af92bf50a.ctex"]
 
 [params]
 

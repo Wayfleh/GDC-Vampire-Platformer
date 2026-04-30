@@ -21,7 +21,7 @@ func enter_state():
 	player.friction = V_FRICTION
 	
 func update(delta: float):
-	if Input.is_action_just_pressed("transform"):
+	if Input.is_action_just_pressed("transform") && !player.isTransformed:
 		# transform vampire into frog if vampire has frog blood and is not
 		#currently a frog
 		if GlobalData.blood_chamber.is_empty():

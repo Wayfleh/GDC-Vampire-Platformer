@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brcpblvnq0dqd"
-path="res://.godot/imported/rat_ko.png-fb06b714c9c73411cd6a7fdf0eccda84.ctex"
+uid="uid://owbuxta1b322"
+path="res://.godot/imported/vampire_token.png-6e636c47014f1be7cda1da09a5a8041b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Placeholder/rat_ko.png"
-dest_files=["res://.godot/imported/rat_ko.png-fb06b714c9c73411cd6a7fdf0eccda84.ctex"]
+source_file="res://Art/UI/vampire_token.png"
+dest_files=["res://.godot/imported/vampire_token.png-6e636c47014f1be7cda1da09a5a8041b.ctex"]
 
 [params]
 

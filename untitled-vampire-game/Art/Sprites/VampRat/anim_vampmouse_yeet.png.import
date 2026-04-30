@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c18yd72vx5ah5"
-path="res://.godot/imported/dirtmound2r.png-c0483d017b41384df9e8aa76ff6c5b9a.ctex"
+uid="uid://bkaxjk8fwkc8f"
+path="res://.godot/imported/anim_vampmouse_yeet.png-b462a8edb3adb2fe8cdba3fff1fdb95c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Placeholder/dirtmound2r.png"
-dest_files=["res://.godot/imported/dirtmound2r.png-c0483d017b41384df9e8aa76ff6c5b9a.ctex"]
+source_file="res://Art/Sprites/VampRat/anim_vampmouse_yeet.png"
+dest_files=["res://.godot/imported/anim_vampmouse_yeet.png-b462a8edb3adb2fe8cdba3fff1fdb95c.ctex"]
 
 [params]
 

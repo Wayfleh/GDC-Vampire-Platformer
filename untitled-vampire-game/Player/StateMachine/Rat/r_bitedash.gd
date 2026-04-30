@@ -8,17 +8,14 @@ func enter_state():
 	player.anim_sprite.play("rat_dash")
 	player.velocity = Vector2.ZERO
 	player.anim_sprite.set_offset(Vector2.ZERO)
-	_dash_state = "charge"
+	player.velocity = Vector2(player.previous_direction * cos(deg_to_rad(launch_angle)) * launch_impulse, 
+							-sin(deg_to_rad(launch_angle)) * launch_impulse)
+	_dash_state = "dashing"
 
 func update(delta : float):
-	if Input.is_action_just_released("bite_dash") && _dash_state == "charge":
-		player.velocity = Vector2(player.previous_direction * cos(deg_to_rad(launch_angle)) * launch_impulse, 
-								-sin(deg_to_rad(launch_angle)) * launch_impulse)
-		_dash_state = "dashing"
-	else:
-		player.apply_gravity(delta, 1)
-		if player.velocity.y > 0:
-			_dash_state = "falling"
+	player.apply_gravity(delta, 1)
+	if player.velocity.y >= 0:
+		_dash_state = "falling"
 	
 	if player.is_on_floor() && _dash_state == "falling":
 		player.velocity.x = player.speed * player.previous_direction

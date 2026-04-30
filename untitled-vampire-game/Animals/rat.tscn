@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://batcm66j50quy"]
 
 [ext_resource type="Script" uid="uid://dkvv6omrwiey4" path="res://Animals/animal.gd" id="1_eyvwv"]
-[ext_resource type="Texture2D" uid="uid://brcpblvnq0dqd" path="res://Art/Placeholder/rat_ko.png" id="2_ts7yi"]
-[ext_resource type="Texture2D" uid="uid://bfeynyhtqwgeb" path="res://Art/Placeholder/anim_mouse_eep.png" id="3_nbxnu"]
+[ext_resource type="Texture2D" uid="uid://brcpblvnq0dqd" path="res://Art/Sprites/rat animal/rat_ko.png" id="2_ts7yi"]
+[ext_resource type="Texture2D" uid="uid://bfeynyhtqwgeb" path="res://Art/Sprites/rat animal/anim_mouse_eep.png" id="3_nbxnu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ftkj1"]
 atlas = ExtResource("2_ts7yi")

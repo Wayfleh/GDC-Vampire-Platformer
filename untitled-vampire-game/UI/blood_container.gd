@@ -3,6 +3,10 @@ extends Node2D
 @onready var token_2: Sprite2D = $token2
 @onready var token_1: Sprite2D = $token1 #token1 is the lowest and frontmost
 @onready var tokens : Array[Sprite2D] = [token_1, token_2, token_3]
+@onready var sprites: Array[Texture2D] = [preload("res://Art/UI/vampire_token.png"),
+										preload("res://Art/UI/token_frog2.png"),
+										preload("res://Art/UI/token_mouse.png")]
+enum {VAMP, FROG, RAT}
 
 """
 Handles visuals for the Blood Container
@@ -45,25 +49,24 @@ func PerformCycleAnimation():
 	pass
 
 func UpdateBloodTokenSprites():
-	var empty : Rect2 = Rect2(0,0,0,0)
-	var human : Rect2 = Rect2(128, 0, 128, 128)
-	var frog : Rect2 = Rect2(0, 0, 128, 128)
 	
 	var currentChamber = GlobalData.blood_chamber.size()
 	
 	if (currentChamber == 0) :
-		tokens[0].set_region_rect(human)
-		tokens[1].set_region_rect(empty)
-		tokens[2].set_region_rect(empty)
+		tokens[0].texture = sprites[VAMP]
+		tokens[1].texture = null
+		tokens[2].texture = null
 		return
 	
 	for i in 3:
 		if (currentChamber >= 1):
 			if GlobalData.blood_chamber[i] == GlobalData.Animals.FROG:
-				tokens[i].set_region_rect(frog)
+				tokens[i].texture = sprites[FROG]
+			if GlobalData.blood_chamber[i] == GlobalData.Animals.RAT:
+				tokens[i].texture = sprites[RAT]
 			currentChamber = currentChamber - 1
-		elif (currentChamber == 0):
-			tokens[i].set_region_rect(empty)
+		elif (currentChamber == 0) && i != 0:
+			tokens[i].texture = null
 	
 	"""
 	if GlobalData.blood_chamber.size() == 0:
