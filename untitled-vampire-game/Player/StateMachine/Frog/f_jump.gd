@@ -48,7 +48,7 @@ func update(delta: float):
 	match _jump_state:
 		"charge":
 			if Input.is_action_just_released("jump"):
-				frog_sprite.play("frog_idle_right")
+				frog_sprite.play("frog_walk_right")
 				_apply_jump_impulse()
 			else:
 				_time = clamp(_time + delta, 0.0, _max_charge_time)

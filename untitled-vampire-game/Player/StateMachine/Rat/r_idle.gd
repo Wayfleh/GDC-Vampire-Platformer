@@ -1,5 +1,8 @@
 extends State
 
+func enter_state():
+	player.anim_sprite.play("rat_idle")
+
 
 func update(delta: float):
 	

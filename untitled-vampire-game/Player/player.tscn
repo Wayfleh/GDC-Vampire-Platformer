@@ -25,6 +25,8 @@
 [ext_resource type="Script" uid="uid://d3sjtxr7sc4jo" path="res://Player/StateMachine/Frog/f_walk.gd" id="10_apopc"]
 [ext_resource type="Texture2D" uid="uid://dinw4bxb85og6" path="res://Art/Placeholder/spongebob vampire.png" id="10_p5o4e"]
 [ext_resource type="Script" uid="uid://dh0kt6slyvvuv" path="res://Player/StateMachine/Frog/f_jump.gd" id="11_apopc"]
+[ext_resource type="Texture2D" uid="uid://bkaxjk8fwkc8f" path="res://Art/Placeholder/anim_vampmouse_yeet.png" id="13_d30e8"]
+[ext_resource type="Texture2D" uid="uid://0ftjg1q8lmjm" path="res://Art/Placeholder/anim_vampmousewalk_rev.png" id="14_6pogt"]
 [ext_resource type="Texture2D" uid="uid://d1jvvc1e8t3k2" path="res://Art/Placeholder/transparentCircle(2).png" id="14_f4lon"]
 [ext_resource type="Script" uid="uid://pfkhuqvmdxwe" path="res://Player/StateMachine/Frog/f_bitedash.gd" id="16_lfmf2"]
 [ext_resource type="AudioStream" uid="uid://btvej03tmgjeh" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Dash_Pass2(1).wav" id="24_8mwp6"]
@@ -66,9 +68,13 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("7_f4lon")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n471f"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy65m"]
 atlas = ExtResource("3_o28un")
-region = Rect2(96, 0, 32, 32)
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maysp"]
+atlas = ExtResource("3_o28un")
+region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hshwv"]
 atlas = ExtResource("4_n471f")
@@ -113,6 +119,42 @@ region = Rect2(128, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbimk"]
 atlas = ExtResource("3_o28un")
 region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6eb1q"]
+atlas = ExtResource("13_d30e8")
+region = Rect2(120, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x5p2"]
+atlas = ExtResource("13_d30e8")
+region = Rect2(80, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rl0i"]
+atlas = ExtResource("13_d30e8")
+region = Rect2(40, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1l10g"]
+atlas = ExtResource("13_d30e8")
+region = Rect2(0, 0, 40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvbyc"]
+atlas = ExtResource("14_6pogt")
+region = Rect2(88, 0, 44, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvnt1"]
+atlas = ExtResource("14_6pogt")
+region = Rect2(132, 0, 44, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kmt7"]
+atlas = ExtResource("14_6pogt")
+region = Rect2(88, 0, 44, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4i3b"]
+atlas = ExtResource("14_6pogt")
+region = Rect2(44, 0, 44, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvbbp"]
+atlas = ExtResource("14_6pogt")
+region = Rect2(0, 0, 44, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m0h3t"]
 atlas = ExtResource("6_hshwv")
@@ -178,7 +220,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n471f")
+"texture": SubResource("AtlasTexture_dy65m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_maysp")
 }],
 "loop": true,
 "name": &"frog_idle_right",
@@ -228,6 +273,48 @@ animations = [{
 }],
 "loop": true,
 "name": &"frog_walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_6eb1q")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_7x5p2")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_6rl0i")
+}, {
+"duration": 0.3,
+"texture": SubResource("AtlasTexture_1l10g")
+}],
+"loop": true,
+"name": &"rat_dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvbyc")
+}],
+"loop": true,
+"name": &"rat_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvnt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kmt7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4i3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvbbp")
+}],
+"loop": true,
+"name": &"rat_walk",
 "speed": 5.0
 }, {
 "frames": [{
@@ -390,9 +477,9 @@ target_position = Vector2(0, -200)
 
 [node name="AlucardSprite" type="AnimatedSprite2D" parent="CurrentDirection" unique_id=980260689]
 unique_name_in_owner = true
-scale = Vector2(1.1, 1.1)
+scale = Vector2(1.0954546, 1.1)
 sprite_frames = SubResource("SpriteFrames_p5o4e")
-animation = &"vampire_jump"
+animation = &"rat_dash"
 offset = Vector2(0, 1)
 
 [node name="BiteHitbox" type="Area2D" parent="CurrentDirection" unique_id=908817078]

@@ -183,11 +183,11 @@ offset_bottom = 21.0
 text = "W"
 
 [node name="RatHoleA1" parent="." unique_id=1798485280 node_paths=PackedStringArray("other_hole") instance=ExtResource("9_h7iq3")]
-position = Vector2(-20, 40)
+position = Vector2(-26, 40)
 other_hole = NodePath("../RatHoleA2")
 
 [node name="RatHoleA2" parent="." unique_id=385630779 node_paths=PackedStringArray("other_hole") instance=ExtResource("9_h7iq3")]
-position = Vector2(-19, 135)
+position = Vector2(-14, 136)
 other_hole = NodePath("../RatHoleA1")
 
 [editable path="Player"]

@@ -4,6 +4,7 @@ var teleporting: bool
 
 # Called when the node enters the scene tree for the first time.
 func enter_state():
+	player.anim_sprite.play("rat_walk")
 	player.velocity.y -= player.jump_impulse
 
 

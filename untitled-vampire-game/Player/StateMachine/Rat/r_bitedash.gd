@@ -5,7 +5,9 @@ extends State
 var _dash_state: String
 
 func enter_state():
+	player.anim_sprite.play("rat_dash")
 	player.velocity = Vector2.ZERO
+	player.anim_sprite.set_offset(Vector2.ZERO)
 	_dash_state = "charge"
 
 func update(delta : float):
@@ -21,3 +23,6 @@ func update(delta : float):
 	if player.is_on_floor() && _dash_state == "falling":
 		player.velocity.x = player.speed * player.previous_direction
 		player.TransformToVampire()
+
+func exit_state():
+	player.anim_sprite.set_offset(Vector2(-5, 3))

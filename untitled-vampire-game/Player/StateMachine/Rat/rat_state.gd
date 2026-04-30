@@ -20,6 +20,7 @@ func enter_state():
 	player.friction = R_FRICTION
 	
 	player.detransform.connect(_transform_to_vampire)
+	player.anim_sprite.set_offset(Vector2(-5, 3))
 
 func update(delta: float):
 	if r_machine.current_state != r_machine.states["R_BITEDASH"]: #don't apply direction in bitedash
@@ -40,3 +41,4 @@ func _transform_to_vampire():
 func exit_state():
 	r_machine.set_physics_process(false)
 	player.rat_hole_interactor.monitoring = false
+	player.anim_sprite.set_offset(Vector2.ZERO)
