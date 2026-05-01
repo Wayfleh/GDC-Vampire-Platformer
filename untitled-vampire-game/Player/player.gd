@@ -193,4 +193,3 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("blood_cycle"):
 		GlobalData.blood_cycle()
-		return

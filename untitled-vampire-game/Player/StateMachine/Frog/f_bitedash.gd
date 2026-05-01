@@ -40,6 +40,10 @@ func enter_state():
 
 
 func update(delta: float):
+	if _tongue.tip_area.monitoring:
+		print("monitoring")
+	else:
+		print("fuck you")
 	match _dash_state:
 		"aim":
 			_aim_tongue(delta)
@@ -67,12 +71,11 @@ func _aim_tongue(delta: float):
 	
 	if Input.is_action_just_released("bite_dash"): #release button to fire tongue
 		_dash_state = "shoot"
-		_tongue.tip_area.show()
+		_tongue.show_tip()
 
 # Moves tongue tip at tongue angle
 # (the whole tongue node is rotated, so the tip's relative y position is moved)
 func _shoot_tongue(delta: float):
-	_tongue.tip_area.monitoring = true
 	_tongue.move_tip(tip_speed * delta)
 	if _tongue.tip.position.y <= -tongue_length: #switch to idle if tip hits nothing
 		transitionToState.emit("F_IDLE")
@@ -87,12 +90,11 @@ func _tip_touch_surface(body : Node2D):
 		return
 	if (body is TileMapLayer): # wall or ceiling usually
 		_dash_state = "pull"
-		if !_tongue.is_mantle_check_colliding(): #angle the velocity higher if grabbing onto a ledge
+		if !_tongue.is_mantle_check_colliding() && !_is_mantling: #angle the velocity higher if grabbing onto a ledge
 			_pull_direction.y -= sign(_pull_direction.x) * player.previous_direction * _curr_angle/2
 			_is_mantling = true
 		_pull_distance = (-_tongue.tip.position.y + 32 if _is_mantling 
 							else -_tongue.tip.position.y - 32)
-		
 		_tongue.hide_tongue()
 	if (body is Animal):
 		pass #TODO make it so animals are pulled toward the player
