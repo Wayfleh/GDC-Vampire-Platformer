@@ -24,6 +24,7 @@ var bite_dash_used: bool = false
 
 @onready var state_machine := $TransformationSM
 @onready var collider := $Collider
+@onready var collider_rat: CollisionShape2D = $ColliderRat
 @onready var anim_sprite : AnimatedSprite2D = %AlucardSprite
 
 

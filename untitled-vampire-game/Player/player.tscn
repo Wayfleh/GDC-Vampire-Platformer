@@ -44,12 +44,17 @@
 [ext_resource type="AudioStream" uid="uid://kq0ic1wajuar" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FootstepsFrog_2.wav" id="30_bbimk"]
 [ext_resource type="Texture2D" uid="uid://dicek02mq4nym" path="res://Art/Placeholder/anim_transformationpoof.png" id="42_6pogt"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gwnis"]
-radius = 12.0
-height = 28.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d30e8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d30e8"]
+size = Vector2(26, 20)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c6x0f"]
 radius = 16.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gwnis"]
+radius = 12.0
+height = 28.0
 
 [sub_resource type="Gradient" id="Gradient_dkpta"]
 interpolation_mode = 2
@@ -392,7 +397,11 @@ footstep_1 = ExtResource("2_8viyr")
 footstep_2 = ExtResource("3_hshwv")
 
 [node name="Collider" type="CollisionShape2D" parent="." unique_id=1281633438]
-shape = SubResource("CapsuleShape2D_gwnis")
+shape = SubResource("CapsuleShape2D_d30e8")
+
+[node name="ColliderRat" type="CollisionShape2D" parent="." unique_id=1653004894]
+shape = SubResource("RectangleShape2D_d30e8")
+disabled = true
 
 [node name="RatHoleInteractor" type="Area2D" parent="." unique_id=2023625641]
 monitoring = false
