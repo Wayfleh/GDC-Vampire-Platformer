@@ -1,0 +1,16 @@
+[gd_scene format=4 uid="uid://d3oa5wxafbr2p"]
+
+[ext_resource type="Shader" uid="uid://1b1v6l8muomj" path="res://Art/tileSet/Decoration/background.gdshader" id="1_jyxwc"]
+[ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="2_6l8j4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lm7ip"]
+shader = ExtResource("1_jyxwc")
+shader_parameter/darkness = 0.5
+shader_parameter/blue_color = Color(0.13541102, 0.34736264, 0.73924, 1)
+shader_parameter/intensity = 0.2110000100225
+
+[node name="Background" type="TileMapLayer" unique_id=1654783105]
+material = SubResource("ShaderMaterial_lm7ip")
+tile_map_data = PackedByteArray("AAD8/wAAAQAEAAQAAAD7/wAAAQAEAAQAAAD6/wAAAQAEAAQAAAD6////AQAEAAQAAAD7////AQAEAAQAAAD8////AQAEAAQAAAD8//7/AQAEAAQAAAD7//7/AQAEAAQAAAD6//7/AQAEAAQAAAD5//7/AQAEAAQAAAD5//3/AQAEAAQAAAD5//z/AQAEAAQAAAD6//z/AQAEAAQAAAD7//z/AQAEAAQAAAD8//z/AQAEAAQAAAD9//z/AQAEAAQAAAD+//z/AQAEAAQAAAD+//3/AQAEAAQAAAD+//7/AQAEAAQAAAD9//3/AQAEAAQAAAD8//3/AQAEAAQAAAD7//3/AQAEAAQAAAD6//3/AQAEAAQAAAD9//7/AQAEAAQAAAD7/wEAAQAEAAQAAAAMAAAAAQAEAAQAAAALAAAAAQAEAAQAAAAMAAEAAQAEAAQAAAAMAAIAAQAEAAQAAAD6/wMAAQAEAAQAAAD5/wQAAQAEAAQAAAD6/wQAAQAEAAQAAAD6/wUAAQAEAAQAAAD5/wUAAQAEAAQAAAD7/wIAAQAEAAQAAAD7/wMAAQAEAAQAAAD8/wEAAQAEAAQAAAA=")
+tile_set = ExtResource("2_6l8j4")
+collision_enabled = false
