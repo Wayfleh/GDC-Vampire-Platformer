@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dq8ex27s7myvo"]
+
+[ext_resource type="Script" uid="uid://ddd0y37mxqf2" path="res://Misc/opening_cutscene.gd" id="1_mckrj"]
+[ext_resource type="Shader" uid="uid://cj5iqnfyfk82" path="res://Misc/opening_cutscene.gdshader" id="2_2wk86"]
+[ext_resource type="Texture2D" uid="uid://cauwnol1d8fiv" path="res://Art/titlescreen_draft.png" id="2_jomyl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jomyl"]
+shader = ExtResource("2_2wk86")
+shader_parameter/blur_amount = 1.0000000475
+
+[node name="OpeningCutscene" type="Control" unique_id=1742611900]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mckrj")
+scroll_speed = 200
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1077001028]
+position = Vector2(466, 257)
+scale = Vector2(0.334, 0.334)
+texture = ExtResource("2_jomyl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1249282164]
+material = SubResource("ShaderMaterial_jomyl")
+layout_mode = 0
+offset_right = 932.0
+offset_bottom = 513.0
+
+[node name="Scroller" type="ScrollContainer" parent="." unique_id=1717205292]
+layout_mode = 1
+offset_left = 278.0
+offset_right = 657.0
+offset_bottom = 516.0
+vertical_scroll_mode = 3
+
+[node name="Story" type="RichTextLabel" parent="Scroller" unique_id=704026172]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 30
+text = " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed molestie felis porttitor imperdiet tincidunt. Pellentesque eget lectus turpis. Aenean vel leo quis nisi varius imperdiet. Donec feugiat ullamcorper augue malesuada facilisis. Suspendisse vitae mauris pharetra, molestie felis ac, finibus metus. Donec imperdiet venenatis nibh vitae pulvinar. Aenean malesuada nisi sem, at suscipit orci efficitur vel.
+
+Quisque dictum metus eget accumsan ullamcorper. Donec laoreet faucibus purus sit amet varius. Praesent vitae eros id leo eleifend gravida bibendum ac felis. Suspendisse dictum dui eu odio vestibulum, non vestibulum lacus sagittis. Proin porta eleifend elit at commodo. Donec bibendum tristique feugiat. Praesent convallis facilisis magna quis placerat.
+
+Morbi venenatis interdum odio non lobortis. Duis dui nulla, egestas sit amet nulla non, scelerisque malesuada risus. Praesent iaculis turpis quam, sit amet molestie arcu viverra ac. Curabitur finibus sodales accumsan. Ut porta eget lorem eget consequat. Nunc pulvinar quis lacus quis faucibus. Nullam eu erat condimentum, condimentum nisl eu, scelerisque nulla. Cras vel felis at velit vulputate feugiat. Vestibulum turpis tellus, egestas nec neque commodo, dictum faucibus erat. Nam quam ligula, pulvinar ut nulla vel, mollis aliquet urna. Phasellus consectetur sapien arcu, vitae laoreet odio dictum quis. Phasellus mollis vitae libero at blandit. Sed ultricies id ligula in porttitor.
+
+Quisque ac lorem risus. Mauris tincidunt enim in turpis scelerisque, at tempor massa iaculis. Fusce ac turpis consequat, placerat dolor vel, tristique ex. Cras velit mi, commodo non imperdiet ac, aliquet in lacus. Fusce vitae ipsum laoreet, tincidunt augue a, tempus nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis nibh magna, accumsan vitae rhoncus eleifend, lobortis at sapien. Vestibulum fermentum auctor tellus a rhoncus. Pellentesque malesuada urna eu eros bibendum, vel pharetra felis facilisis. In dignissim sodales vestibulum. Aliquam ut dolor faucibus, volutpat nunc sed, ultricies tortor. Ut a scelerisque felis. Duis aliquet, neque a porttitor rutrum, ipsum leo pretium nisl, et sodales quam ante eu dui. Proin sed ultricies neque. Vivamus consequat auctor lorem at condimentum. Donec nunc orci, porttitor ac euismod quis, pulvinar at ipsum.
+
+In augue eros, faucibus sed placerat vel, molestie in lacus. Pellentesque eu vestibulum lorem. Integer iaculis dictum erat eget pretium. Phasellus vel est in velit semper pretium at ac lacus. Phasellus suscipit commodo neque, id cursus diam aliquam at. Morbi vulputate ligula et turpis dignissim accumsan. Curabitur sit amet neque turpis. Duis consectetur, nibh non fermentum porta, nulla libero pellentesque nulla, eget porta turpis magna consectetur nibh. Sed cursus lectus ex, non sollicitudin ex tempor quis. Curabitur ligula arcu, lobortis lacinia convallis vitae, lobortis vitae libero. Ut lorem purus, tincidunt sed ultricies vitae, eleifend in leo. Duis ipsum lectus, placerat sed quam a, pharetra fermentum felis. Duis non nulla vestibulum ex imperdiet molestie. In hac habitasse platea dictumst. "
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1

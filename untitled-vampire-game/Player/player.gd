@@ -33,8 +33,8 @@ var can_jump : bool #used for coyote time in vampire state
 #---------- Particles ----------#
 @onready var blood_particles := $BloodParticles
 @onready var afterimage_particles := $AfterimageParticles
-@onready var left_afterimage : Texture2D = preload("res://Art/Placeholder/anim_bitedash_outline_afterimage_LEFT.png")
-@onready var right_afterimage : Texture2D = preload("res://Art/Placeholder/anim_bitedash_outline_afterimage_RIGHT.png")
+@onready var left_afterimage : Texture2D = preload("res://Art/Sprites/Vamp/anim_bitedash_outline_afterimage_LEFT.png")
+@onready var right_afterimage : Texture2D = preload("res://Art/Sprites/Vamp/anim_bitedash_outline_afterimage_RIGHT.png")
 
 
 #---------- RayCasts ----------#
@@ -71,10 +71,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	
-	if direction == -1:
+	if previous_direction == -1:
 		afterimage_particles.texture = left_afterimage
-	if direction == 1:
+	if previous_direction == 1:
 		afterimage_particles.texture = right_afterimage
 	
 	move_and_slide() # Applies velocity to the in-game object

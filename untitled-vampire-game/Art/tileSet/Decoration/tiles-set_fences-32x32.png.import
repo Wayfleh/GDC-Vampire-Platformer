@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://balfhfhgdcod0"
-path="res://.godot/imported/anim_walk_outline.png-664769e336d4153b239eebe4dc4909b0.ctex"
+uid="uid://61xwbolil1p7"
+path="res://.godot/imported/tiles-set_fences-32x32.png-45df63bd358011b90ed2b2f5b926879f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Placeholder/anim_walk_outline.png"
-dest_files=["res://.godot/imported/anim_walk_outline.png-664769e336d4153b239eebe4dc4909b0.ctex"]
+source_file="res://Art/tileSet/Decoration/tiles-set_fences-32x32.png"
+dest_files=["res://.godot/imported/tiles-set_fences-32x32.png-45df63bd358011b90ed2b2f5b926879f.ctex"]
 
 [params]
 

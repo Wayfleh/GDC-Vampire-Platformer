@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1jvvc1e8t3k2"
-path="res://.godot/imported/transparentCircle(2).png-6fa9228969936985b9c70b3572a633ce.ctex"
+uid="uid://cohmv3yh0w0qg"
+path="res://.godot/imported/anim_bitedash_outline.png-d972b158afd25cb6205983133939416e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Placeholder/transparentCircle(2).png"
-dest_files=["res://.godot/imported/transparentCircle(2).png-6fa9228969936985b9c70b3572a633ce.ctex"]
+source_file="res://Art/Sprites/Vamp/anim_bitedash_outline.png"
+dest_files=["res://.godot/imported/anim_bitedash_outline.png-d972b158afd25cb6205983133939416e.ctex"]
 
 [params]
 
