@@ -25,6 +25,7 @@ func move_tip(speed: float):
 
 func hide_tongue():
 	hide()
+	tip_area.hide()
 	tip_area.monitoring = false
 
 # I made this one so the hide function isn't lonely <3
@@ -33,6 +34,9 @@ func show_tongue():
 	tip_circle.hide()
 	tip_area.hide()
 
+func show_tip():
+	tip_area.show()
+	tip_area.monitoring = true
 #returns the direction of the thing that enters the tip area
 func latch_direction() -> int:
 	return 1 if front_check.is_colliding() else -1 if back_check.is_colliding() else 0
@@ -89,6 +93,6 @@ func check_surface() -> void:
 	
 
 func is_mantle_check_colliding() -> bool:
-	print("tongue collide is")
-	print(mantle_front.is_colliding() || mantle_back.is_colliding())
+	#print("tongue collide is")
+	#print(mantle_front.is_colliding() || mantle_back.is_colliding())
 	return mantle_front.is_colliding() || mantle_back.is_colliding()

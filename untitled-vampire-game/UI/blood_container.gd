@@ -24,12 +24,18 @@ var topMostToken : Sprite2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	UpdateBloodTokenSprites()
+	GlobalData.update_blood_chamber.connect(cycleBlood)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("blood_cycle"):
+	if doCycle == true:
+		PerformCycleAnimation()
+	else:
+		return
+
+func cycleBlood():
 		PerformCycleAnimation()
 		topMostToken = readBloodChamber("lastToken")
 		if topMostToken != token_2 || topMostToken != token_3: 
@@ -37,15 +43,12 @@ func _process(delta: float) -> void:
 			return
 		doCycle = true
 		cycleTime = cycleSeconds
-
-	if doCycle == true:
-		PerformCycleAnimation()
-	else:
-		return
+	
 
 func PerformCycleAnimation():
 	#TODO: Add animations here
 	UpdateBloodTokenSprites()
+	doCycle = false
 	pass
 
 func UpdateBloodTokenSprites():
