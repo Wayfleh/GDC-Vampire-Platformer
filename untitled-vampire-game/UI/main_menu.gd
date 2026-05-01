@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_play_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Levels/Level_01.tscn")
+	get_tree().change_scene_to_file("res://Misc/opening_cutscene.tscn")
 	GlobalMusic.ChangeTrack("overworld")
 #goes to level01 if pressed
 

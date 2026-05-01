@@ -95,12 +95,13 @@ func _tip_touch_surface(body : Node2D):
 			_is_mantling = true
 		_pull_distance = (-_tongue.tip.position.y + 32 if _is_mantling 
 							else -_tongue.tip.position.y - 32)
-		_tongue.hide_tongue()
 	if (body is Animal):
 		pass #TODO make it so animals are pulled toward the player
 
 # Moves player in the direction of the tongue
 func _pull_frog(delta: float):
+	if _tongue.tip_area.monitoring:
+		_tongue.hide_tongue()
 	var _current_distance = _starting_position - player.global_position
 	if _current_distance.length() <= _pull_distance:
 		player.velocity = player.velocity.move_toward(_pull_direction.normalized() * pull_speed, delta * pull_speed)

@@ -27,6 +27,7 @@ func hide_tongue():
 	hide()
 	tip_area.hide()
 	tip_area.monitoring = false
+	print(tip_area.monitoring)
 
 # I made this one so the hide function isn't lonely <3
 func show_tongue():
