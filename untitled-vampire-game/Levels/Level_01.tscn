@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="4_2o7fp"]
 [ext_resource type="PackedScene" uid="uid://cxghx2trln3ul" path="res://Levels/Level_02.tscn" id="4_yu5cb"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="5_lkd0j"]
+[ext_resource type="PackedScene" uid="uid://cklmtejug5xhr" path="res://Misc/ButtonInstruction.tscn" id="7_6drxt"]
 
 [node name="Level1" type="Node2D" unique_id=1583682183]
 
@@ -58,3 +59,22 @@ offset_right = -83.0
 offset_bottom = 227.0
 text = "     W
 A   S   D"
+
+[node name="WASD" type="Node2D" parent="." unique_id=1458660883]
+position = Vector2(-257, -34)
+
+[node name="ButtonInstructionW" parent="WASD" unique_id=984686626 instance=ExtResource("7_6drxt")]
+position = Vector2(-111, 192)
+letter = "W"
+
+[node name="ButtonInstructionS" parent="WASD" unique_id=1312155523 instance=ExtResource("7_6drxt")]
+position = Vector2(-111, 238)
+letter = "S"
+
+[node name="ButtonInstructionD" parent="WASD" unique_id=334431205 instance=ExtResource("7_6drxt")]
+position = Vector2(-66, 238)
+letter = "D"
+
+[node name="ButtonInstructionA" parent="WASD" unique_id=826135713 instance=ExtResource("7_6drxt")]
+position = Vector2(-157, 238)
+letter = "A"

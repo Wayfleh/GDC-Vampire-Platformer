@@ -150,7 +150,6 @@ tile_set = SubResource("TileSet_cgdeu")
 unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
-zoom = Vector2(1.25, 1.25)
 
 [node name="Animal" parent="." unique_id=934101410 instance=ExtResource("6_8gc7i")]
 position = Vector2(-258, 174)

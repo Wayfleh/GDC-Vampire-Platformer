@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://bycc0xodltluf"]
+
+[ext_resource type="FontFile" uid="uid://bojfmb0iv5fhc" path="res://Art/UI/Jacquard12-Regular.ttf" id="1_b0wn8"]
+
+[resource]
+line_spacing = 0.0
+font = ExtResource("1_b0wn8")
+font_size = 24

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cklmtejug5xhr"]
+
+[ext_resource type="Script" uid="uid://62622c8y6k6y" path="res://Misc/button_instruction.gd" id="1_04ad0"]
+[ext_resource type="LabelSettings" uid="uid://bycc0xodltluf" path="res://UI/keyboardSpriteLabel.tres" id="1_tmy18"]
+[ext_resource type="Texture2D" uid="uid://cjjdhhb5v5yq3" path="res://Art/UI/controlbutton.png" id="2_04ad0"]
+
+[node name="ButtonInstruction" type="Node2D" unique_id=984686626]
+script = ExtResource("1_04ad0")
+
+[node name="KeyLetter" type="Label" parent="." unique_id=217804761]
+z_index = 1
+offset_left = -20.0
+offset_top = -12.0
+offset_right = 20.0
+offset_bottom = 13.0
+text = "E"
+label_settings = ExtResource("1_tmy18")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeySprite" type="Sprite2D" parent="." unique_id=862594335]
+texture = ExtResource("2_04ad0")

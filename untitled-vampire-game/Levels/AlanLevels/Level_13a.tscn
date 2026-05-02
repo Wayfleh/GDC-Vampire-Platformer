@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="7_ou7qj"]
 [ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="8_3vljn"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="9_26fa5"]
+[ext_resource type="PackedScene" uid="uid://cklmtejug5xhr" path="res://Misc/ButtonInstruction.tscn" id="10_1ayck"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ik50e"]
 texture = ExtResource("3_c8yxo")
@@ -149,7 +150,6 @@ tile_set = SubResource("TileSet_cgdeu")
 unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
-zoom = Vector2(1.25, 1.25)
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("6_6y1yc")]
 position = Vector2(-279, 101)
@@ -184,5 +184,9 @@ offset_top = -160.0
 offset_right = 61.0
 offset_bottom = -137.0
 text = "J"
+
+[node name="ButtonInstructionJ" parent="." unique_id=984686626 instance=ExtResource("10_1ayck")]
+position = Vector2(-66, -136)
+letter = "J"
 
 [editable path="Player"]
