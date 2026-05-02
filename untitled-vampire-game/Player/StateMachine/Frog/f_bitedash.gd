@@ -19,6 +19,12 @@ var _mantle_scalar : float
 var _is_mantling : bool
 var _tongue: Tongue
 
+#Sounds
+@onready var sound_tongue_fire : AudioStreamPlayer2D = owner.get_node("SoundF_Tongue_Fire")
+@onready var sound_tongue_latch : AudioStreamPlayer2D = owner.get_node("SoundF_Tongue_Latch")
+@onready var sound_tongue_retract : AudioStreamPlayer2D = owner.get_node("SoundF_Tongue_Retract")
+@onready var sound_tongue_whiff : AudioStreamPlayer2D = owner.get_node("SoundF_Tongue_Whiff")
+
 
 func enter_state():
 	#initialize tongue stuff
@@ -27,8 +33,8 @@ func enter_state():
 	_tongue.rotation = max_angle
 	_tongue.show_tongue()
 	_tongue.tip.position.y = -10
-	_tongue.surface_check1.set_target_position(Vector2(0, -tongue_length))
-	_tongue.surface_check2.set_target_position(Vector2(0, -tongue_length))
+	_tongue.surface_check1.set_target_position(Vector2(0, -tongue_length + 15))
+	_tongue.surface_check2.set_target_position(Vector2(0, -tongue_length + 15))
 	_time = 0.0
 	_tongue.tip_area.body_entered.connect(_tip_touch_surface) #TODO find a way to put this in a _ready() function without node hierarchy shit getting in the way
 	
@@ -37,6 +43,8 @@ func enter_state():
 	_is_mantling = false
 	_dash_state = "aim"
 	player.velocity = Vector2.ZERO #stop player movement while aiming
+	
+	player.anim_sprite.play("frog_idle_right" if player.is_on_floor() else "frog_idle_air")
 
 
 func update(delta: float):
@@ -70,7 +78,10 @@ func _aim_tongue(delta: float):
 	_tongue.check_surface()
 	
 	if Input.is_action_just_released("bite_dash"): #release button to fire tongue
+		player.anim_sprite.play("frog_mouth_open_ground" if player.is_on_floor() else "frog_mouth_open_air")
+		_tongue.z_index = 1
 		_dash_state = "shoot"
+		sound_tongue_fire.play()
 		_tongue.show_tip()
 
 # Moves tongue tip at tongue angle
@@ -78,6 +89,7 @@ func _aim_tongue(delta: float):
 func _shoot_tongue(delta: float):
 	_tongue.move_tip(tip_speed * delta)
 	if _tongue.tip.position.y <= -tongue_length: #switch to idle if tip hits nothing
+		sound_tongue_whiff.play()
 		transitionToState.emit("F_IDLE")
 
 # connected to the tongue tip's area
@@ -95,6 +107,7 @@ func _tip_touch_surface(body : Node2D):
 			_is_mantling = true
 		_pull_distance = (-_tongue.tip.position.y + 32 if _is_mantling 
 							else -_tongue.tip.position.y - 32)
+		sound_tongue_latch.play()
 	if (body is Animal):
 		pass #TODO make it so animals are pulled toward the player
 
@@ -109,6 +122,7 @@ func _pull_frog(delta: float):
 		_detransform();
 	else: #mantle when distance moved is equal to tongue length and you're mantling
 		#.length() is magnitude of a Vector2 btw
+		sound_tongue_retract.play()
 		_dash_state = "mantle"
 		_mantle_scalar = mantle_impulse if _pull_direction.x > 0 else -mantle_impulse #impulse direction
 		var _mar = deg_to_rad(mantle_angle) #mantle angle (in) radians
@@ -120,4 +134,5 @@ func _detransform():
 		player.TransformToVampire()
 
 func exit_state():
+	_tongue.z_index = 0
 	_tongue.hide_tongue()

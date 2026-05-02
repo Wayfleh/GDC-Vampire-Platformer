@@ -125,12 +125,14 @@ shader_parameter/darkness = 0.5
 shader_parameter/blue_color = Color(0.13541102, 0.34736264, 0.73924, 1)
 shader_parameter/intensity = 0.2110000100225
 
-[node name="RafLevel1" type="Node2D" unique_id=731106712]
+[node name="RafLevel2" type="Node2D" unique_id=731106712]
 
 [node name="BGImage" type="Sprite2D" parent="." unique_id=473209120]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(-32, -61)
+position = Vector2(-84, 11)
+rotation = -1.5707964
+scale = Vector2(0.5738261, 0.573826)
 texture = ExtResource("1_pvciu")
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=1117420332]
@@ -145,7 +147,6 @@ tile_set = ExtResource("2_atqf4")
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(-222, 5)
-tile_map_data = PackedByteArray("AAD5/wYAAQACAAIAAAD6/wYAAQACAAIAAAD7/wYAAQAGAAIAAAD8/wYAAQAGAAIAAAD5/wUAAQAEAAAAAAD6/wUAAQAEAAAAAAD7/wUAAQAEAAAAAAD8/wUAAQAGAAAAAAD+/wEAAQACAAAAAAD//wEAAQAEAAAAAAAAAAEAAQAGAAAAAAD8/wIAAQAAAAAAAAD8/wEAAQAAAAAAAAABAPv/AQACAAAAAAAKAAAAAQAAAAIAAAAKAP//AQAAAAAAAAALAPv/AQAAAAAAAAAAAPv/AQACAAAAAAACAPv/AQACAAAAAAADAPv/AQAGAAAAAAAIAPv/AQACAAAAAAAJAPv/AQACAAAAAAAEAPv/AQAGAAAAAAAFAPz/AQAIAAIAAAAHAAEAAQACAAAAAAD8/wMAAQAAAAIAAAA=")
 tile_set = SubResource("TileSet_65lwb")
 
 [node name="ForegroundRoots" type="TileMapLayer" parent="Tilemaps" unique_id=135111801]
@@ -165,11 +166,9 @@ collision_enabled = false
 position = Vector2(-240, 71)
 
 [node name="Rat" parent="Animals" unique_id=1621375151 instance=ExtResource("6_65lwb")]
-z_index = 1
 position = Vector2(-313, 211)
 
 [node name="Rat2" parent="Animals" unique_id=386763787 instance=ExtResource("6_65lwb")]
-z_index = 1
 position = Vector2(77, 206)
 
 [node name="Frog2" parent="Animals" unique_id=1203613713 instance=ExtResource("5_0luvm")]
