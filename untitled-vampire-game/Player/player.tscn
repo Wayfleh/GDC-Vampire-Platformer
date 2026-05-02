@@ -23,8 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://balfhfhgdcod0" path="res://Art/Sprites/Vamp/anim_walk_outline.png" id="8_8mwp6"]
 [ext_resource type="Script" uid="uid://b56ekyi8jeqru" path="res://Player/StateMachine/Frog/f_idle.gd" id="9_x3vf3"]
 [ext_resource type="Script" uid="uid://d3sjtxr7sc4jo" path="res://Player/StateMachine/Frog/f_walk.gd" id="10_apopc"]
+[ext_resource type="Texture2D" uid="uid://bisa3f5atlkvb" path="res://Art/Sprites/VampFrog/vampfrog-sprite_movement (1).png" id="10_maysp"]
 [ext_resource type="Texture2D" uid="uid://dinw4bxb85og6" path="res://Art/Placeholder/spongebob vampire.png" id="10_p5o4e"]
 [ext_resource type="Script" uid="uid://dh0kt6slyvvuv" path="res://Player/StateMachine/Frog/f_jump.gd" id="11_apopc"]
+[ext_resource type="Texture2D" uid="uid://d23jtkn6lsg8x" path="res://Art/Sprites/VampFrog/vampfrog-sprite_bitedash-open.png" id="12_dy65m"]
 [ext_resource type="Texture2D" uid="uid://bkaxjk8fwkc8f" path="res://Art/Sprites/VampRat/anim_vampmouse_yeet.png" id="13_d30e8"]
 [ext_resource type="Texture2D" uid="uid://0ftjg1q8lmjm" path="res://Art/Sprites/VampRat/anim_vampmousewalk_rev.png" id="14_6pogt"]
 [ext_resource type="Texture2D" uid="uid://d1jvvc1e8t3k2" path="res://Art/Sprites/VampFrog/transparentCircle(2).png" id="14_f4lon"]
@@ -43,6 +45,10 @@
 [ext_resource type="AudioStream" uid="uid://cmpm0k80o6mw8" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FootstepsFrog_1.wav" id="29_755ss"]
 [ext_resource type="AudioStream" uid="uid://kq0ic1wajuar" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FootstepsFrog_2.wav" id="30_bbimk"]
 [ext_resource type="Texture2D" uid="uid://dicek02mq4nym" path="res://Art/Placeholder/anim_transformationpoof.png" id="42_6pogt"]
+[ext_resource type="AudioStream" uid="uid://cgt30c1whfntg" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FrogTongueFire.wav" id="46_6eb1q"]
+[ext_resource type="AudioStream" uid="uid://c6qo8msyh747j" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FrogTongueLatch.wav" id="47_wvbyc"]
+[ext_resource type="AudioStream" uid="uid://bvxgiuf3xpwv6" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FrogTongueRetract.wav" id="48_gvnt1"]
+[ext_resource type="AudioStream" uid="uid://bcx6tqfv7jwvk" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FrogTongueWhiff2.wav" id="49_1kmt7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gwnis"]
 radius = 12.0
@@ -66,6 +72,14 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("6_iyprq")
 region = Rect2(0, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qas3k"]
+atlas = ExtResource("10_maysp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntwt4"]
+atlas = ExtResource("10_maysp")
+region = Rect2(64, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ie76m"]
 atlas = ExtResource("7_f4lon")
 region = Rect2(0, 0, 32, 32)
@@ -77,6 +91,14 @@ region = Rect2(128, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_maysp"]
 atlas = ExtResource("3_o28un")
 region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6nl3"]
+atlas = ExtResource("12_dy65m")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hx1r"]
+atlas = ExtResource("12_dy65m")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hshwv"]
 atlas = ExtResource("4_n471f")
@@ -218,6 +240,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_qas3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntwt4")
+}],
+"loop": true,
+"name": &"frog_idle_air",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ie76m")
 }],
 "loop": true,
@@ -233,6 +266,22 @@ animations = [{
 }],
 "loop": true,
 "name": &"frog_idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6nl3")
+}],
+"loop": true,
+"name": &"frog_mouth_open_air",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8hx1r")
+}],
+"loop": true,
+"name": &"frog_mouth_open_ground",
 "speed": 5.0
 }, {
 "frames": [{
@@ -422,6 +471,7 @@ color_ramp = SubResource("Gradient_dkpta")
 [node name="Tongue" type="Node2D" parent="CurrentDirection" unique_id=949118960]
 unique_name_in_owner = true
 visible = false
+position = Vector2(4, 3)
 rotation = 0.7853982
 scale = Vector2(0.9999999, 0.9999999)
 script = ExtResource("5_pisgm")
@@ -474,22 +524,21 @@ position = Vector2(1, 14)
 target_position = Vector2(15, 0)
 
 [node name="SurfaceCheck2" type="RayCast2D" parent="CurrentDirection/Tongue" unique_id=226353535]
-position = Vector2(-15, 0)
+position = Vector2(-15, -10)
 target_position = Vector2(0, -200)
 
 [node name="MidSC" type="RayCast2D" parent="CurrentDirection/Tongue" unique_id=1473734040]
 target_position = Vector2(0, -200)
 
 [node name="SurfaceCheck1" type="RayCast2D" parent="CurrentDirection/Tongue" unique_id=1007837983]
-position = Vector2(15, 0)
+position = Vector2(15, -10)
 target_position = Vector2(0, -200)
 
 [node name="AlucardSprite" type="AnimatedSprite2D" parent="CurrentDirection" unique_id=980260689]
 unique_name_in_owner = true
 scale = Vector2(1.0954546, 1.1)
 sprite_frames = SubResource("SpriteFrames_p5o4e")
-animation = &"rat_idle"
-frame_progress = 0.8402324
+animation = &"frog_idle_air"
 offset = Vector2(0, 1)
 
 [node name="BiteHitbox" type="Area2D" parent="CurrentDirection" unique_id=908817078]
@@ -641,6 +690,22 @@ volume_db = 8.0
 
 [node name="SoundF_Hop2" type="AudioStreamPlayer2D" parent="." unique_id=115468940]
 stream = ExtResource("30_bbimk")
+volume_db = 8.0
+
+[node name="SoundF_Tongue_Fire" type="AudioStreamPlayer2D" parent="." unique_id=1501720662]
+stream = ExtResource("46_6eb1q")
+volume_db = 8.0
+
+[node name="SoundF_Tongue_Latch" type="AudioStreamPlayer2D" parent="." unique_id=1577823365]
+stream = ExtResource("47_wvbyc")
+volume_db = 8.0
+
+[node name="SoundF_Tongue_Retract" type="AudioStreamPlayer2D" parent="." unique_id=776838224]
+stream = ExtResource("48_gvnt1")
+volume_db = 8.0
+
+[node name="SoundF_Tongue_Whiff" type="AudioStreamPlayer2D" parent="." unique_id=813104962]
+stream = ExtResource("49_1kmt7")
 volume_db = 8.0
 
 [connection signal="area_entered" from="CurrentDirection/BiteHitbox" to="." method="bite_animal"]
