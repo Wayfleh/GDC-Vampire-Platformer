@@ -18,7 +18,7 @@ func showOutline(body: Node2D):
 		if body.state_machine.current_state != body.state_machine.states["RAT"]:
 			return
 		$Sprite2D.texture = hole_sprite[1]
-		$Sprite2D.offset.y = -1
+		$Sprite2D.offset.y = -.5
 
 func hideOutline(body: Node2D):
 	$Sprite2D.texture = hole_sprite[0]
