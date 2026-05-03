@@ -3,9 +3,9 @@ class_name Tongue
 extends Node2D
 
 @onready var tip : Node2D = $TipPivot
-@onready var tip_area : Area2D = $TipPivot/TongueTip
-@onready var mantle_front : RayCast2D = $TipPivot/MantleFront
-@onready var mantle_back : RayCast2D = $TipPivot/MantleBack
+@onready var tip_sprite : Sprite2D = $TipPivot/TipSprite
+@onready var mantle_front : RayCast2D = $TipCircle/MantleFront
+@onready var mantle_back : RayCast2D = $TipCircle/MantleBack
 
 # The front and back check can only collide with bodies, not areas, 
 #so they don't hit the player
@@ -25,22 +25,26 @@ func move_tip(speed: float):
 
 func hide_tongue():
 	hide()
-	tip_area.hide()
-	tip_area.monitoring = false
-	print(tip_area.monitoring)
+	tip_sprite.hide()
 
 # I made this one so the hide function isn't lonely <3
 func show_tongue():
 	show()
 	tip_circle.hide()
-	tip_area.hide()
+	tip_sprite.hide()
 
 func show_tip():
-	tip_area.show()
-	tip_area.monitoring = true
+	tip_sprite.show()
+
 #returns the direction of the thing that enters the tip area
 func latch_direction() -> int:
 	return 1 if front_check.is_colliding() else -1 if back_check.is_colliding() else 0
+
+func rotate_tongue(angle: float):
+	rotation = angle
+	tip.rotation = -angle #tip faces straight up
+	tip_circle.rotation = -angle
+	
 
 #I HATE YOUUUUU I HATE YOU SO MUCH DIE DIE DIE DIE DIE DIE DIE DIE DIE
 #There's probably a better way to do all of these calculations, but I'm not that smart yet
@@ -96,4 +100,5 @@ func check_surface() -> void:
 func is_mantle_check_colliding() -> bool:
 	#print("tongue collide is")
 	#print(mantle_front.is_colliding() || mantle_back.is_colliding())
+	
 	return mantle_front.is_colliding() || mantle_back.is_colliding()

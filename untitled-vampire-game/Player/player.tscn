@@ -66,9 +66,6 @@ height = 28.0
 interpolation_mode = 2
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.3529412)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lfmf2"]
-radius = 15.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_d30e8"]
 atlas = ExtResource("5_jp1hh")
 region = Rect2(0, 0, 32, 32)
@@ -497,32 +494,22 @@ texture = ExtResource("14_f4lon")
 [node name="RayCast2D" type="RayCast2D" parent="CurrentDirection/Tongue/TipCircle" unique_id=817405671]
 enabled = false
 
-[node name="TipPivot" type="Node2D" parent="CurrentDirection/Tongue" unique_id=687600060]
-rotation = -0.7853982
-
-[node name="TongueTip" type="Area2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=620725349]
-visible = false
-monitoring = false
-
-[node name="TongueTipCollider" type="CollisionShape2D" parent="CurrentDirection/Tongue/TipPivot/TongueTip" unique_id=1406688466]
-visible = false
-shape = SubResource("CircleShape2D_lfmf2")
-
-[node name="Sprite2D" type="Sprite2D" parent="CurrentDirection/Tongue/TipPivot/TongueTip" unique_id=370410446]
-rotation = 3.1415927
-texture = ExtResource("4_gu6f8")
-
-[node name="MantleFront" type="RayCast2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=1556445343]
+[node name="MantleFront" type="RayCast2D" parent="CurrentDirection/Tongue/TipCircle" unique_id=1556445343]
 position = Vector2(15, -28)
 target_position = Vector2(10, 0)
 hit_from_inside = true
-collide_with_areas = true
 
-[node name="MantleBack" type="RayCast2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=1470586653]
+[node name="MantleBack" type="RayCast2D" parent="CurrentDirection/Tongue/TipCircle" unique_id=1470586653]
 position = Vector2(-15, -28)
 target_position = Vector2(-10, 0)
 hit_from_inside = true
-collide_with_areas = true
+
+[node name="TipPivot" type="Node2D" parent="CurrentDirection/Tongue" unique_id=687600060]
+rotation = -0.7853982
+
+[node name="TipSprite" type="Sprite2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=370410446]
+rotation = -3.1415925
+texture = ExtResource("4_gu6f8")
 
 [node name="BackCheck" type="RayCast2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=1817393569]
 position = Vector2(-1, 14)

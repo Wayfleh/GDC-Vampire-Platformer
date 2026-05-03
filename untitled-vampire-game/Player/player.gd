@@ -126,7 +126,7 @@ func apply_horizontal_movement(delta: float):
 	else:
 		velocity.x = speed * 100 * direction * delta
 
-func apply_friction(delta: float, friction_mult : int):
+func apply_friction(delta: float, friction_mult : float):
 	if (-0.005 <= velocity.x && velocity.x <= 0.005): #Clamping velocity as it approaches 0 to prevent too many lerpf calls.
 		velocity.x = 0
 	else:
