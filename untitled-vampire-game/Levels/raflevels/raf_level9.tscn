@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://bh4v4f5vgql71"]
+[gd_scene format=4 uid="uid://682kb4tpklrc"]
 
 [ext_resource type="Texture2D" uid="uid://b1nsq1cs3vntd" path="res://Art/bg1.png" id="1_e3l2n"]
 [ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="2_caouf"]

@@ -88,6 +88,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ts7yi"]
+radius = 13.892436
 
 [node name="Rat" type="Area2D" unique_id=1621375151]
 z_index = 1

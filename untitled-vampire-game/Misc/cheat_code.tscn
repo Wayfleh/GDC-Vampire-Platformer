@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dq8ex27s7myvo"]
+[gd_scene format=3 uid="uid://cikx6xtxcrrt1"]
 
 [ext_resource type="Script" uid="uid://ddd0y37mxqf2" path="res://Misc/opening_cutscene.gd" id="1_mckrj"]
 [ext_resource type="Shader" path="res://Misc/opening_cutscene.gdshader" id="2_2wk86"]
