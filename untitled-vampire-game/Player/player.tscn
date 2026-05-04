@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bd4436nmhy81h" path="res://Art/Sprites/VampFrog/vampfrogchargeLEFT.png" id="5_jp1hh"]
 [ext_resource type="Script" uid="uid://bgueu3iyq1rde" path="res://Player/StateMachine/Vampire/v_walk.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://bjqu6w4wos8p3" path="res://Player/tongue.gd" id="5_pisgm"]
+[ext_resource type="Texture2D" uid="uid://shttdd3t4qt5" path="res://Art/Sprites/VampFrog/tip_circle(1).png" id="6_6eb1q"]
 [ext_resource type="Script" uid="uid://d1lffwqtnbmrr" path="res://Player/StateMachine/Vampire/v_jump.gd" id="6_fhl08"]
 [ext_resource type="Texture2D" uid="uid://cohmv3yh0w0qg" path="res://Art/Sprites/Vamp/anim_bitedash_outline.png" id="6_hshwv"]
 [ext_resource type="Texture2D" uid="uid://brfknisqitbyx" path="res://Art/Sprites/VampFrog/vampfrogchargeRIGHT.png" id="6_iyprq"]
@@ -29,9 +30,9 @@
 [ext_resource type="Texture2D" uid="uid://d23jtkn6lsg8x" path="res://Art/Sprites/VampFrog/vampfrog-sprite_bitedash-open.png" id="12_dy65m"]
 [ext_resource type="Texture2D" uid="uid://bkaxjk8fwkc8f" path="res://Art/Sprites/VampRat/anim_vampmouse_yeet.png" id="13_d30e8"]
 [ext_resource type="Texture2D" uid="uid://0ftjg1q8lmjm" path="res://Art/Sprites/VampRat/anim_vampmousewalk_rev.png" id="14_6pogt"]
-[ext_resource type="Texture2D" uid="uid://d1jvvc1e8t3k2" path="res://Art/Sprites/VampFrog/transparentCircle(2).png" id="14_f4lon"]
 [ext_resource type="Texture2D" uid="uid://btyy331d02vos" path="res://Art/Sprites/VampRat/anim_vampmouseidle.png" id="14_ie76m"]
 [ext_resource type="Script" uid="uid://pfkhuqvmdxwe" path="res://Player/StateMachine/Frog/f_bitedash.gd" id="16_lfmf2"]
+[ext_resource type="Texture2D" uid="uid://dhft7yvd8akf3" path="res://Art/Sprites/Vamp/anim_idle_outline.png" id="21_wvbyc"]
 [ext_resource type="AudioStream" uid="uid://btvej03tmgjeh" path="res://Sounds/Player Sounds/VampirePlatformerSFX_Dash_Pass2(1).wav" id="24_8mwp6"]
 [ext_resource type="AudioStream" uid="uid://b1wu7ixox6b0y" path="res://Sounds/Player Sounds/VampirePlatformerSFX_BiteDeepFried.wav" id="24_8viyr"]
 [ext_resource type="Script" uid="uid://bvfkkmorxks4j" path="res://Player/StateMachine/Rat/rat_state.gd" id="24_j2n6q"]
@@ -201,6 +202,10 @@ region = Rect2(32, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ynux"]
 atlas = ExtResource("8_8mwp6")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdg72"]
+atlas = ExtResource("21_wvbyc")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6x0f"]
 atlas = ExtResource("7_gpjlu")
@@ -399,6 +404,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8ynux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdg72")
 }],
 "loop": true,
 "name": &"vampire_idle",
@@ -485,11 +493,11 @@ script = ExtResource("5_pisgm")
 [node name="GuideLine" type="Line2D" parent="CurrentDirection/Tongue" unique_id=1718286960]
 points = PackedVector2Array(0, 0, 0, -80)
 width = 4.0
-default_color = Color(0.8666667, 0.32156864, 0.7254902, 1)
+default_color = Color(0.9764706, 0.41960785, 0.4117647, 1)
 
 [node name="TipCircle" type="Sprite2D" parent="CurrentDirection/Tongue" unique_id=1504127840]
 position = Vector2(0, -89.00001)
-texture = ExtResource("14_f4lon")
+texture = ExtResource("6_6eb1q")
 
 [node name="RayCast2D" type="RayCast2D" parent="CurrentDirection/Tongue/TipCircle" unique_id=817405671]
 enabled = false
@@ -534,7 +542,7 @@ target_position = Vector2(0, -200)
 unique_name_in_owner = true
 scale = Vector2(1.0954546, 1.1)
 sprite_frames = SubResource("SpriteFrames_p5o4e")
-animation = &"frog_idle_air"
+animation = &"vampire_idle"
 offset = Vector2(0, 1)
 
 [node name="BiteHitbox" type="Area2D" parent="CurrentDirection" unique_id=908817078]

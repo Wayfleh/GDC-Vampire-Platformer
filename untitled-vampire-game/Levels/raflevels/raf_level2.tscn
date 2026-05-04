@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://bgaruxx4pyvol"]
+[gd_scene format=4 uid="uid://bmlpqyapw1suf"]
 
 [ext_resource type="Texture2D" uid="uid://b1nsq1cs3vntd" path="res://Art/bg1.png" id="1_16fvj"]
 [ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="2_lm7ip"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="4_ojln6"]
 [ext_resource type="Shader" uid="uid://1b1v6l8muomj" path="res://Art/tileSet/Decoration/background.gdshader" id="5_16fvj"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="5_x3c2v"]
-[ext_resource type="PackedScene" uid="uid://cb1sox1i5emno" path="res://Levels/raflevels/raf_level3.tscn" id="8_4tju2"]
+[ext_resource type="PackedScene" uid="uid://cb1sox1i5emno" path="res://Levels/raflevels/raf_level3_chinese.tscn" id="8_4tju2"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="8_s4agi"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="9_47w54"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="10_cvcn5"]

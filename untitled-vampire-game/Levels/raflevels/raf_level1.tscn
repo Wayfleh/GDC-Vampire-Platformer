@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="6_65lwb"]
 [ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="7_3ilyo"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="9_e0per"]
-[ext_resource type="PackedScene" uid="uid://bgaruxx4pyvol" path="res://Levels/raflevels/raf_level2.tscn" id="10_3ilyo"]
+[ext_resource type="PackedScene" uid="uid://bgaruxx4pyvol" path="res://Levels/raflevels/raf_level2_chinese.tscn" id="10_3ilyo"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="10_65lwb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8nnte"]
