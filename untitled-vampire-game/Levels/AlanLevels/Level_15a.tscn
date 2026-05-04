@@ -247,10 +247,6 @@ other_hole = NodePath("../RatHoleD2W")
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("6_tamp1")]
 position = Vector2(-298, 162)
 
-[node name="TongueTipCollider" parent="Player/CurrentDirection/Tongue/TipPivot/TongueTip" parent_id_path=PackedInt32Array(644735785, 620725349) index="0" unique_id=1406688466]
-position = Vector2(-1.1920929e-07, -1.1920929e-07)
-rotation = -0.2617994
-
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("9_tuqdx")]
 position = Vector2(141, 143)
 

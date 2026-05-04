@@ -1,7 +1,7 @@
 extends Control
 
 @onready var scroll: ScrollContainer = $Scroller
-@export var scroll_speed: int = 500
+@export var scroll_speed: int = 400
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -6,10 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="3_oufby"]
 [ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="4_mn8p1"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="5_0luvm"]
+[ext_resource type="Shader" uid="uid://1b1v6l8muomj" path="res://Art/tileSet/Decoration/background.gdshader" id="5_e0per"]
 [ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="6_65lwb"]
 [ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="7_3ilyo"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="9_e0per"]
-[ext_resource type="PackedScene" uid="uid://bgaruxx4pyvol" path="res://Levels/raflevels/raf_level2.tscn" id="10_3ilyo"]
+[ext_resource type="PackedScene" uid="uid://bgaruxx4pyvol" path="res://Levels/raflevels/raf_level2_chinese.tscn" id="10_3ilyo"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="10_65lwb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8nnte"]
@@ -118,12 +119,20 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_8nnte")
 sources/1 = SubResource("TileSetAtlasSource_0luvm")
 
-[node name="RafLevel1" type="Node2D" unique_id=731106712]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5wb0j"]
+shader = ExtResource("5_e0per")
+shader_parameter/darkness = 0.5
+shader_parameter/blue_color = Color(0.13541102, 0.34736264, 0.73924, 1)
+shader_parameter/intensity = 0.2110000100225
+
+[node name="RafLevel2" type="Node2D" unique_id=731106712]
 
 [node name="BGImage" type="Sprite2D" parent="." unique_id=473209120]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(-32, -61)
+position = Vector2(-84, 11)
+rotation = -1.5707964
+scale = Vector2(0.5738261, 0.573826)
 texture = ExtResource("1_pvciu")
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=1117420332]
@@ -135,20 +144,21 @@ tile_map_data = PackedByteArray("AAD4//f/AQAEAAQAAAD4//j/AQAEAAQAAAD4//n/AQAEAAQ
 tile_set = ExtResource("2_atqf4")
 
 [node name="ForegroundGrass" type="TileMapLayer" parent="Tilemaps" unique_id=762903382]
-visible = false
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(-222, 5)
-tile_map_data = PackedByteArray("AAD5/wYAAQACAAIAAAD6/wYAAQACAAIAAAD7/wYAAQAGAAIAAAD8/wYAAQAGAAIAAAD+/wIAAQACAAIAAAD//wIAAQAGAAIAAAAAAAIAAQACAAIAAAACAPz/AQAGAAIAAAADAPz/AQAGAAIAAAAEAAYAAQAEAAIAAAAFAAYAAQAGAAIAAAAGAAYAAQAEAAIAAAAFAAUAAQAEAAAAAAAGAAUAAQAEAAAAAAD5/wUAAQAEAAAAAAD6/wUAAQAEAAAAAAD7/wUAAQAEAAAAAAD8/wUAAQAGAAAAAAD+/wEAAQACAAAAAAD//wEAAQAEAAAAAAAAAAEAAQAGAAAAAAD8/wIAAQAAAAAAAAD8/wEAAQAAAAAAAAABAPz/AQAGAAIAAAABAPv/AQACAAAAAAAKAAAAAQAAAAIAAAAKAP//AQAAAAAAAAALAPv/AQAAAAAAAAAAAPz/AQAGAAIAAAAIAPz/AQACAAIAAAAJAPz/AQAGAAIAAAADAAYAAQACAAIAAAACAAYAAQACAAIAAAAAAPv/AQACAAAAAAACAPv/AQACAAAAAAADAPv/AQAGAAAAAAAIAPv/AQACAAAAAAAJAPv/AQACAAAAAAAEAPz/AQAGAAIAAAAEAPv/AQAGAAAAAAAFAPz/AQAIAAIAAAAHAAIAAQACAAIAAAAGAAEAAQAAAAIAAAAGAAIAAQAAAAIAAAAHAAEAAQACAAAAAAD9/wMAAQAEAAIAAAD9/wIAAQAEAAAAAAD8/wMAAQAAAAIAAAA=")
 tile_set = SubResource("TileSet_65lwb")
 
 [node name="ForegroundRoots" type="TileMapLayer" parent="Tilemaps" unique_id=135111801]
-visible = false
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(-222, 5)
-tile_map_data = PackedByteArray("AAAAAAIAAQAEAAYAAAABAAIAAQAEAAYAAAABAAMAAQAEAAgAAAD///n/AQAEAAYAAAAAAPn/AQAEAAYAAAABAPn/AQAEAAYAAAD7//r/AQAEAAYAAAD5//7/AQAGAAYAAAD6//v/AQAGAAYAAAD5////AQAGAAgAAAD6//z/AQAGAAgAAAD7//v/AQAEAAgAAAAAAPr/AQAEAAgAAAABAPr/AQAEAAgAAAADAPn/AQAGAAYAAAADAPr/AQAGAAgAAAAAAAMAAQAEAAgAAAACAPn/AQAEAAYAAAD9//n/AQAEAAYAAAAAAPz/AQACAAYAAAAAAP3/AQACAAgAAAA=")
 tile_set = SubResource("TileSet_65lwb")
+
+[node name="Background" type="TileMapLayer" parent="Tilemaps" unique_id=45916202]
+material = SubResource("ShaderMaterial_5wb0j")
+tile_set = ExtResource("2_atqf4")
+collision_enabled = false
 
 [node name="Animals" type="Node2D" parent="." unique_id=1319809549]
 
@@ -156,11 +166,9 @@ tile_set = SubResource("TileSet_65lwb")
 position = Vector2(-240, 71)
 
 [node name="Rat" parent="Animals" unique_id=1621375151 instance=ExtResource("6_65lwb")]
-z_index = 1
 position = Vector2(-313, 211)
 
 [node name="Rat2" parent="Animals" unique_id=386763787 instance=ExtResource("6_65lwb")]
-z_index = 1
 position = Vector2(77, 206)
 
 [node name="Frog2" parent="Animals" unique_id=1203613713 instance=ExtResource("5_0luvm")]

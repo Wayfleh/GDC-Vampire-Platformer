@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1jvvc1e8t3k2"
-path="res://.godot/imported/transparentCircle(2).png-9b32a6b3f66181777bdf96b11121a368.ctex"
+uid="uid://dhft7yvd8akf3"
+path="res://.godot/imported/anim_idle_outline.png-50e44912ddaa63a2143a83ee406dd921.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Sprites/VampFrog/transparentCircle(2).png"
-dest_files=["res://.godot/imported/transparentCircle(2).png-9b32a6b3f66181777bdf96b11121a368.ctex"]
+source_file="res://Art/Sprites/Vamp/anim_idle_outline.png"
+dest_files=["res://.godot/imported/anim_idle_outline.png-50e44912ddaa63a2143a83ee406dd921.ctex"]
 
 [params]
 

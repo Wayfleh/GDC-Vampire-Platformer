@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dq8ex27s7myvo"]
+
+[ext_resource type="Script" uid="uid://ddd0y37mxqf2" path="res://Misc/opening_cutscene.gd" id="1_mckrj"]
+[ext_resource type="Shader" path="res://Misc/opening_cutscene.gdshader" id="2_2wk86"]
+[ext_resource type="Texture2D" uid="uid://cauwnol1d8fiv" path="res://Art/titlescreen_draft.png" id="2_jomyl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jomyl"]
+shader = ExtResource("2_2wk86")
+shader_parameter/blur_amount = 1.0000000475
+
+[node name="CheatCode" type="Control" unique_id=1742611900]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mckrj")
+scroll_speed = 200
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1077001028]
+position = Vector2(466, 257)
+scale = Vector2(0.334, 0.334)
+texture = ExtResource("2_jomyl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1249282164]
+material = SubResource("ShaderMaterial_jomyl")
+layout_mode = 0
+offset_right = 932.0
+offset_bottom = 513.0
+
+[node name="Label" type="Label" parent="." unique_id=646323497]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "The Blood Moon Rises...
+up, up, up, down, down, up, right, jump, dash"
+horizontal_alignment = 1
