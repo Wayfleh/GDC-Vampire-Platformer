@@ -41,6 +41,7 @@ var h_dashing_state: String
 #TODO add animations for BiteDash (Anticipiation, Travel, Follow-through) state
 func enter_state():
 	player.bite_dash_used = true
+	player.can_jump = false
 	dashing_direction = Vector2(player.previous_direction, 0.0) if player.is_on_floor() else Vector2(player.previous_direction,-0.2).normalized()
 	h_bite_dash_travel_time = 0.0
 	h_bite_dash_anticipation_time = 0.0
@@ -66,6 +67,9 @@ func exit_state():
 	player.anim_sprite.play("vampire_idle")
 	player.velocity = dashing_direction * h_bite_dash_residual_speed
 	player.bite_hitbox.monitoring = false
+	
+	if player.is_on_floor():
+		player.can_jump = true
 	
 
 func DoDash(delta: float):

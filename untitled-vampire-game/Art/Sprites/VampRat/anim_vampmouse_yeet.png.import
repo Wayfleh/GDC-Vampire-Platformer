@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://balfhfhgdcod0"
-path="res://.godot/imported/anim_walk_outline.png-664769e336d4153b239eebe4dc4909b0.ctex"
+uid="uid://bkaxjk8fwkc8f"
+path="res://.godot/imported/anim_vampmouse_yeet.png-b462a8edb3adb2fe8cdba3fff1fdb95c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Placeholder/anim_walk_outline.png"
-dest_files=["res://.godot/imported/anim_walk_outline.png-664769e336d4153b239eebe4dc4909b0.ctex"]
+source_file="res://Art/Sprites/VampRat/anim_vampmouse_yeet.png"
+dest_files=["res://.godot/imported/anim_vampmouse_yeet.png-b462a8edb3adb2fe8cdba3fff1fdb95c.ctex"]
 
 [params]
 

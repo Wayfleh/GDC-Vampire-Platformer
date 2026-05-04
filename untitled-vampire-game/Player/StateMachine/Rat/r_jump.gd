@@ -4,6 +4,7 @@ var teleporting: bool
 
 # Called when the node enters the scene tree for the first time.
 func enter_state():
+	player.anim_sprite.play("rat_walk")
 	player.velocity.y -= player.jump_impulse
 
 
@@ -15,7 +16,8 @@ func update(delta: float):
 	
 	if !teleporting:
 		for area in areas:
-			if area is Hole:
+			if area is Hole: 
+				#below block happens only once, so you can just call a method too
 				player.global_position = area.ratTeleport()
 				teleporting = true
 	
@@ -24,3 +26,4 @@ func update(delta: float):
 
 func exit_state():
 	teleporting = false
+	player.anim_sprite.stop()

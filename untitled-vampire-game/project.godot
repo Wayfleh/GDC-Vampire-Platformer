@@ -28,6 +28,7 @@ GlobalMusic="*uid://d2lnxbvep06lu"
 
 window/size/viewport_width=928
 window/size/viewport_height=512
+window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
 [global_group]

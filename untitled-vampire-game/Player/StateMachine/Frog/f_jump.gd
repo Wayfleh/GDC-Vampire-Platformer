@@ -48,6 +48,7 @@ func update(delta: float):
 	match _jump_state:
 		"charge":
 			if Input.is_action_just_released("jump"):
+				frog_sprite.play("frog_walk_right")
 				_apply_jump_impulse()
 			else:
 				_time = clamp(_time + delta, 0.0, _max_charge_time)
@@ -73,7 +74,7 @@ func _update_charge_blink(delta: float):
 		_show_charge_frame = !_show_charge_frame
 
 		var animation: String
-		if _show_charge_frame:
+		if _show_charge_frame || charge_ratio == 1: #hold charge animation at max charge
 			animation = "frog_charge_right"
 		else:
 			animation = "frog_idle_right"

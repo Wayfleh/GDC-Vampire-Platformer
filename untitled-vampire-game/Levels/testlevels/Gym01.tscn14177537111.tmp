@@ -1,0 +1,185 @@
+[gd_scene format=4 uid="uid://d3kuypi4dmbm2"]
+
+[ext_resource type="Texture2D" uid="uid://b1nsq1cs3vntd" path="res://Art/bg1.png" id="1_tvoct"]
+[ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="2_4ojai"]
+[ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="3_ba3a8"]
+[ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="4_7u8bp"]
+[ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="5_xda70"]
+[ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="6_52y0o"]
+[ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="7_nnin2"]
+[ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="8_jirgr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_meo3i"]
+texture = ExtResource("3_ba3a8")
+texture_region_size = Vector2i(32, 32)
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+1:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+7:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:4/0 = 0
+7:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:5/0 = 0
+7:5/0 = 0
+1:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:6/0 = 0
+7:6/0 = 0
+1:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+7:7/0 = 0
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g01ns"]
+resource_name = "BlueGreenTiles"
+texture = ExtResource("4_7u8bp")
+margins = Vector2i(0, 16)
+13:3/size_in_atlas = Vector2i(2, 2)
+13:3/0 = 0
+6:4/size_in_atlas = Vector2i(2, 2)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:4/size_in_atlas = Vector2i(2, 2)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:4/size_in_atlas = Vector2i(2, 2)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/size_in_atlas = Vector2i(2, 2)
+2:2/0 = 0
+4:2/size_in_atlas = Vector2i(2, 2)
+4:2/0 = 0
+6:2/size_in_atlas = Vector2i(2, 2)
+6:2/0 = 0
+2:0/size_in_atlas = Vector2i(2, 2)
+2:0/0 = 0
+4:0/size_in_atlas = Vector2i(2, 2)
+4:0/0 = 0
+6:0/size_in_atlas = Vector2i(2, 2)
+6:0/0 = 0
+0:2/size_in_atlas = Vector2i(2, 2)
+0:2/0 = 0
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+8:2/size_in_atlas = Vector2i(2, 2)
+8:2/0 = 0
+8:0/size_in_atlas = Vector2i(2, 2)
+8:0/0 = 0
+2:8/size_in_atlas = Vector2i(2, 2)
+2:8/0 = 0
+4:8/size_in_atlas = Vector2i(2, 2)
+4:8/0 = 0
+6:8/size_in_atlas = Vector2i(2, 2)
+6:8/0 = 0
+2:6/size_in_atlas = Vector2i(2, 2)
+2:6/0 = 0
+4:6/size_in_atlas = Vector2i(2, 2)
+4:6/0 = 0
+6:6/size_in_atlas = Vector2i(2, 2)
+6:6/0 = 0
+11:3/size_in_atlas = Vector2i(2, 4)
+11:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cgdeu"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_meo3i")
+sources/1 = SubResource("TileSetAtlasSource_g01ns")
+
+[node name="Gym01" type="Node2D" unique_id=1583682183]
+
+[node name="BGImage" type="Sprite2D" parent="." unique_id=658863611]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(12, -67)
+texture = ExtResource("1_tvoct")
+
+[node name="Tilemaps" type="Node2D" parent="." unique_id=1170853404]
+position = Vector2(90, -13)
+
+[node name="Terrain" type="TileMapLayer" parent="Tilemaps" unique_id=584682849]
+position = Vector2(-222, 5)
+tile_map_data = PackedByteArray("AAD4//f/AQAEAAQAAAD4//j/AQAEAAQAAAD4//n/AQAEAAQAAAD4//r/AQAEAAQAAAD4//v/AQAEAAQAAAD4//z/AQAGAAQAAAD4//3/AQAEAAQAAAD4//7/AQAEAAQAAAD4////AQAEAAQAAAD4/wAAAQAEAAQAAAD4/wEAAQAEAAQAAAD4/wIAAQAEAAQAAAD4/wMAAQAEAAQAAAD4/wQAAQAEAAQAAAD4/wUAAQAEAAQAAAD4/wYAAQAEAAQAAAD5/wYAAQAEAAQAAAD6/wYAAQAEAAQAAAD7/wYAAQAEAAQAAAD8/wYAAQAEAAQAAAD9/wYAAQAEAAQAAAD+/wYAAQAEAAQAAAD//wYAAQAEAAQAAAAAAAYAAQAEAAQAAAABAAYAAQAEAAQAAAACAAYAAQAEAAQAAAADAAYAAQAEAAQAAAAEAAYAAQAEAAQAAAAFAAYAAQAEAAQAAAAGAAYAAQAEAAQAAAAHAAYAAQAEAAQAAAAIAAYAAQAEAAQAAAAJAAYAAQAEAAQAAAAKAAYAAQAEAAQAAAD5//n/AQAEAAQAAAD6//n/AQAEAAQAAAD7//n/AQAEAAQAAAD8//n/AQAEAAQAAAD9//n/AQAEAAQAAAD+//n/AQAEAAQAAAD///n/AQAEAAQAAAAAAPn/AQAEAAQAAAABAPn/AQAEAAQAAAACAPn/AQAEAAQAAAADAPn/AQAGAAQAAAADAPf/AQAEAAQAAAAEAPf/AQAEAAQAAAAFAPf/AQAEAAQAAAAGAPf/AQAEAAQAAAAHAPf/AQAEAAQAAAAIAPf/AQAEAAQAAAAJAPf/AQAEAAQAAAAKAPf/AQAEAAQAAAADAPj/AQAEAAQAAAD5//f/AQAEAAQAAAD5//j/AQAEAAQAAAD6//f/AQAEAAQAAAD6//j/AQAEAAQAAAD7//f/AQAEAAQAAAD7//j/AQAEAAQAAAD8//f/AQAEAAQAAAD8//j/AQAEAAQAAAD9//f/AQAEAAQAAAD9//j/AQAEAAQAAAD+//f/AQAEAAQAAAD+//j/AQAEAAQAAAD///f/AQAEAAQAAAD///j/AQAEAAQAAAAAAPf/AQAEAAQAAAAAAPj/AQAEAAQAAAABAPf/AQAEAAQAAAABAPj/AQAEAAQAAAACAPf/AQAEAAQAAAACAPj/AQAEAAQAAAAKAAAAAQAEAAQAAAAKAAEAAQAEAAQAAAAKAAIAAQAEAAQAAAAKAAMAAQAEAAQAAAAKAAQAAQAEAAQAAAAKAAUAAQAEAAQAAAAKAPz/AQAEAAQAAAAKAP3/AQAEAAQAAAAKAP7/AQAEAAQAAAAKAP//AQAEAAQAAAAKAPj/AQAEAAQAAAAKAPn/AQAEAAQAAAAKAPr/AQAEAAQAAAAKAPv/AQAEAAQAAAD5/wUAAQAEAAQAAAD6/wUAAQAEAAQAAAD7/wUAAQAEAAQAAAD8/wUAAQAEAAQAAAD9/wUAAQAEAAQAAAD+/wUAAQAEAAQAAAD//wUAAQAEAAQAAAAAAAUAAQAEAAQAAAABAAUAAQAEAAQAAAACAAUAAQAEAAQAAAADAAUAAQAEAAQAAAAEAAUAAQAEAAQAAAAFAAUAAQAEAAQAAAAGAAUAAQAEAAQAAAAHAAUAAQAEAAQAAAAIAAUAAQAEAAQAAAAJAAUAAQAEAAQAAAD5////AQAEAAQAAAD7////AQAEAAQAAAAEAP//AQAEAAQAAAABAP//AAAHAAYAAAACAP//AAAHAAcAAAADAP//AAAHAAEAAAD5//7/AQACAAQAAAD6//7/AQACAAQAAAD7//7/AQACAAQAAAAEAP7/AQACAAQAAAAFAP7/AQACAAQAAAD///r/AAAHAAEAAAAAAPr/AAAHAAEAAAABAPr/AAAHAAEAAAA=")
+tile_set = ExtResource("2_4ojai")
+
+[node name="ForegroundGrass" type="TileMapLayer" parent="Tilemaps" unique_id=241236715]
+visible = false
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-222, 5)
+tile_map_data = PackedByteArray("AAD5/wYAAQACAAIAAAD6/wYAAQACAAIAAAD7/wYAAQAGAAIAAAD8/wYAAQAGAAIAAAD+/wIAAQACAAIAAAD//wIAAQAGAAIAAAAAAAIAAQACAAIAAAACAPz/AQAGAAIAAAADAPz/AQAGAAIAAAAEAAYAAQAEAAIAAAAFAAYAAQAGAAIAAAAGAAYAAQAEAAIAAAAFAAUAAQAEAAAAAAAGAAUAAQAEAAAAAAD5/wUAAQAEAAAAAAD6/wUAAQAEAAAAAAD7/wUAAQAEAAAAAAD8/wUAAQAGAAAAAAD+/wEAAQACAAAAAAD//wEAAQAEAAAAAAAAAAEAAQAGAAAAAAD8/wIAAQAAAAAAAAD8/wEAAQAAAAAAAAABAPz/AQAGAAIAAAABAPv/AQACAAAAAAAKAAAAAQAAAAIAAAAKAP//AQAAAAAAAAALAPv/AQAAAAAAAAAAAPz/AQAGAAIAAAAIAPz/AQACAAIAAAAJAPz/AQAGAAIAAAADAAYAAQACAAIAAAACAAYAAQACAAIAAAAAAPv/AQACAAAAAAACAPv/AQACAAAAAAADAPv/AQAGAAAAAAAIAPv/AQACAAAAAAAJAPv/AQACAAAAAAAEAPz/AQAGAAIAAAAEAPv/AQAGAAAAAAAFAPz/AQAIAAIAAAAHAAIAAQACAAIAAAAGAAEAAQAAAAIAAAAGAAIAAQAAAAIAAAAHAAEAAQACAAAAAAD9/wMAAQAEAAIAAAD9/wIAAQAEAAAAAAD8/wMAAQAAAAIAAAA=")
+tile_set = SubResource("TileSet_cgdeu")
+
+[node name="ForegroundRoots" type="TileMapLayer" parent="Tilemaps" unique_id=1163366825]
+visible = false
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-222, 5)
+tile_map_data = PackedByteArray("AAAAAAIAAQAEAAYAAAABAAIAAQAEAAYAAAABAAMAAQAEAAgAAAD///n/AQAEAAYAAAAAAPn/AQAEAAYAAAABAPn/AQAEAAYAAAD7//r/AQAEAAYAAAD5//7/AQAGAAYAAAD6//v/AQAGAAYAAAD5////AQAGAAgAAAD6//z/AQAGAAgAAAD7//v/AQAEAAgAAAAAAPr/AQAEAAgAAAABAPr/AQAEAAgAAAADAPn/AQAGAAYAAAADAPr/AQAGAAgAAAAAAAMAAQAEAAgAAAACAPn/AQAEAAYAAAD9//n/AQAEAAYAAAAAAPz/AQACAAYAAAAAAP3/AQACAAgAAAA=")
+tile_set = SubResource("TileSet_cgdeu")
+
+[node name="UI" parent="." unique_id=889175113 instance=ExtResource("5_xda70")]
+unique_name_in_owner = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
+zoom = Vector2(1.25, 1.25)
+
+[node name="Animal" parent="." unique_id=934101410 instance=ExtResource("6_52y0o")]
+position = Vector2(47, 133)
+
+[node name="Animal3" parent="." unique_id=97141298 instance=ExtResource("6_52y0o")]
+position = Vector2(-274, 133)
+
+[node name="Animal4" parent="." unique_id=1715008025 instance=ExtResource("6_52y0o")]
+position = Vector2(105, 135)
+
+[node name="Player" parent="." unique_id=644735785 instance=ExtResource("7_nnin2")]
+position = Vector2(-309, 130)
+
+[node name="Rat" parent="." unique_id=1621375151 instance=ExtResource("8_jirgr")]
+position = Vector2(-281, -89)
+
+[node name="Hints" type="Control" parent="." unique_id=618862978]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RatDashMaxVertClearance" type="Label" parent="Hints" unique_id=229511574]
+layout_mode = 0
+offset_left = -159.0
+offset_top = -193.0
+offset_right = -46.0
+offset_bottom = -170.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "hits head here"

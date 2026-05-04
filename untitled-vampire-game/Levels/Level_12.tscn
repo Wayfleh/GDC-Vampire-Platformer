@@ -1,0 +1,189 @@
+[gd_scene format=4 uid="uid://cuiamjhduvl8a"]
+
+[ext_resource type="Texture2D" uid="uid://b1nsq1cs3vntd" path="res://Art/bg1.png" id="1_ym2fi"]
+[ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="2_bhjwr"]
+[ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="3_f4oyo"]
+[ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="4_yuuu4"]
+[ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="5_xp1nr"]
+[ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="6_xe8ra"]
+[ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="7_o3xc6"]
+[ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="8_1d60o"]
+[ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="9_7t4kt"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ik50e"]
+texture = ExtResource("3_f4oyo")
+texture_region_size = Vector2i(32, 32)
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+1:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+7:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:4/0 = 0
+7:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:5/0 = 0
+7:5/0 = 0
+1:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:6/0 = 0
+7:6/0 = 0
+1:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+7:7/0 = 0
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53jjn"]
+resource_name = "BlueGreenTiles"
+texture = ExtResource("4_yuuu4")
+margins = Vector2i(0, 16)
+13:3/size_in_atlas = Vector2i(2, 2)
+13:3/0 = 0
+6:4/size_in_atlas = Vector2i(2, 2)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:4/size_in_atlas = Vector2i(2, 2)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:4/size_in_atlas = Vector2i(2, 2)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/size_in_atlas = Vector2i(2, 2)
+2:2/0 = 0
+4:2/size_in_atlas = Vector2i(2, 2)
+4:2/0 = 0
+6:2/size_in_atlas = Vector2i(2, 2)
+6:2/0 = 0
+2:0/size_in_atlas = Vector2i(2, 2)
+2:0/0 = 0
+4:0/size_in_atlas = Vector2i(2, 2)
+4:0/0 = 0
+6:0/size_in_atlas = Vector2i(2, 2)
+6:0/0 = 0
+0:2/size_in_atlas = Vector2i(2, 2)
+0:2/0 = 0
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+8:2/size_in_atlas = Vector2i(2, 2)
+8:2/0 = 0
+8:0/size_in_atlas = Vector2i(2, 2)
+8:0/0 = 0
+2:8/size_in_atlas = Vector2i(2, 2)
+2:8/0 = 0
+4:8/size_in_atlas = Vector2i(2, 2)
+4:8/0 = 0
+6:8/size_in_atlas = Vector2i(2, 2)
+6:8/0 = 0
+2:6/size_in_atlas = Vector2i(2, 2)
+2:6/0 = 0
+4:6/size_in_atlas = Vector2i(2, 2)
+4:6/0 = 0
+6:6/size_in_atlas = Vector2i(2, 2)
+6:6/0 = 0
+11:3/size_in_atlas = Vector2i(2, 4)
+11:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cgdeu"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ik50e")
+sources/1 = SubResource("TileSetAtlasSource_53jjn")
+
+[node name="Level3" type="Node2D" unique_id=1583682183]
+
+[node name="BGImage" type="Sprite2D" parent="." unique_id=658863611]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(4, -67)
+texture = ExtResource("1_ym2fi")
+
+[node name="Tilemaps" type="Node2D" parent="." unique_id=1170853404]
+position = Vector2(90, -13)
+
+[node name="Terrain" type="TileMapLayer" parent="Tilemaps" unique_id=584682849]
+z_index = 1
+position = Vector2(-222, 5)
+tile_map_data = PackedByteArray("AAD4//n/AQAEAAQAAAD4//r/AQAEAAQAAAD4//v/AQAEAAQAAAD4//z/AQAEAAQAAAD4//3/AQAEAAQAAAD4//7/AQAEAAQAAAD4////AQAEAAQAAAD4/wAAAQAEAAQAAAD4/wEAAQAEAAQAAAD4/wIAAQAEAAQAAAD4/wMAAQAEAAQAAAD4/wQAAQAEAAQAAAD4/wUAAQAEAAQAAAD4/wYAAQAEAAQAAAD5/wYAAQAEAAQAAAD6/wYAAQAEAAQAAAD7/wYAAQAEAAQAAAD8/wYAAQAEAAQAAAD9/wYAAQAEAAQAAAD+/wYAAQAEAAQAAAD//wYAAQAEAAQAAAAAAAYAAQAEAAQAAAABAAYAAQAEAAQAAAACAAYAAQAEAAQAAAADAAYAAQAEAAQAAAAEAAYAAQAEAAQAAAAFAAYAAQAEAAQAAAAGAAYAAQAEAAQAAAAHAAYAAQAEAAQAAAAIAAYAAQAEAAQAAAAJAAYAAQAEAAQAAAAKAAYAAQAEAAQAAAD5//n/AQAEAAQAAAD6//n/AQAEAAQAAAD7//n/AQAEAAQAAAD8//n/AQAEAAQAAAD9//n/AQAEAAQAAAD+//n/AQAEAAQAAAD///n/AQAEAAQAAAAAAPn/AQAEAAQAAAABAPn/AQAEAAQAAAACAPn/AQAEAAQAAAADAPn/AQAGAAQAAAAKAAAAAQAEAAQAAAAKAAEAAQAEAAQAAAAKAAIAAQAEAAQAAAAKAAMAAQAEAAQAAAAKAAQAAQAEAAQAAAAKAAUAAQAEAAQAAAAKAPz/AQAEAAQAAAAKAP3/AQAEAAQAAAAKAP7/AQAEAAQAAAAKAP//AQAEAAQAAAAKAPn/AQAEAAQAAAAKAPr/AQAEAAQAAAAKAPv/AQAEAAQAAAAEAPn/AQACAAQAAAAFAPn/AQAEAAQAAAAGAPn/AQAGAAQAAAAHAPn/AQAGAAQAAAAIAPn/AQAGAAQAAAAJAPn/AQACAAQAAAD5/wUAAQAGAAQAAAD5/wQAAQAEAAQAAAD7/wUAAQAEAAQAAAD6/wUAAQAEAAQAAAD5/wIAAQACAAQAAAD5/wMAAQACAAQAAAABAAUAAQACAAQAAAACAAUAAQAEAAQAAAADAAQAAQAGAAQAAAAEAAQAAQAGAAQAAAAGAAIAAQAGAAQAAAAFAAQAAQAGAAQAAAAGAAQAAQACAAQAAAADAAUAAQAEAAQAAAAEAAUAAQACAAQAAAAFAAUAAQAEAAQAAAAGAAUAAQACAAQAAAAHAAUAAQAGAAQAAAAIAAUAAQAGAAQAAAAHAAIAAQACAAQAAAAHAAMAAQAGAAQAAAAHAAQAAQAGAAQAAAAIAAIAAQACAAQAAAAIAAMAAQACAAQAAAAIAAQAAQAEAAQAAAAJAAMAAQAGAAQAAAAJAAQAAQAGAAQAAAAJAAUAAQAGAAQAAAAJAP3/AQACAAQAAAAJAPv/AQACAAQAAAAJAPz/AQAGAAQAAAAIAPv/AQAGAAQAAAAIAPz/AQAGAAQAAAAIAP3/AQAGAAQAAAAFAP3/AQAEAAQAAAAGAP3/AQAGAAQAAAAHAP3/AQAGAAQAAAAGAPv/AQAEAAQAAAACAPv/AQAGAAQAAAACAP3/AQAGAAQAAAADAP3/AQAGAAQAAAAEAP3/AQAEAAQAAAAAAP3/AQAEAAQAAAABAP3/AQAGAAQAAAAFAPv/AQACAAQAAAD+//3/AQAEAAQAAAD///3/AQAEAAQAAAAEAPv/AQACAAQAAAABAPv/AQAEAAQAAAD+//v/AQACAAQAAAD///v/AQACAAQAAAD8//v/AQAGAAQAAAD8//z/AQAGAAQAAAD8//3/AQAEAAQAAAD9//3/AQAEAAQAAAD6//3/AQAEAAQAAAD7//3/AQAGAAQAAAD5//3/AQAEAAQAAAAJAAIAAQAGAAQAAAD5/wAAAQAGAAQAAAD5/wEAAQACAAQAAAD6/wAAAQAEAAQAAAD6/wEAAQAGAAQAAAAEAAEAAQACAAQAAAAFAAEAAQACAAQAAAAGAAEAAQAEAAQAAAAHAAEAAQAEAAQAAAAIAAEAAQAGAAQAAAAJAAEAAQAEAAQAAAAHAAAAAQAGAAQAAAAFAAAAAQAEAAQAAAADAAAAAQAEAAQAAAADAAEAAQAEAAQAAAAAAAAAAQACAAQAAAABAAAAAQAEAAQAAAD9/wAAAQACAAQAAAD//wAAAQAGAAQAAAD7/wAAAQACAAQAAAAJAP//AQACAAQAAAAJAAAAAQACAAQAAAD5//7/AQAGAAQAAAA=")
+tile_set = ExtResource("2_bhjwr")
+
+[node name="ForegroundGrass" type="TileMapLayer" parent="Tilemaps" unique_id=241236715]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-222, 5)
+tile_set = SubResource("TileSet_cgdeu")
+
+[node name="ForegroundRoots" type="TileMapLayer" parent="Tilemaps" unique_id=1163366825]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-222, 5)
+tile_set = SubResource("TileSet_cgdeu")
+
+[node name="UI" parent="." unique_id=889175113 instance=ExtResource("5_xp1nr")]
+unique_name_in_owner = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
+zoom = Vector2(1.25, 1.25)
+
+[node name="Player" parent="." unique_id=644735785 instance=ExtResource("6_xe8ra")]
+position = Vector2(-293, 120)
+
+[node name="TongueTipCollider" parent="Player/CurrentDirection/Tongue/TipPivot/TongueTip" parent_id_path=PackedInt32Array(644735785, 620725349) index="0" unique_id=1406688466]
+position = Vector2(-1.1920929e-07, -1.1920929e-07)
+rotation = -0.2617994
+
+[node name="Rat" parent="." unique_id=1621375151 instance=ExtResource("8_1d60o")]
+position = Vector2(-229, 171)
+
+[node name="Rat2" parent="." unique_id=303465674 instance=ExtResource("8_1d60o")]
+position = Vector2(-130, 176)
+
+[node name="Rat3" parent="." unique_id=518722661 instance=ExtResource("8_1d60o")]
+position = Vector2(-13, 111)
+
+[node name="Door" parent="." unique_id=1512673174 instance=ExtResource("9_7t4kt")]
+position = Vector2(-307, -145)
+
+[node name="RatHoleA1" parent="." unique_id=1798485280 node_paths=PackedStringArray("other_hole") instance=ExtResource("7_o3xc6")]
+position = Vector2(71, 104)
+other_hole = NodePath("../RatHoleA2")
+
+[node name="RatHoleA2" parent="." unique_id=229671799 node_paths=PackedStringArray("other_hole") instance=ExtResource("7_o3xc6")]
+position = Vector2(173, -56)
+other_hole = NodePath("../RatHoleA1")
+
+[node name="RatHoleB1" parent="." unique_id=1868535482 node_paths=PackedStringArray("other_hole") instance=ExtResource("7_o3xc6")]
+position = Vector2(-335, -24)
+other_hole = NodePath("../RatHoleB2")
+
+[node name="RatHoleB2" parent="." unique_id=415474553 node_paths=PackedStringArray("other_hole") instance=ExtResource("7_o3xc6")]
+position = Vector2(166, -184)
+other_hole = NodePath("../RatHoleB1")
+
+[editable path="Player"]

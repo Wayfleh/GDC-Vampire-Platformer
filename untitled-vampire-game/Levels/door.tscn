@@ -87,6 +87,7 @@ text = "This should be a number"
 horizontal_alignment = 1
 
 [node name="DoorArea" type="Area2D" parent="." unique_id=125752033]
+position = Vector2(1, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea" unique_id=37752270]
 position = Vector2(-0.5, 4.5)

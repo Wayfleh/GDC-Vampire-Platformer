@@ -19,16 +19,21 @@ func enter_state():
 	player.jump_impulse = V_JUMP_IMPULSE
 	player.gravity = V_GRAVITY
 	player.friction = V_FRICTION
+	player.collider.disabled = false
+	player.collider_rat.disabled = true
+	
+	
 	
 func update(delta: float):
-	if Input.is_action_just_pressed("transform"):
+	if Input.is_action_just_pressed("transform") && !player.isTransformed:
 		# transform vampire into frog if vampire has frog blood and is not
 		#currently a frog
 		if GlobalData.blood_chamber.is_empty():
 			return
-		# remove front of chamber and save it
-		var current_blood = GlobalData.blood_chamber.pop_front() 
 		if (v_machine.current_state != v_machine.states["V_BITEDASH"]):
+			player.playPoofParticle()
+			# remove front of chamber and save it
+			var current_blood = GlobalData.blood_chamber.pop_front() 
 			match current_blood:
 				GlobalData.Animals.FROG:
 					sound_f_transform.play()

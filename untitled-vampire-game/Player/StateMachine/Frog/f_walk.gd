@@ -9,7 +9,7 @@ var hopIndex = 0
 
 func enter_state():
 	#TODO fix the current_direction bullshit in player so it doesn't change the scale of the nodes at all, cause that's gonna mess with stuff later
-	player.anim_sprite.play("frog_walk_right")
+	pass
 
 func update(delta: float):
 	if player.is_on_floor():
@@ -27,6 +27,8 @@ func update(delta: float):
 
 func _hop():
 	player.velocity.y -= _walk_hop_impulse
+	player.anim_sprite.stop()
+	player.anim_sprite.play("frog_walk_right")
 	playHopSound()
 
 func playHopSound():

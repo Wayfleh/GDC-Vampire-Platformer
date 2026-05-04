@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcur51a13as4t"
-path="res://.godot/imported/anim_bitedash_outline_afterimage_RIGHT.png-17eb50a23b312c97dc137ed156ff69a6.ctex"
+uid="uid://0ftjg1q8lmjm"
+path="res://.godot/imported/anim_vampmousewalk_rev.png-7b6d6e7620647c8e54f421e861c43b75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Placeholder/anim_bitedash_outline_afterimage_RIGHT.png"
-dest_files=["res://.godot/imported/anim_bitedash_outline_afterimage_RIGHT.png-17eb50a23b312c97dc137ed156ff69a6.ctex"]
+source_file="res://Art/Sprites/VampRat/anim_vampmousewalk_rev.png"
+dest_files=["res://.godot/imported/anim_vampmousewalk_rev.png-7b6d6e7620647c8e54f421e861c43b75.ctex"]
 
 [params]
 

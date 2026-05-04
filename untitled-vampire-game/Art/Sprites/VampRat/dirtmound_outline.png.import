@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bab67nkugjfq8"
-path="res://.godot/imported/anim_bitedash_outline_afterimage_LEFT.png-3a79f69bfb92d10b94a56412fc1407f8.ctex"
+uid="uid://dpvd3hyuc5ayw"
+path="res://.godot/imported/dirtmound_outline.png-92e4de2f1639e36ff3fd9dbfd438482f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Placeholder/anim_bitedash_outline_afterimage_LEFT.png"
-dest_files=["res://.godot/imported/anim_bitedash_outline_afterimage_LEFT.png-3a79f69bfb92d10b94a56412fc1407f8.ctex"]
+source_file="res://Art/Sprites/VampRat/dirtmound_outline.png"
+dest_files=["res://.godot/imported/dirtmound_outline.png-92e4de2f1639e36ff3fd9dbfd438482f.ctex"]
 
 [params]
 

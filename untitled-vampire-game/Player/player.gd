@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var speed: float = 500.0
 @export var jump_impulse: float = 500.0
 @export var gravity: float = 200.0
+@export var max_gravity: float = 300.0
 @export var friction: float = 10.0
 
 @export var bite_dash_direction: Vector2
@@ -23,15 +24,18 @@ var bite_dash_used: bool = false
 
 @onready var state_machine := $TransformationSM
 @onready var collider := $Collider
+@onready var collider_rat: CollisionShape2D = $ColliderRat
 @onready var anim_sprite : AnimatedSprite2D = %AlucardSprite
-@onready var isTransformed : bool = false #Keep track if Alacarte is an animal for detransformation
 
+
+@onready var isTransformed : bool = false #Keep track if Alacarte is an animal for detransformation
+var can_jump : bool #used for coyote time in vampire state
 
 #---------- Particles ----------#
 @onready var blood_particles := $BloodParticles
 @onready var afterimage_particles := $AfterimageParticles
-@onready var left_afterimage : Texture2D = preload("res://Art/Placeholder/anim_bitedash_outline_afterimage_LEFT.png")
-@onready var right_afterimage : Texture2D = preload("res://Art/Placeholder/anim_bitedash_outline_afterimage_RIGHT.png")
+@onready var left_afterimage : Texture2D = preload("res://Art/Sprites/Vamp/anim_bitedash_outline_afterimage_LEFT.png")
+@onready var right_afterimage : Texture2D = preload("res://Art/Sprites/Vamp/anim_bitedash_outline_afterimage_RIGHT.png")
 
 
 #---------- RayCasts ----------#
@@ -68,10 +72,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	
-	if direction == -1:
+	if previous_direction == -1:
 		afterimage_particles.texture = left_afterimage
-	if direction == 1:
+	if previous_direction == 1:
 		afterimage_particles.texture = right_afterimage
 	
 	move_and_slide() # Applies velocity to the in-game object
@@ -123,14 +126,14 @@ func apply_horizontal_movement(delta: float):
 	else:
 		velocity.x = speed * 100 * direction * delta
 
-func apply_friction(delta: float, friction_mult : int):
+func apply_friction(delta: float, friction_mult : float):
 	if (-0.005 <= velocity.x && velocity.x <= 0.005): #Clamping velocity as it approaches 0 to prevent too many lerpf calls.
 		velocity.x = 0
 	else:
 		velocity.x = lerpf(velocity.x, 0.0, delta * friction_mult)
 
 func apply_input_direction(delta: float):
-	direction = Input.get_axis("left", "right")
+	direction = sign(Input.get_axis("left", "right"))
 	if direction != 0:
 		$CurrentDirection.scale.x = direction
 		previous_direction = direction
@@ -171,8 +174,11 @@ func DetermineBiteDashDirection(currPos: Vector2, prevPos: Vector2, bite_dash_di
 	return dir
 
 func TransformToVampire():
+	playPoofParticle()
 	detransform.emit()
 
+func playPoofParticle():
+	$PoofParticles.emitting = true
 
 func UpdateUI():
 	bloodContainer.UpdateBloodTokenSprites()
@@ -187,10 +193,3 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("blood_cycle"):
 		GlobalData.blood_cycle()
-		return
-		
-	if Input.is_action_just_pressed("transform") && state_machine.current_state != state_machine.states["VAMPIRE"]:
-		if isTransformed == true:
-			TransformToVampire()
-			isTransformed = false
-			return

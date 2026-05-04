@@ -9,6 +9,7 @@ var animals_remaining : int
 var level_complete : bool = false
 
 signal update_animals_remaining
+signal update_blood_chamber
 
 func start_level() -> void:
 	print("LEVEL MANAGER READY IN SCENE:", get_tree().current_scene.name)
@@ -36,6 +37,7 @@ func blood_cycle():
 	
 	var token = blood_chamber.pop_front()
 	blood_chamber.push_back(token)
+	update_blood_chamber.emit()
 	# Updating UI currently initiated from the action in Player.gd
 	# Currently unsure if/how to connect the blood_container to this global_data.gd
 	return

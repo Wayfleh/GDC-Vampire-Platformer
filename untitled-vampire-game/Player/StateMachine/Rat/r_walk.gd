@@ -1,5 +1,7 @@
 extends State
 
+func enter_state():
+	player.anim_sprite.play("rat_walk")
 
 func update(delta: float):
 	
@@ -13,3 +15,6 @@ func update(delta: float):
 	if Input.is_action_just_pressed("jump") and player.is_on_floor():
 		transitionToState.emit("R_JUMP")
 	
+
+func exit_state():
+	player.anim_sprite.stop()

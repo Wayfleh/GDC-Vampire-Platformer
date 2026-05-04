@@ -41,18 +41,17 @@ func update(delta: float):
 		
 		if Input.is_action_just_pressed("bite_dash"):
 			f_machine.change_state("F_BITEDASH")
+	
+		if Input.is_action_just_pressed("transform"):
+			player.TransformToVampire()
 	# Detransforming can only be available the frame AFTER pressing the transform button.
 	# Please let me know if there's a better way of doing this. Other solutions I've tried
 	#	end up transforming and detransforming within the same frame.
-	if player.isTransformed == false:
-		player.isTransformed = true
+	#if player.isTransformed == false:
+	#	player.isTransformed = true
 
 func _transform_to_vampire():
-	if f_machine.current_state != f_machine.states["F_BITEDASH"]:
-		transitionToState.emit("VAMPIRE")
-	else:
-		print("frog_state.gd -- _transform_to_vampire(): Cannot detransform during F_BITEDASH")
-	return
+	transitionToState.emit("VAMPIRE")
 
 #turn off processing for statemachine
 func exit_state():
