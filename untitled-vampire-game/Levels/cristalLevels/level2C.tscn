@@ -1,0 +1,98 @@
+[gd_scene format=4 uid="uid://x1166bgp0fmu"]
+
+[ext_resource type="Texture2D" uid="uid://b1nsq1cs3vntd" path="res://Art/bg1.png" id="1_vn7jf"]
+[ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="2_6drxt"]
+[ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="2_mtno4"]
+[ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="4_2o7fp"]
+[ext_resource type="PackedScene" uid="uid://cxghx2trln3ul" path="res://Levels/Level_02.tscn" id="4_yu5cb"]
+[ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="5_lkd0j"]
+[ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="7_qb46w"]
+[ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="8_vhsq0"]
+[ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="9_ma2q2"]
+
+[node name="Level1" type="Node2D" unique_id=1583682183]
+
+[node name="BGImage" type="Sprite2D" parent="." unique_id=276155856]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-87, -54)
+texture = ExtResource("1_vn7jf")
+
+[node name="Tilemaps" type="Node2D" parent="." unique_id=2067243543]
+position = Vector2(-1, 0)
+
+[node name="Terrain" type="TileMapLayer" parent="Tilemaps" unique_id=1005403231]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-222, 5)
+tile_map_data = PackedByteArray("AAAAAAcAAQAEAAQAAAD//wcAAQAEAAQAAAD7/wcAAQAEAAQAAAAHAAcAAQAEAAQAAAAIAAcAAQAEAAQAAAAJAAcAAQAEAAQAAAAKAAcAAQAEAAQAAAAEAAcAAQAEAAQAAAD4/wcAAQAEAAQAAAD4//f/AQAEAAQAAAAOAPf/AQAEAAQAAAAOAPj/AQAEAAQAAAAOAPn/AQAEAAQAAAAOAPr/AQAEAAQAAAAOAPv/AQAEAAQAAAAOAPz/AQAEAAQAAAAOAP3/AQAEAAQAAAAOAP7/AQAEAAQAAAAOAP//AQAEAAQAAAAOAAAAAQAEAAQAAAAOAAEAAQAEAAQAAAAOAAIAAQAEAAQAAAAOAAMAAQAEAAQAAAAOAAQAAQAEAAQAAAAOAAUAAQAEAAQAAAAOAAYAAQAEAAQAAAAOAAcAAQAEAAQAAAD5//f/AQAEAAQAAAD6//f/AQAEAAQAAAD7//f/AQAEAAQAAAD8//f/AQAEAAQAAAD9//f/AQAEAAQAAAD+//f/AQAEAAQAAAD///f/AQAEAAQAAAAAAPf/AQAEAAQAAAABAPf/AQAEAAQAAAACAPf/AQAEAAQAAAADAPf/AQAEAAQAAAAEAPf/AQAEAAQAAAAFAPf/AQAEAAQAAAAGAPf/AQAEAAQAAAAHAPf/AQAEAAQAAAAIAPf/AQAEAAQAAAALAPf/AQAEAAQAAAAMAPf/AQAEAAQAAAANAPf/AQAEAAQAAAD5/wcAAQAEAAQAAAD6/wcAAQAEAAQAAAD8/wcAAQAEAAQAAAD9/wcAAQAEAAQAAAD+/wcAAQAEAAQAAAABAAcAAQAEAAQAAAACAAcAAQAEAAQAAAADAAcAAQAEAAQAAAAFAAcAAQAEAAQAAAAGAAcAAQAEAAQAAAALAAcAAQAEAAQAAAAMAAcAAQAEAAQAAAANAAcAAQAEAAQAAAD4//j/AQAEAAQAAAD4//n/AQAEAAQAAAD4//r/AQAEAAQAAAD4//v/AQAEAAQAAAD4//z/AQAEAAQAAAD4//3/AQAEAAQAAAD4//7/AQAEAAQAAAD4////AQAEAAQAAAD4/wAAAQAEAAQAAAD4/wEAAQAEAAQAAAD4/wIAAQAEAAQAAAD4/wMAAQAEAAQAAAD4/wQAAQAEAAQAAAD4/wUAAQAEAAQAAAD4/wYAAQAEAAQAAAAJAPf/AQACAAQAAAAKAPf/AQACAAQAAAD7/wQAAQAEAAQAAAD7/wUAAQAEAAQAAAD7/wYAAQAEAAQAAAAJAAMAAQAEAAQAAAAJAAQAAQAEAAQAAAAJAAUAAQAEAAQAAAAJAAYAAQAEAAQAAAAAAAYAAQAEAAQAAAAAAAUAAQAEAAQAAAAAAAQAAQAEAAQAAAAAAAIAAQAEAAQAAAAAAAEAAQAEAAQAAAD5//z/AQACAAQAAAD6//z/AQACAAQAAAD7//z/AQACAAQAAAD8//z/AQACAAQAAAAEAPz/AQACAAQAAAALAPz/AQACAAQAAAAMAPz/AQACAAQAAAANAPz/AQACAAQAAAAKAAMAAQAEAAQAAAALAAMAAQAEAAQAAAAMAAMAAQAEAAQAAAANAAMAAQAEAAQAAAD//wQAAQAEAAQAAAD+/wQAAQAEAAQAAAD9/wQAAQAEAAQAAAD8/wQAAQAEAAQAAAD7/wEAAQAEAAQAAAD8/wEAAQAEAAQAAAD9/wEAAQAEAAQAAAD+/wEAAQAEAAQAAAD//wEAAQAEAAQAAAAAAAMAAQAEAAQAAAD5/wYAAQAEAAQAAAD6/wYAAQAEAAQAAAD6/wUAAQAEAAQAAAD5/wUAAQAEAAQAAAD5/wQAAQAEAAQAAAD6/wQAAQAEAAQAAAA=")
+tile_set = ExtResource("2_6drxt")
+
+[node name="ForegroundGrass" type="TileMapLayer" parent="Tilemaps" unique_id=1589213294]
+visible = false
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-222, 5)
+tile_map_data = PackedByteArray("AAAFAAAAAQAGAAAAAAAGAAAAAQAGAAAAAAD9//r/AQAEAAAAAAD+//r/AQAEAAAAAAD///r/AQAEAAAAAAAAAPr/AQAEAAAAAAAKAPr/AQAEAAAAAAAGAP3/AQACAAAAAAALAP//AQACAAAAAAAMAP//AQAEAAAAAAAKAAIAAQAGAAAAAAD6/wIAAQACAAAAAAD7/wIAAQACAAAAAAD8/wIAAQACAAAAAAAEAAQAAQAGAAAAAAAGAAYAAQACAAAAAAABAP3/AQAIAAAAAAD7//v/AQAAAAIAAAAFAP3/AQAAAAAAAAAJAAIAAQAAAAAAAAAFAAQAAQAIAAAAAAAMAPv/AQACAAAAAAA=")
+tile_set = ExtResource("2_6drxt")
+
+[node name="ForegroundRoots" type="TileMapLayer" parent="Tilemaps" unique_id=1557639527]
+visible = false
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-222, 5)
+tile_map_data = PackedByteArray("AAD//wEAAQAEAAYAAAAAAAEAAQAEAAYAAAABAAEAAQAEAAYAAAACAAEAAQAEAAYAAAADAAEAAQAEAAYAAAAEAAEAAQAEAAYAAAAFAAEAAQAEAAYAAAAGAAEAAQAEAAYAAAAHAAEAAQAEAAYAAAAIAAEAAQAGAAYAAAD+/wEAAQACAAYAAAD7//7/AQAEAAYAAAD8//7/AQAEAAYAAAD9//7/AQAEAAYAAAD+//7/AQAEAAYAAAD///7/AQAEAAYAAAAAAP7/AQAGAAYAAAD8//v/AQACAAYAAAD9//v/AQAEAAYAAAD+//v/AQAEAAYAAAD///v/AQAEAAYAAAAAAPv/AQAEAAYAAAABAPv/AQAEAAYAAAACAPv/AQAEAAYAAAADAPv/AQAEAAYAAAAEAPv/AQAEAAYAAAAFAPv/AQAEAAYAAAAGAPv/AQAEAAYAAAAHAPv/AQAEAAYAAAAIAPv/AQAEAAYAAAAJAPv/AQAEAAYAAAAKAPv/AQAGAAYAAAAMAPz/AQAEAAYAAAD6//z/AQAEAAYAAAALAAAAAQACAAYAAAAMAAAAAQAGAAYAAAAGAP7/AQACAAYAAAAHAP7/AQAEAAYAAAAIAP7/AQAEAAYAAAAJAP7/AQAEAAYAAAAKAP7/AQAEAAYAAAALAP7/AQAGAAYAAAD6/wAAAQACAAYAAAD7/wAAAQAGAAYAAAD5//7/AQAGAAYAAAANAP7/AQACAAYAAAANAP//AQACAAgAAAAGAP//AQACAAgAAAD7////AQACAAgAAAD8//z/AQACAAgAAAD6/wEAAQACAAgAAAD+/wIAAQACAAgAAAALAAEAAQACAAgAAAD5////AQAGAAgAAAAAAP//AQAGAAgAAAALAP//AQAGAAgAAAAKAPz/AQAGAAgAAAAMAAEAAQAGAAgAAAAIAAIAAQAGAAgAAAD7/wEAAQAGAAgAAAD8////AQAEAAgAAAD9////AQAEAAgAAAD+////AQAEAAgAAAD/////AQAEAAgAAAD9//z/AQAEAAgAAAD+//z/AQAEAAgAAAD///z/AQAEAAgAAAAAAPz/AQAEAAgAAAABAPz/AQAEAAgAAAACAPz/AQAEAAgAAAADAPz/AQAEAAgAAAAEAPz/AQAEAAgAAAAFAPz/AQAEAAgAAAAGAPz/AQAEAAgAAAAHAPz/AQAEAAgAAAAIAPz/AQAEAAgAAAAJAPz/AQAEAAgAAAAHAP//AQAEAAgAAAAIAP//AQAEAAgAAAAJAP//AQAEAAgAAAAKAP//AQAEAAgAAAD//wIAAQAEAAgAAAAAAAIAAQAEAAgAAAABAAIAAQAEAAgAAAACAAIAAQAEAAgAAAADAAIAAQAEAAgAAAAEAAIAAQAEAAgAAAAFAAIAAQAEAAgAAAAGAAIAAQAEAAgAAAAHAAIAAQAEAAgAAAD6//3/AQAEAAgAAAAMAP3/AQAEAAgAAAA=")
+tile_set = ExtResource("2_6drxt")
+
+[node name="Player" parent="." unique_id=644735785 instance=ExtResource("2_mtno4")]
+position = Vector2(-419, -136)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
+
+[node name="UI" parent="." unique_id=889175113 instance=ExtResource("4_2o7fp")]
+unique_name_in_owner = true
+
+[node name="Animal2" parent="." unique_id=934101410 instance=ExtResource("7_qb46w")]
+position = Vector2(191, 85)
+
+[node name="Animal" parent="." unique_id=771487301 instance=ExtResource("7_qb46w")]
+position = Vector2(207, -134)
+
+[node name="Rat5" parent="." unique_id=1621375151 instance=ExtResource("8_vhsq0")]
+position = Vector2(-392, 125)
+rotation = -0.03930657
+
+[node name="AnimatedSprite2D" parent="Rat5" index="0" unique_id=1932192081]
+flip_h = true
+
+[node name="CollisionShape2D" parent="Rat5" index="1" unique_id=1035761371]
+position = Vector2(2.9601474, 2.0585704)
+
+[node name="Rat3" parent="." unique_id=33174282 instance=ExtResource("8_vhsq0")]
+position = Vector2(-375.00003, -132)
+rotation = -0.019653287
+
+[node name="AnimatedSprite2D" parent="Rat3" index="0" unique_id=1932192081]
+flip_h = true
+
+[node name="CollisionShape2D" parent="Rat3" index="1" unique_id=1035761371]
+position = Vector2(2.9601474, 2.0585704)
+
+[node name="RatHoleA5" parent="." unique_id=1798485280 node_paths=PackedStringArray("other_hole") instance=ExtResource("9_ma2q2")]
+position = Vector2(-255, 213)
+other_hole = NodePath("../RatHoleA4")
+
+[node name="RatHoleA4" parent="." unique_id=1781826174 node_paths=PackedStringArray("other_hole") instance=ExtResource("9_ma2q2")]
+position = Vector2(122, 214)
+other_hole = NodePath("../RatHoleA1")
+
+[node name="RatHoleA1" parent="." unique_id=793346191 node_paths=PackedStringArray("other_hole") instance=ExtResource("9_ma2q2")]
+position = Vector2(-254, 120)
+other_hole = NodePath("../RatHoleA5")
+
+[node name="Door" parent="." unique_id=1512673174 instance=ExtResource("5_lkd0j")]
+position = Vector2(195, 189)
+next_level = ExtResource("4_yu5cb")
+
+[editable path="Rat5"]
+[editable path="Rat3"]
