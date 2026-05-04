@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://b1k3vejyw11ab"]
+
+[ext_resource type="Shader" uid="uid://bfttru0uel3vu" path="res://Levels/MatLevels/Fog.gdshader" id="1_c6qy8"]
+
+[sub_resource type="Gradient" id="Gradient_c6qy8"]
+offsets = PackedFloat32Array(0, 0.99171597, 1)
+colors = PackedColorArray(0.015384615, 0.015384615, 0.015384615, 1, 0.6366864, 0.6366864, 0.6366864, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ee5pd"]
+noise_type = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aoy4t"]
+noise = SubResource("FastNoiseLite_ee5pd")
+color_ramp = SubResource("Gradient_c6qy8")
+seamless = true
+normalize = false
+seamless_blend_skirt = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w5rom"]
+shader = ExtResource("1_c6qy8")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_aoy4t")
+shader_parameter/smoke_color = Color(0.6118329, 0.6118329, 0.6118329, 1)
+shader_parameter/distortion_speed = 0.2
+shader_parameter/density = 0.750000035625
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g302m"]
+
+[sub_resource type="Shader" id="Shader_g302m"]
+code = "
+
+shader_type canvas_item;
+
+// Uniforms for customization
+uniform sampler2D noise_texture : repeat_enable;
+uniform vec3 smoke_color : source_color = vec3(0.8);
+uniform float distortion_speed : hint_range(0.0, 5.0) = 0.2;
+uniform float density : hint_range(0.0, 1.0) = 1.0;
+
+void fragment() {
+    // Pre-calculate time-based offsets
+    float time_offset_1 = TIME * distortion_speed * 0.1;
+    float time_offset_2 = TIME * distortion_speed * 0.2;
+    
+    // Sample noise with distortion
+    vec4 noise = texture(noise_texture, UV + time_offset_1);
+    
+    // Create distorted UV and sample final noise
+    vec2 distorted_uv = UV + noise.rg * 0.1 - 0.05 + time_offset_2;
+    float final_noise = texture(noise_texture, distorted_uv).r;
+    
+    float smoke_alpha = final_noise * density;
+    
+    // Output color
+    COLOR = vec4(smoke_color, smoke_alpha);
+}
+
+"
+
+[sub_resource type="Gradient" id="Gradient_ee5pd"]
+offsets = PackedFloat32Array(0, 0.99171597, 1)
+colors = PackedColorArray(0.015384615, 0.015384615, 0.015384615, 1, 0.6366864, 0.6366864, 0.6366864, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_aoy4t"]
+noise_type = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_w5rom"]
+noise = SubResource("FastNoiseLite_aoy4t")
+color_ramp = SubResource("Gradient_ee5pd")
+seamless = true
+normalize = false
+seamless_blend_skirt = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1rd12"]
+shader = SubResource("Shader_g302m")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_w5rom")
+shader_parameter/smoke_color = Color(0.09220996, 0.13820449, 0.23352075, 1)
+shader_parameter/distortion_speed = 0.50000002375
+shader_parameter/density = 1.0
+
+[sub_resource type="Gradient" id="Gradient_aoy4t"]
+offsets = PackedFloat32Array(0, 0.99171597, 1)
+colors = PackedColorArray(0.015384615, 0.015384615, 0.015384615, 1, 0.6366864, 0.6366864, 0.6366864, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_w5rom"]
+noise_type = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1rd12"]
+noise = SubResource("FastNoiseLite_w5rom")
+color_ramp = SubResource("Gradient_aoy4t")
+seamless = true
+normalize = false
+seamless_blend_skirt = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l1ghi"]
+shader = SubResource("Shader_g302m")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_1rd12")
+shader_parameter/smoke_color = Color(0.07427422, 0.11475631, 0.19866624, 1)
+shader_parameter/distortion_speed = 0.50000002375
+shader_parameter/density = 1.0
+
+[node name="Fog" type="Node" unique_id=1507834529]
+
+[node name="Fog Top" type="Sprite2D" parent="." unique_id=467039011]
+visibility_layer = 2
+z_index = 99
+material = SubResource("ShaderMaterial_w5rom")
+position = Vector2(-129, -79)
+scale = Vector2(1256.8538, 872.39795)
+texture = SubResource("CanvasTexture_g302m")
+
+[node name="Fog Mid" type="Sprite2D" parent="." unique_id=1961027277]
+z_index = -2
+material = SubResource("ShaderMaterial_1rd12")
+position = Vector2(-142.99998, -56)
+scale = Vector2(1256.8538, 872.39795)
+texture = SubResource("CanvasTexture_g302m")
+
+[node name="Fog Back" type="Sprite2D" parent="." unique_id=674383982]
+z_index = -99
+material = SubResource("ShaderMaterial_l1ghi")
+position = Vector2(-142.99998, -56)
+scale = Vector2(1256.8538, 872.39795)
+texture = SubResource("CanvasTexture_g302m")
