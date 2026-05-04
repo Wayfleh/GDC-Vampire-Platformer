@@ -1,19 +1,19 @@
-[gd_scene format=4 uid="uid://6q88bvdk3o3t"]
+[gd_scene format=4 uid="uid://dcv8o4yj2tnej"]
 
-[ext_resource type="Texture2D" uid="uid://bvn7fek3wbrdg" path="res://Art/bg2.png" id="1_ge7n5"]
-[ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="2_6xu85"]
-[ext_resource type="PackedScene" uid="uid://d3oa5wxafbr2p" path="res://Art/tileSet/backgroundTiles.tscn" id="2_cumtc"]
-[ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="3_hqxie"]
-[ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="4_jb7n3"]
-[ext_resource type="Texture2D" uid="uid://urdnjs7u27l" path="res://Art/tileSet/Decoration/trees.png" id="5_2xhet"]
-[ext_resource type="Texture2D" uid="uid://61xwbolil1p7" path="res://Art/tileSet/Decoration/tiles-set_fences-32x32.png" id="6_4j7u5"]
-[ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="8_punna"]
-[ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="9_xtcxp"]
-[ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="10_1iqhy"]
-[ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="11_5rw60"]
+[ext_resource type="Texture2D" uid="uid://bvn7fek3wbrdg" path="res://Art/bg2.png" id="1_rukwf"]
+[ext_resource type="PackedScene" uid="uid://d3oa5wxafbr2p" path="res://Art/tileSet/backgroundTiles.tscn" id="2_c7etc"]
+[ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="3_i0vfa"]
+[ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="4_ixk4a"]
+[ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="5_l0ted"]
+[ext_resource type="Texture2D" uid="uid://urdnjs7u27l" path="res://Art/tileSet/Decoration/trees.png" id="6_qol4s"]
+[ext_resource type="Texture2D" uid="uid://61xwbolil1p7" path="res://Art/tileSet/Decoration/tiles-set_fences-32x32.png" id="7_iscff"]
+[ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="8_ajdkd"]
+[ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="9_2tv4w"]
+[ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="10_6bnvo"]
+[ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="11_kgkug"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8nnte"]
-texture = ExtResource("3_hqxie")
+texture = ExtResource("4_ixk4a")
 texture_region_size = Vector2i(32, 32)
 2:1/0 = 0
 3:1/0 = 0
@@ -64,7 +64,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0luvm"]
 resource_name = "BlueGreenTiles"
-texture = ExtResource("4_jb7n3")
+texture = ExtResource("5_l0ted")
 margins = Vector2i(0, 16)
 13:3/size_in_atlas = Vector2i(2, 2)
 13:3/0 = 0
@@ -113,7 +113,7 @@ margins = Vector2i(0, 16)
 11:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ha6my"]
-texture = ExtResource("5_2xhet")
+texture = ExtResource("6_qol4s")
 texture_region_size = Vector2i(64, 96)
 0:0/0 = 0
 1:0/0 = 0
@@ -147,7 +147,7 @@ texture_region_size = Vector2i(64, 96)
 9:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sgaei"]
-texture = ExtResource("6_4j7u5")
+texture = ExtResource("7_iscff")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -168,21 +168,21 @@ sources/3 = SubResource("TileSetAtlasSource_sgaei")
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(28, 297)
-texture = ExtResource("1_ge7n5")
+texture = ExtResource("1_rukwf")
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=1117420332]
 position = Vector2(14, 26)
 
-[node name="Background" parent="Tilemaps" unique_id=1654783105 instance=ExtResource("2_cumtc")]
+[node name="Background" parent="Tilemaps" unique_id=1654783105 instance=ExtResource("2_c7etc")]
 tile_map_data = PackedByteArray("AAD9/wYAAwABAAAAAAADAAYAAwAEAAAAAAAFAAcAAwAEAAAAABAHAAYAAwAEAAAAABD7/wUAAQAGAAQAAAD6/wUAAQAGAAQAAAD5/wUAAQAGAAQAAAD5/wQAAQAGAAQAAAD6/wQAAQAGAAQAAAD7/wQAAQAGAAQAAAD6/wMAAQAGAAQAAAD6/wIAAQAGAAQAAAD5/wIAAQAGAAQAAAD5/wMAAQAGAAQAAAD5/wEAAQAGAAQAAAAMAAUAAQAGAAQAAAALAAUAAQAGAAQAAAAKAAUAAQAGAAQAAAALAAQAAQAGAAQAAAAMAAQAAQAGAAQAAAAMAAMAAQAGAAQAAAA=")
 
-[node name="BGOffsetY" parent="Tilemaps" unique_id=2025547553 instance=ExtResource("2_cumtc")]
+[node name="BGOffsetY" parent="Tilemaps" unique_id=2025547553 instance=ExtResource("2_c7etc")]
 position = Vector2(0, 16)
 tile_map_data = PackedByteArray("AAAIAAYAAwABAAAAABACAAYAAwABAAAAAAD//wUAAwABAAAAAAA=")
 
 [node name="Terrain" type="TileMapLayer" parent="Tilemaps" unique_id=1748731787]
 tile_map_data = PackedByteArray("AAD4//f/AQAEAAQAAAD4//j/AQAEAAQAAAD4//n/AQAEAAQAAAD4//r/AQAEAAQAAAD4//v/AQAEAAQAAAD4//z/AQAGAAQAAAD4//3/AQAEAAQAAAD4//7/AQAEAAQAAAD4////AQAEAAQAAAD4/wAAAQAEAAQAAAD4/wEAAQAEAAQAAAD4/wIAAQAEAAQAAAD4/wMAAQAEAAQAAAD4/wQAAQAEAAQAAAD4/wUAAQAEAAQAAAD4/wYAAQAEAAQAAAD5/wYAAQAEAAQAAAD6/wYAAQAEAAQAAAD7/wYAAQAEAAQAAAD8/wYAAQAEAAQAAAANAP3/AQACAAQAAAANAPf/AQACAAQAAAANAPj/AQACAAQAAAANAPn/AQACAAQAAAANAPr/AQACAAQAAAANAPv/AQACAAQAAAANAPz/AQACAAQAAAANAP7/AQACAAQAAAANAP//AQACAAQAAAANAAAAAQACAAQAAAANAAEAAQACAAQAAAANAAIAAQACAAQAAAANAAMAAQACAAQAAAANAAQAAQACAAQAAAANAAUAAQACAAQAAAANAAYAAQACAAQAAAAJAAYAAQACAAQAAAAKAAYAAQACAAQAAAALAAYAAQACAAQAAAAMAAYAAQACAAQAAAAOAAYAAAAHAAEAAAAOAAQAAAAHAAEAAAAOAAIAAAAHAAEAAAAOAAAAAAAHAAEAAAAOAP7/AAAHAAEAAAAOAPz/AAAHAAEAAAAOAPr/AAAHAAEAAAAOAPj/AAAHAAEAAAAOAAUAAAAHAAIAAAAOAAMAAAAHAAIAAAAOAAEAAAAHAAIAAAAOAP//AAAHAAIAAAAOAP3/AAAHAAIAAAAOAPv/AAAHAAIAAAAOAPn/AAAHAAIAAAAOAPf/AAAHAAIAAAD8/wUAAQACAAQAAAD8/wQAAQACAAQAAAD8/wMAAQACAAQAAAD8/wIAAQACAAQAAAD4/wgAAAAHAAEAAAD5/wgAAAAHAAIAAAD6/wgAAAAHAAEAAAD7/wgAAAAHAAIAAAD8/wgAAAAHAAEAAAD9/wgAAAAHAAIAAAD+/wgAAAAHAAEAAAD//wgAAAAHAAIAAAAAAAgAAAAHAAEAAAABAAgAAAAHAAIAAAACAAgAAAAHAAEAAAADAAgAAAAHAAIAAAAEAAgAAAAHAAEAAAAFAAgAAAAHAAIAAAAGAAgAAAAHAAEAAAAHAAgAAAAHAAIAAAAIAAgAAAAHAAEAAAAJAAgAAAAHAAIAAAAKAAgAAAAHAAEAAAALAAgAAAAHAAIAAAAMAAgAAAAHAAEAAAANAAgAAAAHAAIAAAA=")
-tile_set = ExtResource("2_6xu85")
+tile_set = ExtResource("3_i0vfa")
 
 [node name="ForegroundGrass" type="TileMapLayer" parent="Tilemaps" unique_id=762903382]
 texture_filter = 1
@@ -202,19 +202,34 @@ position = Vector2(16, 0)
 tile_map_data = PackedByteArray("AAAAAAYAAgABAAAAABAGAAcAAgABAAAAAAD+/wcAAgABAAAAAAA=")
 tile_set = SubResource("TileSet_65lwb")
 
-[node name="Frog" parent="." unique_id=934101410 instance=ExtResource("8_punna")]
+[node name="Frog" parent="." unique_id=934101410 instance=ExtResource("8_ajdkd")]
 position = Vector2(-134, 191)
 
 [node name="Animals" type="Node2D" parent="." unique_id=1319809549]
 
-[node name="UI" parent="." unique_id=889175113 instance=ExtResource("9_xtcxp")]
+[node name="UI" parent="." unique_id=889175113 instance=ExtResource("9_2tv4w")]
 unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1630121106]
 position = Vector2(222, -5)
 
-[node name="Door" parent="." unique_id=1512673174 instance=ExtResource("10_1iqhy")]
+[node name="Door" parent="." unique_id=1512673174 instance=ExtResource("10_6bnvo")]
 position = Vector2(376, 169)
 
-[node name="Player" parent="." unique_id=644735785 instance=ExtResource("11_5rw60")]
+[node name="Player" parent="." unique_id=644735785 instance=ExtResource("11_kgkug")]
 position = Vector2(-186, 193)
+
+[node name="Frog2" parent="." unique_id=332677513 instance=ExtResource("8_ajdkd")]
+position = Vector2(-36, 32)
+
+[node name="Frog3" parent="." unique_id=1442877937 instance=ExtResource("8_ajdkd")]
+position = Vector2(44, 5)
+
+[node name="Frog4" parent="." unique_id=1879398054 instance=ExtResource("8_ajdkd")]
+position = Vector2(129, 29)
+
+[node name="Frog5" parent="." unique_id=1469562068 instance=ExtResource("8_ajdkd")]
+position = Vector2(192, 93)
+
+[node name="Frog6" parent="." unique_id=576968808 instance=ExtResource("8_ajdkd")]
+position = Vector2(241, 147)

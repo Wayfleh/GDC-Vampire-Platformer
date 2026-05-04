@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1jvvc1e8t3k2"
-path="res://.godot/imported/transparentCircle(2).png-9b32a6b3f66181777bdf96b11121a368.ctex"
+path="res://.godot/imported/transparentCircle(2).png-6fa9228969936985b9c70b3572a633ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Sprites/VampFrog/transparentCircle(2).png"
-dest_files=["res://.godot/imported/transparentCircle(2).png-9b32a6b3f66181777bdf96b11121a368.ctex"]
+source_file="res://Art/Placeholder/transparentCircle(2).png"
+dest_files=["res://.godot/imported/transparentCircle(2).png-6fa9228969936985b9c70b3572a633ce.ctex"]
 
 [params]
 

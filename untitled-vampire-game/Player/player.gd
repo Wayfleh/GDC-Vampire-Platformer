@@ -139,13 +139,12 @@ func apply_input_direction(delta: float):
 		previous_direction = direction
 
 func bite_animal(area: Area2D):
-	if area is Animal:
+	if area is Animal && !just_bit_animal:
 		#fix to it counting the animal twice due to death animation
 		if area.is_dead:
 			return
 		
 		just_bit_animal = true
-		bite_hitbox.monitoring = false
 		sound_v_animal_bitten.play()
 		blood_particles.restart()
 		GlobalData.blood_collected(area)

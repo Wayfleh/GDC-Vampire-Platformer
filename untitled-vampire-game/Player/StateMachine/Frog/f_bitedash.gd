@@ -69,6 +69,7 @@ func update(delta: float):
 				_detransform()
 			if Input.is_action_just_pressed("transform"):
 				player.velocity.x = _mantle_scalar * 2.33
+				player.previous_direction = sign(player.velocity.x)
 				_detransform()
 
 func _aim_tongue(delta: float):

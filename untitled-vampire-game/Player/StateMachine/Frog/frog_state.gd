@@ -39,7 +39,7 @@ func update(delta: float):
 	if f_machine.current_state != f_machine.states["F_BITEDASH"]: 
 		player.apply_input_direction(delta) #don't apply direction in bitedash
 		
-		if Input.is_action_just_pressed("bite_dash"):
+		if Input.is_action_pressed("bite_dash"):
 			f_machine.change_state("F_BITEDASH")
 	
 		if Input.is_action_just_pressed("transform"):
