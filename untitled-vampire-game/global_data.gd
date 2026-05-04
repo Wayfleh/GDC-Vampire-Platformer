@@ -7,6 +7,7 @@ var charges : int
 
 var animals_remaining : int
 var level_complete : bool = false
+var restarted: bool = false
 
 signal update_animals_remaining
 signal update_blood_chamber

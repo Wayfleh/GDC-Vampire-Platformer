@@ -67,6 +67,10 @@ func _ready() -> void:
 	bite_dash_direction = Vector2(1,0)
 	previous_position = Vector2(0,0)
 	bite_hitbox.area_entered.connect(bite_animal)
+	anim_sprite.play("vampire_idle")
+	if GlobalData.restarted:
+		playPoofParticle()
+		GlobalData.restarted = false
 	
 
 
@@ -187,6 +191,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("restart"):
 		GlobalData.blood_chamber.clear()
 		UpdateUI()
+		GlobalData.restarted = true
 		get_tree().reload_current_scene()
 		return
 	
