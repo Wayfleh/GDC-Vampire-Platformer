@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="9_h7iq3"]
 [ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="10_4la7o"]
 [ext_resource type="PackedScene" uid="uid://dbs5s5o7smwei" path="res://Levels/Level_11.tscn" id="10_h7iq3"]
+[ext_resource type="PackedScene" uid="uid://cklmtejug5xhr" path="res://Misc/ButtonInstruction.tscn" id="11_f4oyo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ik50e"]
 texture = ExtResource("3_btnue")
@@ -149,7 +150,6 @@ tile_set = SubResource("TileSet_cgdeu")
 unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
-zoom = Vector2(1.25, 1.25)
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("7_npl2t")]
 position = Vector2(-331, 32)
@@ -189,5 +189,14 @@ other_hole = NodePath("../RatHoleA2")
 [node name="RatHoleA2" parent="." unique_id=385630779 node_paths=PackedStringArray("other_hole") instance=ExtResource("9_h7iq3")]
 position = Vector2(-14, 136)
 other_hole = NodePath("../RatHoleA1")
+
+[node name="ButtonInstructionW" parent="." unique_id=984686626 instance=ExtResource("11_f4oyo")]
+position = Vector2(-27, -4)
+letter = "W"
+
+[node name="ButtonInstructionE" parent="." unique_id=1160192943 instance=ExtResource("11_f4oyo")]
+position = Vector2(155, 121)
+scale = Vector2(-1, 1)
+letter = "E"
 
 [editable path="Player"]

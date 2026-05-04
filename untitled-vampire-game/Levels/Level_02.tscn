@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="5_c8ve7"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="6_exfpd"]
 [ext_resource type="PackedScene" uid="uid://bjysayggk63jd" path="res://Levels/Level_03.tscn" id="8_qy17v"]
+[ext_resource type="PackedScene" uid="uid://cklmtejug5xhr" path="res://Misc/ButtonInstruction.tscn" id="11_ri7ki"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ri7ki"]
 texture = ExtResource("1_c7tlk")
@@ -157,10 +158,10 @@ next_level = ExtResource("8_qy17v")
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("2_ce6vd")]
 position = Vector2(-412, 180)
 
-[node name="SoundF_Transform" parent="Player" index="12" unique_id=290602985]
+[node name="SoundF_Transform" parent="Player" index="14" unique_id=290602985]
 volume_db = 6.0
 
-[node name="SoundF_Jump" parent="Player" index="13" unique_id=284681269]
+[node name="SoundF_Jump" parent="Player" index="15" unique_id=284681269]
 volume_db = 12.0
 
 [node name="UI" parent="." unique_id=889175113 instance=ExtResource("5_c8ve7")]
@@ -174,5 +175,9 @@ offset_top = 100.0
 offset_right = 160.0
 offset_bottom = 123.0
 text = "J"
+
+[node name="ButtonInstructionJ" parent="." unique_id=984686626 instance=ExtResource("11_ri7ki")]
+position = Vector2(142, 200)
+letter = "J"
 
 [editable path="Player"]
