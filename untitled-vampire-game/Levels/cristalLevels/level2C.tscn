@@ -52,7 +52,10 @@ position = Vector2(-419, -136)
 [node name="UI" parent="." unique_id=889175113 instance=ExtResource("4_2o7fp")]
 unique_name_in_owner = true
 
-[node name="Animal" parent="." unique_id=934101410 instance=ExtResource("7_qb46w")]
+[node name="Animal2" parent="." unique_id=934101410 instance=ExtResource("7_qb46w")]
+position = Vector2(191, 85)
+
+[node name="Animal" parent="." unique_id=771487301 instance=ExtResource("7_qb46w")]
 position = Vector2(207, -134)
 
 [node name="Rat5" parent="." unique_id=1621375151 instance=ExtResource("8_vhsq0")]
@@ -65,14 +68,6 @@ flip_h = true
 [node name="CollisionShape2D" parent="Rat5" index="1" unique_id=1035761371]
 position = Vector2(2.9601474, 2.0585704)
 
-[node name="Rat4" parent="." unique_id=1474027303 instance=ExtResource("8_vhsq0")]
-position = Vector2(-1132.4192, -373.76688)
-rotation = -0.058959857
-scale = Vector2(1.0000001, 1.0000001)
-
-[node name="AnimatedSprite2D" parent="Rat4" index="0" unique_id=1932192081]
-flip_h = true
-
 [node name="Rat3" parent="." unique_id=33174282 instance=ExtResource("8_vhsq0")]
 position = Vector2(-375.00003, -132)
 rotation = -0.019653287
@@ -82,9 +77,6 @@ flip_h = true
 
 [node name="CollisionShape2D" parent="Rat3" index="1" unique_id=1035761371]
 position = Vector2(2.9601474, 2.0585704)
-
-[node name="Rat2" parent="." unique_id=479004100 instance=ExtResource("8_vhsq0")]
-position = Vector2(-335, -132)
 
 [node name="RatHoleA5" parent="." unique_id=1798485280 node_paths=PackedStringArray("other_hole") instance=ExtResource("9_ma2q2")]
 position = Vector2(-255, 213)
@@ -103,5 +95,4 @@ position = Vector2(195, 189)
 next_level = ExtResource("4_yu5cb")
 
 [editable path="Rat5"]
-[editable path="Rat4"]
 [editable path="Rat3"]
