@@ -65,10 +65,6 @@ size = Vector2(26, 20)
 [sub_resource type="CircleShape2D" id="CircleShape2D_c6x0f"]
 radius = 16.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gwnis"]
-radius = 12.0
-height = 28.0
-
 [sub_resource type="Gradient" id="Gradient_dkpta"]
 interpolation_mode = 2
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.3529412)
@@ -444,6 +440,10 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gwnis"]
+radius = 12.0
+height = 28.0
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ie76m"]
 particles_animation = true
 particles_anim_h_frames = 7
@@ -470,12 +470,6 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RatHoleInteractor" unique_id=701468909]
 shape = SubResource("CircleShape2D_c6x0f")
 
-[node name="BiteHitbox" type="Area2D" parent="." unique_id=903445956]
-monitoring = false
-
-[node name="BiteHitboxCollider" type="CollisionShape2D" parent="BiteHitbox" unique_id=1419210328]
-shape = SubResource("CapsuleShape2D_gwnis")
-
 [node name="AfterimageParticles" type="CPUParticles2D" parent="." unique_id=1799021689]
 emitting = false
 texture = ExtResource("2_7emwf")
@@ -489,12 +483,12 @@ color_ramp = SubResource("Gradient_dkpta")
 [node name="CurrentDirection" type="Node2D" parent="." unique_id=30504841]
 
 [node name="BackCheck" type="RayCast2D" parent="CurrentDirection" unique_id=1817393569]
-position = Vector2(3, 16.999998)
+position = Vector2(0, 17)
 scale = Vector2(0.9999999, 0.9999999)
 target_position = Vector2(-15, 0)
 
 [node name="FrontCheck" type="RayCast2D" parent="CurrentDirection" unique_id=1405425635]
-position = Vector2(5, 16.999998)
+position = Vector2(0, 17)
 scale = Vector2(0.9999999, 0.9999999)
 target_position = Vector2(15, 0)
 

@@ -99,7 +99,7 @@ metadata/_custom_type_script = "uid://dkvv6omrwiey4"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1932192081]
 sprite_frames = SubResource("SpriteFrames_h03w7")
-animation = &"death"
+animation = &"snooze"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1035761371]
 shape = SubResource("CircleShape2D_ts7yi")

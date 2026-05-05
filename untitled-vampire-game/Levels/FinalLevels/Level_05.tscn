@@ -196,13 +196,13 @@ unique_name_in_owner = true
 position = Vector2(222, -5)
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("9_gvucg")]
-position = Vector2(-159, -35)
+position = Vector2(-160, -21)
 
 [node name="Rat2" parent="." unique_id=439533986 instance=ExtResource("7_apybv")]
-position = Vector2(331, -20)
+position = Vector2(325, -12)
 
 [node name="Rat3" parent="." unique_id=593198475 instance=ExtResource("7_apybv")]
-position = Vector2(-50, -40)
+position = Vector2(-57, -13)
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("11_v4483")]
 position = Vector2(385, -51)

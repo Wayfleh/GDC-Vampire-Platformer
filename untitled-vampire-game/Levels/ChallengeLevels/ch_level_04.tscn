@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="7_b65n4"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="8_4p3m4"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="9_28w8f"]
-[ext_resource type="PackedScene" uid="uid://6q88bvdk3o3t" path="res://Levels/ChallengeLevels/ch_level_05.tscn" id="10_tg1vn"]
+[ext_resource type="PackedScene" uid="uid://ndbodfavegpb" path="res://Misc/kill_zone.tscn" id="11_cd10s"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="11_qov5o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8nnte"]
@@ -170,8 +170,10 @@ unique_name_in_owner = true
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("9_28w8f")]
 position = Vector2(-375, -110)
-next_level = ExtResource("10_tg1vn")
 player_face_left_on_start = true
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("11_qov5o")]
 position = Vector2(172, 96)
+
+[node name="KillZone" parent="." unique_id=1777521344 instance=ExtResource("11_cd10s")]
+position = Vector2(-22, 434)

@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="9_gvucg"]
 [ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="10_wv8qu"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="11_v4483"]
-[ext_resource type="PackedScene" uid="uid://b8x5jlealn5gc" path="res://Levels/FinalLevels/Level_08.tscn" id="12_a5oyo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8nnte"]
 texture = ExtResource("3_obqlb")
@@ -189,7 +188,7 @@ texture_repeat = 1
 tile_set = SubResource("TileSet_65lwb")
 
 [node name="Rat" parent="." unique_id=1621375151 instance=ExtResource("7_apybv")]
-position = Vector2(334, -146)
+position = Vector2(328, -140)
 
 [node name="Animals" type="Node2D" parent="." unique_id=1319809549]
 
@@ -200,13 +199,13 @@ unique_name_in_owner = true
 position = Vector2(222, -5)
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("9_gvucg")]
-position = Vector2(376, -163)
+position = Vector2(392, -150)
 
 [node name="Rat2" parent="." unique_id=439533986 instance=ExtResource("7_apybv")]
-position = Vector2(331, -20)
+position = Vector2(328, -12)
 
 [node name="Rat3" parent="." unique_id=593198475 instance=ExtResource("7_apybv")]
-position = Vector2(-46, -83)
+position = Vector2(-46, -76)
 
 [node name="RatHole" parent="." unique_id=1798485280 node_paths=PackedStringArray("other_hole") instance=ExtResource("10_wv8qu")]
 position = Vector2(404, -21)
@@ -218,5 +217,4 @@ other_hole = NodePath("../RatHole")
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("11_v4483")]
 position = Vector2(-145, 177)
-next_level = ExtResource("12_a5oyo")
 player_face_left_on_start = true

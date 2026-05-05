@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://b1nsq1cs3vntd" path="res://Art/bg1.png" id="1_vn7jf"]
 [ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="2_6drxt"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="2_mtno4"]
+[ext_resource type="PackedScene" uid="uid://d3oa5wxafbr2p" path="res://Art/tileSet/backgroundTiles.tscn" id="2_ssqxp"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="4_2o7fp"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="5_lkd0j"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="7_qb46w"]
 [ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="8_vhsq0"]
-[ext_resource type="PackedScene" uid="uid://dlspin4ymodoo" path="res://Levels/FinalLevels/level_17.tscn" id="9_ios0c"]
 [ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="9_ma2q2"]
 
 [node name="Level1" type="Node2D" unique_id=1583682183]
@@ -20,6 +20,10 @@ texture = ExtResource("1_vn7jf")
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=2067243543]
 position = Vector2(-1, 0)
+
+[node name="Background" parent="Tilemaps" unique_id=1654783105 instance=ExtResource("2_ssqxp")]
+position = Vector2(-222, 5)
+tile_map_data = PackedByteArray("AAD5//r/BAACAAIAAAD5//v/BAACAAIAAAD5//z/BAACAAIAAAD6//v/BAACAAIAAAA=")
 
 [node name="Terrain" type="TileMapLayer" parent="Tilemaps" unique_id=1005403231]
 texture_filter = 1
@@ -37,11 +41,10 @@ tile_map_data = PackedByteArray("AAAFAAAAAQAGAAAAAAAGAAAAAQAGAAAAAAD9//r/AQAEAAA
 tile_set = ExtResource("2_6drxt")
 
 [node name="ForegroundRoots" type="TileMapLayer" parent="Tilemaps" unique_id=1557639527]
-visible = false
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(-222, 5)
-tile_map_data = PackedByteArray("AAD//wEAAQAEAAYAAAAAAAEAAQAEAAYAAAABAAEAAQAEAAYAAAACAAEAAQAEAAYAAAADAAEAAQAEAAYAAAAEAAEAAQAEAAYAAAAFAAEAAQAEAAYAAAAGAAEAAQAEAAYAAAAHAAEAAQAEAAYAAAAIAAEAAQAGAAYAAAD+/wEAAQACAAYAAAD7//7/AQAEAAYAAAD8//7/AQAEAAYAAAD9//7/AQAEAAYAAAD+//7/AQAEAAYAAAD///7/AQAEAAYAAAAAAP7/AQAGAAYAAAD8//v/AQACAAYAAAD9//v/AQAEAAYAAAD+//v/AQAEAAYAAAD///v/AQAEAAYAAAAAAPv/AQAEAAYAAAABAPv/AQAEAAYAAAACAPv/AQAEAAYAAAADAPv/AQAEAAYAAAAEAPv/AQAEAAYAAAAFAPv/AQAEAAYAAAAGAPv/AQAEAAYAAAAHAPv/AQAEAAYAAAAIAPv/AQAEAAYAAAAJAPv/AQAEAAYAAAAKAPv/AQAGAAYAAAAMAPz/AQAEAAYAAAD6//z/AQAEAAYAAAALAAAAAQACAAYAAAAMAAAAAQAGAAYAAAAGAP7/AQACAAYAAAAHAP7/AQAEAAYAAAAIAP7/AQAEAAYAAAAJAP7/AQAEAAYAAAAKAP7/AQAEAAYAAAALAP7/AQAGAAYAAAD6/wAAAQACAAYAAAD7/wAAAQAGAAYAAAD5//7/AQAGAAYAAAANAP7/AQACAAYAAAANAP//AQACAAgAAAAGAP//AQACAAgAAAD7////AQACAAgAAAD8//z/AQACAAgAAAD6/wEAAQACAAgAAAD+/wIAAQACAAgAAAALAAEAAQACAAgAAAD5////AQAGAAgAAAAAAP//AQAGAAgAAAALAP//AQAGAAgAAAAKAPz/AQAGAAgAAAAMAAEAAQAGAAgAAAAIAAIAAQAGAAgAAAD7/wEAAQAGAAgAAAD8////AQAEAAgAAAD9////AQAEAAgAAAD+////AQAEAAgAAAD/////AQAEAAgAAAD9//z/AQAEAAgAAAD+//z/AQAEAAgAAAD///z/AQAEAAgAAAAAAPz/AQAEAAgAAAABAPz/AQAEAAgAAAACAPz/AQAEAAgAAAADAPz/AQAEAAgAAAAEAPz/AQAEAAgAAAAFAPz/AQAEAAgAAAAGAPz/AQAEAAgAAAAHAPz/AQAEAAgAAAAIAPz/AQAEAAgAAAAJAPz/AQAEAAgAAAAHAP//AQAEAAgAAAAIAP//AQAEAAgAAAAJAP//AQAEAAgAAAAKAP//AQAEAAgAAAD//wIAAQAEAAgAAAAAAAIAAQAEAAgAAAABAAIAAQAEAAgAAAACAAIAAQAEAAgAAAADAAIAAQAEAAgAAAAEAAIAAQAEAAgAAAAFAAIAAQAEAAgAAAAGAAIAAQAEAAgAAAAHAAIAAQAEAAgAAAD6//3/AQAEAAgAAAAMAP3/AQAEAAgAAAA=")
+tile_map_data = PackedByteArray("AAD5//3/BAABAAQAAAD5//z/BAABAAMAAAA=")
 tile_set = ExtResource("2_6drxt")
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("2_mtno4")]
@@ -86,4 +89,3 @@ other_hole = NodePath("../RatHoleA5")
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("5_lkd0j")]
 position = Vector2(162, 189)
-next_level = ExtResource("9_ios0c")

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://682kb4tpklrc"]
 
-[ext_resource type="Texture2D" uid="uid://b1nsq1cs3vntd" path="res://Art/bg1.png" id="1_e3l2n"]
+[ext_resource type="Texture2D" uid="uid://bvn7fek3wbrdg" path="res://Art/bg2.png" id="1_0qpak"]
 [ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="2_caouf"]
 [ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="3_a1qbe"]
 [ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="4_13lgx"]
@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="8_bqacv"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="9_t3fpb"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="10_gic7q"]
-[ext_resource type="PackedScene" uid="uid://cb1sox1i5emno" path="res://Levels/ChallengeLevels/ch_level_04.tscn" id="11_8vugw"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="11_f7cvg"]
+[ext_resource type="PackedScene" uid="uid://ndbodfavegpb" path="res://Misc/kill_zone.tscn" id="12_8vugw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8nnte"]
 texture = ExtResource("3_a1qbe")
@@ -169,7 +169,7 @@ sources/3 = SubResource("TileSetAtlasSource_sgaei")
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(85, 304)
-texture = ExtResource("1_e3l2n")
+texture = ExtResource("1_0qpak")
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=1117420332]
 position = Vector2(14, 26)
@@ -204,7 +204,9 @@ position = Vector2(222, -5)
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("10_gic7q")]
 position = Vector2(117, -84)
-next_level = ExtResource("11_8vugw")
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("11_f7cvg")]
 position = Vector2(-168, 97)
+
+[node name="KillZone" parent="." unique_id=1777521344 instance=ExtResource("12_8vugw")]
+position = Vector2(212, 442)

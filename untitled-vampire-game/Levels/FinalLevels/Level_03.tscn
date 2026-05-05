@@ -5,10 +5,9 @@
 [ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="3_ps6yb"]
 [ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="4_qcjig"]
 [ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="5_js3oa"]
-[ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="6_nhiqr"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="7_ae5et"]
-[ext_resource type="PackedScene" uid="uid://yxb6hakqw03p" path="res://Levels/FinalLevels/Level_04.tscn" id="8_1tcs8"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="9_lojly"]
+[ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="9_ydupy"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="10_vohej"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ri7ki"]
@@ -147,13 +146,6 @@ texture_repeat = 1
 position = Vector2(-222, 5)
 tile_set = SubResource("TileSet_7ykyd")
 
-[node name="Animal" parent="." unique_id=934101410 instance=ExtResource("6_nhiqr")]
-position = Vector2(195, -34)
-
-[node name="Door" parent="." unique_id=1512673174 instance=ExtResource("7_ae5et")]
-position = Vector2(101, -62)
-next_level = ExtResource("8_1tcs8")
-
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("9_lojly")]
 position = Vector2(-250, -40)
 
@@ -161,3 +153,9 @@ position = Vector2(-250, -40)
 unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
+
+[node name="Rat" parent="." unique_id=1621375151 instance=ExtResource("9_ydupy")]
+position = Vector2(193, -30)
+
+[node name="Door" parent="." unique_id=1512673174 instance=ExtResource("7_ae5et")]
+position = Vector2(101, -62)
