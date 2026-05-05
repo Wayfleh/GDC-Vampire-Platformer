@@ -55,7 +55,7 @@ func update(delta: float):
 			_shoot_tongue(delta)
 		"pull":
 			_pull_frog(delta)
-			if player.is_on_ceiling() || player.is_on_wall():
+			if (player.is_on_ceiling() || player.is_on_wall()) && (player.latch_direction() == player.previous_direction * sign(_pull_direction.x)):
 				_detransform()
 			if Input.is_action_just_pressed("transform"):
 				_detransform()
@@ -105,7 +105,7 @@ func _shoot_tongue(delta: float):
 func _tip_touch_surface():
 	_pull_direction = Vector2(sin(_curr_angle) * player.previous_direction, -cos(_curr_angle)) 
 	#break if already getting pulled or if wall is behind tongue area
-	if _dash_state == "pull" || _tongue.latch_direction() == -player.previous_direction * sign(_pull_direction.x):
+	if _dash_state == "pull":
 		return
 	_dash_state = "pull"
 	if !_tongue.is_mantle_check_colliding() && !_is_mantling: #angle the velocity higher if grabbing onto a ledge

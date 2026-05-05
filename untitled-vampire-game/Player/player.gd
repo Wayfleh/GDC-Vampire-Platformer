@@ -40,6 +40,8 @@ var can_jump : bool #used for coyote time in vampire state
 
 #---------- RayCasts ----------#
 @onready var frog_floor_check : RayCast2D = $FrogFloorCheck
+@onready var front_check : RayCast2D = $CurrentDirection/FrontCheck
+@onready var back_check : RayCast2D = $CurrentDirection/BackCheck
 
 #---------- Sounds ----------#
 @onready var footstep_player: AudioStreamPlayer2D = $FootstepPlayer
@@ -99,6 +101,7 @@ func apply_footsteps(delta: float) -> void:
 
 func is_walking_on_floor() -> bool:
 	return is_on_floor() and direction != 0 and abs(velocity.x) > 5
+
 
 func play_next_footstep() -> void:
 	if footstep_1 == null or footstep_2 == null:
@@ -168,14 +171,14 @@ func bite_animal(area: Area2D):
 # Using player velocity to determine Bite Dash facing direction
 # DetermineBiteDashDirection() takes bite_dash_direction as an argument, so it can 
 #		pass itself (and remain the same) if there is no change in position
-func DetermineBiteDashDirection(currPos: Vector2, prevPos: Vector2, bite_dash_direction: Vector2):
+func DetermineBiteDashDirection(currPos: Vector2, prevPos: Vector2, bd_direction: Vector2):
 	if (currPos == null || prevPos == null):
 		print("Player.gd: DetermineBiteDashDirection() - current or previous position is null?")
 		print(currPos)
 		print(prevPos)
 		return Vector2(1,0)
 	if (currPos == prevPos):
-		return bite_dash_direction
+		return bd_direction
 	var dir = (currPos - prevPos).normalized()
 	# print(dir)wd
 	return dir
@@ -183,6 +186,9 @@ func DetermineBiteDashDirection(currPos: Vector2, prevPos: Vector2, bite_dash_di
 func TransformToVampire():
 	playPoofParticle()
 	detransform.emit()
+
+func latch_direction() -> int:
+	return 1 if front_check.is_colliding() else -1 if back_check.is_colliding() else 0
 
 func playPoofParticle():
 	$PoofParticles.emitting = true

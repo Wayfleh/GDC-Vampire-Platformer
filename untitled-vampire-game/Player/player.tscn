@@ -484,6 +484,16 @@ color_ramp = SubResource("Gradient_dkpta")
 
 [node name="CurrentDirection" type="Node2D" parent="." unique_id=30504841]
 
+[node name="BackCheck" type="RayCast2D" parent="CurrentDirection" unique_id=1817393569]
+position = Vector2(3, 16.999998)
+scale = Vector2(0.9999999, 0.9999999)
+target_position = Vector2(-15, 0)
+
+[node name="FrontCheck" type="RayCast2D" parent="CurrentDirection" unique_id=1405425635]
+position = Vector2(5, 16.999998)
+scale = Vector2(0.9999999, 0.9999999)
+target_position = Vector2(15, 0)
+
 [node name="Tongue" type="Node2D" parent="CurrentDirection" unique_id=949118960]
 unique_name_in_owner = true
 visible = false
@@ -521,14 +531,6 @@ rotation = -0.7853982
 rotation = -3.1415925
 texture = ExtResource("4_gu6f8")
 
-[node name="BackCheck" type="RayCast2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=1817393569]
-position = Vector2(-1, 14)
-target_position = Vector2(-15, 0)
-
-[node name="FrontCheck" type="RayCast2D" parent="CurrentDirection/Tongue/TipPivot" unique_id=1405425635]
-position = Vector2(1, 14)
-target_position = Vector2(15, 0)
-
 [node name="SurfaceCheck2" type="RayCast2D" parent="CurrentDirection/Tongue" unique_id=226353535]
 position = Vector2(-15, -10)
 target_position = Vector2(0, -200)
@@ -545,6 +547,7 @@ unique_name_in_owner = true
 scale = Vector2(1.0954546, 1.1)
 sprite_frames = SubResource("SpriteFrames_p5o4e")
 animation = &"vampire_idle"
+autoplay = "vampire_idle"
 offset = Vector2(0, 1)
 
 [node name="BiteHitbox" type="Area2D" parent="CurrentDirection" unique_id=908817078]

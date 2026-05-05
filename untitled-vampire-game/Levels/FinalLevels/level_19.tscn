@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="8_mn44o"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="9_rvdpb"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="10_cjaxa"]
-[ext_resource type="PackedScene" uid="uid://b166yygglrjgn" path="res://Levels/FinalLevels/level_20.tscn" id="11_mym2i"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="12_bxwws"]
 [ext_resource type="PackedScene" uid="uid://b1k3vejyw11ab" path="res://Levels/MatLevels/fog.tscn" id="13_f0q3w"]
 [ext_resource type="PackedScene" uid="uid://cy7xnhnawsqe0" path="res://Levels/MatLevels/world_environment.tscn" id="14_e2qa3"]
@@ -222,7 +221,6 @@ unique_name_in_owner = true
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("10_cjaxa")]
 position = Vector2(-31, 55)
-next_level = ExtResource("11_mym2i")
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("12_bxwws")]
 position = Vector2(-29, -204)

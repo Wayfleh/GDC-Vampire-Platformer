@@ -9,8 +9,6 @@ extends Node2D
 
 # The front and back check can only collide with bodies, not areas, 
 #so they don't hit the player
-@onready var front_check : RayCast2D = $TipPivot/FrontCheck
-@onready var back_check : RayCast2D = $TipPivot/BackCheck
 @onready var guide_line : Line2D = $GuideLine
 @onready var surface_check1 := $SurfaceCheck1
 @onready var mid_check := $MidSC
@@ -36,9 +34,6 @@ func show_tongue():
 func show_tip():
 	tip_sprite.show()
 
-#returns the direction of the thing that enters the tip area
-func latch_direction() -> int:
-	return 1 if front_check.is_colliding() else -1 if back_check.is_colliding() else 0
 
 func rotate_tongue(angle: float):
 	rotation = angle
