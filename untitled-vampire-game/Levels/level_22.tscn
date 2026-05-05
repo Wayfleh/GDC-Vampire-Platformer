@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="8_xh63u"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="9_y71vf"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="10_axvv8"]
+[ext_resource type="PackedScene" uid="uid://7obuqw341s24" path="res://Levels/level_23.tscn" id="11_2dyoc"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="11_mwv5u"]
 [ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="12_432ep"]
 
@@ -202,9 +203,6 @@ unique_name_in_owner = true
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1630121106]
 position = Vector2(222, -5)
 
-[node name="Door" parent="." unique_id=1512673174 instance=ExtResource("10_axvv8")]
-position = Vector2(-378, -171)
-
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("11_mwv5u")]
 position = Vector2(-69, -85)
 
@@ -219,9 +217,9 @@ other_hole = NodePath("../RatHole2")
 position = Vector2(377, 202)
 other_hole = NodePath("../RatHole")
 
-[node name="Door2" parent="." unique_id=1632409762 instance=ExtResource("10_axvv8")]
-position = Vector2(68, -49)
-player_face_left_on_start = true
+[node name="Door" parent="." unique_id=1512673174 instance=ExtResource("10_axvv8")]
+position = Vector2(111, -52)
+next_level = ExtResource("11_2dyoc")
 
 [node name="Label" type="Label" parent="." unique_id=278304940]
 offset_left = 32.0

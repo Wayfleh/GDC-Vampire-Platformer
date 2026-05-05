@@ -27,7 +27,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			sequence_index += 1
 			print(sequence_index)
 			if sequence_index >= chinese_sequence.size():
-				get_tree().change_scene_to_file("res://Levels/raflevels/raf_level2_chinese.tscn")
+				get_tree().change_scene_to_file("res://Levels/ChallengeLevels/ch_level_00.tscn")
 		else:
 			sequence_index = 0
 

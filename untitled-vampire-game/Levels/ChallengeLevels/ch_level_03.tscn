@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="8_bqacv"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="9_t3fpb"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="10_gic7q"]
+[ext_resource type="PackedScene" uid="uid://cb1sox1i5emno" path="res://Levels/ChallengeLevels/ch_level_04.tscn" id="11_8vugw"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="11_f7cvg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8nnte"]
@@ -203,6 +204,7 @@ position = Vector2(222, -5)
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("10_gic7q")]
 position = Vector2(117, -84)
+next_level = ExtResource("11_8vugw")
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("11_f7cvg")]
 position = Vector2(-168, 97)

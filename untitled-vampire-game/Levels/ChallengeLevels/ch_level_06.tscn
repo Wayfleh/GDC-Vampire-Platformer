@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="9_2alec"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="10_b666s"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="11_5kwlf"]
-[ext_resource type="PackedScene" uid="uid://b81xfqhj2clb" path="res://UI/MainMenu.tscn" id="12_rqnxo"]
+[ext_resource type="PackedScene" uid="uid://dnubak5qwos5p" path="res://Levels/ChallengeLevels/ch_level_07.tscn" id="13_wc7pm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8nnte"]
 texture = ExtResource("3_pp1oj")
@@ -218,4 +218,4 @@ position = Vector2(-159, 67)
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("10_b666s")]
 position = Vector2(13, -175)
-next_level = ExtResource("12_rqnxo")
+next_level = ExtResource("13_wc7pm")

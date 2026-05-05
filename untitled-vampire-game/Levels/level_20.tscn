@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="7_nec8v"]
 [ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="8_lq6s2"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="9_m5q7d"]
+[ext_resource type="PackedScene" uid="uid://duejw8cfsx7tu" path="res://Levels/level_21.tscn" id="10_bg33e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ik50e"]
 texture = ExtResource("3_dqtey")
@@ -171,11 +172,8 @@ position = Vector2(-63, -82)
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("6_q60eh")]
 position = Vector2(-109, -86)
 
-[node name="TongueTipCollider" parent="Player/CurrentDirection/Tongue/TipPivot/TongueTip" parent_id_path=PackedInt32Array(644735785, 620725349) index="0" unique_id=1406688466]
-position = Vector2(-1.1920929e-07, -1.1920929e-07)
-rotation = -0.2617994
-
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("9_m5q7d")]
 position = Vector2(-85, 143)
+next_level = ExtResource("10_bg33e")
 
 [editable path="Player"]

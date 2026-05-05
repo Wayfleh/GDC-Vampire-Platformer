@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="10_d3t8u"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="11_qmahd"]
 [ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="11_vtx8w"]
+[ext_resource type="PackedScene" uid="uid://c2weci5nkc4kn" path="res://Levels/level_18.tscn" id="13_cka8y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8nnte"]
 texture = ExtResource("3_kc85c")
@@ -248,3 +249,4 @@ other_hole = NodePath("../HoleStart")
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("10_d3t8u")]
 position = Vector2(362, 177)
+next_level = ExtResource("13_cka8y")

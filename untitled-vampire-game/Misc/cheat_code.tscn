@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cikx6xtxcrrt1"]
+[gd_scene format=3 uid="uid://dq8ex27s7myvo"]
 
-[ext_resource type="Script" uid="uid://ddd0y37mxqf2" path="res://Misc/opening_cutscene.gd" id="1_mckrj"]
-[ext_resource type="Shader" path="res://Misc/opening_cutscene.gdshader" id="2_2wk86"]
+[ext_resource type="Script" uid="uid://clo37jvrd7l8y" path="res://Misc/cheat_code.gd" id="1_bsgle"]
+[ext_resource type="Shader" uid="uid://cj5iqnfyfk82" path="res://Misc/opening_cutscene.gdshader" id="2_2wk86"]
 [ext_resource type="Texture2D" uid="uid://cauwnol1d8fiv" path="res://Art/titlescreen_draft.png" id="2_jomyl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jomyl"]
@@ -15,8 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_mckrj")
-scroll_speed = 200
+script = ExtResource("1_bsgle")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1077001028]
 position = Vector2(466, 257)
@@ -29,6 +28,24 @@ layout_mode = 0
 offset_right = 932.0
 offset_bottom = 513.0
 
+[node name="PressAnyButton" type="Label" parent="." unique_id=2027905942]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = 221.0
+offset_right = 623.0
+offset_bottom = 308.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Press Any Button to Exit to Menu"
+horizontal_alignment = 1
+
 [node name="Label" type="Label" parent="." unique_id=646323497]
 layout_mode = 1
 anchors_preset = 8
@@ -36,13 +53,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -327.0
+offset_top = -43.5
+offset_right = 327.0
+offset_bottom = 43.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "The Blood Moon Rises...
 up, up, up, down, down, up, right, jump, dash"
 horizontal_alignment = 1
+
+[node name="SkipTimer" type="Timer" parent="." unique_id=1725917032]
+wait_time = 5.0
+one_shot = true
+autostart = true

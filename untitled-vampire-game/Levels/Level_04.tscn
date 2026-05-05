@@ -1,18 +1,18 @@
 [gd_scene format=4 uid="uid://yxb6hakqw03p"]
 
-[ext_resource type="Script" path="res://Levels/level.gd" id="1_0nwaa"]
-[ext_resource type="Texture2D" uid="uid://b1nsq1cs3vntd" path="res://Art/bg1.png" id="2_swj38"]
-[ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="3_dvlat"]
-[ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="4_eqc7x"]
-[ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="5_p1o74"]
-[ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="6_hqqsb"]
-[ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="7_k1ixg"]
-[ext_resource type="PackedScene" uid="uid://ckkrgjevim5nw" path="res://Levels/Level_05.tscn" id="8_0nwaa"]
-[ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="9_ghi1r"]
-[ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="10_3kjpl"]
+[ext_resource type="Script" path="res://Levels/level.gd" id="1_d7i4m"]
+[ext_resource type="Texture2D" uid="uid://b1nsq1cs3vntd" path="res://Art/bg1.png" id="2_2v171"]
+[ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="3_wr56a"]
+[ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="4_ymq3j"]
+[ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="5_onnav"]
+[ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="6_4m14n"]
+[ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="7_j2due"]
+[ext_resource type="PackedScene" uid="uid://breuyw8p5r3n" path="res://Levels/level_05.tscn" id="8_d7i4m"]
+[ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="9_3b5fx"]
+[ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="10_gew8q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ri7ki"]
-texture = ExtResource("4_eqc7x")
+texture = ExtResource("4_ymq3j")
 texture_region_size = Vector2i(32, 32)
 2:1/0 = 0
 3:1/0 = 0
@@ -63,7 +63,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sv6oy"]
 resource_name = "BlueGreenTiles"
-texture = ExtResource("5_p1o74")
+texture = ExtResource("5_onnav")
 margins = Vector2i(0, 16)
 13:3/size_in_atlas = Vector2i(2, 2)
 13:3/0 = 0
@@ -118,13 +118,13 @@ sources/0 = SubResource("TileSetAtlasSource_ri7ki")
 sources/1 = SubResource("TileSetAtlasSource_sv6oy")
 
 [node name="Level2" type="Node2D" unique_id=1583682183]
-script = ExtResource("1_0nwaa")
+script = ExtResource("1_d7i4m")
 
 [node name="BGImage" type="Sprite2D" parent="." unique_id=1739098038]
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(-90, -54)
-texture = ExtResource("2_swj38")
+texture = ExtResource("2_2v171")
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=91933045]
 position = Vector2(-4, 0)
@@ -132,7 +132,7 @@ position = Vector2(-4, 0)
 [node name="Terrain" type="TileMapLayer" parent="Tilemaps" unique_id=1005403231]
 position = Vector2(-222, 5)
 tile_map_data = PackedByteArray("AAAAAAcAAQAEAAQAAAD//wcAAQAEAAQAAAD7/wcAAQAEAAQAAAAHAAcAAQAEAAQAAAAIAAcAAQAEAAQAAAAJAAcAAQAEAAQAAAAKAAcAAQAEAAQAAAAEAAcAAQAEAAQAAAD4/wcAAQAEAAQAAAD4//f/AQAEAAQAAAAOAPf/AQAEAAQAAAAOAPj/AQAEAAQAAAAOAPn/AQAEAAQAAAAOAPr/AQAEAAQAAAAOAPv/AQAEAAQAAAAOAPz/AQAEAAQAAAAOAP3/AQAEAAQAAAAOAP7/AQAEAAQAAAAOAP//AQAEAAQAAAAOAAAAAQAEAAQAAAAOAAEAAQAEAAQAAAAOAAIAAQAEAAQAAAAOAAMAAQAEAAQAAAAOAAQAAQAEAAQAAAAOAAUAAQAEAAQAAAAOAAYAAQAEAAQAAAAOAAcAAQAEAAQAAAD5//f/AQAEAAQAAAD6//f/AQAEAAQAAAD7//f/AQAEAAQAAAD8//f/AQAEAAQAAAD9//f/AQAEAAQAAAD+//f/AQAEAAQAAAD///f/AQAEAAQAAAAAAPf/AQAEAAQAAAABAPf/AQAEAAQAAAACAPf/AQAEAAQAAAADAPf/AQAEAAQAAAAEAPf/AQAEAAQAAAAFAPf/AQAEAAQAAAAGAPf/AQAEAAQAAAAHAPf/AQAEAAQAAAAIAPf/AQAEAAQAAAAJAPf/AQAEAAQAAAAKAPf/AQAEAAQAAAALAPf/AQAEAAQAAAAMAPf/AQAEAAQAAAANAPf/AQAEAAQAAAD5/wcAAQAEAAQAAAD6/wcAAQAEAAQAAAD8/wcAAQAEAAQAAAD9/wcAAQAEAAQAAAD+/wcAAQAEAAQAAAABAAcAAQAEAAQAAAACAAcAAQAEAAQAAAADAAcAAQAEAAQAAAAFAAcAAQAEAAQAAAAGAAcAAQAEAAQAAAALAAcAAQAEAAQAAAAMAAcAAQAEAAQAAAANAAcAAQAEAAQAAAD4//j/AQAEAAQAAAD4//n/AQAEAAQAAAD4//r/AQAEAAQAAAD4//v/AQAEAAQAAAD4//z/AQAEAAQAAAD4//3/AQAEAAQAAAD4//7/AQAEAAQAAAD4////AQAEAAQAAAD4/wAAAQAEAAQAAAD4/wEAAQAEAAQAAAD4/wIAAQAEAAQAAAD4/wMAAQAEAAQAAAD4/wQAAQAEAAQAAAD4/wUAAQAEAAQAAAD4/wYAAQAEAAQAAAD5/wYAAQAEAAQAAAD6/wYAAQAEAAQAAAABAAYAAQAEAAQAAAACAAUAAQAEAAQAAAADAAQAAQAEAAQAAAAIAAMAAQAEAAQAAAAJAAIAAQAEAAQAAAAKAAEAAQAEAAQAAAACAAYAAQAEAAQAAAADAAYAAQAEAAQAAAAEAAYAAQAEAAQAAAAFAAYAAQAEAAQAAAAGAAYAAQAEAAQAAAAHAAYAAQAEAAQAAAAIAAYAAQAEAAQAAAAJAAYAAQAEAAQAAAAKAAYAAQAEAAQAAAALAAYAAQAEAAQAAAAMAAYAAQAEAAQAAAANAAYAAQAEAAQAAAADAAUAAQAEAAQAAAAEAAUAAQAEAAQAAAAFAAUAAQAEAAQAAAAGAAUAAQAEAAQAAAAHAAUAAQAEAAQAAAAIAAUAAQAEAAQAAAAJAAUAAQAEAAQAAAAKAAUAAQAEAAQAAAALAAUAAQAEAAQAAAAMAAUAAQAEAAQAAAANAAUAAQAEAAQAAAAEAAQAAQAEAAQAAAAFAAQAAQAEAAQAAAAGAAQAAQAEAAQAAAAHAAQAAQAEAAQAAAAIAAQAAQAEAAQAAAAJAAQAAQAEAAQAAAAKAAQAAQAEAAQAAAALAAQAAQAEAAQAAAAMAAQAAQAEAAQAAAANAAQAAQAEAAQAAAAJAAMAAQAEAAQAAAAKAAMAAQAEAAQAAAALAAMAAQAEAAQAAAAMAAMAAQAEAAQAAAAKAAIAAQAEAAQAAAALAAIAAQAEAAQAAAAMAAIAAQAEAAQAAAANAAIAAQAEAAQAAAALAAEAAQAEAAQAAAANAAMAAQAEAAQAAAADAAAAAQAEAAQAAAAEAAAAAQAEAAQAAAAFAAAAAQAGAAQAAAD8/wAAAQAEAAQAAAD9/wAAAQAEAAQAAAD+/wAAAQAEAAQAAAD//wAAAQAEAAQAAAAAAAAAAQAEAAQAAAABAAAAAQAEAAQAAAACAAAAAQAEAAQAAAD5/wAAAQAEAAQAAAD5/wEAAQAEAAQAAAD6/wEAAQAEAAQAAAD7/wEAAQAEAAQAAAD8/wEAAQAEAAQAAAAJAPz/AQAEAAQAAAAKAPz/AQAEAAQAAAALAPz/AQAEAAQAAAAMAPz/AQAEAAQAAAANAPz/AQAEAAQAAAD5//3/AQAEAAQAAAD6//3/AQAEAAQAAAD7//3/AQAEAAQAAAD8//3/AQAEAAQAAAD9//3/AQAEAAQAAAD9//7/AQACAAQAAAD+//7/AQAGAAQAAAADAPz/AQACAAQAAAAEAPz/AQAEAAQAAAAFAPz/AQAEAAQAAAAGAPz/AQAGAAQAAAAMAP//AQACAAQAAAANAP//AQAEAAQAAAAMAP3/AQAEAAQAAAAMAP7/AQAEAAQAAAANAP3/AQAEAAQAAAANAP7/AQAEAAQAAAALAP3/AQAEAAQAAAAKAP3/AQAEAAQAAAD5//n/AQAEAAQAAAD5//j/AQAEAAQAAAD6//j/AQAEAAQAAAD5//r/AQAGAAQAAAD7//j/AQAEAAQAAAD8//j/AQAEAAQAAAD6//n/AQAGAAQAAAD9//j/AQAEAAQAAAD+//j/AQAEAAQAAAD///j/AQAGAAQAAAANAPj/AQACAAQAAAD5/wIAAQAEAAQAAAD9/wEAAQAEAAQAAAD+/wEAAQAEAAQAAAD//wEAAQAGAAQAAAD6/wIAAQAEAAQAAAD7/wIAAQAEAAQAAAD8/wIAAQAGAAQAAAAHAAMAAQAEAAQAAAAIAAIAAQAEAAQAAAAJAAEAAQAEAAQAAAALAP7/AQAEAAQAAAAKAP7/AQACAAQAAAAJAP3/AQACAAQAAAA=")
-tile_set = ExtResource("3_dvlat")
+tile_set = ExtResource("3_wr56a")
 
 [node name="ForegroundGrass" type="TileMapLayer" parent="Tilemaps" unique_id=1832401620]
 texture_filter = 1
@@ -148,23 +148,23 @@ position = Vector2(-222, 5)
 tile_map_data = PackedByteArray("AAD9/wEAAQAEAAYAAAD+/wEAAQAEAAYAAAD//wEAAQAGAAYAAAAAAAAAAQAEAAYAAAABAAAAAQAEAAYAAAACAAAAAQAEAAYAAAADAAAAAQAEAAYAAAAEAAAAAQAEAAYAAAAFAAAAAQAGAAYAAAD//wIAAQAGAAgAAAAFAAEAAQAGAAgAAAAAAAEAAQAEAAgAAAABAAEAAQAEAAgAAAACAAEAAQAEAAgAAAADAAEAAQAEAAgAAAAEAAEAAQAEAAgAAAD+/wIAAQAEAAgAAAD6//3/AQAEAAYAAAD7//3/AQAEAAYAAAD8//3/AQAEAAYAAAD7//7/AQAEAAgAAAD8//7/AQAEAAgAAAD9//7/AQACAAYAAAD+//7/AQAGAAYAAAD9////AQACAAgAAAD+////AQAGAAgAAAAGAP3/AQAGAAgAAAADAP3/AQACAAgAAAADAPz/AQACAAYAAAAEAPz/AQAEAAYAAAAFAPz/AQAEAAYAAAAGAPz/AQAGAAYAAAAEAP3/AQAEAAgAAAAFAP3/AQAEAAgAAAAJAP3/AQACAAYAAAAKAP7/AQACAAYAAAAJAP7/AQACAAgAAAAKAP//AQACAAgAAAALAP7/AQAEAAYAAAA=")
 tile_set = SubResource("TileSet_7ykyd")
 
-[node name="Animal" parent="." unique_id=934101410 instance=ExtResource("6_hqqsb")]
+[node name="Animal" parent="." unique_id=934101410 instance=ExtResource("6_4m14n")]
 position = Vector2(-83, -4)
 
-[node name="Door" parent="." unique_id=1512673174 instance=ExtResource("7_k1ixg")]
+[node name="Door" parent="." unique_id=1512673174 instance=ExtResource("7_j2due")]
 position = Vector2(147, -163)
-next_level = ExtResource("8_0nwaa")
+next_level = ExtResource("8_d7i4m")
 
-[node name="Player" parent="." unique_id=644735785 instance=ExtResource("9_ghi1r")]
+[node name="Player" parent="." unique_id=644735785 instance=ExtResource("9_3b5fx")]
 position = Vector2(-416, 171)
 
-[node name="SoundF_Transform" parent="Player" index="12" unique_id=290602985]
+[node name="SoundF_Transform" parent="Player" index="14" unique_id=290602985]
 volume_db = 6.0
 
-[node name="SoundF_Jump" parent="Player" index="13" unique_id=284681269]
+[node name="SoundF_Jump" parent="Player" index="15" unique_id=284681269]
 volume_db = 12.0
 
-[node name="UI" parent="." unique_id=889175113 instance=ExtResource("10_3kjpl")]
+[node name="UI" parent="." unique_id=889175113 instance=ExtResource("10_gew8q")]
 unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]

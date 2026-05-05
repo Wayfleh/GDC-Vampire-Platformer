@@ -1,17 +1,18 @@
-[gd_scene format=4 uid="uid://67i51wtnoyel"]
+[gd_scene format=4 uid="uid://0jtuvtebife3"]
 
-[ext_resource type="Texture2D" uid="uid://b1nsq1cs3vntd" path="res://Art/bg1.png" id="2_0bxjh"]
-[ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="3_3vrqk"]
-[ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="4_enqwd"]
-[ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="5_yvtbi"]
-[ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="6_8gc7i"]
-[ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="7_cf272"]
-[ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="9_rjv3q"]
-[ext_resource type="PackedScene" uid="uid://3uyg1vra8sar" path="res://Levels/Level_10.tscn" id="9_w3hw2"]
-[ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="10_h0i70"]
+[ext_resource type="Texture2D" uid="uid://b1nsq1cs3vntd" path="res://Art/bg1.png" id="1_2lra1"]
+[ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="2_7ca8b"]
+[ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="3_gk0jr"]
+[ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="4_k6kqw"]
+[ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="5_8kycc"]
+[ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="6_s7gkg"]
+[ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="7_sbtdn"]
+[ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="8_ipd6o"]
+[ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="9_vmlj2"]
+[ext_resource type="PackedScene" uid="uid://ckkrgjevim5nw" path="res://Levels/level_10.tscn" id="10_rx6g8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ik50e"]
-texture = ExtResource("4_enqwd")
+texture = ExtResource("3_gk0jr")
 texture_region_size = Vector2i(32, 32)
 2:1/0 = 0
 3:1/0 = 0
@@ -62,7 +63,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_53jjn"]
 resource_name = "BlueGreenTiles"
-texture = ExtResource("5_yvtbi")
+texture = ExtResource("4_k6kqw")
 margins = Vector2i(0, 16)
 13:3/size_in_atlas = Vector2i(2, 2)
 13:3/0 = 0
@@ -116,59 +117,73 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ik50e")
 sources/1 = SubResource("TileSetAtlasSource_53jjn")
 
-[node name="Level4" type="Node2D" unique_id=1583682183]
+[node name="Level14a" type="Node2D" unique_id=1583682183]
 
 [node name="BGImage" type="Sprite2D" parent="." unique_id=658863611]
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(4, -67)
-texture = ExtResource("2_0bxjh")
+texture = ExtResource("1_2lra1")
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=1170853404]
 position = Vector2(90, -13)
 
 [node name="Terrain" type="TileMapLayer" parent="Tilemaps" unique_id=584682849]
+z_index = 1
 position = Vector2(-222, 5)
-tile_map_data = PackedByteArray("AAD4//f/AQAEAAQAAAD4//j/AQAEAAQAAAD4//n/AQAEAAQAAAD4//r/AQAEAAQAAAD4//v/AQAEAAQAAAD4//z/AQAEAAQAAAD4//3/AQAEAAQAAAD4//7/AQAEAAQAAAD4////AQAEAAQAAAD4/wAAAQAEAAQAAAD4/wEAAQAEAAQAAAD4/wIAAQAEAAQAAAD4/wMAAQAEAAQAAAD4/wQAAQAEAAQAAAD4/wUAAQAEAAQAAAD4/wYAAQAEAAQAAAD5/wYAAQAEAAQAAAD6/wYAAQAEAAQAAAD7/wYAAQAEAAQAAAD8/wYAAQAEAAQAAAD9/wYAAQAEAAQAAAD+/wYAAQAEAAQAAAD//wYAAQAEAAQAAAAAAAYAAQAEAAQAAAABAAYAAQAEAAQAAAACAAYAAQAEAAQAAAADAAYAAQAEAAQAAAAEAAYAAQAEAAQAAAAFAAYAAQAEAAQAAAAGAAYAAQAEAAQAAAAHAAYAAQAEAAQAAAAIAAYAAQAEAAQAAAAJAAYAAQAEAAQAAAAKAAYAAQAEAAQAAAD9/wMAAQAEAAQAAAD9/wQAAQAEAAQAAAD9/wUAAQAEAAQAAAD+/wIAAQAEAAQAAAD+/wMAAQAEAAQAAAD+/wQAAQAEAAQAAAD+/wUAAQAEAAQAAAD//wIAAQAEAAQAAAD//wMAAQAEAAQAAAD//wUAAQAEAAQAAAAAAAIAAQAEAAQAAAABAAIAAQAEAAQAAAACAAIAAQAEAAQAAAADAAIAAQAEAAQAAAADAP//AQAEAAQAAAADAAAAAQAEAAQAAAADAAEAAQAEAAQAAAADAP3/AQAEAAQAAAADAP7/AQAEAAQAAAACAPz/AQACAAQAAAADAPz/AQAEAAQAAAD5//n/AQAEAAQAAAD6//n/AQAEAAQAAAD7//n/AQAEAAQAAAD8//n/AQAEAAQAAAD9//n/AQAEAAQAAAD+//n/AQAEAAQAAAD///n/AQAEAAQAAAAAAPn/AQAEAAQAAAABAPn/AQAEAAQAAAACAPn/AQAEAAQAAAADAPn/AQAGAAQAAAADAPf/AQAEAAQAAAAEAPf/AQAEAAQAAAAFAPf/AQAEAAQAAAAGAPf/AQAEAAQAAAAHAPf/AQAEAAQAAAAIAPf/AQAEAAQAAAAJAPf/AQAEAAQAAAAKAPf/AQAEAAQAAAADAPj/AQAEAAQAAAD5//f/AQAEAAQAAAD5//j/AQAEAAQAAAD6//f/AQAEAAQAAAD6//j/AQAEAAQAAAD7//f/AQAEAAQAAAD7//j/AQAEAAQAAAD8//f/AQAEAAQAAAD8//j/AQAEAAQAAAD9//f/AQAEAAQAAAD9//j/AQAEAAQAAAD+//f/AQAEAAQAAAD+//j/AQAEAAQAAAD///f/AQAEAAQAAAD///j/AQAEAAQAAAAAAPf/AQAEAAQAAAAAAPj/AQAEAAQAAAABAPf/AQAEAAQAAAABAPj/AQAEAAQAAAACAPf/AQAEAAQAAAACAPj/AQAEAAQAAAADAAMAAQACAAQAAAD5//r/AQAEAAQAAAD5//v/AQAEAAQAAAD5//z/AQAEAAQAAAD5//3/AQAEAAQAAAD5//7/AQAGAAQAAAD6//r/AQAEAAQAAAD6//v/AQAGAAQAAAD7//r/AQAEAAQAAAAIAAAAAQAEAAQAAAAIAAEAAQAEAAQAAAAIAAIAAQAEAAQAAAAIAAMAAQAEAAQAAAAIAAQAAQAEAAQAAAAIAAUAAQAEAAQAAAAJAAAAAQAEAAQAAAAJAAEAAQAEAAQAAAAJAAIAAQAEAAQAAAAJAAMAAQAEAAQAAAAJAAQAAQAEAAQAAAAJAAUAAQAEAAQAAAAKAAAAAQAEAAQAAAAKAAEAAQAEAAQAAAAKAAIAAQAEAAQAAAAKAAMAAQAEAAQAAAAKAAQAAQAEAAQAAAAKAAUAAQAEAAQAAAAJAPz/AQAEAAQAAAAJAP3/AQAEAAQAAAAJAP7/AQAEAAQAAAAJAP//AQAEAAQAAAAKAPz/AQAEAAQAAAAKAP3/AQAEAAQAAAAKAP7/AQAEAAQAAAAKAP//AQAEAAQAAAACAP3/AQAEAAQAAAACAP7/AQAEAAQAAAACAP//AQAEAAQAAAACAAAAAQAEAAQAAAACAAEAAQAEAAQAAAABAP3/AQAEAAQAAAABAP7/AQAEAAQAAAABAP//AQAEAAQAAAABAAAAAQAEAAQAAAABAAEAAQAEAAQAAAAAAPz/AQAEAAQAAAABAPz/AQAEAAQAAAADAAQAAQAEAAQAAAACAAMAAQAEAAQAAAAHAAIAAQAEAAQAAAAHAAMAAQAEAAQAAAAHAAQAAQAEAAQAAAAHAAUAAQAEAAQAAAAIAPz/AQAEAAQAAAAIAP3/AQAEAAQAAAAIAP7/AQAEAAQAAAAIAP//AQAEAAQAAAAKAPj/AQAEAAQAAAAKAPn/AQAEAAQAAAAKAPr/AQAEAAQAAAAKAPv/AQAEAAQAAAAEAPz/AQAGAAQAAAA=")
-tile_set = ExtResource("3_3vrqk")
+tile_map_data = PackedByteArray("AAD4//n/AQAGAAQAAAD4//r/AQAEAAQAAAD4//v/AQAEAAQAAAD4//z/AQAEAAQAAAD4//3/AQAEAAQAAAD4//7/AQAEAAQAAAD4////AQAEAAQAAAD4/wAAAQAEAAQAAAD4/wEAAQAEAAQAAAD4/wIAAQAEAAQAAAD4/wMAAQAEAAQAAAD4/wQAAQAEAAQAAAD4/wUAAQAEAAQAAAD4/wYAAQAEAAQAAAD5/wYAAQAEAAQAAAD6/wYAAQAEAAQAAAD7/wYAAQAEAAQAAAD8/wYAAQAEAAQAAAD9/wYAAQAEAAQAAAD+/wYAAQAEAAQAAAD//wYAAQAEAAQAAAAAAAYAAQAEAAQAAAABAAYAAQAEAAQAAAACAAYAAQAEAAQAAAADAAYAAQAEAAQAAAAEAAYAAQAEAAQAAAAFAAYAAQAEAAQAAAAGAAYAAQAEAAQAAAAHAAYAAQAEAAQAAAAIAAYAAQAEAAQAAAAJAAYAAQAEAAQAAAAKAAYAAQAEAAQAAAD+//n/AQAEAAQAAAD///n/AQAEAAQAAAAAAPn/AQAEAAQAAAABAPn/AQAEAAQAAAACAPn/AQAEAAQAAAADAPn/AQAGAAQAAAAKAAAAAQAEAAQAAAAKAAEAAQAEAAQAAAAKAAIAAQAEAAQAAAAKAAMAAQAEAAQAAAAKAAQAAQAEAAQAAAAKAAUAAQAEAAQAAAAKAPz/AQAEAAQAAAAKAP3/AQAEAAQAAAAKAP7/AQAEAAQAAAAKAP//AQAEAAQAAAAKAPn/AQAEAAQAAAAKAPr/AQAEAAQAAAAKAPv/AQAEAAQAAAAEAPn/AQACAAQAAAAFAPn/AQAEAAQAAAAGAPn/AQAGAAQAAAAHAPn/AQAGAAQAAAAIAPn/AQAGAAQAAAAJAPn/AQACAAQAAAD5//n/AQAGAAQAAAD6//n/AQACAAQAAAD7//n/AQAEAAQAAAD8//n/AQAEAAQAAAD9//n/AQACAAQAAAAFAAMAAQACAAQAAAAFAAQAAQACAAQAAAAFAAUAAQACAAQAAAAGAAMAAQAGAAQAAAAGAAQAAQAEAAQAAAAGAAUAAQAGAAQAAAAHAAMAAQACAAQAAAAHAAQAAQACAAQAAAAHAAUAAQACAAQAAAAIAAMAAQAEAAQAAAAIAAQAAQAGAAQAAAAIAAUAAQAGAAQAAAAJAAMAAQAGAAQAAAAJAAQAAQACAAQAAAAJAAUAAQACAAQAAAAEAAUAAQACAAQAAAD5/wIAAQAEAAQAAAD6/wIAAQAEAAQAAAD7/wIAAQAEAAQAAAD8/wIAAQACAAQAAAD9/wIAAQACAAQAAAD9/wMAAQACAAQAAAD9/wQAAQACAAQAAAD9/wUAAQACAAQAAAD7//7/AQACAAQAAAD8//7/AQAGAAQAAAD9//7/AQAEAAQAAAD+//7/AQAEAAQAAAAFAP7/AQAGAAQAAAAGAP7/AQAGAAQAAAD6//3/AQAGAAQAAAD6//7/AQAGAAQAAAD5/wAAAQACAAQAAAD6/wAAAQACAAQAAAAIAP3/AQAEAAQAAAAJAP3/AQAEAAQAAAD5//3/AQAGAAQAAAD5//7/AQAGAAQAAAD5////AQAEAAQAAAD6////AQAGAAQAAAD7////AQAGAAQAAAD5//r/AQAGAAQAAAD6//r/AQAGAAQAAAD7//r/AQACAAQAAAD8//r/AQAEAAQAAAD9//r/AQACAAQAAAD+//r/AQACAAQAAAAFAPr/AQAEAAQAAAAGAPr/AQACAAQAAAAHAPr/AQAGAAQAAAAIAPr/AQAEAAQAAAAJAPr/AQAEAAQAAAAJAAEAAQAEAAQAAAAJAP7/AQACAAQAAAAJAP//AQACAAQAAAAJAAAAAQACAAQAAAAIAP7/AQACAAQAAAAIAP//AQAGAAQAAAAIAAAAAQAEAAQAAAD8/wMAAQACAAQAAAD5//v/AQAEAAQAAAA=")
+tile_set = ExtResource("2_7ca8b")
 
 [node name="ForegroundGrass" type="TileMapLayer" parent="Tilemaps" unique_id=241236715]
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(-222, 5)
-tile_map_data = PackedByteArray("AAD5/wYAAQACAAIAAAD6/wYAAQACAAIAAAD7/wYAAQAGAAIAAAD8/wYAAQAGAAIAAAD+/wIAAQACAAIAAAD//wIAAQAGAAIAAAAAAAIAAQACAAIAAAACAPz/AQAGAAIAAAADAPz/AQAGAAIAAAAEAAYAAQAEAAIAAAAFAAYAAQAGAAIAAAAGAAYAAQAEAAIAAAAFAAUAAQAEAAAAAAAGAAUAAQAEAAAAAAD5/wUAAQAEAAAAAAD6/wUAAQAEAAAAAAD7/wUAAQAEAAAAAAD8/wUAAQAGAAAAAAD+/wEAAQACAAAAAAD//wEAAQAEAAAAAAAAAAEAAQAGAAAAAAD8/wIAAQAAAAAAAAD8/wEAAQAAAAAAAAABAPz/AQAGAAIAAAABAPv/AQACAAAAAAAKAAAAAQAAAAIAAAAKAP//AQAAAAAAAAALAPv/AQAAAAAAAAAAAPz/AQAGAAIAAAAIAPz/AQACAAIAAAAJAPz/AQAGAAIAAAADAAYAAQACAAIAAAACAAYAAQACAAIAAAAAAPv/AQACAAAAAAACAPv/AQACAAAAAAADAPv/AQAGAAAAAAAIAPv/AQACAAAAAAAJAPv/AQACAAAAAAAEAPz/AQAGAAIAAAAEAPv/AQAGAAAAAAAFAPz/AQAIAAIAAAAHAAIAAQACAAIAAAAGAAEAAQAAAAIAAAAGAAIAAQAAAAIAAAAHAAEAAQACAAAAAAD9/wMAAQAEAAIAAAD9/wIAAQAEAAAAAAD8/wMAAQAAAAIAAAA=")
 tile_set = SubResource("TileSet_cgdeu")
 
 [node name="ForegroundRoots" type="TileMapLayer" parent="Tilemaps" unique_id=1163366825]
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(-222, 5)
-tile_map_data = PackedByteArray("AAAAAAIAAQAEAAYAAAABAAIAAQAEAAYAAAABAAMAAQAEAAgAAAD///n/AQAEAAYAAAAAAPn/AQAEAAYAAAABAPn/AQAEAAYAAAD7//r/AQAEAAYAAAD5//7/AQAGAAYAAAD6//v/AQAGAAYAAAD5////AQAGAAgAAAD6//z/AQAGAAgAAAD7//v/AQAEAAgAAAAAAPr/AQAEAAgAAAABAPr/AQAEAAgAAAADAPn/AQAGAAYAAAADAPr/AQAGAAgAAAAAAAMAAQAEAAgAAAACAPn/AQAEAAYAAAD9//n/AQAEAAYAAAAAAPz/AQACAAYAAAAAAP3/AQACAAgAAAA=")
 tile_set = SubResource("TileSet_cgdeu")
 
-[node name="UI" parent="." unique_id=889175113 instance=ExtResource("10_h0i70")]
+[node name="UI" parent="." unique_id=889175113 instance=ExtResource("5_8kycc")]
 unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
 
-[node name="Animal" parent="." unique_id=934101410 instance=ExtResource("6_8gc7i")]
-position = Vector2(-258, 174)
+[node name="Player" parent="." unique_id=644735785 instance=ExtResource("6_s7gkg")]
+position = Vector2(-96, 160)
 
-[node name="Animal2" parent="." unique_id=1220351439 instance=ExtResource("6_8gc7i")]
-position = Vector2(-132, 46)
+[node name="RatHoleA1" parent="." unique_id=1798485280 node_paths=PackedStringArray("other_hole") instance=ExtResource("8_ipd6o")]
+position = Vector2(-335, 40)
+other_hole = NodePath("../RatHoleA2")
 
-[node name="Animal3" parent="." unique_id=97141298 instance=ExtResource("6_8gc7i")]
-position = Vector2(-99, 175)
+[node name="RatHoleA2" parent="." unique_id=872710124 node_paths=PackedStringArray("other_hole") instance=ExtResource("8_ipd6o")]
+position = Vector2(-326, -120)
+other_hole = NodePath("../RatHoleA1")
 
-[node name="Player" parent="." unique_id=644735785 instance=ExtResource("9_rjv3q")]
-position = Vector2(-291, 137)
+[node name="RatHoleB1" parent="." unique_id=667052543 node_paths=PackedStringArray("other_hole") instance=ExtResource("8_ipd6o")]
+position = Vector2(157, -120)
+other_hole = NodePath("../RatHoleB2")
 
-[node name="TongueTipCollider" parent="Player/CurrentDirection/Tongue/TipPivot/TongueTip" parent_id_path=PackedInt32Array(644735785, 620725349) index="0" unique_id=1406688466]
-position = Vector2(-1.1920929e-07, -1.1920929e-07)
-rotation = -0.2617994
+[node name="RatHoleB2" parent="." unique_id=768902097 node_paths=PackedStringArray("other_hole") instance=ExtResource("8_ipd6o")]
+position = Vector2(-249, 168)
+other_hole = NodePath("../RatHoleB1")
 
-[node name="Door" parent="." unique_id=1512673174 instance=ExtResource("7_cf272")]
-position = Vector2(159, -176)
-next_level = ExtResource("9_w3hw2")
+[node name="Rat" parent="." unique_id=1621375151 instance=ExtResource("7_sbtdn")]
+position = Vector2(178, 82)
+
+[node name="Rat2" parent="." unique_id=894520762 instance=ExtResource("7_sbtdn")]
+position = Vector2(157, 82)
+
+[node name="Rat3" parent="." unique_id=1786492736 instance=ExtResource("7_sbtdn")]
+position = Vector2(-328, 50)
+
+[node name="Rat4" parent="." unique_id=2000387497 instance=ExtResource("7_sbtdn")]
+position = Vector2(-22, 179)
+
+[node name="Door" parent="." unique_id=1512673174 instance=ExtResource("9_vmlj2")]
+position = Vector2(-312, 144)
+next_level = ExtResource("10_rx6g8")
 
 [editable path="Player"]

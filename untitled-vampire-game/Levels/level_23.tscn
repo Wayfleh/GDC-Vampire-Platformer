@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="6_65lwb"]
 [ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="7_3ilyo"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="9_e0per"]
-[ext_resource type="PackedScene" uid="uid://bgaruxx4pyvol" path="res://Levels/raflevels/raf_level2_chinese.tscn" id="10_3ilyo"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="10_65lwb"]
+[ext_resource type="PackedScene" uid="uid://x1166bgp0fmu" path="res://Levels/level_24.tscn" id="11_4q5vv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8nnte"]
 texture = ExtResource("3_oufby")
@@ -189,7 +189,7 @@ unique_name_in_owner = true
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("9_e0per")]
 position = Vector2(-78, -107)
-next_level = ExtResource("10_3ilyo")
+next_level = ExtResource("11_4q5vv")
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("10_65lwb")]
 position = Vector2(-381, 192)

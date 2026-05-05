@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ddd0y37mxqf2" path="res://Misc/opening_cutscene.gd" id="1_ye210"]
 [ext_resource type="Texture2D" uid="uid://cauwnol1d8fiv" path="res://Art/titlescreen_draft.png" id="2_krxag"]
-[ext_resource type="Shader" path="res://Misc/opening_cutscene.gdshader" id="3_x5rxr"]
+[ext_resource type="Shader" uid="uid://cj5iqnfyfk82" path="res://Misc/opening_cutscene.gdshader" id="3_x5rxr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jomyl"]
 shader = ExtResource("3_x5rxr")
@@ -16,7 +16,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ye210")
-scroll_speed = 200
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1077001028]
 position = Vector2(466, 257)
@@ -80,4 +79,14 @@ Afflicted with a starvation that can only be satisfied with blood, he now sets o
 "
 fit_content = true
 scroll_active = false
+horizontal_alignment = 1
+
+[node name="PressAnyButton" type="Label" parent="." unique_id=606061790]
+layout_mode = 0
+offset_left = 643.0
+offset_top = 480.0
+offset_right = 961.0
+offset_bottom = 508.0
+theme_override_font_sizes/font_size = 20
+text = "Press Any Button to Skip"
 horizontal_alignment = 1
