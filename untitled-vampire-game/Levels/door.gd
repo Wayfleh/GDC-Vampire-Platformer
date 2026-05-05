@@ -6,7 +6,6 @@ class_name Door extends Node2D
 @onready var door_sprite: AnimatedSprite2D = $DoorSprite
 @onready var open_sound: AudioStreamPlayer2D = $openSound
 
-@export var next_level: PackedScene #Loads the next level
 @export var player_face_left_on_start: bool = false
 ####
 # make sure the level you load can't end up looping back into 
