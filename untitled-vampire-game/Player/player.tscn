@@ -50,6 +50,8 @@
 [ext_resource type="AudioStream" uid="uid://c6qo8msyh747j" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FrogTongueLatch.wav" id="47_wvbyc"]
 [ext_resource type="AudioStream" uid="uid://bvxgiuf3xpwv6" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FrogTongueRetract.wav" id="48_gvnt1"]
 [ext_resource type="AudioStream" uid="uid://bcx6tqfv7jwvk" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FrogTongueWhiff2.wav" id="49_1kmt7"]
+[ext_resource type="AudioStream" uid="uid://b17g1taevs2p8" path="res://Sounds/Player Sounds/VampirePlatformerSFX_RatBiteDashLaunch.wav" id="51_1kmt7"]
+[ext_resource type="AudioStream" uid="uid://bk2ligv6gtr3x" path="res://Sounds/Player Sounds/VampirePlatformerSFX_RatFootsteps1.wav" id="52_c4i3b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d30e8"]
 
@@ -710,6 +712,18 @@ volume_db = 8.0
 
 [node name="SoundF_Tongue_Whiff" type="AudioStreamPlayer2D" parent="." unique_id=813104962]
 stream = ExtResource("49_1kmt7")
+volume_db = 8.0
+
+[node name="SoundR_Jump" type="AudioStreamPlayer2D" parent="." unique_id=964328932]
+stream = ExtResource("49_1kmt7")
+volume_db = 8.0
+
+[node name="SoundR_Fling" type="AudioStreamPlayer2D" parent="." unique_id=137825593]
+stream = ExtResource("51_1kmt7")
+volume_db = 8.0
+
+[node name="SoundR_FootStep" type="AudioStreamPlayer2D" parent="." unique_id=176573284]
+stream = ExtResource("52_c4i3b")
 volume_db = 8.0
 
 [connection signal="area_entered" from="CurrentDirection/BiteHitbox" to="." method="bite_animal"]

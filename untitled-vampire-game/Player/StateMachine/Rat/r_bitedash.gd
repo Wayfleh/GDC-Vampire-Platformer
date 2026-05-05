@@ -3,6 +3,7 @@ extends State
 @export_range(0, 90, 0.1, "suffix: deg") var launch_angle: float
 @export var launch_impulse : float = 500.0
 var _dash_state: String
+@onready var rat_sound_fling: AudioStreamPlayer2D = $"../../../../SoundR_fling"
 
 func enter_state():
 	player.anim_sprite.play("rat_dash")

@@ -85,6 +85,9 @@ func _physics_process(delta: float) -> void:
 	#bite_dash_direction = DetermineBiteDashDirection(position, previous_position, bite_dash_direction)
 	#previous_position = position
 					# move_and_slide() is a CharacterBody2D Function
+	apply_footsteps(delta)
+
+func apply_footsteps(delta: float) -> void:
 	if is_walking_on_floor():
 		footstep_timer -= delta
 		if footstep_timer <= 0.0:
@@ -92,6 +95,7 @@ func _physics_process(delta: float) -> void:
 			footstep_timer = footstep_interval
 	else:
 		stop_footsteps()
+	
 
 func is_walking_on_floor() -> bool:
 	return is_on_floor() and direction != 0 and abs(velocity.x) > 5

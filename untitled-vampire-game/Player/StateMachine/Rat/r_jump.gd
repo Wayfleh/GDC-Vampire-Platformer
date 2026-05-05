@@ -1,6 +1,7 @@
 extends State
 
 var teleporting: bool
+@onready var rat_sound_jump: AudioStreamPlayer2D = $"../../../../SoundR_Jump"
 
 # Called when the node enters the scene tree for the first time.
 func enter_state():
@@ -20,6 +21,8 @@ func update(delta: float):
 				#below block happens only once, so you can just call a method too
 				player.global_position = area.ratTeleport()
 				teleporting = true
+		if area.is_empty():
+			rat_sound_jump.play()
 	
 	if player.is_on_floor() and !Input.is_action_just_pressed("jump"):
 		transitionToState.emit("R_IDLE")

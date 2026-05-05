@@ -7,7 +7,6 @@ extends State
 @onready var r_machine = $RatSM
 
 
-
 #turn on processing for statemachine
 #set player constants to vampire constants
 func enter_state():

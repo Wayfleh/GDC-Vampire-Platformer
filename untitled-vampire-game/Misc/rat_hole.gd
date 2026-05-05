@@ -12,6 +12,7 @@ func _ready() -> void:
 	body_exited.connect(hideOutline)
 
 func ratTeleport() -> Vector2:
+	$HoleSound.play()
 	return other_hole.global_position
 
 #func _process(delta: float) -> void:

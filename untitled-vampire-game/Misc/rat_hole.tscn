@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d1rw8lxuf5i44" path="res://Misc/rat_hole.gd" id="1_fmhc0"]
 [ext_resource type="Texture2D" uid="uid://cfccsqvvg7x5g" path="res://Art/Sprites/VampRat/dirtmound2.png" id="2_fmhc0"]
+[ext_resource type="AudioStream" uid="uid://bhyoaaikhoyrr" path="res://Sounds/Player Sounds/VampirePlatformerSFX_RatToHole.wav" id="3_3rg5b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g67rg"]
 radius = 16.0
@@ -15,3 +16,6 @@ texture = ExtResource("2_fmhc0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=299113441]
 shape = SubResource("CircleShape2D_g67rg")
+
+[node name="HoleSound" type="AudioStreamPlayer2D" parent="." unique_id=2096152696]
+stream = ExtResource("3_3rg5b")

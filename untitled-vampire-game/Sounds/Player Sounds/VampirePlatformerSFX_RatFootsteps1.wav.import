@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bk2ligv6gtr3x"
+path="res://.godot/imported/VampirePlatformerSFX_RatFootsteps1.wav-619e438b26d5d0638c1bb8ed4fc4db8d.sample"
+
+[deps]
+
+source_file="res://Sounds/Player Sounds/VampirePlatformerSFX_RatFootsteps1.wav"
+dest_files=["res://.godot/imported/VampirePlatformerSFX_RatFootsteps1.wav-619e438b26d5d0638c1bb8ed4fc4db8d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
