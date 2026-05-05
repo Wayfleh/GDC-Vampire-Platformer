@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="6_8gc7i"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="7_cf272"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="9_rjv3q"]
-[ext_resource type="PackedScene" uid="uid://cicjl1oqe4vfv" path="res://Levels/level_14.tscn" id="9_w6q35"]
+[ext_resource type="PackedScene" uid="uid://cicjl1oqe4vfv" path="res://Levels/FinalLevels/level_14.tscn" id="9_w6q35"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="10_h0i70"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ik50e"]

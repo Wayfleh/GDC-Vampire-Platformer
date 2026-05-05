@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://y404sm5m3lg3"]
 
-[ext_resource type="Script" path="res://Levels/level.gd" id="1_jnbb5"]
+[ext_resource type="Script" uid="uid://v8cmstrdotrt" path="res://Levels/level.gd" id="1_jnbb5"]
 [ext_resource type="Texture2D" uid="uid://b1nsq1cs3vntd" path="res://Art/bg1.png" id="2_0bxjh"]
 [ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="3_3vrqk"]
 [ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="4_enqwd"]
@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="6_8gc7i"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="7_cf272"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="9_rjv3q"]
-[ext_resource type="PackedScene" uid="uid://67i51wtnoyel" path="res://Levels/level_13.tscn" id="9_w3hw2"]
+[ext_resource type="PackedScene" uid="uid://67i51wtnoyel" path="res://Levels/FinalLevels/level_13.tscn" id="9_w3hw2"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="10_h0i70"]
 [ext_resource type="PackedScene" uid="uid://cklmtejug5xhr" path="res://Misc/ButtonInstruction.tscn" id="11_rwj5m"]
 

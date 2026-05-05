@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="8_xh63u"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="9_y71vf"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="10_axvv8"]
-[ext_resource type="PackedScene" uid="uid://7obuqw341s24" path="res://Levels/level_23.tscn" id="11_2dyoc"]
+[ext_resource type="PackedScene" uid="uid://7obuqw341s24" path="res://Levels/FinalLevels/level_23.tscn" id="11_2dyoc"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="11_mwv5u"]
 [ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="12_432ep"]
 

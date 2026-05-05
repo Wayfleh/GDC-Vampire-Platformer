@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="8_s4agi"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="9_47w54"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="10_cvcn5"]
-[ext_resource type="PackedScene" uid="uid://y404sm5m3lg3" path="res://Levels/level_12.tscn" id="10_wi607"]
+[ext_resource type="PackedScene" uid="uid://y404sm5m3lg3" path="res://Levels/FinalLevels/Level_12.tscn" id="10_wi607"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lm7ip"]
 shader = ExtResource("5_16fvj")

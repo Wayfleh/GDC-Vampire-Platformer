@@ -40,7 +40,8 @@ func _ready() -> void:
 
 func check_level_complete(body: Node2D) -> void:
 	if body is Player and door_open:
-		GlobalData.next_level(next_level)
+		GlobalData.curr_level_index += 1
+		GlobalData.next_level()
 
 func update_animal_number() -> void:
 	animal_number.text = str(GlobalData.animals_remaining)

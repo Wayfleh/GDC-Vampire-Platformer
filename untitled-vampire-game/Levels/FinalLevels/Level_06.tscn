@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="5_m7xy0"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="7_npl2t"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="8_kta7h"]
-[ext_resource type="PackedScene" uid="uid://bqqxtrkydtxig" path="res://Levels/level_07.tscn" id="9_fm70h"]
+[ext_resource type="PackedScene" uid="uid://bqqxtrkydtxig" path="res://Levels/FinalLevels/Level_07.tscn" id="9_fm70h"]
 [ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="9_h7iq3"]
 [ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="10_4la7o"]
 [ext_resource type="PackedScene" uid="uid://cklmtejug5xhr" path="res://Misc/ButtonInstruction.tscn" id="11_f4oyo"]

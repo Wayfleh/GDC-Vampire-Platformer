@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="5_lkd0j"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="7_qb46w"]
 [ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="8_vhsq0"]
-[ext_resource type="PackedScene" uid="uid://dlspin4ymodoo" path="res://Levels/level_17.tscn" id="9_ios0c"]
+[ext_resource type="PackedScene" uid="uid://dlspin4ymodoo" path="res://Levels/FinalLevels/level_17.tscn" id="9_ios0c"]
 [ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="9_ma2q2"]
 
 [node name="Level1" type="Node2D" unique_id=1583682183]

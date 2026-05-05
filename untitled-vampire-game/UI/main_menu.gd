@@ -16,6 +16,10 @@ var sequence_index: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GlobalData.curr_level_index = 0
+	GlobalData.challenge = false
+	GlobalData.curr_path = GlobalData.levels_path
+	GlobalData.levels = GlobalData.level_files
 	GlobalMusic.ChangeTrack("main_menu")
 	sequence_index = 0
 
@@ -27,7 +31,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			sequence_index += 1
 			print(sequence_index)
 			if sequence_index >= chinese_sequence.size():
-				get_tree().change_scene_to_file("res://Levels/ChallengeLevels/ch_level_00.tscn")
+				GlobalData.challenge = true
+				GlobalData.curr_path = GlobalData.ch_levels_path
+				GlobalData.levels = GlobalData.ch_level_files
+				GlobalData.next_level()
 		else:
 			sequence_index = 0
 

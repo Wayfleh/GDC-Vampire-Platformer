@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="8_6t1tm"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="9_4mcfs"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="11_rdbk0"]
-[ext_resource type="PackedScene" uid="uid://5ps2wh357jau" path="res://Levels/level_22.tscn" id="12_qvpa1"]
+[ext_resource type="PackedScene" uid="uid://5ps2wh357jau" path="res://Levels/FinalLevels/level_22.tscn" id="12_qvpa1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8nnte"]
 texture = ExtResource("3_g302m")

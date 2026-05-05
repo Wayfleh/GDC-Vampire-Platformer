@@ -9,8 +9,33 @@ var animals_remaining : int
 var level_complete : bool = false
 var restarted: bool = false
 
+var levels_path: String = "res://Levels/FinalLevels"
+var ch_levels_path: String = "res://Levels/ChallengeLevels/"
+
+var curr_path: String = levels_path
+
+var level_files: PackedStringArray
+var ch_level_files: PackedStringArray
+
+var levels: PackedStringArray = level_files
+
+var challenge: bool = false
+var curr_level_index: int = 0
+
 signal update_animals_remaining
 signal update_blood_chamber
+
+func _ready() -> void:
+	level_files = DirAccess.get_files_at(levels_path)
+	ch_level_files = DirAccess.get_files_at(ch_levels_path)
+
+#FOR DEBUGGING ONLY, TAKE THIS OUT LATER
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("debug_increment_level"):
+		curr_level_index += 1
+		print(curr_level_index)
+	elif Input.is_action_just_pressed("debug_next_level"):
+		next_level()
 
 func start_level() -> void:
 	print("LEVEL MANAGER READY IN SCENE:", get_tree().current_scene.name)
@@ -43,7 +68,12 @@ func blood_cycle():
 	# Currently unsure if/how to connect the blood_container to this global_data.gd
 	return
 
-func next_level(level : PackedScene):
+func next_level():
 	blood_chamber.clear()
 	charges = 0
-	get_tree().change_scene_to_packed(level)
+	if curr_level_index >= levels.size():
+		var last_scene = "res://UI/MainMenu.tscn" if challenge else "res://Misc/cheat_code.tscn"
+		get_tree().change_scene_to_file(last_scene)
+		return
+	var level_path = curr_path + "/" + levels.get(curr_level_index)
+	get_tree().change_scene_to_file(level_path)

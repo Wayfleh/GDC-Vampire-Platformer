@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://bjysayggk63jd"]
 
-[ext_resource type="Script" path="res://Levels/level.gd" id="1_hj3xb"]
+[ext_resource type="Script" uid="uid://v8cmstrdotrt" path="res://Levels/level.gd" id="1_hj3xb"]
 [ext_resource type="Texture2D" uid="uid://b1nsq1cs3vntd" path="res://Art/bg1.png" id="2_k6wck"]
 [ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="3_ps6yb"]
 [ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="4_qcjig"]
 [ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="5_js3oa"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="6_nhiqr"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="7_ae5et"]
-[ext_resource type="PackedScene" uid="uid://yxb6hakqw03p" path="res://Levels/level_04.tscn" id="8_1tcs8"]
+[ext_resource type="PackedScene" uid="uid://yxb6hakqw03p" path="res://Levels/FinalLevels/Level_04.tscn" id="8_1tcs8"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="9_lojly"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="10_vohej"]
 
@@ -155,17 +155,9 @@ position = Vector2(101, -62)
 next_level = ExtResource("8_1tcs8")
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("9_lojly")]
-position = Vector2(-305, -43)
-
-[node name="SoundF_Transform" parent="Player" index="14" unique_id=290602985]
-volume_db = 6.0
-
-[node name="SoundF_Jump" parent="Player" index="15" unique_id=284681269]
-volume_db = 12.0
+position = Vector2(-250, -40)
 
 [node name="UI" parent="." unique_id=889175113 instance=ExtResource("10_vohej")]
 unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
-
-[editable path="Player"]
