@@ -8,6 +8,7 @@ extends State
 @onready var v_machine = $VampireSM
 
 @onready var sound_f_transform: AudioStreamPlayer2D = $"../../SoundF_Transform"
+@onready var sound_r_transform: AudioStreamPlayer2D = $"../../SoundR_Transform"
 
 var trans_buffer_timer: Timer
 @onready var current_chamber_size: int
@@ -67,6 +68,7 @@ func transform():
 			sound_f_transform.play()
 			transitionToState.emit("FROG")
 		GlobalData.Animals.RAT:
+			sound_r_transform.play()
 			transitionToState.emit("RAT")
 #turn off processing for statemachine
 func exit_state():

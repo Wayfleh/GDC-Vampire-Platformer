@@ -45,6 +45,8 @@ func die_from_bite_dash(from_dir: int) -> void:
 
 	_disable_collision_shapes(self)
 
+	$DeathSound.play()
+	
 	# If the frog has a sprite animation and a "death" animation exists, play it
 	if has_node("AnimatedSprite2D"):
 		var sprite = $AnimatedSprite2D

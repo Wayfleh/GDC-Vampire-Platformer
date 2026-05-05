@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://l8asneecp3kh"
+path="res://.godot/imported/VampirePlatformerSFX_RestartButton.wav-2469266af6c19b2053f991f4445ac498.sample"
+
+[deps]
+
+source_file="res://Sounds/Player Sounds/VampirePlatformerSFX_RestartButton.wav"
+dest_files=["res://.godot/imported/VampirePlatformerSFX_RestartButton.wav-2469266af6c19b2053f991f4445ac498.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="7_apybv"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="8_0legg"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="9_gvucg"]
-[ext_resource type="PackedScene" uid="uid://3uyg1vra8sar" path="res://Levels/level_06.tscn" id="11_ju81r"]
+[ext_resource type="PackedScene" uid="uid://ndbodfavegpb" path="res://Misc/kill_zone.tscn" id="11_oy7oe"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="11_v4483"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8nnte"]
@@ -206,4 +206,6 @@ position = Vector2(-50, -40)
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("11_v4483")]
 position = Vector2(385, -51)
-next_level = ExtResource("11_ju81r")
+
+[node name="KillZone" parent="." unique_id=1777521344 instance=ExtResource("11_oy7oe")]
+position = Vector2(222, 431)

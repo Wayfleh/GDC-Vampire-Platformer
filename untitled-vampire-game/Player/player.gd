@@ -71,6 +71,7 @@ func _ready() -> void:
 	bite_hitbox.area_entered.connect(bite_animal)
 	anim_sprite.play("vampire_idle")
 	if GlobalData.restarted:
+		$SoundV_Restart.play()
 		playPoofParticle()
 		GlobalData.restarted = false
 	
@@ -184,6 +185,7 @@ func DetermineBiteDashDirection(currPos: Vector2, prevPos: Vector2, bd_direction
 	return dir
 
 func TransformToVampire():
+	$SoundV_DeTransform.play()
 	playPoofParticle()
 	detransform.emit()
 
@@ -197,12 +199,15 @@ func UpdateUI():
 	bloodContainer.UpdateBloodTokenSprites()
 	pass
 
+func restart():
+	GlobalData.blood_chamber.clear()
+	UpdateUI()
+	GlobalData.restarted = true
+	get_tree().reload_current_scene()
+
 func _process(delta):
 	if Input.is_action_just_pressed("restart"):
-		GlobalData.blood_chamber.clear()
-		UpdateUI()
-		GlobalData.restarted = true
-		get_tree().reload_current_scene()
+		restart()
 		return
 	
 	if Input.is_action_just_pressed("blood_cycle"):
