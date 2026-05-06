@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="7_o3xc6"]
 [ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="8_1d60o"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="9_7t4kt"]
+[ext_resource type="PackedScene" uid="uid://b1k3vejyw11ab" path="res://Levels/MatLevels/fog.tscn" id="10_mu0c4"]
+[ext_resource type="PackedScene" uid="uid://cy7xnhnawsqe0" path="res://Levels/MatLevels/world_environment.tscn" id="11_nh138"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ik50e"]
 texture = ExtResource("3_f4oyo")
@@ -175,5 +177,9 @@ other_hole = NodePath("../RatHoleB1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
 offset = Vector2(12, -8)
+
+[node name="Fog" parent="." unique_id=1507834529 instance=ExtResource("10_mu0c4")]
+
+[node name="WorldEnvironment" parent="." unique_id=1101015796 instance=ExtResource("11_nh138")]
 
 [editable path="Player"]

@@ -10,9 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="8_xh63u"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="9_y71vf"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="10_axvv8"]
-[ext_resource type="PackedScene" uid="uid://7obuqw341s24" path="res://Levels/FinalLevels/level_23.tscn" id="11_2dyoc"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="11_mwv5u"]
 [ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="12_432ep"]
+[ext_resource type="PackedScene" uid="uid://b1k3vejyw11ab" path="res://Levels/MatLevels/fog.tscn" id="13_uiekn"]
+[ext_resource type="PackedScene" uid="uid://cy7xnhnawsqe0" path="res://Levels/MatLevels/world_environment.tscn" id="14_f8rx1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8nnte"]
 texture = ExtResource("3_4uqje")
@@ -219,7 +220,6 @@ other_hole = NodePath("../RatHole")
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("10_axvv8")]
 position = Vector2(111, -52)
-next_level = ExtResource("11_2dyoc")
 
 [node name="Label" type="Label" parent="." unique_id=278304940]
 offset_left = 32.0
@@ -228,3 +228,7 @@ offset_right = 72.0
 offset_bottom = 415.0
 text = "lame ass level but it teaches the player to
 cycle their blood or some shit"
+
+[node name="Fog" parent="." unique_id=1507834529 instance=ExtResource("13_uiekn")]
+
+[node name="WorldEnvironment" parent="." unique_id=1101015796 instance=ExtResource("14_f8rx1")]

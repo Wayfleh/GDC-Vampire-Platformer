@@ -3,12 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://b1nsq1cs3vntd" path="res://Art/bg1.png" id="1_vn7jf"]
 [ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="2_6drxt"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="2_mtno4"]
-[ext_resource type="PackedScene" uid="uid://ndbodfavegpb" path="res://Misc/kill_zone.tscn" id="3_5d7e3"]
+[ext_resource type="PackedScene" path="res://Misc/kill_zone.tscn" id="3_5d7e3"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="4_2o7fp"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="5_lkd0j"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="7_qb46w"]
 [ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="8_vhsq0"]
 [ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="9_ma2q2"]
+[ext_resource type="PackedScene" uid="uid://b1k3vejyw11ab" path="res://Levels/MatLevels/fog.tscn" id="10_s6u42"]
+[ext_resource type="PackedScene" uid="uid://cy7xnhnawsqe0" path="res://Levels/MatLevels/world_environment.tscn" id="11_6x3r5"]
 
 [node name="Level1" type="Node2D" unique_id=1583682183]
 
@@ -95,6 +97,10 @@ other_hole = NodePath("../RatHoleA5")
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("5_lkd0j")]
 position = Vector2(151, 189)
+
+[node name="Fog" parent="." unique_id=1507834529 instance=ExtResource("10_s6u42")]
+
+[node name="WorldEnvironment" parent="." unique_id=1101015796 instance=ExtResource("11_6x3r5")]
 
 [editable path="Rat5"]
 [editable path="Rat3"]

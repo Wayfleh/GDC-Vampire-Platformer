@@ -7,10 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="5_a0o3x"]
 [ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="6_8kv5i"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="7_v70ti"]
-[ext_resource type="PackedScene" uid="uid://ndbodfavegpb" path="res://Misc/kill_zone.tscn" id="8_lp0fy"]
+[ext_resource type="PackedScene" path="res://Misc/kill_zone.tscn" id="8_lp0fy"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="8_t2om5"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="9_vwe3a"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="11_s2btx"]
+[ext_resource type="PackedScene" uid="uid://b1k3vejyw11ab" path="res://Levels/MatLevels/fog.tscn" id="12_qdiu3"]
+[ext_resource type="PackedScene" uid="uid://cy7xnhnawsqe0" path="res://Levels/MatLevels/world_environment.tscn" id="13_2jah6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lm7ip"]
 shader = ExtResource("2_f2rh6")
@@ -305,3 +307,7 @@ text = "Secret Chinese Tech taught to me by my Master:
 Rising to greatness,
 Be humble and reattain
 Your mortality"
+
+[node name="Fog" parent="." unique_id=1507834529 instance=ExtResource("12_qdiu3")]
+
+[node name="WorldEnvironment" parent="." unique_id=1101015796 instance=ExtResource("13_2jah6")]

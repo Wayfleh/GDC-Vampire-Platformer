@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="3_o2e5c"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="5_5h6gf"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="6_qceym"]
+[ext_resource type="PackedScene" uid="uid://b1k3vejyw11ab" path="res://Levels/MatLevels/fog.tscn" id="7_5hgjr"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="7_rgvce"]
+[ext_resource type="PackedScene" uid="uid://cy7xnhnawsqe0" path="res://Levels/MatLevels/world_environment.tscn" id="8_abr83"]
 
 [node name="Level1" type="Node2D" unique_id=1583682183]
 position = Vector2(1, -9)
@@ -194,5 +196,9 @@ rotation = -1.0868044
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("3_o2e5c")]
 position = Vector2(-125, -196)
+
+[node name="Fog" parent="." unique_id=1507834529 instance=ExtResource("7_5hgjr")]
+
+[node name="WorldEnvironment" parent="." unique_id=1101015796 instance=ExtResource("8_abr83")]
 
 [editable path="Player"]

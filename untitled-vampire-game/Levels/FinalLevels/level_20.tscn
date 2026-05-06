@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="7_nec8v"]
 [ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="8_lq6s2"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="9_m5q7d"]
+[ext_resource type="PackedScene" uid="uid://b1k3vejyw11ab" path="res://Levels/MatLevels/fog.tscn" id="10_32ct6"]
+[ext_resource type="PackedScene" uid="uid://cy7xnhnawsqe0" path="res://Levels/MatLevels/world_environment.tscn" id="11_ifeif"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ik50e"]
 texture = ExtResource("3_dqtey")
@@ -174,3 +176,7 @@ position = Vector2(-148, -56)
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("9_m5q7d")]
 position = Vector2(-100, 174)
+
+[node name="Fog" parent="." unique_id=1507834529 instance=ExtResource("10_32ct6")]
+
+[node name="WorldEnvironment" parent="." unique_id=1101015796 instance=ExtResource("11_ifeif")]

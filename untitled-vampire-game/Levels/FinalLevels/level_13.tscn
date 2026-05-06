@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="5_yvtbi"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="6_8gc7i"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="7_cf272"]
+[ext_resource type="PackedScene" uid="uid://b1k3vejyw11ab" path="res://Levels/MatLevels/fog.tscn" id="9_54qe6"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="9_rjv3q"]
+[ext_resource type="PackedScene" uid="uid://cy7xnhnawsqe0" path="res://Levels/MatLevels/world_environment.tscn" id="10_7tjn5"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="10_h0i70"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ik50e"]
@@ -165,5 +167,9 @@ position = Vector2(-291, 137)
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("7_cf272")]
 position = Vector2(253, -177)
+
+[node name="Fog" parent="." unique_id=1507834529 instance=ExtResource("9_54qe6")]
+
+[node name="WorldEnvironment" parent="." unique_id=1101015796 instance=ExtResource("10_7tjn5")]
 
 [editable path="Player"]

@@ -11,7 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="9_t3fpb"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="10_gic7q"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="11_f7cvg"]
-[ext_resource type="PackedScene" uid="uid://ndbodfavegpb" path="res://Misc/kill_zone.tscn" id="12_8vugw"]
+[ext_resource type="PackedScene" path="res://Misc/kill_zone.tscn" id="12_8vugw"]
+[ext_resource type="PackedScene" uid="uid://b1k3vejyw11ab" path="res://Levels/MatLevels/fog.tscn" id="13_gkmvc"]
+[ext_resource type="PackedScene" uid="uid://cy7xnhnawsqe0" path="res://Levels/MatLevels/world_environment.tscn" id="14_febhn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8nnte"]
 texture = ExtResource("3_a1qbe")
@@ -210,3 +212,18 @@ position = Vector2(-168, 97)
 
 [node name="KillZone" parent="." unique_id=1777521344 instance=ExtResource("12_8vugw")]
 position = Vector2(212, 442)
+
+[node name="Fog" parent="." unique_id=1507834529 instance=ExtResource("13_gkmvc")]
+
+[node name="Fog Top" parent="Fog" index="0" unique_id=467039011]
+position = Vector2(119.42688, -78.801025)
+
+[node name="Fog Mid" parent="Fog" index="1" unique_id=1961027277]
+position = Vector2(105.426895, -55.801025)
+
+[node name="Fog Back" parent="Fog" index="2" unique_id=674383982]
+position = Vector2(105.426895, -55.801025)
+
+[node name="WorldEnvironment" parent="." unique_id=1101015796 instance=ExtResource("14_febhn")]
+
+[editable path="Fog"]

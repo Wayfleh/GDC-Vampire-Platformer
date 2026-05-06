@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="8_6t1tm"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="9_4mcfs"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="11_rdbk0"]
-[ext_resource type="PackedScene" uid="uid://5ps2wh357jau" path="res://Levels/FinalLevels/level_22.tscn" id="12_qvpa1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8nnte"]
 texture = ExtResource("3_g302m")
@@ -253,7 +252,6 @@ unique_name_in_owner = true
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("9_4mcfs")]
 position = Vector2(-292, -166)
 scale = Vector2(1.0184548, 0.9200299)
-next_level = ExtResource("12_qvpa1")
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("11_rdbk0")]
 position = Vector2(-215, 209)
