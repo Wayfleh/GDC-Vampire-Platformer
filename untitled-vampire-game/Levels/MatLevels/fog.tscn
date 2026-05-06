@@ -22,11 +22,13 @@ shader = ExtResource("1_c6qy8")
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_aoy4t")
 shader_parameter/smoke_color = Color(0.6118329, 0.6118329, 0.6118329, 1)
 shader_parameter/distortion_speed = 0.134000006365
-shader_parameter/density = 0.800000038
+shader_parameter/density = 1.0
+shader_parameter/pixelation_amount = 128.00000455999998
 shader_parameter/fade_start = 0.58000002755
 shader_parameter/fade_end = 0.850000040375
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_g302m"]
+texture_filter = 1
 
 [sub_resource type="Gradient" id="Gradient_ee5pd"]
 offsets = PackedFloat32Array(0, 0.99171597, 1)
@@ -47,7 +49,8 @@ shader = ExtResource("1_c6qy8")
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_w5rom")
 shader_parameter/smoke_color = Color(0.09220996, 0.13820449, 0.23352075, 1)
 shader_parameter/distortion_speed = 0.50000002375
-shader_parameter/density = 1.0
+shader_parameter/density = 0.800000038
+shader_parameter/pixelation_amount = 128.00000455999998
 shader_parameter/fade_start = 0.70000003325
 shader_parameter/fade_end = 0.800000038
 
@@ -70,30 +73,28 @@ shader = ExtResource("1_c6qy8")
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_1rd12")
 shader_parameter/smoke_color = Color(0.07427422, 0.11475631, 0.19866624, 1)
 shader_parameter/distortion_speed = 0.50000002375
-shader_parameter/density = 1.0
+shader_parameter/density = 0.800000038
+shader_parameter/pixelation_amount = 128.00000455999998
 shader_parameter/fade_start = 0.6000000285
 shader_parameter/fade_end = 0.90000004275
 
-[node name="Fog" type="Node2D" unique_id=181930816]
+[node name="Fog" type="Node2D" unique_id=763216912]
 
 [node name="Fog Top" type="Sprite2D" parent="." unique_id=467039011]
 visibility_layer = 2
-z_index = 99
+z_index = 5
 material = SubResource("ShaderMaterial_w5rom")
-position = Vector2(-141.00006, -53)
-scale = Vector2(1256.8538, 872.39795)
+scale = Vector2(928, 928)
 texture = SubResource("CanvasTexture_g302m")
 
 [node name="Fog Mid" type="Sprite2D" parent="." unique_id=1961027277]
-z_index = -2
+z_index = 2
 material = SubResource("ShaderMaterial_1rd12")
-position = Vector2(-142.99998, -56)
-scale = Vector2(1256.8538, 872.39795)
+scale = Vector2(928, 928)
 texture = SubResource("CanvasTexture_g302m")
 
 [node name="Fog Back" type="Sprite2D" parent="." unique_id=674383982]
-z_index = -99
+z_index = 1
 material = SubResource("ShaderMaterial_l1ghi")
-position = Vector2(-142.99998, -56)
-scale = Vector2(1256.8538, 872.39795)
+scale = Vector2(928, 928)
 texture = SubResource("CanvasTexture_g302m")

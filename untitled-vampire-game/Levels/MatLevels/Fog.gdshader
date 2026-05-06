@@ -6,6 +6,8 @@ uniform vec3 smoke_color : source_color = vec3(0.8);
 uniform float distortion_speed : hint_range(0.0, 5.0) = 0.2;
 uniform float density : hint_range(0.0, 1.0) = 1.0;
 
+uniform float pixelation_amount: hint_range(32.0, 2048.0) = 0.0; // Higher = smaller pixels
+
 uniform float fade_start : hint_range(0.0, 1.0) = 0.7;
 uniform float fade_end : hint_range(0.0, 1.0) = 1.0;
 
@@ -18,8 +20,9 @@ void fragment() {
     // Sample noise with distortion
     vec4 noise = texture(noise_texture, UV + time_offset_1);
     
+    vec2 grid_uv = round(UV * pixelation_amount)/pixelation_amount;
     // Create distorted UV and sample final noise
-    vec2 distorted_uv = UV + noise.rg * 0.1 - 0.05 + time_offset_2;
+    vec2 distorted_uv = grid_uv - noise.rg * 0.1 - 0.05 + time_offset_2;
     float final_noise = texture(noise_texture, distorted_uv).r;
     
     float smoke_alpha = final_noise * density;

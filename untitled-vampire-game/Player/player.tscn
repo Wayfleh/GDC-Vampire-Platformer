@@ -639,6 +639,8 @@ mantle_angle = 25.0
 
 [node name="RAT" type="Node" parent="TransformationSM" unique_id=1041574165]
 script = ExtResource("24_j2n6q")
+R_SPEED = 150.0
+R_FRICTION = 20.0
 metadata/_custom_type_script = "uid://c68npqqwy1yig"
 
 [node name="RatSM" type="Node" parent="TransformationSM/RAT" unique_id=1273521801 node_paths=PackedStringArray("player", "initial_state")]

@@ -248,6 +248,6 @@ scale = Vector2(0.91369784, 0.9200299)
 position = Vector2(-410, -51)
 
 [node name="Fog" parent="." unique_id=1507834529 instance=ExtResource("12_ppssm")]
-position = Vector2(24, -192)
+position = Vector2(-80, -277)
 
 [node name="WorldEnvironment" parent="." unique_id=1101015796 instance=ExtResource("13_w6reo")]
