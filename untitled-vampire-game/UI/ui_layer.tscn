@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://da4x5la3k57k5" path="res://UI/blood_container.tscn" id="2_hbgg0"]
 [ext_resource type="Texture2D" uid="uid://dhffbbhcpoytn" path="res://Art/UI/margincut2.png" id="3_dn8jg"]
 [ext_resource type="PackedScene" uid="uid://dgn8ajamtynwx" path="res://UI/pause_menu.tscn" id="5_cftff"]
+[ext_resource type="FontFile" uid="uid://bojfmb0iv5fhc" path="res://Art/UI/Jacquard12-Regular.ttf" id="6_gwv0x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tdu8r"]
 texture = ExtResource("1_pnoum")
@@ -59,6 +60,7 @@ tile_size = Vector2i(32, 32)
 sources/1 = SubResource("TileSetAtlasSource_tdu8r")
 
 [node name="UI" type="CanvasLayer" unique_id=889175113]
+process_mode = 3
 offset = Vector2(-5, 4)
 transform = Transform2D(1, 0, 0, 1, -5, 4)
 script = ExtResource("1_e00e5")
@@ -85,3 +87,18 @@ position = Vector2(821, 395)
 
 [node name="Pause Menu" parent="." unique_id=2101282950 instance=ExtResource("5_cftff")]
 visible = false
+offset_left = 4.0
+offset_top = -4.0
+offset_right = -700.0
+offset_bottom = -4.0
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=1509330370]
+offset_left = 709.0
+offset_top = 31.0
+offset_right = 933.0
+offset_bottom = 96.0
+theme_override_colors/default_color = Color(0.9019608, 0.8, 0.5411765, 1)
+theme_override_fonts/normal_font = ExtResource("6_gwv0x")
+theme_override_font_sizes/normal_font_size = 60
+text = "Level:"
+horizontal_alignment = 1

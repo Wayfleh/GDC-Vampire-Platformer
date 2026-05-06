@@ -1,10 +1,11 @@
 extends Control
 
-@onready var resume_button: Button = $Buttons/Resume
-@onready var restart_button: Button = $Buttons/Restart
-@onready var main_menu_button: Button = $"Buttons/Main Menu"
-@onready var custom_keybinds_button: Button = $Buttons/CustomKeybinds
-@onready var reset_defaults_button: Button = $Buttons/ResetDefaults
+@onready var buttons = $Buttons
+@onready var resume_button: PauseMenuButton = $Buttons/Resume
+@onready var restart_button: PauseMenuButton = $Buttons/Restart
+@onready var main_menu_button: PauseMenuButton = $"Buttons/Main Menu"
+@onready var custom_keybinds_button: PauseMenuButton = $Buttons/CustomKeybinds
+@onready var reset_defaults_button: PauseMenuButton = $Buttons/ResetDefaults
 @onready var rebind_status: Label = $RebindStatus
 
 
@@ -26,7 +27,9 @@ var current_rebind_index: int = 0
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_WHEN_PAUSED
-
+	for button in buttons.get_children():
+		button.label.text = button.name
+	
 	resume_button.pressed.connect(resume)
 	restart_button.pressed.connect(restart)
 	main_menu_button.pressed.connect(main_menu)
@@ -39,11 +42,13 @@ func _ready() -> void:
 
 
 func pause() -> void:
+	$AnimationPlayer.play("pause")
 	get_tree().paused = true
 	show()
 
 
 func resume() -> void:
+	$AnimationPlayer.play("resume")
 	get_tree().paused = false
 	hide()
 	is_rebinding = false

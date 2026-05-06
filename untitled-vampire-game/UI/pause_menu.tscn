@@ -1,13 +1,38 @@
 [gd_scene format=3 uid="uid://dgn8ajamtynwx"]
 
 [ext_resource type="Script" uid="uid://e62g0m22g3oi" path="res://UI/pause_menu.gd" id="1_ltd3m"]
+[ext_resource type="Shader" uid="uid://cj5iqnfyfk82" path="res://Misc/opening_cutscene.gdshader" id="2_03fe5"]
+[ext_resource type="PackedScene" uid="uid://cunoymdxr6fm2" path="res://Misc/pause_menu_button.tscn" id="2_jfm1e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0b5ob"]
+shader = ExtResource("2_03fe5")
+shader_parameter/blur_amount = 0.50000002375
+
+[sub_resource type="Animation" id="Animation_03fe5"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_0b5ob"]
+resource_name = "pause"
+length = 0.2
+
+[sub_resource type="Animation" id="Animation_pqlge"]
+resource_name = "resume"
+length = 0.1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nben2"]
+_data = {
+&"RESET": SubResource("Animation_03fe5"),
+&"pause": SubResource("Animation_0b5ob"),
+&"resume": SubResource("Animation_pqlge")
+}
 
 [node name="Pause Menu" type="Control" unique_id=2101282950]
-process_mode = 2
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -704.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -18,45 +43,48 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 705.0
+offset_right = 705.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0.12156863, 0, 0, 0.2901961)
 
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1575546521]
+material = SubResource("ShaderMaterial_0b5ob")
+layout_mode = 0
+offset_right = 705.0
+offset_bottom = 512.0
+
 [node name="Buttons" type="VBoxContainer" parent="." unique_id=1497395441]
+process_mode = 2
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -50.5
-offset_right = 48.0
-offset_bottom = 50.5
+offset_left = 623.0
+offset_top = -166.0
+offset_right = 788.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 
-[node name="Resume" type="Button" parent="Buttons" unique_id=1762749082]
+[node name="Resume" parent="Buttons" unique_id=1955878795 instance=ExtResource("2_jfm1e")]
 layout_mode = 2
-text = "Resume"
 
-[node name="Restart" type="Button" parent="Buttons" unique_id=1968363567]
+[node name="Restart" parent="Buttons" unique_id=551647265 instance=ExtResource("2_jfm1e")]
 layout_mode = 2
-text = "Restart"
 
-[node name="Main Menu" type="Button" parent="Buttons" unique_id=1171522702]
+[node name="Main Menu" parent="Buttons" unique_id=359446007 instance=ExtResource("2_jfm1e")]
 layout_mode = 2
-text = "Main Menu"
 
-[node name="CustomKeybinds" type="Button" parent="Buttons" unique_id=2055838474]
+[node name="CustomKeybinds" parent="Buttons" unique_id=1326421521 instance=ExtResource("2_jfm1e")]
 layout_mode = 2
-text = "Customize Keybinds"
 
-[node name="ResetDefaults" type="Button" parent="Buttons" unique_id=1675966085]
+[node name="ResetDefaults" parent="Buttons" unique_id=1596594165 instance=ExtResource("2_jfm1e")]
 layout_mode = 2
-text = "Reset Defaults"
 
 [node name="RebindStatus" type="Label" parent="." unique_id=1878967351]
 layout_mode = 0
@@ -64,3 +92,7 @@ offset_left = 382.0
 offset_top = 332.0
 offset_right = 546.0
 offset_bottom = 355.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=141114411]
+root_node = NodePath("../ColorRect2")
+libraries/ = SubResource("AnimationLibrary_nben2")
