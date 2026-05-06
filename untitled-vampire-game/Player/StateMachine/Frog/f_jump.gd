@@ -56,7 +56,7 @@ func update(delta: float):
 
 		"jumping":
 			player.apply_horizontal_movement(delta)
-			if player.velocity.y > 0.0:
+			if player.velocity.y >= 0.0:
 				_jump_state = "falling"
 
 	player.apply_gravity(delta)
