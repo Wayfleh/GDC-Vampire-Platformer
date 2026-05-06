@@ -37,7 +37,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("debug_next_level"):
 		next_level()
-		print(curr_level_index + 1)
+		print("LEVEL: " + str(curr_level_index + 1))
 
 func start_level() -> void:
 	print("LEVEL MANAGER READY IN SCENE:", get_tree().current_scene.name)

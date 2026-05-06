@@ -22,6 +22,7 @@ var doCycle : bool = false
 
 var hbcb_distance_y := -36
 var hbcd_z_index := 97
+var overflow: bool = false
 
 var topMostToken : Sprite2D
 # Called when the node enters the scene tree for the first time.
@@ -30,6 +31,7 @@ func _ready() -> void:
 	GlobalData.update_blood_chamber.connect(cycleBlood)
 	
 	GlobalData.do_the_bit.connect(do_the_bit)
+	overflow = false
 	pass # Replace with function body.
 
 
@@ -122,8 +124,13 @@ func do_the_bit():
 	frog_token_sprite.texture = sprites[1]
 	add_child(frog_token_sprite)
 	hbcb_distance_y -= 16
+	if hbcb_distance_y <= -378:
+		overflow = true
+		hbcb_distance_y = 149
+		hbcd_z_index = 120
 	hbcd_z_index -= 1
 	frog_token_sprite.position.y = hbcb_distance_y
+	frog_token_sprite.position.x = -100 if overflow else 0
 	frog_token_sprite.z_index = hbcd_z_index
 	
 	
