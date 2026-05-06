@@ -626,6 +626,7 @@ script = ExtResource("10_apopc")
 
 [node name="F_JUMP" type="Node" parent="TransformationSM/FROG/FrogSM" unique_id=688462069]
 script = ExtResource("11_apopc")
+_max_charge_time = 1.0
 
 [node name="F_BITEDASH" type="Node" parent="TransformationSM/FROG/FrogSM" unique_id=2142105885]
 script = ExtResource("16_lfmf2")

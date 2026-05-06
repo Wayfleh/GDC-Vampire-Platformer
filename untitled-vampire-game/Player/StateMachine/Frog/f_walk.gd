@@ -22,7 +22,7 @@ func update(delta: float):
 	if player.direction == 0:
 		transitionToState.emit("F_IDLE")
 	
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") and (player.frog_floor_check.is_colliding() || player.is_on_floor()):
 		transitionToState.emit("F_JUMP")
 
 func _hop():
