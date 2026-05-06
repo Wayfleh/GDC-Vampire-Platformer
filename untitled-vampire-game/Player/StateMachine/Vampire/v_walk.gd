@@ -10,7 +10,8 @@ func enter_state():
 	add_child(coyote_timer)
 	coyote_timer.timeout.connect(_on_coyote_timer_timeout)
 	if player.is_on_floor():
-		player.anim_sprite.play("vampire_walk")
+		if player.bd_sprite_timer.is_stopped():
+			player.anim_sprite.play("vampire_walk")
 	else:
 		player.anim_sprite.play("vampire_fall")
 	#walk animation
@@ -21,7 +22,8 @@ func update(delta: float):
 	player.apply_horizontal_movement(delta)
 	player.apply_gravity(delta)
 	
-	if player.anim_sprite.animation == "vampire_fall" && player.is_on_floor():
+	if player.anim_sprite.animation != "vampire_walk" && player.is_on_floor() && player.bd_sprite_timer.is_stopped():
+		#&& (you're buns at the game)
 		player.anim_sprite.play("vampire_walk")
 	
 	if player.velocity.x == 0:

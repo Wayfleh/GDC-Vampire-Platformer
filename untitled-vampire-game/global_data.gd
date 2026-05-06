@@ -79,7 +79,7 @@ func next_level():
 	if challenge && curr_level_index == levels.size() - 1:
 		hilarious_blood_chamber_bit = true
 	if curr_level_index >= levels.size():
-		var last_scene = "res://UI/MainMenu.tscn" if challenge else "res://Misc/cheat_code.tscn"
+		var last_scene = "res://UI/credits.tscn" if challenge else "res://Misc/cheat_code.tscn"
 		get_tree().change_scene_to_file(last_scene)
 		return
 	var level_path = curr_path + "/" + levels.get(curr_level_index)

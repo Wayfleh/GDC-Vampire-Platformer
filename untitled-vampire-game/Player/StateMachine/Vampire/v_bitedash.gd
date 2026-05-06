@@ -64,13 +64,13 @@ func update(delta: float):
 	
 
 func exit_state():
-	player.anim_sprite.play("vampire_idle")
 	player.just_bit_animal = false
 	player.velocity = dashing_direction * h_bite_dash_residual_speed
 	player.bite_hitbox.set_deferred("monitoring", false)
 	print(player.bite_hitbox.monitoring)
 	if player.is_on_floor():
 		player.can_jump = true
+	player.bd_sprite_timer.start()
 	
 
 func DoDash(delta: float):

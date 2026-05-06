@@ -16,10 +16,12 @@ func update(delta: float):
 	player.apply_gravity(delta)
 	
 	if player.is_on_floor():
-		player.anim_sprite.play("vampire_idle")
+		if player.bd_sprite_timer.is_stopped():
+			player.anim_sprite.play("vampire_idle")
 		player.can_jump = true
 	else:
-		player.anim_sprite.play("vampire_fall")
+		if player.bd_sprite_timer.is_stopped():
+			player.anim_sprite.play("vampire_fall")
 		player.can_jump = false
 	if player.afterimage_particles.emitting:
 		player.afterimage_particles.emitting = false

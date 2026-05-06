@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://cyf1k4i72icfy"]
+
+[ext_resource type="Script" uid="uid://cr74mr723eeyf" path="res://UI/credits.gd" id="1_ftffn"]
+[ext_resource type="Texture2D" uid="uid://bykteu7q3meb" path="res://Art/creditscene_sized.png" id="1_kk2ga"]
+[ext_resource type="FontFile" uid="uid://bojfmb0iv5fhc" path="res://Art/UI/Jacquard12-Regular.ttf" id="2_2g780"]
+[ext_resource type="FontFile" uid="uid://clomxcxkqvoww" path="res://Art/UI/PixelifySans-VariableFont_wght.ttf" id="3_ftffn"]
+[ext_resource type="PackedScene" uid="uid://cunoymdxr6fm2" path="res://Misc/pause_menu_button.tscn" id="4_0ccpq"]
+
+[node name="Credits" type="Control" unique_id=1327236525]
+custom_minimum_size = Vector2(928, 512)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ftffn")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1216192855]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_kk2ga")
+
+[node name="CreditTitle" type="Label" parent="." unique_id=193549946]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 50.0
+offset_right = 327.0
+offset_bottom = 151.0
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_2g780")
+theme_override_font_sizes/font_size = 100
+text = "Credits"
+
+[node name="Return" parent="." unique_id=1955878795 instance=ExtResource("4_0ccpq")]
+process_mode = 3
+layout_mode = 0
+offset_left = 454.0
+offset_top = 374.0
+offset_right = 619.0
+offset_bottom = 414.0
+
+[node name="HFlowContainer" type="HFlowContainer" parent="." unique_id=1897410006]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 170.0
+offset_right = 537.0
+offset_bottom = 352.0
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 30
+
+[node name="Programmers" type="VBoxContainer" parent="HFlowContainer" unique_id=1689495102]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="ProgramTitle" type="Label" parent="HFlowContainer/Programmers" unique_id=1471983536]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2g780")
+theme_override_font_sizes/font_size = 40
+text = "Programmers"
+
+[node name="ProgramNames" type="Label" parent="HFlowContainer/Programmers" unique_id=179443330]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ftffn")
+theme_override_font_sizes/font_size = 20
+text = "Cristal Herrera
+Rafael Caculba
+VeryNoName"
+
+[node name="Artists" type="VBoxContainer" parent="HFlowContainer" unique_id=1923197222]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="ArtistsTitle" type="Label" parent="HFlowContainer/Artists" unique_id=87793751]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2g780")
+theme_override_font_sizes/font_size = 40
+text = "Artists"
+
+[node name="ArtistsNames" type="Label" parent="HFlowContainer/Artists" unique_id=713471923]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ftffn")
+theme_override_font_sizes/font_size = 20
+text = "Caustic Kat
+iinochu"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HFlowContainer" unique_id=1332469832]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="SoundTitle" type="Label" parent="HFlowContainer/VBoxContainer" unique_id=1170353699]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2g780")
+theme_override_font_sizes/font_size = 40
+text = "SoundDesigner"
+
+[node name="Sounder" type="Label" parent="HFlowContainer/VBoxContainer" unique_id=2066014292]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ftffn")
+theme_override_font_sizes/font_size = 20
+text = "Crowbar Circus"
