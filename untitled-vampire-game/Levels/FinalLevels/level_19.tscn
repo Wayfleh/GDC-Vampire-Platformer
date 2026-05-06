@@ -226,6 +226,7 @@ position = Vector2(-31, 55)
 position = Vector2(-29, -204)
 
 [node name="Fog" parent="." unique_id=1507834529 instance=ExtResource("13_f0q3w")]
+position = Vector2(13, 201)
 
 [node name="WorldEnvironment" parent="." unique_id=1101015796 instance=ExtResource("14_e2qa3")]
 
