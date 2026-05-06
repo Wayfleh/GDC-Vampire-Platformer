@@ -22,10 +22,14 @@ var levels: PackedStringArray = level_files
 var challenge: bool = false
 var curr_level_index: int = 0
 
+var hilarious_blood_chamber_bit: bool = false
+
 signal update_animals_remaining
 signal update_blood_chamber
+signal do_the_bit
 
 func _ready() -> void:
+	hilarious_blood_chamber_bit = false
 	level_files = DirAccess.get_files_at(levels_path)
 	ch_level_files = DirAccess.get_files_at(ch_levels_path)
 
@@ -51,6 +55,8 @@ func animal_bitten():
 		level_complete = true
 
 func blood_collected(animal : Area2D):
+	if hilarious_blood_chamber_bit && blood_chamber.size() == 3:
+		do_the_bit.emit()
 	blood_chamber.push_front(animal.type)
 	if (blood_chamber.size() > 3):
 		blood_chamber.resize(3)
@@ -71,6 +77,8 @@ func blood_cycle():
 func next_level():
 	blood_chamber.clear()
 	charges = 0
+	if challenge && curr_level_index == levels.size() - 1:
+		hilarious_blood_chamber_bit = true
 	if curr_level_index >= levels.size():
 		var last_scene = "res://UI/MainMenu.tscn" if challenge else "res://Misc/cheat_code.tscn"
 		get_tree().change_scene_to_file(last_scene)

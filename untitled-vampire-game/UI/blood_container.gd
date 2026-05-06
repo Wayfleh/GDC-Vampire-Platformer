@@ -20,11 +20,16 @@ var cycleTime : float
 @export var moveRightOffset : float = 50 # Amount of distance the token will move to the right for cycling
 var doCycle : bool = false
 
+var hbcb_distance_y := -36
+var hbcd_z_index := 97
+
 var topMostToken : Sprite2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	UpdateBloodTokenSprites()
 	GlobalData.update_blood_chamber.connect(cycleBlood)
+	
+	GlobalData.do_the_bit.connect(do_the_bit)
 	pass # Replace with function body.
 
 
@@ -110,3 +115,15 @@ func readBloodChamber(function: String):
 		
 	else:
 		print("blood_container.gd: readBloodChamber() invalid parameter?")
+
+#SHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+func do_the_bit():
+	var frog_token_sprite = Sprite2D.new()
+	frog_token_sprite.texture = sprites[1]
+	add_child(frog_token_sprite)
+	hbcb_distance_y -= 16
+	hbcd_z_index -= 1
+	frog_token_sprite.position.y = hbcb_distance_y
+	frog_token_sprite.z_index = hbcd_z_index
+	
+	
