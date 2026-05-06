@@ -16,7 +16,7 @@ var sequence_index: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GlobalData.curr_level_index = 0
+	GlobalData.curr_level_index = -1
 	GlobalData.challenge = false
 	GlobalData.curr_path = GlobalData.levels_path
 	GlobalData.levels = GlobalData.level_files

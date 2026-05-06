@@ -20,7 +20,7 @@ var ch_level_files: PackedStringArray
 var levels: PackedStringArray = level_files
 
 var challenge: bool = false
-var curr_level_index: int = 0
+var curr_level_index: int = -1
 
 var hilarious_blood_chamber_bit: bool = false
 
@@ -35,11 +35,9 @@ func _ready() -> void:
 
 #FOR DEBUGGING ONLY, TAKE THIS OUT LATER
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("debug_increment_level"):
-		curr_level_index += 1
-		print(curr_level_index)
-	elif Input.is_action_just_pressed("debug_next_level"):
+	if Input.is_action_just_pressed("debug_next_level"):
 		next_level()
+		print(curr_level_index + 1)
 
 func start_level() -> void:
 	print("LEVEL MANAGER READY IN SCENE:", get_tree().current_scene.name)
@@ -77,6 +75,7 @@ func blood_cycle():
 func next_level():
 	blood_chamber.clear()
 	charges = 0
+	curr_level_index += 1
 	if challenge && curr_level_index == levels.size() - 1:
 		hilarious_blood_chamber_bit = true
 	if curr_level_index >= levels.size():

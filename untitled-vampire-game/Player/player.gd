@@ -30,6 +30,7 @@ var bite_dash_used: bool = false
 
 @onready var isTransformed : bool = false #Keep track if Alacarte is an animal for detransformation
 var can_jump : bool #used for coyote time in vampire state
+var jump_buffered: bool #when the player presses jump in the middle of another thing
 
 #---------- Particles ----------#
 @onready var blood_particles := $BloodParticles
@@ -212,3 +213,8 @@ func _process(delta):
 	
 	if Input.is_action_just_pressed("blood_cycle"):
 		GlobalData.blood_cycle()
+	
+	if Input.is_action_just_released("jump") && jump_buffered:
+		jump_buffered = false
+	if Input.is_action_just_pressed("jump") && !jump_buffered:
+		jump_buffered = true
