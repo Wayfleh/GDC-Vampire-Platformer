@@ -336,9 +336,9 @@ position = Vector2(186, -194)
 [node name="Fog" parent="." unique_id=1507834529 instance=ExtResource("7_hhqlp")]
 position = Vector2(-64, 13)
 
-[node name="KillZone" parent="Fog" unique_id=1777521344 instance=ExtResource("11_o2ahx")]
-position = Vector2(9, 354)
-
 [node name="WorldEnvironment" parent="." unique_id=1101015796 instance=ExtResource("8_wesbb")]
+
+[node name="KillZone" parent="." unique_id=1777521344 instance=ExtResource("11_o2ahx")]
+position = Vector2(-55, 367)
 
 [editable path="Player"]
