@@ -33,6 +33,6 @@ void fragment() {
 	
 	
     // Output color
-    COLOR =  vec4(smoke_color, smoke_alpha * alpha_mask);
+    COLOR =    vec4(smoke_color, smoke_alpha * alpha_mask);
 }
 
