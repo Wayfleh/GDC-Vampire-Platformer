@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://deywo0q4v1kj8" path="res://Levels/door.gd" id="1_c5cab"]
 [ext_resource type="Texture2D" uid="uid://dhf8xaawmn15n" path="res://Art/Custom Icons/anim_gate.png" id="3_o6o21"]
+[ext_resource type="FontFile" uid="uid://clomxcxkqvoww" path="res://Art/UI/PixelifySans-VariableFont_wght.ttf" id="3_ppseb"]
+[ext_resource type="Shader" uid="uid://bo2cbvgqvg3dx" path="res://UI/level_no_anti_alias.gdshader" id="3_tf1mp"]
 [ext_resource type="AudioStream" uid="uid://b01i8t583rqe7" path="res://Sounds/enviornment/DoorOpening.wav" id="4_tf1mp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_obau8"]
@@ -59,6 +61,10 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ghfw5"]
+shader = ExtResource("3_tf1mp")
+shader_parameter/my_color = Color(1, 1, 1, 1)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ppseb"]
 size = Vector2(32, 64)
 
@@ -72,6 +78,7 @@ sprite_frames = SubResource("SpriteFrames_lw0lb")
 animation = &"open"
 
 [node name="AnimalNumber" type="Label" parent="." unique_id=66334771]
+material = SubResource("ShaderMaterial_ghfw5")
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -83,6 +90,8 @@ offset_right = 95.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ppseb")
+theme_override_font_sizes/font_size = 30
 text = "This should be a number"
 horizontal_alignment = 1
 

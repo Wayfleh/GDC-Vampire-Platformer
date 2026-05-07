@@ -4,10 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://bykteu7q3meb" path="res://Art/creditscene_sized.png" id="2_jomyl"]
 [ext_resource type="Shader" uid="uid://cj5iqnfyfk82" path="res://Misc/opening_cutscene.gdshader" id="3_x5rxr"]
 [ext_resource type="FontFile" uid="uid://clomxcxkqvoww" path="res://Art/UI/PixelifySans-VariableFont_wght.ttf" id="4_2wk86"]
+[ext_resource type="Shader" uid="uid://bo2cbvgqvg3dx" path="res://UI/level_no_anti_alias.gdshader" id="4_w13sb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jomyl"]
 shader = ExtResource("3_x5rxr")
 shader_parameter/blur_amount = 1.0000000475
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_olhen"]
+shader = ExtResource("4_w13sb")
+shader_parameter/my_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c4mim"]
+shader = ExtResource("4_w13sb")
+shader_parameter/my_color = Color(1, 1, 1, 1)
 
 [node name="OpeningCutscene" type="Control" unique_id=1742611900]
 layout_mode = 3
@@ -36,6 +45,7 @@ offset_bottom = 516.0
 vertical_scroll_mode = 3
 
 [node name="Story" type="RichTextLabel" parent="Scroller" unique_id=704026172]
+material = SubResource("ShaderMaterial_olhen")
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/normal_font = ExtResource("4_2wk86")
@@ -85,6 +95,7 @@ scroll_active = false
 horizontal_alignment = 1
 
 [node name="PressAnyButton" type="Label" parent="." unique_id=606061790]
+material = SubResource("ShaderMaterial_c4mim")
 layout_mode = 0
 offset_left = 643.0
 offset_top = 480.0
