@@ -50,8 +50,10 @@
 [ext_resource type="AudioStream" uid="uid://cdf1s1v4sn4kc" path="res://Sounds/Player Sounds/VampirePlatformerSFX_AnimalDeTransform.wav" id="44_uvbbp"]
 [ext_resource type="AudioStream" uid="uid://cgt30c1whfntg" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FrogTongueFire.wav" id="46_6eb1q"]
 [ext_resource type="AudioStream" uid="uid://bxjq1chivfm6a" path="res://Sounds/Player Sounds/VampirePlatformerSFX_AnimalTransformRat.wav" id="46_7v2uk"]
+[ext_resource type="AudioStream" uid="uid://be06n53owqmq6" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FrogJumpCharge_WindUp.wav" id="47_8hx1r"]
 [ext_resource type="AudioStream" uid="uid://c6qo8msyh747j" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FrogTongueLatch.wav" id="47_wvbyc"]
 [ext_resource type="AudioStream" uid="uid://bvxgiuf3xpwv6" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FrogTongueRetract.wav" id="48_gvnt1"]
+[ext_resource type="AudioStream" uid="uid://sn2u5x8bfop6" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FrogJumpCharge_HoldLoop.wav" id="48_qas3k"]
 [ext_resource type="AudioStream" uid="uid://bcx6tqfv7jwvk" path="res://Sounds/Player Sounds/VampirePlatformerSFX_FrogTongueWhiff2.wav" id="49_1kmt7"]
 [ext_resource type="AudioStream" uid="uid://b17g1taevs2p8" path="res://Sounds/Player Sounds/VampirePlatformerSFX_RatBiteDashLaunch.wav" id="51_1kmt7"]
 [ext_resource type="AudioStream" uid="uid://bk2ligv6gtr3x" path="res://Sounds/Player Sounds/VampirePlatformerSFX_RatFootsteps1.wav" id="52_c4i3b"]
@@ -672,7 +674,7 @@ position = Vector2(0, 14)
 target_position = Vector2(0, 30)
 
 [node name="FootstepPlayer" type="AudioStreamPlayer2D" parent="." unique_id=858939323]
-volume_db = 8.0
+volume_db = 14.0
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1704760268]
 stream = ExtResource("24_qemgg")
@@ -680,7 +682,7 @@ volume_db = 15.0
 
 [node name="SoundV_AnimalBitten" type="AudioStreamPlayer2D" parent="." unique_id=1515482835]
 stream = ExtResource("24_8viyr")
-volume_db = 12.0
+volume_db = 8.0
 
 [node name="SoundV_BiteDash" type="AudioStreamPlayer2D" parent="." unique_id=1899384871]
 stream = ExtResource("24_8mwp6")
@@ -692,15 +694,23 @@ volume_db = 20.0
 
 [node name="SoundV_DeTransform" type="AudioStreamPlayer2D" parent="." unique_id=394572689]
 stream = ExtResource("44_uvbbp")
-volume_db = 5.0
+volume_db = 2.0
 
 [node name="SoundF_Transform" type="AudioStreamPlayer2D" parent="." unique_id=290602985]
 stream = ExtResource("27_76lrf")
-volume_db = 8.0
+volume_db = 5.0
 
 [node name="SoundF_Jump" type="AudioStreamPlayer2D" parent="." unique_id=284681269]
 stream = ExtResource("28_efx54")
-volume_db = 8.0
+volume_db = 15.0
+
+[node name="SoundF_Jump_Wind" type="AudioStreamPlayer2D" parent="." unique_id=802816871]
+stream = ExtResource("47_8hx1r")
+volume_db = 12.0
+
+[node name="SoundF_Jump_Hold" type="AudioStreamPlayer2D" parent="." unique_id=2076551646]
+stream = ExtResource("48_qas3k")
+volume_db = 12.0
 
 [node name="SoundF_Hop1" type="AudioStreamPlayer2D" parent="." unique_id=1345114377]
 stream = ExtResource("29_755ss")
@@ -736,7 +746,6 @@ volume_db = 8.0
 
 [node name="SoundR_Transform" type="AudioStreamPlayer2D" parent="." unique_id=2127215631]
 stream = ExtResource("46_7v2uk")
-volume_db = 2.0
 
 [node name="SoundR_FootStep" type="AudioStreamPlayer2D" parent="." unique_id=176573284]
 stream = ExtResource("52_c4i3b")

@@ -37,7 +37,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("debug_next_level"):
 		next_level()
-		print("LEVEL: " + str(curr_level_index + 1))
 
 func start_level() -> void:
 	print("LEVEL MANAGER READY IN SCENE:", get_tree().current_scene.name)
@@ -54,7 +53,7 @@ func animal_bitten():
 
 func blood_collected(animal : Area2D):
 	if hilarious_blood_chamber_bit && blood_chamber.size() == 3:
-		do_the_bit.emit()
+		do_the_bit.emit(animal.type)
 	blood_chamber.push_front(animal.type)
 	if (blood_chamber.size() > 3):
 		blood_chamber.resize(3)
@@ -76,11 +75,15 @@ func next_level():
 	blood_chamber.clear()
 	charges = 0
 	curr_level_index += 1
+	var level_path: String
 	if challenge && curr_level_index == levels.size() - 1:
 		hilarious_blood_chamber_bit = true
+	level_path = curr_path + "/" + levels.get(curr_level_index)
 	if curr_level_index >= levels.size():
-		var last_scene = "res://UI/credits.tscn" if challenge else "res://Misc/cheat_code.tscn"
-		get_tree().change_scene_to_file(last_scene)
-		return
-	var level_path = curr_path + "/" + levels.get(curr_level_index)
-	get_tree().change_scene_to_file(level_path)
+		level_path = "res://UI/credits.tscn" if challenge else "res://Misc/cheat_code.tscn"
+	LevelTransition.transitionOut()
+	await get_tree().create_timer(.32).timeout
+	var level_to_load = load(level_path)
+	get_tree().change_scene_to_packed(level_to_load)
+	LevelTransition.transitionIn()
+	

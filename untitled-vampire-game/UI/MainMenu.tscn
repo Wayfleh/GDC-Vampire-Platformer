@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b81xfqhj2clb"]
 
 [ext_resource type="Script" uid="uid://diqn6wfdtampl" path="res://UI/main_menu.gd" id="1_uahxu"]
-[ext_resource type="Texture2D" uid="uid://cauwnol1d8fiv" path="res://Art/titlescreen_draft.png" id="2_b37jj"]
+[ext_resource type="Texture2D" uid="uid://dbfdxlk51alhj" path="res://Art/titlescreen_finalFINAL.png" id="2_y6s48"]
 [ext_resource type="Texture2D" uid="uid://c4sg6kquxb5te" path="res://Art/UI/buttons/start_button.png" id="3_8aown"]
 [ext_resource type="Texture2D" uid="uid://dprwbakel8t78" path="res://Art/UI/buttons/quitButton.png" id="4_t6syg"]
 [ext_resource type="Texture2D" uid="uid://dt0umpmv2pm48" path="res://Art/UI/buttons/CreditsButton.png" id="5_y6s48"]
@@ -16,21 +16,20 @@ grow_vertical = 2
 script = ExtResource("1_uahxu")
 
 [node name="TitleBG" type="Sprite2D" parent="." unique_id=1400340256]
-position = Vector2(464.5626, 256.00003)
-scale = Vector2(0.33463544, 0.33463544)
-texture = ExtResource("2_b37jj")
+position = Vector2(464, 256)
+texture = ExtResource("2_y6s48")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1240355915]
 layout_mode = 0
-offset_left = -138.0
-offset_top = 51.0
-offset_right = 790.0
-offset_bottom = 670.0
+offset_left = 422.0
+offset_top = 90.0
+offset_right = 1122.0
+offset_bottom = 690.0
 scale = Vector2(0.7022475, 0.70475435)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=555649148]
 layout_mode = 2
-theme_override_constants/separation = 60
+theme_override_constants/separation = 30
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=274609959]
 layout_mode = 2
