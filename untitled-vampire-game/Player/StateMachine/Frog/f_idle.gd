@@ -17,7 +17,7 @@ func update(delta: float):
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
 		transitionToState.emit("F_WALK")
 	
-	if Input.is_action_just_pressed("jump") and player.frog_floor_check.is_colliding():
+	if Input.is_action_just_pressed("jump") and (player.frog_floor_check.is_colliding() || player.is_on_floor()):
 		transitionToState.emit("F_JUMP")
 
 func exit_state():

@@ -6,15 +6,18 @@
 script = ExtResource("1_k8fm1")
 
 [node name="token3" type="Sprite2D" parent="." unique_id=713598858]
+z_index = 97
 texture_filter = 1
 position = Vector2(0, -36)
 region_rect = Rect2(128, 0, 128, 128)
 
 [node name="token2" type="Sprite2D" parent="." unique_id=701643579]
+z_index = 98
 texture_filter = 1
 position = Vector2(0, -18)
 region_rect = Rect2(128, 0, 128, 128)
 
 [node name="token1" type="Sprite2D" parent="." unique_id=479676428]
+z_index = 99
 texture_filter = 1
 region_rect = Rect2(128, 0, 128, 128)

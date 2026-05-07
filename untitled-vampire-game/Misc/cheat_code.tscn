@@ -2,11 +2,48 @@
 
 [ext_resource type="Script" uid="uid://clo37jvrd7l8y" path="res://Misc/cheat_code.gd" id="1_bsgle"]
 [ext_resource type="Shader" uid="uid://cj5iqnfyfk82" path="res://Misc/opening_cutscene.gdshader" id="2_2wk86"]
-[ext_resource type="Texture2D" uid="uid://cauwnol1d8fiv" path="res://Art/titlescreen_draft.png" id="2_jomyl"]
+[ext_resource type="Texture2D" uid="uid://bykteu7q3meb" path="res://Art/creditscene_sized.png" id="2_8cdsj"]
+[ext_resource type="FontFile" uid="uid://clomxcxkqvoww" path="res://Art/UI/PixelifySans-VariableFont_wght.ttf" id="4_63rdk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jomyl"]
 shader = ExtResource("2_2wk86")
 shader_parameter/blur_amount = 1.0000000475
+
+[sub_resource type="Animation" id="Animation_pkws5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jn27e"]
+resource_name = "appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x4cdi"]
+_data = {
+&"RESET": SubResource("Animation_pkws5"),
+&"appear": SubResource("Animation_jn27e")
+}
 
 [node name="CheatCode" type="Control" unique_id=1742611900]
 layout_mode = 3
@@ -18,9 +55,8 @@ grow_vertical = 2
 script = ExtResource("1_bsgle")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1077001028]
-position = Vector2(466, 257)
-scale = Vector2(0.334, 0.334)
-texture = ExtResource("2_jomyl")
+position = Vector2(464, 256)
+texture = ExtResource("2_8cdsj")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1249282164]
 material = SubResource("ShaderMaterial_jomyl")
@@ -29,19 +65,19 @@ offset_right = 932.0
 offset_bottom = 513.0
 
 [node name="PressAnyButton" type="Label" parent="." unique_id=2027905942]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -31.0
-offset_top = 221.0
-offset_right = 623.0
-offset_bottom = 308.0
+offset_left = -35.0
+offset_top = 222.0
+offset_right = 619.0
+offset_bottom = 309.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_63rdk")
 theme_override_font_sizes/font_size = 20
 text = "Press Any Button to Exit to Menu"
 horizontal_alignment = 1
@@ -59,12 +95,17 @@ offset_right = 327.0
 offset_bottom = 43.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_fonts/font = ExtResource("4_63rdk")
+theme_override_font_sizes/font_size = 40
 text = "The Blood Moon Rises...
-up, up, up, down, down, up, right, jump, dash"
+(up, up, up, down, down, up, right, jump, dash)"
 horizontal_alignment = 1
 
 [node name="SkipTimer" type="Timer" parent="." unique_id=1725917032]
-wait_time = 5.0
+wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1440358115]
+libraries/ = SubResource("AnimationLibrary_x4cdi")

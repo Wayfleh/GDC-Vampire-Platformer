@@ -9,6 +9,7 @@ func _ready() -> void:
 	can_skip = false
 	press_any.hide()
 	skip_timer.timeout.connect(_you_can_skip_now)
+	$AnimationPlayer.play("appear")
 
 func _you_can_skip_now():
 	can_skip = true
