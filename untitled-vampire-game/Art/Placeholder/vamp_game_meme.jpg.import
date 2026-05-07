@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7e4c7ixx7mi8"
-path="res://.godot/imported/trees.png-b9841179c324e40012290467ca236fae.ctex"
+uid="uid://cruxvdf0mu1qd"
+path="res://.godot/imported/vamp_game_meme.jpg-f4fd02d86e615c10d796e2156fb06a1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/tileSet/Decoration/trees.png"
-dest_files=["res://.godot/imported/trees.png-b9841179c324e40012290467ca236fae.ctex"]
+source_file="res://Art/Placeholder/vamp_game_meme.jpg"
+dest_files=["res://.godot/imported/vamp_game_meme.jpg-f4fd02d86e615c10d796e2156fb06a1f.ctex"]
 
 [params]
 

@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="2_hsace"]
 [ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="3_obqlb"]
 [ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="4_ds7l1"]
-[ext_resource type="Texture2D" uid="uid://urdnjs7u27l" path="res://Art/tileSet/Decoration/trees.png" id="5_he11k"]
+[ext_resource type="Texture2D" uid="uid://7e4c7ixx7mi8" path="res://Art/tileSet/Decoration/trees.png" id="5_he11k"]
 [ext_resource type="Texture2D" uid="uid://61xwbolil1p7" path="res://Art/tileSet/Decoration/tiles-set_fences-32x32.png" id="6_1nhu0"]
 [ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="7_apybv"]
 [ext_resource type="Shader" uid="uid://1b1v6l8muomj" path="res://Art/tileSet/Decoration/background.gdshader" id="7_jp7rt"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b1k3vejyw11ab" path="res://Levels/MatLevels/fog.tscn" id="8_367fx"]
 [ext_resource type="PackedScene" uid="uid://cy7xnhnawsqe0" path="res://Levels/MatLevels/world_environment.tscn" id="9_ctecc"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="9_gvucg"]
-[ext_resource type="PackedScene" path="res://Misc/kill_zone.tscn" id="11_oy7oe"]
+[ext_resource type="PackedScene" uid="uid://ndbodfavegpb" path="res://Misc/kill_zone.tscn" id="11_oy7oe"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="11_v4483"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nr5gb"]

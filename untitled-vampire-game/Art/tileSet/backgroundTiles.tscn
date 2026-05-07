@@ -8,6 +8,7 @@ shader = ExtResource("1_jyxwc")
 shader_parameter/darkness = 0.5
 shader_parameter/blue_color = Color(0.13541102, 0.34736264, 0.73924, 1)
 shader_parameter/intensity = 0.2110000100225
+shader_parameter/transparency = 1.0
 
 [node name="Background" type="TileMapLayer" unique_id=1654783105]
 material = SubResource("ShaderMaterial_lm7ip")

@@ -3,6 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://b61ta084tcmob" path="res://Art/UI/buttons/pausebutton.png" id="1_acupf"]
 [ext_resource type="FontFile" uid="uid://clomxcxkqvoww" path="res://Art/UI/PixelifySans-VariableFont_wght.ttf" id="2_hap02"]
 [ext_resource type="Script" uid="uid://d0l7tte4jfpqr" path="res://Misc/pause_menu_button.gd" id="2_mll7e"]
+[ext_resource type="Shader" uid="uid://bo2cbvgqvg3dx" path="res://UI/level_no_anti_alias.gdshader" id="3_mll7e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uwtnw"]
+shader = ExtResource("3_mll7e")
+shader_parameter/my_color = Color(0.875, 0.196, 0.055, 1)
 
 [node name="PauseMenuButton" type="TextureButton" unique_id=1955878795]
 process_mode = 2
@@ -10,6 +15,7 @@ texture_normal = ExtResource("1_acupf")
 script = ExtResource("2_mll7e")
 
 [node name="Label" type="RichTextLabel" parent="." unique_id=2030328396]
+material = SubResource("ShaderMaterial_uwtnw")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -17,7 +23,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme_override_colors/default_color = Color(0.8745098, 0.19607843, 0.05490196, 1)
+theme_override_colors/default_color = Color(0.875, 0.196, 0.055, 1)
 theme_override_fonts/normal_font = ExtResource("2_hap02")
 text = "Pause"
 horizontal_alignment = 1

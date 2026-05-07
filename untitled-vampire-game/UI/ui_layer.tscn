@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://da4x5la3k57k5" path="res://UI/blood_container.tscn" id="2_hbgg0"]
 [ext_resource type="Texture2D" uid="uid://dhffbbhcpoytn" path="res://Art/UI/margincut2.png" id="3_dn8jg"]
 [ext_resource type="PackedScene" uid="uid://dgn8ajamtynwx" path="res://UI/pause_menu.tscn" id="5_cftff"]
+[ext_resource type="Shader" uid="uid://bo2cbvgqvg3dx" path="res://UI/level_no_anti_alias.gdshader" id="6_atk3t"]
 [ext_resource type="FontFile" uid="uid://bojfmb0iv5fhc" path="res://Art/UI/Jacquard12-Regular.ttf" id="6_gwv0x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tdu8r"]
@@ -59,6 +60,10 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/1 = SubResource("TileSetAtlasSource_tdu8r")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_74no6"]
+shader = ExtResource("6_atk3t")
+shader_parameter/my_color = Color(0.9019608, 0.8, 0.5411765, 1)
+
 [node name="UI" type="CanvasLayer" unique_id=889175113]
 process_mode = 3
 offset = Vector2(-5, 4)
@@ -93,6 +98,8 @@ offset_right = -700.0
 offset_bottom = -4.0
 
 [node name="Label" type="RichTextLabel" parent="." unique_id=1509330370]
+texture_filter = 1
+material = SubResource("ShaderMaterial_74no6")
 offset_left = 709.0
 offset_top = 31.0
 offset_right = 933.0

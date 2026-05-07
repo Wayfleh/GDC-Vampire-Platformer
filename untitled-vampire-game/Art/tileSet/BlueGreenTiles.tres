@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="1_ey813"]
 [ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="2_fqvwo"]
 [ext_resource type="Texture2D" uid="uid://61xwbolil1p7" path="res://Art/tileSet/Decoration/tiles-set_fences-32x32.png" id="3_14p5m"]
-[ext_resource type="Texture2D" uid="uid://urdnjs7u27l" path="res://Art/tileSet/Decoration/trees.png" id="4_k00fh"]
 [ext_resource type="Texture2D" uid="uid://x01jktlxrmig" path="res://Art/tileSet/tiles-set_grass-32x32_v2.png" id="5_k00fh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kin0h"]
@@ -114,8 +113,11 @@ texture_region_size = Vector2i(32, 32)
 2:0/0 = 0
 3:0/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_14p5m"]
+load_path = "res://.godot/imported/trees.png-b9841179c324e40012290467ca236fae.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_56d46"]
-texture = ExtResource("4_k00fh")
+texture = SubResource("CompressedTexture2D_14p5m")
 texture_region_size = Vector2i(64, 96)
 0:0/0 = 0
 1:0/0 = 0

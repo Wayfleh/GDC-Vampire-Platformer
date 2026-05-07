@@ -2,121 +2,191 @@
 
 [ext_resource type="Script" uid="uid://v8cmstrdotrt" path="res://Levels/level.gd" id="1_jnbb5"]
 [ext_resource type="Texture2D" uid="uid://b1nsq1cs3vntd" path="res://Art/bg1.png" id="2_0bxjh"]
+[ext_resource type="PackedScene" uid="uid://d3oa5wxafbr2p" path="res://Art/tileSet/backgroundTiles.tscn" id="3_0bngy"]
 [ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="3_3vrqk"]
-[ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="4_enqwd"]
-[ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="5_yvtbi"]
+[ext_resource type="Shader" uid="uid://1b1v6l8muomj" path="res://Art/tileSet/Decoration/background.gdshader" id="4_tfss3"]
+[ext_resource type="PackedScene" uid="uid://b1k3vejyw11ab" path="res://Levels/MatLevels/fog.tscn" id="5_8l1qh"]
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="6_8gc7i"]
+[ext_resource type="Shader" uid="uid://bfttru0uel3vu" path="res://Levels/MatLevels/Fog.gdshader" id="6_mxtl2"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="7_cf272"]
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="9_rjv3q"]
-[ext_resource type="PackedScene" uid="uid://67i51wtnoyel" path="res://Levels/FinalLevels/level_13.tscn" id="9_w3hw2"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="10_h0i70"]
 [ext_resource type="PackedScene" uid="uid://cklmtejug5xhr" path="res://Misc/ButtonInstruction.tscn" id="11_rwj5m"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ri7ki"]
-texture = ExtResource("4_enqwd")
-texture_region_size = Vector2i(32, 32)
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-1:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-7:3/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-4:4/0 = 0
-4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-5:4/0 = 0
-5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-6:4/0 = 0
-7:4/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-5:5/0 = 0
-7:5/0 = 0
-1:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-5:6/0 = 0
-7:6/0 = 0
-1:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-7:7/0 = 0
-3:4/0 = 0
-3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6fdrb"]
+shader = ExtResource("4_tfss3")
+shader_parameter/darkness = 1.0
+shader_parameter/blue_color = Color(0.2784314, 0.5058824, 0.9254902, 1)
+shader_parameter/intensity = 0.2110000100225
+shader_parameter/transparency = 1.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sv6oy"]
-resource_name = "BlueGreenTiles"
-texture = ExtResource("5_yvtbi")
-margins = Vector2i(0, 16)
-13:3/size_in_atlas = Vector2i(2, 2)
-13:3/0 = 0
-6:4/size_in_atlas = Vector2i(2, 2)
-6:4/0 = 0
-6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-4:4/size_in_atlas = Vector2i(2, 2)
-4:4/0 = 0
-4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-2:4/size_in_atlas = Vector2i(2, 2)
-2:4/0 = 0
-2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-2:2/size_in_atlas = Vector2i(2, 2)
-2:2/0 = 0
-4:2/size_in_atlas = Vector2i(2, 2)
-4:2/0 = 0
-6:2/size_in_atlas = Vector2i(2, 2)
-6:2/0 = 0
-2:0/size_in_atlas = Vector2i(2, 2)
-2:0/0 = 0
-4:0/size_in_atlas = Vector2i(2, 2)
-4:0/0 = 0
-6:0/size_in_atlas = Vector2i(2, 2)
-6:0/0 = 0
-0:2/size_in_atlas = Vector2i(2, 2)
-0:2/0 = 0
-0:0/size_in_atlas = Vector2i(2, 2)
-0:0/0 = 0
-8:2/size_in_atlas = Vector2i(2, 2)
-8:2/0 = 0
-8:0/size_in_atlas = Vector2i(2, 2)
-8:0/0 = 0
-2:8/size_in_atlas = Vector2i(2, 2)
-2:8/0 = 0
-4:8/size_in_atlas = Vector2i(2, 2)
-4:8/0 = 0
-6:8/size_in_atlas = Vector2i(2, 2)
-6:8/0 = 0
-2:6/size_in_atlas = Vector2i(2, 2)
-2:6/0 = 0
-4:6/size_in_atlas = Vector2i(2, 2)
-4:6/0 = 0
-6:6/size_in_atlas = Vector2i(2, 2)
-6:6/0 = 0
-11:3/size_in_atlas = Vector2i(2, 4)
-11:3/0 = 0
+[sub_resource type="Gradient" id="Gradient_lrib3"]
+offsets = PackedFloat32Array(0, 0.99171597, 1)
+colors = PackedColorArray(0.015384615, 0.015384615, 0.015384615, 1, 0.6366864, 0.6366864, 0.6366864, 1, 1, 1, 1, 1)
 
-[sub_resource type="TileSet" id="TileSet_7ykyd"]
-tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_ri7ki")
-sources/1 = SubResource("TileSetAtlasSource_sv6oy")
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3pid6"]
+frequency = 0.0073
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aoy4t"]
+noise = SubResource("FastNoiseLite_3pid6")
+color_ramp = SubResource("Gradient_lrib3")
+seamless = true
+invert = true
+normalize = false
+seamless_blend_skirt = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0eyd5"]
+shader = ExtResource("6_mxtl2")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_aoy4t")
+shader_parameter/smoke_color = Color(0.41568628, 0.34509805, 0.7294118, 1)
+shader_parameter/distortion_speed = 0.0400000019
+shader_parameter/density = 0.150000007125
+shader_parameter/levels = 15.000000665
+shader_parameter/pixelation_amount = 128.00000455999998
+shader_parameter/fade_start = 0.58000002755
+shader_parameter/fade_end = 0.850000040375
+
+[sub_resource type="Gradient" id="Gradient_ee5pd"]
+offsets = PackedFloat32Array(0, 0.99171597, 1)
+colors = PackedColorArray(0.015384615, 0.015384615, 0.015384615, 1, 0.6366864, 0.6366864, 0.6366864, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_aoy4t"]
+noise_type = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_w5rom"]
+noise = SubResource("FastNoiseLite_aoy4t")
+color_ramp = SubResource("Gradient_ee5pd")
+seamless = true
+normalize = false
+seamless_blend_skirt = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x8uo1"]
+shader = ExtResource("6_mxtl2")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_w5rom")
+shader_parameter/smoke_color = Color(0.09220996, 0.13820449, 0.23352075, 1)
+shader_parameter/distortion_speed = 0.50000002375
+shader_parameter/density = 0.30000001425
+shader_parameter/levels = 20.0000009025
+shader_parameter/pixelation_amount = 128.00000455999998
+shader_parameter/fade_start = 0.70000003325
+shader_parameter/fade_end = 0.800000038
+
+[sub_resource type="Shader" id="Shader_n271t"]
+code = "shader_type canvas_item;
+
+// Uniforms for customization
+uniform sampler2D noise_texture : repeat_enable;
+uniform vec3 smoke_color : source_color = vec3(0.8);
+uniform float distortion_speed : hint_range(0.0, 5.0) = 0.2;
+uniform float density : hint_range(0.0, 1.0) = 1.0;
+uniform float levels : hint_range(1.0, 30.0) = 5.0;
+
+uniform float pixelation_amount: hint_range(32.0, 2048.0) = 0.0; // Higher = smaller pixels
+
+uniform float fade_start : hint_range(0.0, 1.0) = 0.7;
+uniform float fade_end : hint_range(0.0, 1.0) = 1.0;
+
+void fragment() {
+	
+    // Pre-calculate time-based offsets
+    float time_offset_1 = TIME * distortion_speed * 0.1;
+    float time_offset_2 = TIME * distortion_speed * 0.2;
+    
+    // Sample noise with distortion
+    vec2 grid_uv = round(UV * pixelation_amount)/pixelation_amount;
+    vec4 noise = texture(noise_texture, grid_uv + time_offset_1);
+    
+    vec3 posterized_color = floor(noise.rgb * levels) / levels; 
+    // Create distorted UV and sample final noise
+    vec2 distorted_uv = grid_uv - noise.rg * 0.1 - 0.05 + time_offset_2;
+    
+    
+    float smoke_alpha = posterized_color.r * density;
+    
+	float alpha_mask = 1.0 - smoothstep(fade_start, fade_end, UV.y);
+	
+	
+    // Output color
+    COLOR =    vec4(smoke_color, smoke_alpha * alpha_mask);
+}
+
+"
+
+[sub_resource type="Gradient" id="Gradient_ivpr8"]
+offsets = PackedFloat32Array(0, 0.99171597, 1)
+colors = PackedColorArray(0.015384615, 0.015384615, 0.015384615, 1, 0.6366864, 0.6366864, 0.6366864, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_q2sio"]
+noise_type = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1rd12"]
+noise = SubResource("FastNoiseLite_q2sio")
+color_ramp = SubResource("Gradient_ivpr8")
+seamless = true
+normalize = false
+seamless_blend_skirt = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0f4ls"]
+shader = SubResource("Shader_n271t")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_1rd12")
+shader_parameter/smoke_color = Color(0.07427422, 0.11475631, 0.19866624, 1)
+shader_parameter/distortion_speed = 0.50000002375
+shader_parameter/density = 0.2000000095
+shader_parameter/levels = 20.0000009025
+shader_parameter/pixelation_amount = 128.00000455999998
+shader_parameter/fade_start = 0.6000000285
+shader_parameter/fade_end = 0.90000004275
+
+[sub_resource type="Gradient" id="Gradient_ops10"]
+offsets = PackedFloat32Array(0, 0.99171597, 1)
+colors = PackedColorArray(0.015384615, 0.015384615, 0.015384615, 1, 0.6366864, 0.6366864, 0.6366864, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mms20"]
+frequency = 0.0073
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qdxlg"]
+noise = SubResource("FastNoiseLite_mms20")
+color_ramp = SubResource("Gradient_ops10")
+seamless = true
+invert = true
+normalize = false
+seamless_blend_skirt = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uw3es"]
+shader = ExtResource("6_mxtl2")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_qdxlg")
+shader_parameter/smoke_color = Color(0.41568628, 0.34509805, 0.7294118, 1)
+shader_parameter/distortion_speed = 0.2000000095
+shader_parameter/density = 0.6000000285
+shader_parameter/levels = 15.000000665
+shader_parameter/pixelation_amount = 128.00000455999998
+shader_parameter/fade_start = 0.58000002755
+shader_parameter/fade_end = 0.850000040375
+
+[sub_resource type="Gradient" id="Gradient_xifid"]
+offsets = PackedFloat32Array(0, 0.99171597, 1)
+colors = PackedColorArray(0.015384615, 0.015384615, 0.015384615, 1, 0.6366864, 0.6366864, 0.6366864, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6ual8"]
+noise_type = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_srrrp"]
+noise = SubResource("FastNoiseLite_6ual8")
+color_ramp = SubResource("Gradient_xifid")
+seamless = true
+normalize = false
+seamless_blend_skirt = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tbsqc"]
+shader = ExtResource("6_mxtl2")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_srrrp")
+shader_parameter/smoke_color = Color(0.07427422, 0.11475631, 0.19866624, 1)
+shader_parameter/distortion_speed = 0.50000002375
+shader_parameter/density = 0.400000019
+shader_parameter/levels = 20.0000009025
+shader_parameter/pixelation_amount = 128.00000455999998
+shader_parameter/fade_start = 0.6000000285
+shader_parameter/fade_end = 0.90000004275
 
 [node name="Level2" type="Node2D" unique_id=1583682183]
 script = ExtResource("1_jnbb5")
@@ -124,73 +194,170 @@ script = ExtResource("1_jnbb5")
 [node name="BGImage" type="Sprite2D" parent="." unique_id=1739098038]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(-90, -54)
+position = Vector2(-79, 284)
 texture = ExtResource("2_0bxjh")
+flip_h = true
 
 [node name="Tilemaps" type="Node2D" parent="." unique_id=91933045]
 position = Vector2(-4, 0)
 
+[node name="BGTreeOffset2" parent="Tilemaps" unique_id=1654783105 instance=ExtResource("3_0bngy")]
+position = Vector2(-204, 0)
+tile_map_data = PackedByteArray("AAAEAPv/AwADAAAAACA=")
+
+[node name="BGTreeOffset" parent="Tilemaps" unique_id=55628219 instance=ExtResource("3_0bngy")]
+position = Vector2(-220, 16)
+tile_map_data = PackedByteArray("AAAFAAAAAwAAAAAAAAACAAEAAwAAAAAAAAD7////AwAAAAAAAAD+//3/AwAAAAAAAAAHAPv/AwADAAAAADA=")
+
+[node name="Background" parent="Tilemaps" unique_id=1035804450 instance=ExtResource("3_0bngy")]
+position = Vector2(-204, 0)
+tile_map_data = PackedByteArray("AAD8/wYABAAEAAIAAAD9/wYABAADAAIAAAD+/wYABAACAAIAAAD//wYABAADAAIAAAAAAAYABAAEAAIAAAABAAYABAAEAAIAAAACAAYABAADAAIAAAADAAYABAAEAAIAAAAEAAYABAAEAAIAAAAFAAYABAACAAIAAAAGAAYABAADAAIAAAAHAAYABAAEAAIAAAAIAAYABAAEAAIAAAAIAAUABAACAAIAAAAJAAUABAADAAIAAAAKAAUABAACAAIAAAAKAAYABAADAAIAAAALAAYABAADAAIAAAAOAAUABAACAAIAAAANAAUABAADAAIAAAANAAYABAACAAIAAAAMAAYABAADAAIAAAAMAAUABAAEAAIAAAALAAUABAACAAIAAAAMAAQABAADAAIAAAAJAAQABAACAAIAAAAIAAQABAADAAIAAAAHAAUABAADAAIAAAAGAAUABAADAAIAAAAFAAUABAADAAIAAAADAAUABAAEAAIAAAACAAUABAAEAAIAAAABAAUABAADAAIAAAAAAAUABAACAAIAAAD//wUABAACAAIAAAD+/wUABAACAAIAAAD9/wUABAADAAIAAAD+/wQABAADAAIAAAD//wQABAACAAIAAAAAAAQABAAEAAIAAAABAAQABAACAAIAAAACAAQABAADAAIAAAADAAQABAAEAAIAAAAFAAQABAACAAIAAAAIAAMABAACAAIAAAAGAAMABAADAAIAAAAEAAMABAACAAIAAAADAAMABAACAAIAAAACAAMABAAEAAIAAAABAAMABAACAAIAAAAAAAMABAAEAAIAAAD//wMABAAEAAIAAAD+/wMABAADAAIAAAD//wIABAADAAIAAAD//wEABAACAAIAAAD//wAABAAEAAIAAAAAAAAABAACAAIAAAAHAAAABAADAAIAAAAIAAAABAACAAIAAAAIAP//BAAEAAIAAAAIAAEABAAEAAIAAAAIAAIABAAEAAIAAAAHAAIABAADAAIAAAAGAAIABAAEAAIAAAAFAAIABAACAAIAAAAEAAIABAAEAAIAAAADAAIABAACAAIAAAACAAIABAAEAAIAAAABAAIABAACAAIAAAAAAAIABAAEAAIAAAAAAAEABAACAAIAAAABAAEABAADAAIAAAAGAAEABAAEAAIAAAAHAAEABAADAAIAAAAHAP//BAADAAIAAAAGAAAABAADAAIAAAAFAAEABAADAAIAAAAKAP3/BAACAAIAAAALAP3/BAAEAAIAAAAMAP3/BAADAAIAAAAMAPz/BAAEAAIAAAALAPz/BAAEAAIAAAANAP3/BAACAAIAAAAOAP3/BAACAAIAAAAPAP3/BAADAAIAAAAPAPz/BAAEAAIAAAAOAPz/BAAEAAIAAAANAPz/BAADAAIAAAANAPv/BAACAAIAAAAOAPv/BAAEAAIAAAAPAPv/BAAEAAIAAAAPAPr/BAADAAIAAAAJAPr/BAAFAAIAAAAIAPr/BAADAAIAAAAHAPr/BAACAAIAAAAGAPr/BAAEAAIAAAAFAPr/BAADAAIAAAAGAPn/BAAEAAIAAAAFAPn/BAADAAIAAAAEAPr/BAACAAIAAAAJAPv/BAADAAIAAAAKAPv/BAACAAIAAAALAPv/BAACAAIAAAALAPr/BAAEAAIAAAAKAPz/BAAEAAIAAAAJAPz/BAACAAIAAAAFAAMABAAEAAIAAAAEAAQABAAEAAIAAAA=")
+
+[node name="BGRoots" type="Node2D" parent="Tilemaps" unique_id=1658194249]
+
+[node name="BGRootsBot" parent="Tilemaps/BGRoots" unique_id=1980249314 instance=ExtResource("3_0bngy")]
+position = Vector2(-204, 0)
+tile_map_data = PackedByteArray("AAACAAIABAADAAMAACABAAEABAAEAAMAACAAAAAABAADAAMAACAAAP//BAAEAAMAAAAHAAIABAAEAAMAAAAGAAMABAADAAMAAAAEAAQABAADAAMAAAD8/wUAAwADAAAAACD+/wIAAwADAAAAACAJAAEAAwADAAAAAGAJAAMAAwADAAAAAEAKAAQAAwABAAAAADAMAAQAAwABAAAAADANAAUAAwABAAAAADD//wcAAwADAAAAAAACAAcAAwADAAAAAHAGAAcAAwADAAAAABAKAP3/AwADAAAAAAA=")
+
+[node name="BGRootsL" parent="Tilemaps/BGRoots" unique_id=1713147360 instance=ExtResource("3_0bngy")]
+position = Vector2(-204, 0)
+tile_map_data = PackedByteArray("AAAMAPr/BAADAAMAAFAMAPv/BAAEAAMAAFAEAAUABAAEAAMAAFAGAAQABAADAAMAAFAHAAMABAAEAAMAAFACAAEABAACAAMAAHABAAAABAACAAMAAHAFAAQABAADAAMAAGAGAAMABAADAAMAAGADAAUABAADAAMAAGALAPr/BAACAAMAAGALAPv/BAACAAMAAGA=")
+
+[node name="BGRootsL2" parent="Tilemaps/BGRoots" unique_id=2109519832 instance=ExtResource("3_0bngy")]
+position = Vector2(-204, 0)
+
+[node name="BGRootsTop" parent="Tilemaps/BGRoots" unique_id=134134622 instance=ExtResource("3_0bngy")]
+position = Vector2(-204, 0)
+tile_map_data = PackedByteArray("AAAMAPr/BAAEAAMAACANAPr/BAAFAAMAACAEAAUABAADAAMAADAGAAQABAAFAAMAADAHAAMABAABAAMAADACAAEABAADAAMAABABAAAABAAFAAMAABAOAPr/BAAEAAMAACA=")
+
+[node name="BGRootsHighlights" type="Node2D" parent="Tilemaps" unique_id=387648358]
+
+[node name="Bot" parent="Tilemaps/BGRootsHighlights" unique_id=135602951 instance=ExtResource("3_0bngy")]
+material = SubResource("ShaderMaterial_6fdrb")
+position = Vector2(-204, 0)
+tile_map_data = PackedByteArray("AAANAPv/BAABAAMAAHAPAPr/BAAFAAMAAHAEAAYABAACAAMAADAGAAUABAAEAAMAADAHAAUABAAEAAMAADAFAAUABAADAAMAAFAIAAQABAACAAMAAFAIAAMABAACAAMAAFADAAIABAADAAMAADAEAAIABAACAAMAADAFAAEABAAFAAMAADAGAAAABAADAAMAADAHAP//BAAFAAMAADA=")
+
+[node name="Bot2" parent="Tilemaps/BGRootsHighlights" unique_id=593715560 instance=ExtResource("3_0bngy")]
+material = SubResource("ShaderMaterial_6fdrb")
+position = Vector2(-204, 0)
+tile_map_data = PackedByteArray("AAANAPv/BAAFAAMAACAOAPv/BAAEAAMAACAMAPz/BAADAAMAACAFAAEABAADAAMAAFAGAAAABAAEAAMAAFAHAP//BAADAAMAAFA=")
+
+[node name="Fog" parent="Tilemaps" unique_id=763216912 instance=ExtResource("5_8l1qh")]
+position = Vector2(-69, -2)
+
+[node name="Fog Top" parent="Tilemaps/Fog" index="0" unique_id=467039011]
+material = SubResource("ShaderMaterial_0eyd5")
+
+[node name="Fog Mid" parent="Tilemaps/Fog" index="1" unique_id=1961027277]
+z_index = 13
+material = SubResource("ShaderMaterial_x8uo1")
+
+[node name="Fog Back" parent="Tilemaps/Fog" index="2" unique_id=674383982]
+material = SubResource("ShaderMaterial_0f4ls")
+
+[node name="Fog2" parent="Tilemaps" unique_id=2075588707 instance=ExtResource("5_8l1qh")]
+z_index = 5
+position = Vector2(352, -480)
+rotation = 1.5707964
+
+[node name="Fog Top" parent="Tilemaps/Fog2" index="0" unique_id=467039011]
+material = SubResource("ShaderMaterial_uw3es")
+position = Vector2(-4.999996, 90)
+flip_h = true
+
+[node name="Fog Mid" parent="Tilemaps/Fog2" index="1" unique_id=1961027277]
+visible = false
+
+[node name="Fog Back" parent="Tilemaps/Fog2" index="2" unique_id=674383982]
+visible = false
+material = SubResource("ShaderMaterial_tbsqc")
+
+[node name="Fog3" parent="Tilemaps" unique_id=641946034 instance=ExtResource("5_8l1qh")]
+z_index = 5
+position = Vector2(-97, 339)
+rotation = 2.6965337
+
+[node name="Fog Top" parent="Tilemaps/Fog3" index="0" unique_id=467039011]
+material = SubResource("ShaderMaterial_uw3es")
+position = Vector2(-0.03039655, 1.09343)
+flip_h = true
+
+[node name="Fog Mid" parent="Tilemaps/Fog3" index="1" unique_id=1961027277]
+visible = false
+
+[node name="Fog Back" parent="Tilemaps/Fog3" index="2" unique_id=674383982]
+visible = false
+material = SubResource("ShaderMaterial_tbsqc")
+
 [node name="Terrain" type="TileMapLayer" parent="Tilemaps" unique_id=1005403231]
-position = Vector2(-222, 5)
-tile_map_data = PackedByteArray("AAAAAAcAAQAEAAQAAAD//wcAAQAEAAQAAAD7/wcAAQAEAAQAAAAHAAcAAQAEAAQAAAAIAAcAAQAEAAQAAAAJAAcAAQAEAAQAAAAKAAcAAQAEAAQAAAAEAAcAAQAEAAQAAAD4/wcAAQAEAAQAAAD4//f/AQAEAAQAAAAOAPf/AQAEAAQAAAAOAAcAAQAEAAQAAAAFAPf/AQAEAAQAAAAGAPf/AQAEAAQAAAAHAPf/AQAEAAQAAAAIAPf/AQAEAAQAAAAJAPf/AQAEAAQAAAAKAPf/AQAEAAQAAAALAPf/AQAEAAQAAAAMAPf/AQAEAAQAAAANAPf/AQAEAAQAAAD5/wcAAQAEAAQAAAD6/wcAAQAEAAQAAAD8/wcAAQAEAAQAAAD9/wcAAQAEAAQAAAD+/wcAAQAEAAQAAAABAAcAAQAEAAQAAAACAAcAAQAEAAQAAAADAAcAAQAEAAQAAAAFAAcAAQAEAAQAAAAGAAcAAQAEAAQAAAALAAcAAQAEAAQAAAAMAAcAAQAEAAQAAAANAAcAAQAEAAQAAAD4//j/AQAEAAQAAAD4//n/AQAEAAQAAAD4//r/AQAEAAQAAAD4//v/AQAEAAQAAAD4//z/AQAEAAQAAAD4//3/AQAEAAQAAAD4//7/AQAEAAQAAAD4////AQAEAAQAAAD4/wAAAQAEAAQAAAD4/wEAAQAEAAQAAAD4/wIAAQAEAAQAAAD4/wMAAQAEAAQAAAD4/wQAAQAEAAQAAAD4/wUAAQAEAAQAAAD4/wYAAQAEAAQAAAAPAAQAAQAEAAQAAAAPAAcAAQAEAAQAAAAPAAYAAQAEAAQAAAAPAAUAAQAEAAQAAAAPAAMAAQAEAAQAAAAPAAIAAQAEAAQAAAAPAAEAAQAEAAQAAAAPAAAAAQAEAAQAAAAPAP//AQAEAAQAAAAPAP7/AQAEAAQAAAAPAP3/AQAEAAQAAAAPAPz/AQAEAAQAAAAPAPv/AQAEAAQAAAAPAPr/AQAEAAQAAAAPAPn/AQAEAAQAAAAPAPj/AQAEAAQAAAAPAPf/AQAEAAQAAAD5/wEAAQAEAAQAAAD5/wIAAQACAAQAAAD5/wMAAQAEAAQAAAD5/wQAAQAGAAQAAAD5/wUAAQAGAAQAAAD5/wYAAQAEAAQAAAD6/wEAAQAGAAQAAAD6/wIAAQACAAQAAAD6/wMAAQAEAAQAAAD6/wQAAQAGAAQAAAD6/wUAAQAGAAQAAAD6/wYAAQAGAAQAAAD7/wAAAQAGAAQAAAD7/wEAAQAGAAQAAAD7/wIAAQACAAQAAAD7/wMAAQACAAQAAAD7/wQAAQACAAQAAAD7/wUAAQAGAAQAAAD7/wYAAQACAAQAAAD8/wAAAQACAAQAAAD8/wEAAQACAAQAAAD8/wIAAQAEAAQAAAD8/wMAAQAGAAQAAAD8/wQAAQAEAAQAAAD8/wUAAQACAAQAAAD9////AQAEAAQAAAD9/wAAAQACAAQAAAD9/wEAAQAEAAQAAAD9/wIAAQACAAQAAAD9/wMAAQAGAAQAAAD9/wQAAQACAAQAAAD+////AQACAAQAAAD+/wAAAQACAAQAAAD+/wEAAQAEAAQAAAD+/wIAAQACAAQAAAD/////AQAEAAQAAAAJAP7/AQAGAAQAAAAJAP//AQACAAQAAAAJAAAAAQAEAAQAAAAJAAEAAQACAAQAAAAJAAIAAQAEAAQAAAAJAAMAAQACAAQAAAAKAP7/AQAGAAQAAAAKAP//AQAGAAQAAAAKAAAAAQACAAQAAAAKAAEAAQAGAAQAAAAKAAIAAQACAAQAAAAKAAMAAQAGAAQAAAAKAAQAAQAGAAQAAAALAP7/AQAEAAQAAAALAP//AQAGAAQAAAALAAAAAQACAAQAAAALAAEAAQAGAAQAAAALAAIAAQAGAAQAAAALAAMAAQACAAQAAAALAAQAAQAGAAQAAAAMAP7/AQAGAAQAAAAMAP//AQACAAQAAAAMAAAAAQAEAAQAAAAMAAEAAQAEAAQAAAAMAAIAAQACAAQAAAAMAAMAAQAGAAQAAAANAP7/AQAGAAQAAAANAP//AQAGAAQAAAANAAAAAQAGAAQAAAANAAEAAQAGAAQAAAANAAIAAQAGAAQAAAANAAMAAQAEAAQAAAANAAQAAQAEAAQAAAAOAP7/AQAGAAQAAAAOAP//AQACAAQAAAAOAAAAAQACAAQAAAAOAAEAAQAEAAQAAAAOAAIAAQAEAAQAAAAOAAMAAQAEAAQAAAAOAAQAAQACAAQAAAD4//P/AQACAAQAAAD4//T/AQACAAQAAAD4//X/AQAEAAQAAAD4//b/AQAEAAQAAAD5//P/AQAGAAQAAAD6//P/AQAGAAQAAAD7//P/AQACAAQAAAD8//P/AQAGAAQAAAD9//P/AQACAAQAAAD+//P/AQAGAAQAAAD///P/AQAEAAQAAAAAAPP/AQAGAAQAAAABAPP/AQAGAAQAAAACAPP/AQACAAQAAAADAPP/AQAEAAQAAAAEAPP/AQAGAAQAAAAFAPP/AQAGAAQAAAAGAPP/AQAGAAQAAAAHAPP/AQAEAAQAAAAIAPP/AQAEAAQAAAAJAPP/AQAEAAQAAAAKAPP/AQACAAQAAAALAPP/AQACAAQAAAAMAPP/AQACAAQAAAANAPP/AQAEAAQAAAAOAPP/AQAEAAQAAAAPAPP/AQAEAAQAAAAPAPT/AQACAAQAAAAPAPX/AQACAAQAAAAPAPb/AQAEAAQAAAAFAPT/AQAGAAQAAAAFAPX/AQAGAAQAAAAFAPb/AQACAAQAAAAGAPT/AQACAAQAAAAGAPX/AQAEAAQAAAAGAPb/AQAGAAQAAAAHAPT/AQACAAQAAAAHAPX/AQAEAAQAAAAHAPb/AQAEAAQAAAAIAPT/AQAEAAQAAAAIAPX/AQACAAQAAAAIAPb/AQAEAAQAAAAJAPT/AQAGAAQAAAAJAPX/AQAEAAQAAAAJAPb/AQAGAAQAAAAKAPT/AQAEAAQAAAAKAPX/AQAEAAQAAAAKAPb/AQAEAAQAAAALAPT/AQAGAAQAAAALAPX/AQAEAAQAAAALAPb/AQACAAQAAAAMAPT/AQACAAQAAAAMAPX/AQACAAQAAAAMAPb/AQACAAQAAAANAPT/AQAGAAQAAAANAPX/AQACAAQAAAANAPb/AQACAAQAAAAOAPT/AQAGAAQAAAAOAPX/AQACAAQAAAAOAPb/AQAEAAQAAAAEAPT/AQAEAAQAAAD5//T/AQAEAAQAAAAOAAYAAQAEAAQAAAAJAAYAAQACAAQAAAAIAP7/AQAEAAQAAAAJAPn/AQAEAAQAAAAHAPn/AQACAAQAAAAIAPn/AQACAAQAAAAGAPj/AQAGAAQAAAAHAPj/AQAGAAQAAAAIAPj/AQAGAAQAAAAJAPj/AQACAAQAAAAKAPj/AQAEAAQAAAALAPj/AQAEAAQAAAAMAPj/AQAEAAQAAAANAPj/AQAEAAQAAAAOAPj/AQACAAQAAAAKAPn/AQAGAAQAAAALAPn/AQAGAAQAAAAMAPn/AQAGAAQAAAANAPn/AQAEAAQAAAAOAPn/AQAGAAQAAAAKAPr/AQACAAQAAAAFAPv/AQAGAAQAAAAGAPv/AQACAAQAAAAHAPv/AQAGAAQAAAAIAPv/AQAGAAQAAAACAPj/AQACAAQAAAADAPj/AQAGAAQAAAAEAPj/AQAGAAQAAAAFAPj/AQACAAQAAAAAAPT/AQAEAAQAAAAAAPX/AQACAAQAAAABAPT/AQAGAAQAAAABAPX/AQAGAAQAAAACAPT/AQAEAAQAAAACAPX/AQAEAAQAAAACAPb/AQACAAQAAAACAPf/AQACAAQAAAADAPT/AQACAAQAAAADAPX/AQACAAQAAAADAPb/AQAGAAQAAAADAPf/AQACAAQAAAAEAPX/AQAGAAQAAAAEAPb/AQAGAAQAAAAEAPf/AQAEAAQAAAD///T/AQAEAAQAAAD///X/AQAGAAQAAAD+//T/AQACAAQAAAABAPb/AQAEAAQAAAAEAPv/AQACAAQAAAADAPv/AQAGAAQAAAA=")
+z_index = 10
+position = Vector2(-204, 0)
+tile_map_data = PackedByteArray("AAAAAAcAAQAEAAQAAAD//wcAAQAEAAQAAAD7/wcAAQAEAAQAAAAHAAcAAQAEAAQAAAAIAAcAAQAEAAQAAAAJAAcAAQAEAAQAAAAKAAcAAQAEAAQAAAAEAAcAAQAEAAQAAAD4/wcAAQAEAAQAAAAOAPf/AQAEAAQAAAAOAAcAAQAEAAQAAAAFAPf/AQAEAAQAAAAGAPf/AQAEAAQAAAAHAPf/AQAEAAQAAAAIAPf/AQAEAAQAAAAJAPf/AQAEAAQAAAAKAPf/AQAEAAQAAAALAPf/AQAEAAQAAAAMAPf/AQAEAAQAAAANAPf/AQAEAAQAAAD5/wcAAQAEAAQAAAD6/wcAAQAEAAQAAAD8/wcAAQAEAAQAAAD9/wcAAQAEAAQAAAD+/wcAAQAEAAQAAAABAAcAAQAEAAQAAAACAAcAAQAEAAQAAAADAAcAAQAEAAQAAAAFAAcAAQAEAAQAAAAGAAcAAQAEAAQAAAALAAcAAQAEAAQAAAAMAAcAAQAEAAQAAAANAAcAAQAEAAQAAAD4/wEAAQAEAAQAAAD4/wIAAQAEAAQAAAD4/wMAAQAEAAQAAAD4/wQAAQAEAAQAAAD4/wUAAQAEAAQAAAD4/wYAAQAEAAQAAAAPAAQAAQAEAAQAAAAPAAcAAQAEAAQAAAAPAAYAAQAEAAQAAAAPAAUAAQAEAAQAAAAPAAMAAQAEAAQAAAAPAAIAAQAEAAQAAAAPAAEAAQAEAAQAAAAPAAAAAQAEAAQAAAAPAP//AQAEAAQAAAAPAP7/AQAEAAQAAAAPAPn/AQAEAAQAAAAPAPj/AQAEAAQAAAAPAPf/AQAEAAQAAAD5/wEAAQAEAAQAAAD5/wIAAQACAAQAAAD5/wMAAQAEAAQAAAD5/wQAAQAGAAQAAAD5/wUAAQAGAAQAAAD5/wYAAQAEAAQAAAD6/wEAAQAGAAQAAAD6/wIAAQACAAQAAAD6/wMAAQAEAAQAAAD6/wQAAQAGAAQAAAD6/wUAAQAGAAQAAAD6/wYAAQAGAAQAAAD7/wAAAQAGAAQAAAD7/wEAAQAGAAQAAAD7/wIAAQACAAQAAAD7/wMAAQACAAQAAAD7/wQAAQACAAQAAAD7/wUAAQAGAAQAAAD7/wYAAQACAAQAAAD8/wAAAQACAAQAAAD8/wEAAQACAAQAAAD8/wIAAQAEAAQAAAD8/wMAAQAGAAQAAAD8/wQAAQAEAAQAAAD8/wUAAQACAAQAAAD9////AQAEAAQAAAD9/wAAAQACAAQAAAD9/wEAAQAEAAQAAAD9/wIAAQACAAQAAAD9/wMAAQAGAAQAAAD9/wQAAQACAAQAAAD+////AQACAAQAAAD+/wAAAQACAAQAAAD+/wEAAQAEAAQAAAD+/wIAAQACAAQAAAD/////AQAEAAQAAAAJAP7/AQAGAAQAAAAJAP//AQACAAQAAAAJAAAAAQAEAAQAAAAJAAEAAQACAAQAAAAJAAIAAQAEAAQAAAAJAAMAAQACAAQAAAAKAP7/AQAGAAQAAAAKAP//AQAGAAQAAAAKAAAAAQACAAQAAAAKAAEAAQAGAAQAAAAKAAIAAQACAAQAAAAKAAMAAQAGAAQAAAAKAAQAAQAGAAQAAAALAP7/AQAEAAQAAAALAP//AQAGAAQAAAALAAAAAQACAAQAAAALAAEAAQAGAAQAAAALAAIAAQAGAAQAAAALAAMAAQACAAQAAAALAAQAAQAGAAQAAAAMAP7/AQAGAAQAAAAMAP//AQACAAQAAAAMAAAAAQAEAAQAAAAMAAEAAQAEAAQAAAAMAAIAAQACAAQAAAAMAAMAAQAGAAQAAAANAP7/AQAGAAQAAAANAP//AQAGAAQAAAANAAAAAQAGAAQAAAANAAEAAQAGAAQAAAANAAIAAQAGAAQAAAANAAMAAQAEAAQAAAANAAQAAQAEAAQAAAAOAP7/AQAGAAQAAAAOAP//AQACAAQAAAAOAAAAAQACAAQAAAAOAAEAAQAEAAQAAAAOAAIAAQAEAAQAAAAOAAMAAQAEAAQAAAAOAAQAAQACAAQAAAD4//P/AQACAAQAAAD4//T/AQACAAQAAAD5//P/AQAGAAQAAAD6//P/AQAGAAQAAAD7//P/AQACAAQAAAD8//P/AQAGAAQAAAD9//P/AQACAAQAAAD+//P/AQAGAAQAAAD///P/AQAEAAQAAAAAAPP/AQAGAAQAAAABAPP/AQAGAAQAAAACAPP/AQACAAQAAAADAPP/AQAEAAQAAAAEAPP/AQAGAAQAAAAFAPP/AQAGAAQAAAAGAPP/AQAGAAQAAAAHAPP/AQAEAAQAAAAIAPP/AQAEAAQAAAAJAPP/AQAEAAQAAAAKAPP/AQACAAQAAAALAPP/AQACAAQAAAAMAPP/AQACAAQAAAANAPP/AQAEAAQAAAAOAPP/AQAEAAQAAAAPAPP/AQAEAAQAAAAPAPT/AQACAAQAAAAPAPX/AQACAAQAAAAPAPb/AQAEAAQAAAAFAPT/AQAGAAQAAAAFAPX/AQAGAAQAAAAFAPb/AQACAAQAAAAGAPT/AQACAAQAAAAGAPX/AQAEAAQAAAAGAPb/AQAGAAQAAAAHAPT/AQACAAQAAAAHAPX/AQAEAAQAAAAHAPb/AQAEAAQAAAAIAPT/AQAEAAQAAAAIAPX/AQACAAQAAAAIAPb/AQAEAAQAAAAJAPT/AQAGAAQAAAAJAPX/AQAEAAQAAAAJAPb/AQAGAAQAAAAKAPT/AQAEAAQAAAAKAPX/AQAEAAQAAAAKAPb/AQAEAAQAAAALAPT/AQAGAAQAAAALAPX/AQAEAAQAAAALAPb/AQACAAQAAAAMAPT/AQACAAQAAAAMAPX/AQACAAQAAAAMAPb/AQACAAQAAAANAPT/AQAGAAQAAAANAPX/AQACAAQAAAANAPb/AQACAAQAAAAOAPT/AQAGAAQAAAAOAPX/AQACAAQAAAAOAPb/AQAEAAQAAAAEAPT/AQAEAAQAAAD5//T/AQAEAAQAAAAOAAYAAQAEAAQAAAAJAAYAAQACAAQAAAAIAP7/AQAEAAQAAAAJAPn/AQAEAAQAAAAHAPn/AQACAAQAAAAIAPn/AQACAAQAAAAGAPj/AQAGAAQAAAAHAPj/AQAGAAQAAAAIAPj/AQAGAAQAAAAJAPj/AQACAAQAAAAKAPj/AQAEAAQAAAALAPj/AQAEAAQAAAAMAPj/AQAEAAQAAAANAPj/AQAEAAQAAAAOAPj/AQACAAQAAAAKAPn/AQAGAAQAAAALAPn/AQAGAAQAAAAMAPn/AQAGAAQAAAANAPn/AQAEAAQAAAAOAPn/AQAGAAQAAAAKAPr/AQACAAQAAAAFAPv/AQAGAAQAAAAGAPv/AQACAAQAAAAHAPv/AQAGAAQAAAAIAPv/AQAGAAQAAAACAPj/AQACAAQAAAADAPj/AQAGAAQAAAAEAPj/AQAGAAQAAAAFAPj/AQACAAQAAAAAAPT/AQAEAAQAAAAAAPX/AQACAAQAAAABAPT/AQAGAAQAAAABAPX/AQAGAAQAAAACAPT/AQAEAAQAAAACAPX/AQAEAAQAAAACAPb/AQACAAQAAAACAPf/AQACAAQAAAADAPT/AQACAAQAAAADAPX/AQACAAQAAAADAPb/AQAGAAQAAAADAPf/AQACAAQAAAAEAPX/AQAGAAQAAAAEAPb/AQAGAAQAAAAEAPf/AQAEAAQAAAD///T/AQAEAAQAAAD///X/AQAGAAQAAAD+//T/AQACAAQAAAABAPb/AQAEAAQAAAAEAPv/AQACAAQAAAADAPv/AQAGAAQAAAAQAPr/BAADAAIAAAAQAPv/BAAEAAIAAAAQAPz/BAADAAIAAAAQAP3/BAACAAIAAAD3//j/AQAEAAQAAAD3//n/AQAEAAQAAAD3//r/AQAEAAQAAAD3//v/AQAEAAQAAAD3//z/AQAEAAQAAAD3//3/AQAEAAQAAAD3//7/AQAEAAQAAAD3////AQAEAAQAAAD3/wAAAQAEAAQAAAD3//X/AQAEAAQAAAD3//b/AQAEAAQAAAD3//f/AQAEAAQAAAA=")
 tile_set = ExtResource("3_3vrqk")
 
 [node name="ForegroundGrass" type="TileMapLayer" parent="Tilemaps" unique_id=1832401620]
+z_index = 10
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(-222, 5)
-tile_set = SubResource("TileSet_7ykyd")
+position = Vector2(-204, 0)
+tile_map_data = PackedByteArray("AAD6/wEABAAFAAEAAAD5/wEABAADAAEAAAD4/wEABAABAAEAAAD7/wAABAAEAAEAAAD8/wAABAAFAAEAAAD9////BAABAAEAAAD+////BAAFAAEAAAD/////BAACAAEAAAADAPv/BAACAAEAAAAEAPv/BAADAAEAAAAFAPv/BAACAAEAAAAGAPv/BAADAAEAAAAHAPv/BAACAAEAAAAIAPv/BAADAAEAAAAIAP7/BAABAAEAAAAJAP7/BAABAAEAAAAKAP7/BAAEAAEAAAALAP7/BAACAAEAAAAMAP7/BAADAAEAAAANAP7/BAABAAEAAAAOAP7/BAACAAEAAAAPAP7/BAACAAEAAAAPAP3/BAAEAAAAAAAOAP3/BAAFAAAAAAANAP3/BAADAAAAAAAMAP3/BAADAAAAAAALAP3/BAACAAAAAAAKAP3/BAABAAAAAAAJAP3/BAAFAAAAAAAIAP3/BAAEAAAAAAAIAPr/BAAFAAAAAAAHAPr/BAAFAAAAAAAGAPr/BAAEAAAAAAAFAPr/BAAFAAAAAAAEAPr/BAABAAAAAAADAPr/BAAFAAAAAAACAPv/BAAAAAEAAAAHAP7/BAAAAAEAAAAJAPv/BAAAAAEAABA=")
+tile_set = ExtResource("3_3vrqk")
 
-[node name="ForegroundRoots" type="TileMapLayer" parent="Tilemaps" unique_id=160878538]
+[node name="FGrassEdges" type="TileMapLayer" parent="Tilemaps" unique_id=356028810]
+z_index = 10
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(-222, 5)
-tile_set = SubResource("TileSet_7ykyd")
+position = Vector2(-204, 0)
+tile_map_data = PackedByteArray("AAD6/wAABAAJAAEAAAD8////BAAJAAEAAAD7////BAADAAAAAAD5/wAABAAEAAAAAAD4/wAABAAEAAAAAAD+//7/BAAEAAAAAAD9//7/BAADAAAAAAA=")
+tile_set = ExtResource("3_3vrqk")
+
+[node name="ForegroundTrees" type="TileMapLayer" parent="Tilemaps" unique_id=160878538]
+z_index = 10
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-204, 0)
+tile_map_data = PackedByteArray("AAD5////AwAAAAAAAAD7//7/AwAAAAAAAAA=")
+tile_set = ExtResource("3_3vrqk")
 
 [node name="Animal" parent="." unique_id=934101410 instance=ExtResource("6_8gc7i")]
-position = Vector2(-419, 29)
+z_index = 10
+position = Vector2(-254, -42)
 
 [node name="Animal2" parent="." unique_id=611088952 instance=ExtResource("6_8gc7i")]
-position = Vector2(14, -165)
+z_index = 10
+position = Vector2(8, -169)
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("7_cf272")]
-position = Vector2(209, -100)
-next_level = ExtResource("9_w3hw2")
+z_index = 9
+position = Vector2(193, -105)
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("9_rjv3q")]
-position = Vector2(-272, -41)
+z_index = 10
+position = Vector2(-440, 15)
 
-[node name="SoundF_Transform" parent="Player" index="14" unique_id=290602985]
+[node name="SoundF_Transform" parent="Player" index="15" unique_id=290602985]
 volume_db = 6.0
 
-[node name="SoundF_Jump" parent="Player" index="15" unique_id=284681269]
+[node name="SoundF_Jump" parent="Player" index="16" unique_id=284681269]
 volume_db = 12.0
 
 [node name="UI" parent="." unique_id=889175113 instance=ExtResource("10_h0i70")]
 unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
-
-[node name="placeholderlabelReset" type="Label" parent="." unique_id=1513929462]
-offset_left = -109.0
-offset_top = 161.0
-offset_right = -69.0
-offset_bottom = 184.0
-text = "R"
-
-[node name="placeholderlabelGrapple" type="Label" parent="." unique_id=503284623]
-offset_left = -207.0
-offset_top = -190.0
-offset_right = -167.0
-offset_bottom = -167.0
-text = "J"
+z_index = 10
 
 [node name="ButtonInstructionJ" parent="." unique_id=984686626 instance=ExtResource("11_rwj5m")]
+z_index = 10
 position = Vector2(-199, -215)
 letter = "J"
 
 [node name="ButtonInstructionR" parent="." unique_id=1243346540 instance=ExtResource("11_rwj5m")]
+z_index = 10
 position = Vector2(-104, 190)
 letter = "R"
 
+[editable path="Tilemaps/Fog"]
+[editable path="Tilemaps/Fog2"]
+[editable path="Tilemaps/Fog3"]
 [editable path="Player"]

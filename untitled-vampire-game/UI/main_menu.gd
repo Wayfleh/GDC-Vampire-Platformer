@@ -34,6 +34,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				GlobalData.challenge = true
 				GlobalData.curr_path = GlobalData.ch_levels_path
 				GlobalData.levels = GlobalData.ch_level_files
+				GlobalMusic.ChangeTrack("challenge")
 				GlobalData.next_level()
 		else:
 			sequence_index = 0
