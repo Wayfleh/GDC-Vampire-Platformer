@@ -233,22 +233,23 @@ position = Vector2(-591, -25)
 rotation = 1.5707964
 
 [node name="Animals" type="Node2D" parent="." unique_id=1319809549]
+position = Vector2(2, -2)
 
 [node name="Frog" parent="Animals" unique_id=934101410 instance=ExtResource("7_i5mwg")]
-position = Vector2(176, -13.999999)
+position = Vector2(173, -17)
 scale = Vector2(1.662194, 1.5765377)
 
 [node name="Rat" parent="Animals" unique_id=1621375151 instance=ExtResource("6_pfrtj")]
-position = Vector2(197, 215.99997)
+position = Vector2(195, 216.00002)
 rotation = -0.009766623
 scale = Vector2(-0.92000127, 0.96200025)
 
 [node name="RatHole" parent="." unique_id=1798485280 node_paths=PackedStringArray("other_hole") instance=ExtResource("7_t8b04")]
-position = Vector2(-437, 207)
+position = Vector2(-435, 205)
 other_hole = NodePath("../RatHole2")
 
 [node name="RatHole2" parent="." unique_id=1269758435 node_paths=PackedStringArray("other_hole") instance=ExtResource("7_t8b04")]
-position = Vector2(-86, -15)
+position = Vector2(-84, -19)
 other_hole = NodePath("../RatHole")
 
 [node name="UI" parent="." unique_id=889175113 instance=ExtResource("8_6t1tm")]
@@ -257,11 +258,11 @@ unique_name_in_owner = true
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1630121106]
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("9_4mcfs")]
-position = Vector2(-292, -166)
+position = Vector2(-292, -169)
 scale = Vector2(1.0184548, 0.9200299)
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("11_rdbk0")]
-position = Vector2(-215, 209)
+position = Vector2(-216, 205)
 
 [editable path="Animals/Frog"]
 [editable path="UI"]
