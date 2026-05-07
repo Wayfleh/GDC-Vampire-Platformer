@@ -14,7 +14,7 @@ script = ExtResource("1_kkmoe")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1525392828]
 position = Vector2(0, -3)
 sprite_frames = ExtResource("2_o8yfw")
-animation = &"death"
+animation = &"snooze"
 
 [node name="spriteold" type="Sprite2D" parent="." unique_id=135745891]
 visible = false

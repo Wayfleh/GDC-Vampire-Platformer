@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://c63xvvcuu15fh"
 
 GlobalData="*uid://bq1n32qfhnrem"
 GlobalMusic="*uid://d2lnxbvep06lu"
+LevelTransition="*uid://brehqgom45bim"
 
 [display]
 
