@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Challenge.mp3-8197ef0ce7334a3f0f279c8eb2ab78b
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
