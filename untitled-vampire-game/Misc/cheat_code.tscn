@@ -4,10 +4,19 @@
 [ext_resource type="Shader" uid="uid://cj5iqnfyfk82" path="res://Misc/opening_cutscene.gdshader" id="2_2wk86"]
 [ext_resource type="Texture2D" uid="uid://bykteu7q3meb" path="res://Art/creditscene_sized.png" id="2_8cdsj"]
 [ext_resource type="FontFile" uid="uid://clomxcxkqvoww" path="res://Art/UI/PixelifySans-VariableFont_wght.ttf" id="4_63rdk"]
+[ext_resource type="Shader" uid="uid://bo2cbvgqvg3dx" path="res://UI/level_no_anti_alias.gdshader" id="4_pkws5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jomyl"]
 shader = ExtResource("2_2wk86")
 shader_parameter/blur_amount = 1.0000000475
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jn27e"]
+shader = ExtResource("4_pkws5")
+shader_parameter/my_color = Color(255, 255, 255, 255)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x4cdi"]
+shader = ExtResource("4_pkws5")
+shader_parameter/my_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Animation" id="Animation_pkws5"]
 length = 0.001
@@ -65,6 +74,7 @@ offset_right = 932.0
 offset_bottom = 513.0
 
 [node name="PressAnyButton" type="Label" parent="." unique_id=2027905942]
+material = SubResource("ShaderMaterial_jn27e")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -83,6 +93,7 @@ text = "Press Any Button to Exit to Menu"
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="." unique_id=646323497]
+material = SubResource("ShaderMaterial_x4cdi")
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

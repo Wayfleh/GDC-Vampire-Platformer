@@ -4,7 +4,7 @@ extends Node2D
 @onready var challenge: AudioStreamPlayer2D = $Challenge
 @onready var currentTrack : String = "overworld"
 
-@onready var musicTracks : Array[AudioStreamPlayer2D] = [overworld, main_menu]
+@onready var musicTracks : Array[AudioStreamPlayer2D] = [overworld, main_menu, challenge]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

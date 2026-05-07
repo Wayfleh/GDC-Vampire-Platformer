@@ -54,7 +54,7 @@ func animal_bitten():
 
 func blood_collected(animal : Area2D):
 	if hilarious_blood_chamber_bit && blood_chamber.size() == 3:
-		do_the_bit.emit()
+		do_the_bit.emit(animal.type)
 	blood_chamber.push_front(animal.type)
 	if (blood_chamber.size() > 3):
 		blood_chamber.resize(3)

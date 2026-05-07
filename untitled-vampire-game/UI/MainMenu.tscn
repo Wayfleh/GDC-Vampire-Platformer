@@ -16,7 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_uahxu")
 
 [node name="TitleBG" type="Sprite2D" parent="." unique_id=1400340256]
-position = Vector2(464.5626, 256.00003)
+position = Vector2(464, 256)
 texture = ExtResource("2_y6s48")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1240355915]
