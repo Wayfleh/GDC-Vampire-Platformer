@@ -15,12 +15,14 @@ shader = ExtResource("3_vg2hb")
 shader_parameter/darkness = 0.390000018525
 shader_parameter/blue_color = Color(0.13541102, 0.34736264, 0.73924, 1)
 shader_parameter/intensity = 0.2110000100225
+shader_parameter/transparency = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2gic4"]
 shader = ExtResource("3_vg2hb")
 shader_parameter/darkness = 0.2690000127775
 shader_parameter/blue_color = Color(0.13541102, 0.34736264, 0.73924, 1)
 shader_parameter/intensity = 0.790000037525
+shader_parameter/transparency = 1.0
 
 [node name="Level1" type="Node2D" unique_id=1583682183]
 
@@ -100,6 +102,7 @@ offset = Vector2(-15, 5)
 unique_name_in_owner = true
 
 [node name="placeholderlabelcontrols" type="Label" parent="." unique_id=212978863]
+visible = false
 offset_left = -134.0
 offset_top = 332.0
 offset_right = -77.0

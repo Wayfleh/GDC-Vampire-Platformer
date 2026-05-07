@@ -7,7 +7,8 @@ extends Control
 @onready var custom_keybinds_button: PauseMenuButton = $Buttons/CustomKeybinds
 @onready var reset_defaults_button: PauseMenuButton = $Buttons/ResetDefaults
 @onready var rebind_status: Label = $RebindStatus
-
+@onready var bookhit: AudioStreamPlayer2D = $bookhit
+	#bookhit is here too, since the bookhit in globalMusic doesnt work for on-pause and keybinds
 
 var actions_to_rebind: Array[String] = [
 	"left",
@@ -42,6 +43,7 @@ func _ready() -> void:
 
 
 func pause() -> void:
+	bookhit.play()
 	$AnimationPlayer.play("pause")
 	get_tree().paused = true
 	show()
@@ -50,6 +52,8 @@ func pause() -> void:
 func resume() -> void:
 	$AnimationPlayer.play("resume")
 	get_tree().paused = false
+	GlobalMusic.SFX_Bookhit()
+	
 	hide()
 	is_rebinding = false
 	set_menu_buttons_disabled(false)
@@ -58,11 +62,14 @@ func resume() -> void:
 
 
 func restart() -> void:
+	GlobalMusic.SFX_Bookhit()
 	get_tree().paused = false
+	
 	get_tree().reload_current_scene()
 
 
 func main_menu() -> void:
+	GlobalMusic.SFX_Bookhit()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://UI/MainMenu.tscn")
 
@@ -103,6 +110,7 @@ func clear_menu_focus() -> void:
 
 
 func start_rebinding() -> void:
+	bookhit.play()
 	is_rebinding = true
 	current_rebind_index = 0
 	set_menu_buttons_disabled(true)
@@ -145,6 +153,7 @@ func rebind_current_action(event: InputEvent) -> void:
 
 	var action_name := actions_to_rebind[current_rebind_index]
 
+	bookhit.play()
 	InputMap.action_erase_events(action_name)
 	InputMap.action_add_event(action_name, event.duplicate())
 
@@ -153,6 +162,7 @@ func rebind_current_action(event: InputEvent) -> void:
 
 
 func reset_to_defaults() -> void:
+	bookhit.play()
 	is_rebinding = false
 	set_menu_buttons_disabled(false)
 	clear_menu_focus()

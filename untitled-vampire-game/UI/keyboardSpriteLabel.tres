@@ -1,6 +1,6 @@
 [gd_resource type="LabelSettings" format=3 uid="uid://bycc0xodltluf"]
 
-[ext_resource type="FontFile" uid="uid://bojfmb0iv5fhc" path="res://Art/UI/Jacquard12-Regular.ttf" id="1_b0wn8"]
+[ext_resource type="FontFile" uid="uid://clomxcxkqvoww" path="res://Art/UI/PixelifySans-VariableFont_wght.ttf" id="1_b0wn8"]
 
 [resource]
 line_spacing = 0.0
