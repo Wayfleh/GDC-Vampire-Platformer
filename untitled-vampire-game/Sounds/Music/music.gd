@@ -1,6 +1,7 @@
 extends Node2D
 @onready var overworld: AudioStreamPlayer2D = $Overworld
 @onready var main_menu: AudioStreamPlayer2D = $MainMenu
+@onready var challenge: AudioStreamPlayer2D = $Challenge
 @onready var currentTrack : String = "overworld"
 
 @onready var musicTracks : Array[AudioStreamPlayer2D] = [overworld, main_menu]
@@ -23,11 +24,15 @@ func ChangeTrack(track:String):
 	match track:
 		"main_menu":
 			main_menu.play()
-			currentTrack = "main_menu"
+			currentTrack = track
 			return
 		"overworld":
 			overworld.play()
-			currentTrack = "overworld"
+			currentTrack = track
+			return
+		"challenge":
+			challenge.play()
+			currentTrack = track
 			return
 		_:
 			overworld.play()
