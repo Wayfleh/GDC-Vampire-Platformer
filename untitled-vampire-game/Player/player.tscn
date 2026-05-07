@@ -672,7 +672,7 @@ position = Vector2(0, 14)
 target_position = Vector2(0, 30)
 
 [node name="FootstepPlayer" type="AudioStreamPlayer2D" parent="." unique_id=858939323]
-volume_db = 8.0
+volume_db = 14.0
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="." unique_id=1704760268]
 stream = ExtResource("24_qemgg")
@@ -680,7 +680,7 @@ volume_db = 15.0
 
 [node name="SoundV_AnimalBitten" type="AudioStreamPlayer2D" parent="." unique_id=1515482835]
 stream = ExtResource("24_8viyr")
-volume_db = 12.0
+volume_db = 8.0
 
 [node name="SoundV_BiteDash" type="AudioStreamPlayer2D" parent="." unique_id=1899384871]
 stream = ExtResource("24_8mwp6")
@@ -692,11 +692,11 @@ volume_db = 20.0
 
 [node name="SoundV_DeTransform" type="AudioStreamPlayer2D" parent="." unique_id=394572689]
 stream = ExtResource("44_uvbbp")
-volume_db = 5.0
+volume_db = 2.0
 
 [node name="SoundF_Transform" type="AudioStreamPlayer2D" parent="." unique_id=290602985]
 stream = ExtResource("27_76lrf")
-volume_db = 8.0
+volume_db = 5.0
 
 [node name="SoundF_Jump" type="AudioStreamPlayer2D" parent="." unique_id=284681269]
 stream = ExtResource("28_efx54")
@@ -736,7 +736,6 @@ volume_db = 8.0
 
 [node name="SoundR_Transform" type="AudioStreamPlayer2D" parent="." unique_id=2127215631]
 stream = ExtResource("46_7v2uk")
-volume_db = 2.0
 
 [node name="SoundR_FootStep" type="AudioStreamPlayer2D" parent="." unique_id=176573284]
 stream = ExtResource("52_c4i3b")
