@@ -23,7 +23,7 @@ shader_parameter/blue_color = Color(0.13541102, 0.34736264, 0.73924, 1)
 shader_parameter/intensity = 0.626000029735
 shader_parameter/transparency = 1.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8pgih"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e7jsd"]
 texture = ExtResource("3_k0snu")
 texture_region_size = Vector2i(32, 32)
 2:1/0 = 0
@@ -73,7 +73,7 @@ texture_region_size = Vector2i(32, 32)
 3:4/0 = 0
 3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rx1my"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ad4y6"]
 resource_name = "BlueGreenTiles"
 texture = ExtResource("4_flfcu")
 margins = Vector2i(0, 16)
@@ -123,7 +123,7 @@ margins = Vector2i(0, 16)
 11:3/size_in_atlas = Vector2i(2, 4)
 11:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fnhlo"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8pgih"]
 texture = ExtResource("6_x1k2b")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -134,7 +134,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_14p5m"]
 load_path = "res://.godot/imported/trees.png-b9841179c324e40012290467ca236fae.ctex"
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x648w"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rx1my"]
 texture = SubResource("CompressedTexture2D_14p5m")
 texture_region_size = Vector2i(64, 96)
 0:0/0 = 0
@@ -171,7 +171,7 @@ texture_region_size = Vector2i(64, 96)
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gpfel"]
 load_path = "res://.godot/imported/grass_LOD_32x32.png-836eed09ff24ca9e2f8462d223a968a1.ctex"
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cm6o5"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fnhlo"]
 texture = SubResource("CompressedTexture2D_gpfel")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -219,11 +219,11 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_su3vu"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_8pgih")
-sources/1 = SubResource("TileSetAtlasSource_rx1my")
-sources/2 = SubResource("TileSetAtlasSource_fnhlo")
-sources/3 = SubResource("TileSetAtlasSource_x648w")
-sources/4 = SubResource("TileSetAtlasSource_cm6o5")
+sources/0 = SubResource("TileSetAtlasSource_e7jsd")
+sources/1 = SubResource("TileSetAtlasSource_ad4y6")
+sources/2 = SubResource("TileSetAtlasSource_8pgih")
+sources/3 = SubResource("TileSetAtlasSource_rx1my")
+sources/4 = SubResource("TileSetAtlasSource_fnhlo")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_e7jsd"]
 shader = ExtResource("3_tphdo")
@@ -484,6 +484,7 @@ position = Vector2(99, 51)
 material = SubResource("ShaderMaterial_fnhlo")
 
 [node name="BGRootsBehindBGOffY" parent="Tilemaps" unique_id=1423422238 instance=ExtResource("2_ggchs")]
+visible = false
 position = Vector2(0, 16)
 tile_map_data = PackedByteArray("AAAJAPr/AwACAAAAACA=")
 
