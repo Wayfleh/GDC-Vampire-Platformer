@@ -5,13 +5,8 @@
 [ext_resource type="FontFile" uid="uid://bojfmb0iv5fhc" path="res://Art/UI/Jacquard12-Regular.ttf" id="2_2g780"]
 [ext_resource type="FontFile" uid="uid://clomxcxkqvoww" path="res://Art/UI/PixelifySans-VariableFont_wght.ttf" id="3_ftffn"]
 [ext_resource type="PackedScene" uid="uid://cunoymdxr6fm2" path="res://Misc/pause_menu_button.tscn" id="4_0ccpq"]
-[ext_resource type="Shader" uid="uid://bo2cbvgqvg3dx" path="res://UI/level_no_anti_alias.gdshader" id="5_0ccpq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ehabf"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8sla6"]
-shader = ExtResource("5_0ccpq")
-shader_parameter/my_color = Color(1, 1, 1, 1)
 
 [node name="Credits" type="Control" unique_id=1327236525]
 custom_minimum_size = Vector2(928, 512)
@@ -61,14 +56,12 @@ layout_mode = 2
 theme_override_constants/separation = 15
 
 [node name="ProgramTitle" type="Label" parent="HFlowContainer/Programmers" unique_id=1471983536]
-material = SubResource("ShaderMaterial_8sla6")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_2g780")
 theme_override_font_sizes/font_size = 40
 text = "Programmers"
 
 [node name="ProgramNames" type="Label" parent="HFlowContainer/Programmers" unique_id=179443330]
-material = SubResource("ShaderMaterial_8sla6")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ftffn")
 theme_override_font_sizes/font_size = 20
@@ -81,14 +74,12 @@ layout_mode = 2
 theme_override_constants/separation = 15
 
 [node name="ArtistsTitle" type="Label" parent="HFlowContainer/Artists" unique_id=87793751]
-material = SubResource("ShaderMaterial_8sla6")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_2g780")
 theme_override_font_sizes/font_size = 40
 text = "Artists"
 
 [node name="ArtistsNames" type="Label" parent="HFlowContainer/Artists" unique_id=713471923]
-material = SubResource("ShaderMaterial_8sla6")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ftffn")
 theme_override_font_sizes/font_size = 20
@@ -100,14 +91,12 @@ layout_mode = 2
 theme_override_constants/separation = 15
 
 [node name="SoundTitle" type="Label" parent="HFlowContainer/VBoxContainer" unique_id=1170353699]
-material = SubResource("ShaderMaterial_8sla6")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_2g780")
 theme_override_font_sizes/font_size = 40
-text = "SoundDesigner"
+text = "Sound Designer"
 
 [node name="Sounder" type="Label" parent="HFlowContainer/VBoxContainer" unique_id=2066014292]
-material = SubResource("ShaderMaterial_8sla6")
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_ftffn")
 theme_override_font_sizes/font_size = 20

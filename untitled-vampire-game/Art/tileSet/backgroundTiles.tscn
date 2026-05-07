@@ -1,16 +1,9 @@
 [gd_scene format=3 uid="uid://d3oa5wxafbr2p"]
 
-[ext_resource type="Shader" uid="uid://1b1v6l8muomj" path="res://Art/tileSet/Decoration/background.gdshader" id="1_jyxwc"]
+[ext_resource type="Material" uid="uid://buyxqonxru2ba" path="res://Misc/background_shader.tres" id="1_jyxwc"]
 [ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="2_6l8j4"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lm7ip"]
-shader = ExtResource("1_jyxwc")
-shader_parameter/darkness = 0.5
-shader_parameter/blue_color = Color(0.13541102, 0.34736264, 0.73924, 1)
-shader_parameter/intensity = 0.2110000100225
-shader_parameter/transparency = 1.0
-
 [node name="Background" type="TileMapLayer" unique_id=1654783105]
-material = SubResource("ShaderMaterial_lm7ip")
+material = ExtResource("1_jyxwc")
 tile_set = ExtResource("2_6l8j4")
 collision_enabled = false
