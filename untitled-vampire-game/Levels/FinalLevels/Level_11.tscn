@@ -20,6 +20,7 @@ shader = ExtResource("5_16fvj")
 shader_parameter/darkness = 0.30000001425
 shader_parameter/blue_color = Color(0.13541102, 0.34736264, 0.73924, 1)
 shader_parameter/intensity = 0.2110000100225
+shader_parameter/transparency = 1.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gppu3"]
 texture = ExtResource("3_2b465")
@@ -228,12 +229,14 @@ shader = ExtResource("5_16fvj")
 shader_parameter/darkness = 0.400000019
 shader_parameter/blue_color = Color(0.13541102, 0.34736264, 0.73924, 1)
 shader_parameter/intensity = 0.2110000100225
+shader_parameter/transparency = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_87gkd"]
 shader = ExtResource("5_16fvj")
 shader_parameter/darkness = 0.5190000246525
 shader_parameter/blue_color = Color(0, 0, 1, 1)
 shader_parameter/intensity = 0.42400002014
+shader_parameter/transparency = 1.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0f33c"]
 atlas = ExtResource("7_rai53")
@@ -334,7 +337,7 @@ colors = PackedColorArray(0.015384615, 0.015384615, 0.015384615, 1, 0.6366864, 0
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_i46ja"]
 frequency = 0.0073
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aoy4t"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1imph"]
 noise = SubResource("FastNoiseLite_i46ja")
 color_ramp = SubResource("Gradient_vgeru")
 seamless = true
@@ -344,7 +347,7 @@ seamless_blend_skirt = 0.5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iu3yr"]
 shader = ExtResource("9_6cqe1")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_aoy4t")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_1imph")
 shader_parameter/smoke_color = Color(0.41642743, 0.3469094, 0.7291892, 1)
 shader_parameter/distortion_speed = 0.134000006365
 shader_parameter/density = 0.2000000095

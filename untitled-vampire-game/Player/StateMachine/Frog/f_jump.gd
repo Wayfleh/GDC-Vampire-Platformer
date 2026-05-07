@@ -18,6 +18,8 @@ var _blink_timer: float = 0.0
 var _show_charge_frame: bool = false
 
 @onready var sound_f_jump: AudioStreamPlayer2D = $"../../../../SoundF_Jump"
+@onready var sound_f_jump_wind: AudioStreamPlayer2D = $"../../../../SoundF_Jump_Wind"
+@onready var sound_f_jump_hold: AudioStreamPlayer2D = $"../../../../SoundF_Jump_Hold"
 @onready var frog_sprite: AnimatedSprite2D
 
 # TODO remove this shit later,
@@ -39,10 +41,15 @@ func enter_state():
 	_blink_timer = slow_blink_interval
 	_show_charge_frame = false
 	frog_sprite = player.anim_sprite
+	sound_f_jump_hold.finished.connect(_loop_charge_hold)
+	sound_f_jump_wind.finished.connect(_loop_charge_hold)
+	sound_f_jump_wind.play()
 	
 	#frog_sprite.play(_get_frog_idle_animation())
-	
 
+func _loop_charge_hold():
+	if _jump_state == "charge":
+		sound_f_jump_hold.play()
 
 func update(delta: float):
 	match _jump_state:
@@ -93,7 +100,8 @@ func _apply_jump_impulse():
 	player.speed = _speed_snapshot * 1.5
 	player.velocity.x = player.previous_direction * clampf(player.speed, player.speed, ARBITRARY_MAGIC_MAX_AIR_SPEED * 2)
 
-	sound_f_jump.play()
+	sound_f_jump_wind.stop() if sound_f_jump_wind.playing else sound_f_jump_wind.stop()
+	sound_f_jump.play(.04)
 	_jump_state = "jumping"
 
 
