@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="6_5cf55"]
 [ext_resource type="PackedScene" uid="uid://b1k3vejyw11ab" path="res://Levels/MatLevels/fog.tscn" id="7_hhqlp"]
 [ext_resource type="PackedScene" uid="uid://cy7xnhnawsqe0" path="res://Levels/MatLevels/world_environment.tscn" id="8_wesbb"]
+[ext_resource type="PackedScene" uid="uid://ndbodfavegpb" path="res://Misc/kill_zone.tscn" id="11_o2ahx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5cf55"]
 shader = ExtResource("3_tl4dq")
@@ -147,20 +148,20 @@ tile_set = ExtResource("2_45xta")
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(-222, 5)
-tile_map_data = PackedByteArray("AAD5/wIAAQAEAAIAAAD6/wIAAQAEAAIAAAD7/wAAAQAEAAIAAAD8/wAAAQAEAAIAAAAJAAIAAQAEAAIAAAAKAAIAAQAEAAIAAAALAAIAAQAEAAIAAAAMAAIAAQAEAAIAAAAHAP//AQAEAAIAAAAIAP//AQAEAAIAAAAJAP//AQAEAAIAAAD9/wAAAQAIAAIAAAAGAP//AQAAAAIAAAAIAAIAAQAAAAIAAAALAP//AQAIAAIAAAD5//j/AQAEAAgAAAD6//j/AQAEAAgAAAD7//j/AQAEAAgAAAD8//j/AQAEAAgAAAD9//j/AQAEAAgAAAD+//j/AQAEAAgAAAD///j/AQAEAAgAAAAAAPj/AQAEAAgAAAABAPj/AQAEAAgAAAACAPj/AQAEAAgAAAADAPj/AQAEAAgAAAAEAPj/AQAEAAgAAAAFAPj/AQAEAAgAAAAGAPj/AQAEAAgAAAAHAPj/AQAEAAgAAAAIAPj/AQAEAAgAAAAJAPj/AQAEAAgAAAAKAPj/AQAEAAgAAAALAPj/AQAEAAgAAAAMAPj/AQAEAAgAAAA=")
+tile_map_data = PackedByteArray("AAD5/wIAAQAEAAIAAAD6/wIAAQAEAAIAAAD7/wAAAQAEAAIAAAD8/wAAAQAEAAIAAAAJAAIAAQAEAAIAAAAKAAIAAQAEAAIAAAALAAIAAQAEAAIAAAAMAAIAAQAEAAIAAAAHAP//AQAEAAIAAAAIAP//AQAEAAIAAAAJAP//AQAEAAIAAAD9/wAAAQAIAAIAAAAGAP//AQAAAAIAAAAIAAIAAQAAAAIAAAALAP//AQAIAAIAAAD5//j/AQAEAAgAAAD6//j/AQAEAAgAAAD7//j/AQAEAAgAAAD8//j/AQAEAAgAAAD9//j/AQAEAAgAAAD+//j/AQAEAAgAAAD///j/AQAEAAgAAAAAAPj/AQAEAAgAAAABAPj/AQAEAAgAAAACAPj/AQAEAAgAAAADAPj/AQAEAAgAAAAEAPj/AQAEAAgAAAAFAPj/AQAEAAgAAAAGAPj/AQAEAAgAAAAHAPj/AQAEAAgAAAAIAPj/AQAEAAgAAAAJAPj/AQAEAAgAAAAKAPj/AQAEAAgAAAALAPj/AQAEAAgAAAAMAPj/AQAEAAgAAAALAPv/AQAEAAIAAAAMAPv/AQAEAAIAAAANAPv/AQAEAAIAAAD///v/AQAEAAIAAAA=")
 tile_set = ExtResource("2_45xta")
 
 [node name="ForegroundRoots" type="TileMapLayer" parent="Tilemaps" unique_id=1557639527]
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(-222, 5)
-tile_map_data = PackedByteArray("AAD5//z/AQAEAAgAAAD6//v/AQAEAAgAAAD8//r/AQAEAAgAAAD9//r/AQAEAAgAAAD+//n/AQAEAAgAAAD///n/AQAEAAgAAAAAAPn/AQAEAAgAAAACAPj/AQAEAAgAAAADAPj/AQAEAAgAAAAEAPj/AQAEAAgAAAAFAPj/AQAEAAgAAAAGAPj/AQAEAAgAAAAHAPj/AQAEAAgAAAAIAPj/AQAEAAgAAAAJAPj/AQAEAAgAAAAKAPn/AQAEAAgAAAALAPn/AQAEAAgAAAAMAPr/AQAEAAgAAAABAPj/AQAEAAgAAAA=")
+tile_map_data = PackedByteArray("AAD5//z/AQAEAAgAAAD6//v/AQAEAAgAAAD8//r/AQAEAAgAAAD9//r/AQAEAAgAAAD+//n/AQAEAAgAAAD///n/AQAEAAgAAAAAAPn/AQAEAAgAAAACAPj/AQAEAAgAAAADAPj/AQAEAAgAAAAEAPj/AQAEAAgAAAAFAPj/AQAEAAgAAAAGAPj/AQAEAAgAAAAHAPj/AQAEAAgAAAAIAPj/AQAEAAgAAAAMAPr/AQAEAAgAAAABAPj/AQAEAAgAAAAMAPz/AQAEAAgAAAALAPz/AQAEAAgAAAANAPj/AQAEAAgAAAA=")
 tile_set = ExtResource("2_45xta")
 
 [node name="BackgroundTrees" type="TileMapLayer" parent="Tilemaps" unique_id=849901585]
 z_index = -2
 material = SubResource("ShaderMaterial_5cf55")
-position = Vector2(-222, 5)
+position = Vector2(-222, 101)
 tile_map_data = PackedByteArray("AAACAAEAAAAAAAAAAAD//wEAAAAAAAAAAAADAAEAAAADAAAAAAAAAAEAAAADAAAAAAAFAAEAAAAEAAAAAAA=")
 tile_set = SubResource("TileSet_wesbb")
 collision_enabled = false
@@ -177,6 +178,7 @@ collision_enabled = false
 z_index = -2
 material = SubResource("ShaderMaterial_5cf55")
 position = Vector2(-222, 5)
+tile_map_data = PackedByteArray("AAABAAMAAQAEAAIAAAACAAIAAQAEAAIAAAAFAAUAAQAEAAIAAAAHAAQAAQAEAAIAAAAIAAMAAQAEAAIAAAAKAAEAAQAEAAIAAAALAAAAAQAEAAIAAAAMAP//AQAEAAIAAAD+/wMAAQAEAAIAAAD9/wMAAQAEAAIAAAD8/wMAAQAEAAIAAAD//wUAAQAEAAIAAAAAAAUAAQAEAAIAAAADAAYAAQAEAAIAAAAEAAYAAQAEAAIAAAAGAAYAAQAEAAIAAAD///v/AQAEAAIAAAD///7/AQAEAAgAAAD+////AQAEAAgAAAD9////AQAEAAgAAAD8/wIAAQAEAAgAAAA=")
 tile_set = ExtResource("2_45xta")
 collision_enabled = false
 
@@ -211,6 +213,10 @@ unique_name_in_owner = true
 position = Vector2(186, -194)
 
 [node name="Fog" parent="." unique_id=1507834529 instance=ExtResource("7_hhqlp")]
+position = Vector2(-64, 13)
+
+[node name="KillZone" parent="Fog" unique_id=1777521344 instance=ExtResource("11_o2ahx")]
+position = Vector2(9, 354)
 
 [node name="WorldEnvironment" parent="." unique_id=1101015796 instance=ExtResource("8_wesbb")]
 
