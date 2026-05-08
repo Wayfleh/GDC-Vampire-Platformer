@@ -7,4 +7,5 @@ func _ready() -> void:
 	$Return.pressed.connect(return_to_main_menu)
 
 func return_to_main_menu():
+	GlobalMusic.SFX_Bookhit()
 	get_tree().change_scene_to_file("res://UI/MainMenu.tscn")

@@ -10,9 +10,9 @@ script = ExtResource("1_04ad0")
 [node name="KeyLetter" type="Label" parent="." unique_id=217804761]
 z_index = 1
 offset_left = -20.0
-offset_top = -12.0
+offset_top = -16.0
 offset_right = 20.0
-offset_bottom = 13.0
+offset_bottom = 14.0
 text = "E"
 label_settings = ExtResource("1_tmy18")
 horizontal_alignment = 1
