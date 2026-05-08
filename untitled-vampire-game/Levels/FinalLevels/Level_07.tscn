@@ -481,7 +481,6 @@ unique_name_in_owner = true
 position = Vector2(222, -5)
 
 [node name="ButtonInstruction" parent="." unique_id=984686626 instance=ExtResource("12_46dt4")]
-z_index = 20
 position = Vector2(178, 89)
 letter = "R"
 
