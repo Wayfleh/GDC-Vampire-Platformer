@@ -19,20 +19,23 @@ shader = ExtResource("2_f2rh6")
 shader_parameter/darkness = 0.350000016625
 shader_parameter/blue_color = Color(0.13541102, 0.34736264, 0.73924, 1)
 shader_parameter/intensity = 0.2110000100225
+shader_parameter/transparency = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v70ti"]
 shader = ExtResource("2_f2rh6")
 shader_parameter/darkness = 0.350000016625
 shader_parameter/blue_color = Color(0.13541102, 0.34736264, 0.73924, 1)
 shader_parameter/intensity = 0.2110000100225
+shader_parameter/transparency = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t2om5"]
 shader = ExtResource("2_f2rh6")
 shader_parameter/darkness = 0.350000016625
 shader_parameter/blue_color = Color(0.13541102, 0.34736264, 0.73924, 1)
 shader_parameter/intensity = 0.2110000100225
+shader_parameter/transparency = 1.0
 
-[sub_resource type="Shader" id="Shader_a0o3x"]
+[sub_resource type="Shader" id="Shader_qdiu3"]
 code = "shader_type canvas_item;
 uniform float darkness : hint_range(0.0, 1.0) = 0.5;
 
@@ -51,7 +54,7 @@ void fragment() {
 }"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8kv5i"]
-shader = SubResource("Shader_a0o3x")
+shader = SubResource("Shader_qdiu3")
 shader_parameter/darkness = 0.350000016625
 shader_parameter/blue_color = Color(0.13541102, 0.34736264, 0.73924, 1)
 shader_parameter/intensity = 0.2110000100225
@@ -86,6 +89,7 @@ shader = ExtResource("2_f2rh6")
 shader_parameter/darkness = 0.5
 shader_parameter/blue_color = Color(0.13541102, 0.34736264, 0.73924, 1)
 shader_parameter/intensity = 0.2110000100225
+shader_parameter/transparency = 1.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8nnte"]
 texture = ExtResource("5_a0o3x")
