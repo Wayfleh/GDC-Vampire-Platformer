@@ -437,6 +437,7 @@ unique_name_in_owner = true
 [node name="Camera2D" type="Camera2D" parent="." unique_id=409163092]
 
 [node name="placeholderlabelSuperjump" type="Label" parent="." unique_id=709557522]
+visible = false
 offset_left = -153.0
 offset_top = 1.0
 offset_right = -113.0

@@ -376,6 +376,7 @@ position = Vector2(161, 114)
 position = Vector2(-311, -177)
 
 [node name="placeholderlabelFling" type="Label" parent="." unique_id=1520226327]
+visible = false
 offset_left = 21.0
 offset_top = -160.0
 offset_right = 61.0
@@ -383,6 +384,7 @@ offset_bottom = -137.0
 text = "J"
 
 [node name="ButtonInstructionJ" parent="." unique_id=984686626 instance=ExtResource("10_1ayck")]
+visible = false
 position = Vector2(-66, -136)
 letter = "J"
 

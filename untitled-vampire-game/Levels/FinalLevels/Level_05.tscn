@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="9_gvucg"]
 [ext_resource type="PackedScene" uid="uid://ndbodfavegpb" path="res://Misc/kill_zone.tscn" id="11_oy7oe"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="11_v4483"]
+[ext_resource type="PackedScene" uid="uid://cklmtejug5xhr" path="res://Misc/ButtonInstruction.tscn" id="15_367fx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nr5gb"]
 texture = ExtResource("3_obqlb")
@@ -274,3 +275,13 @@ position = Vector2(385, -47)
 
 [node name="KillZone" parent="." unique_id=1777521344 instance=ExtResource("11_oy7oe")]
 position = Vector2(222, 431)
+
+[node name="ButtonInstruction" parent="." unique_id=984686626 instance=ExtResource("15_367fx")]
+z_index = 99
+position = Vector2(16, 26)
+letter = "J"
+
+[node name="ButtonInstruction2" parent="." unique_id=1511427662 instance=ExtResource("15_367fx")]
+z_index = 99
+position = Vector2(-55, 27)
+letter = "E"

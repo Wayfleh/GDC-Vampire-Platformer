@@ -322,7 +322,6 @@ letter = "W"
 
 [node name="ButtonInstructionE" parent="." unique_id=1160192943 instance=ExtResource("11_f4oyo")]
 position = Vector2(155, 131)
-scale = Vector2(-1, 1)
 letter = "E"
 
 [editable path="Player"]
