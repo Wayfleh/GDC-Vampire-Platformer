@@ -6,6 +6,8 @@ extends Node2D
 
 @onready var musicTracks : Array[AudioStreamPlayer2D] = [overworld, main_menu, challenge]
 
+@onready var sfx_bookhit: AudioStreamPlayer2D = $SFX_Bookhit
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -44,3 +46,6 @@ func ChangeTrack(track:String):
 func StopAll():
 	for track in musicTracks:
 		track.stop()
+
+func SFX_Bookhit():
+	sfx_bookhit.play()

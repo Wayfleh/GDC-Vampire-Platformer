@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://ckiph8d3epe0a"]
+
+[ext_resource type="Shader" uid="uid://1b1v6l8muomj" path="res://Art/tileSet/Decoration/background.gdshader" id="1_g0ov0"]
+
+[resource]
+shader = ExtResource("1_g0ov0")
+shader_parameter/darkness = 0.390000018525
+shader_parameter/blue_color = Color(0.13541102, 0.34736264, 0.73924, 1)
+shader_parameter/intensity = 0.2110000100225
+shader_parameter/transparency = 1.0

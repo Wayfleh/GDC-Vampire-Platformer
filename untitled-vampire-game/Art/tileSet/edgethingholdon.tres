@@ -1,4 +1,8 @@
-shader_type canvas_item;
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dmetugsor0gkk"]
+
+[sub_resource type="Shader" id="Shader_ll3r2"]
+code = "shader_type canvas_item;
+render_mode blend_add;
 uniform float darkness : hint_range(0.0, 1.0) = 0.5;
 
 uniform vec4 blue_color : source_color = vec4(0.0, 0.0, 1.0, 1.0); 
@@ -14,4 +18,11 @@ void fragment() {
     // Multiply the RGB values by the darkness factor
     // We keep the original alpha (tex_color.a) so transparency isn't affected
     COLOR = vec4(blue_tinted * darkness, transparency * tex_color.a);
-}
+}"
+
+[resource]
+shader = SubResource("Shader_ll3r2")
+shader_parameter/darkness = 0.2000000095
+shader_parameter/blue_color = Color(0.72290987, 0.7884086, 0.9864666, 1)
+shader_parameter/intensity = 0.2000000095
+shader_parameter/transparency = 0.4790000227525

@@ -1,12 +1,14 @@
 [gd_resource type="TileSet" format=3 uid="uid://bkks64xk7pou6"]
 
-[ext_resource type="Texture2D" uid="uid://jg2hgxrmymlf" path="res://Art/tileSet/tileset.png" id="1_ey813"]
 [ext_resource type="Texture2D" uid="uid://baicqthiobfeh" path="res://Art/tileSet/tiles-set_grass-32x32.png" id="2_fqvwo"]
 [ext_resource type="Texture2D" uid="uid://61xwbolil1p7" path="res://Art/tileSet/Decoration/tiles-set_fences-32x32.png" id="3_14p5m"]
 [ext_resource type="Texture2D" uid="uid://x01jktlxrmig" path="res://Art/tileSet/tiles-set_grass-32x32_v2.png" id="5_k00fh"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4xqkk"]
+load_path = "res://.godot/imported/tiles-set_grass-32x32_v2.png-dcc0ba7fff119afd53b91dce1184c4c3.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kin0h"]
-texture = ExtResource("1_ey813")
+texture = SubResource("CompressedTexture2D_4xqkk")
 texture_region_size = Vector2i(32, 32)
 2:1/0 = 0
 3:1/0 = 0

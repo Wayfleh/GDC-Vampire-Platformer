@@ -23,4 +23,6 @@ func _process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey && !button_pressed:
 		button_pressed = true
+		GlobalMusic.SFX_Bookhit()
+		await get_tree().create_timer(GlobalMusic.sfx_bookhit.stream.get_length()).timeout
 		GlobalData.next_level()

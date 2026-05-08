@@ -119,9 +119,9 @@ func readBloodChamber(function: String):
 		print("blood_container.gd: readBloodChamber() invalid parameter?")
 
 #SHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
-func do_the_bit(type: GlobalData.Animals):
+func do_the_bit():
 	var token_sprite = Sprite2D.new()
-	token_sprite.texture = sprites[1] if type == GlobalData.Animals.FROG else sprites[2]
+	token_sprite.texture = sprites[1] if GlobalData.blood_chamber[2] == GlobalData.Animals.FROG else sprites[2]
 	add_child(token_sprite)
 	hbcb_distance_y -= 16
 	if hbcb_distance_y <= -378:
