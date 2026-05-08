@@ -633,7 +633,7 @@ shader_parameter/blue_color = Color(0.13541102, 0.34736264, 0.73924, 1)
 shader_parameter/intensity = 0.2110000100225
 shader_parameter/transparency = 1.0
 
-[node name="Level1" type="Node2D" unique_id=1583682183]
+[node name="Level2" type="Node2D" unique_id=1583682183]
 
 [node name="BGImage" type="Sprite2D" parent="." unique_id=276155856]
 z_index = -1504
@@ -671,7 +671,7 @@ tile_set = ExtResource("2_6drxt")
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(-220, 11)
-tile_map_data = PackedByteArray("AAD9//z/AwAEAAAAAAAXAPX/AwAEAAAAAAD3/wEAAwAAAAAAAADz/wkAAwAAAAAAAAAYAPn/AwAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD9//z/AwAEAAAAAAAXAPX/AwAEAAAAAAD3/wEAAwAAAAAAAADz/wkAAwAAAAAAAAAYAPn/AwAAAAAAAAD4//7/AgAAAAAAAAD5//7/AgABAAAAAAD6//7/AgADAAAAAAAQAAQAAgAAAAAAAAARAAQAAgABAAAAAAASAAQAAgADAAAAAAA=")
 tile_set = SubResource("TileSet_gsa68")
 
 [node name="KillZone" parent="Tilemaps" unique_id=1777521344 instance=ExtResource("3_5d7e3")]
