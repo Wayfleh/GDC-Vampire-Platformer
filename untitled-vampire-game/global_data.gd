@@ -32,6 +32,7 @@ func _ready() -> void:
 	hilarious_blood_chamber_bit = false
 	level_files = DirAccess.get_files_at(levels_path)
 	ch_level_files = DirAccess.get_files_at(ch_levels_path)
+	levels = level_files
 
 
 func start_level() -> void:

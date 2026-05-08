@@ -1,7 +1,7 @@
 extends Control
 
 @onready var scroll: ScrollContainer = $Scroller
-@export var scroll_speed: int = 100
+@export var scroll_speed: int = 75
 
 var curr_scroll: float = 0
 var button_pressed: bool = false
@@ -17,12 +17,12 @@ func _process(delta: float) -> void:
 		scroll.scroll_vertical += 1
 		curr_scroll = 0
 	
-	if scroll.scroll_vertical >= scroll.get_v_scroll_bar().max_value - scroll.get_v_scroll_bar().page:
+	if scroll.scroll_vertical >= scroll.get_v_scroll_bar().max_value - scroll.get_v_scroll_bar().page && !button_pressed:
+		button_pressed = true
 		GlobalData.next_level()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey && !button_pressed:
 		button_pressed = true
 		GlobalMusic.SFX_Bookhit()
-		await get_tree().create_timer(GlobalMusic.sfx_bookhit.stream.get_length()).timeout
 		GlobalData.next_level()

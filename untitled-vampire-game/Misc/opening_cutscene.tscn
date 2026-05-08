@@ -42,6 +42,9 @@ layout_mode = 1
 offset_left = 278.0
 offset_right = 657.0
 offset_bottom = 516.0
+mouse_filter = 0
+mouse_behavior_recursive = 1
+mouse_force_pass_scroll_events = false
 vertical_scroll_mode = 3
 
 [node name="Story" type="RichTextLabel" parent="Scroller" unique_id=704026172]
