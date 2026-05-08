@@ -33,10 +33,6 @@ func _ready() -> void:
 	level_files = DirAccess.get_files_at(levels_path)
 	ch_level_files = DirAccess.get_files_at(ch_levels_path)
 
-#FOR DEBUGGING ONLY, TAKE THIS OUT LATER
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("debug_next_level"):
-		next_level()
 
 func start_level() -> void:
 	print("LEVEL MANAGER READY IN SCENE:", get_tree().current_scene.name)
