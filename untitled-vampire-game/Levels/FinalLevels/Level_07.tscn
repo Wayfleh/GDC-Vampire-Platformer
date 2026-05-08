@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="9_gvucg"]
 [ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="10_wv8qu"]
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="11_v4483"]
+[ext_resource type="PackedScene" uid="uid://cklmtejug5xhr" path="res://Misc/ButtonInstruction.tscn" id="12_46dt4"]
 [ext_resource type="PackedScene" uid="uid://b1k3vejyw11ab" path="res://Levels/MatLevels/fog.tscn" id="13_43rgy"]
 [ext_resource type="PackedScene" uid="uid://cy7xnhnawsqe0" path="res://Levels/MatLevels/world_environment.tscn" id="14_le7dr"]
 
@@ -478,6 +479,11 @@ unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1630121106]
 position = Vector2(222, -5)
+
+[node name="ButtonInstruction" parent="." unique_id=984686626 instance=ExtResource("12_46dt4")]
+z_index = 20
+position = Vector2(178, 89)
+letter = "R"
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("9_gvucg")]
 position = Vector2(392, -150)
