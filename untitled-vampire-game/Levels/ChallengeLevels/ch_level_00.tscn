@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cfccsqvvg7x5g" path="res://Art/Sprites/VampRat/dirtmound2.png" id="8_t6b5y"]
 [ext_resource type="PackedScene" uid="uid://ndbodfavegpb" path="res://Misc/kill_zone.tscn" id="9_1ljyn"]
 
-[sub_resource type="Shader" id="Shader_4j4yj"]
+[sub_resource type="Shader" id="Shader_lb3hf"]
 code = "shader_type canvas_item;
 uniform float darkness : hint_range(0.0, 1.0) = 0.5;
 
@@ -33,7 +33,7 @@ void fragment() {
 }"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tjxmp"]
-shader = SubResource("Shader_4j4yj")
+shader = SubResource("Shader_lb3hf")
 shader_parameter/darkness = 0.350000016625
 shader_parameter/blue_color = Color(0.13541102, 0.34736264, 0.73924, 1)
 shader_parameter/intensity = 0.2110000100225
