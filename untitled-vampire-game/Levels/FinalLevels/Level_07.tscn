@@ -465,14 +465,13 @@ collision_enabled = false
 position = Vector2(323, -139)
 scale = Vector2(1.0546212, 1)
 
+[node name="Rat3" parent="Animals" unique_id=644031589 instance=ExtResource("7_apybv")]
+position = Vector2(-180.99998, -45)
+scale = Vector2(-1.1050001, 1.0799997)
+
 [node name="Rat2" parent="Animals" unique_id=439533986 instance=ExtResource("7_apybv")]
 position = Vector2(398, -14)
 scale = Vector2(1.76, 1.9999985)
-
-[node name="Rat3" parent="Animals" unique_id=593198475 instance=ExtResource("7_apybv")]
-position = Vector2(-181, -45.999992)
-rotation = 3.1415925
-scale = Vector2(1.5509952, -1.6327975)
 
 [node name="UI" parent="." unique_id=889175113 instance=ExtResource("8_0legg")]
 unique_name_in_owner = true
