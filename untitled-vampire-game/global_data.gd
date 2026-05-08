@@ -52,11 +52,11 @@ func animal_bitten():
 		level_complete = true
 
 func blood_collected(animal : Area2D):
-	if hilarious_blood_chamber_bit && blood_chamber.size() == 3:
-		do_the_bit.emit(animal.type)
 	blood_chamber.push_front(animal.type)
 	if (blood_chamber.size() > 3):
 		blood_chamber.resize(3)
+	if hilarious_blood_chamber_bit && blood_chamber.size() == 3:
+		do_the_bit.emit()
 	return
 	
 func blood_cycle():
@@ -76,7 +76,7 @@ func next_level():
 	charges = 0
 	curr_level_index += 1
 	var level_path: String
-	if challenge && curr_level_index == levels.size() - 1:
+	if challenge && (curr_level_index == levels.size() - 1):
 		hilarious_blood_chamber_bit = true
 	level_path = curr_path + "/" + levels.get(curr_level_index)
 	if curr_level_index >= levels.size():

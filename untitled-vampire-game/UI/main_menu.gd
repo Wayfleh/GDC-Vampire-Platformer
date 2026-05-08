@@ -43,12 +43,16 @@ func _unhandled_input(event: InputEvent) -> void:
 func _on_play_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Misc/opening_cutscene.tscn")
 	GlobalMusic.ChangeTrack("overworld")
+	GlobalMusic.SFX_Bookhit()
 #goes to level01 if pressed
 
 
 func _on_quit_button_2_pressed() -> void:
+	GlobalMusic.SFX_Bookhit()
+	await get_tree().create_timer(GlobalMusic.sfx_bookhit.stream.get_length()).timeout
 	get_tree().quit()
 
 
 func _on_credits_button_pressed() -> void:
+	GlobalMusic.SFX_Bookhit()
 	get_tree().change_scene_to_file("res://UI/credits.tscn") # Replace with function body.

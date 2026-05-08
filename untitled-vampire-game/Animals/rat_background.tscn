@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://cj6q3oovxwvot"]
+
+[ext_resource type="Material" uid="uid://ckiph8d3epe0a" path="res://backgroundShader.tres" id="1_82uj4"]
+[ext_resource type="Texture2D" uid="uid://brcpblvnq0dqd" path="res://Art/Sprites/rat animal/rat_ko.png" id="1_et38c"]
+[ext_resource type="Texture2D" uid="uid://bfeynyhtqwgeb" path="res://Art/Sprites/rat animal/anim_mouse_eep.png" id="2_82uj4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftkj1"]
+atlas = ExtResource("1_et38c")
+region = Rect2(0, 0, 44, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63cbq"]
+atlas = ExtResource("1_et38c")
+region = Rect2(44, 0, 44, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0w81"]
+atlas = ExtResource("1_et38c")
+region = Rect2(88, 0, 44, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycq5r"]
+atlas = ExtResource("2_82uj4")
+region = Rect2(0, 0, 36, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bgo2"]
+atlas = ExtResource("2_82uj4")
+region = Rect2(36, 0, 36, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxtex"]
+atlas = ExtResource("2_82uj4")
+region = Rect2(72, 0, 36, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb2y5"]
+atlas = ExtResource("2_82uj4")
+region = Rect2(108, 0, 36, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2icp"]
+atlas = ExtResource("2_82uj4")
+region = Rect2(72, 0, 36, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axao4"]
+atlas = ExtResource("2_82uj4")
+region = Rect2(36, 0, 36, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_relks"]
+atlas = ExtResource("2_82uj4")
+region = Rect2(0, 0, 36, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h03w7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftkj1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63cbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0w81")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycq5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bgo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxtex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vb2y5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2icp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axao4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_relks")
+}],
+"loop": true,
+"name": &"snooze",
+"speed": 5.0
+}]
+
+[node name="rat_background" type="AnimatedSprite2D" unique_id=948139171]
+material = ExtResource("1_82uj4")
+sprite_frames = SubResource("SpriteFrames_h03w7")
+animation = &"snooze"
+autoplay = "snooze"
