@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b1k3vejyw11ab" path="res://Levels/MatLevels/fog.tscn" id="10_ouekc"]
 [ext_resource type="PackedScene" uid="uid://cy7xnhnawsqe0" path="res://Levels/MatLevels/world_environment.tscn" id="11_joc07"]
 
-[sub_resource type="Shader" id="Shader_4j4yj"]
+[sub_resource type="Shader" id="Shader_tl4dq"]
 code = "shader_type canvas_item;
 uniform float darkness : hint_range(0.0, 1.0) = 0.5;
 
@@ -31,7 +31,7 @@ void fragment() {
 }"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vry70"]
-shader = SubResource("Shader_4j4yj")
+shader = SubResource("Shader_tl4dq")
 shader_parameter/darkness = 0.350000016625
 shader_parameter/blue_color = Color(0.13541102, 0.34736264, 0.73924, 1)
 shader_parameter/intensity = 0.2110000100225
@@ -51,7 +51,6 @@ shader_parameter/intensity = 0.2110000100225
 shader_parameter/transparency = 1.0
 
 [node name="Level1" type="Node2D" unique_id=1583682183]
-position = Vector2(1, -9)
 
 [node name="BGImage" type="Sprite2D" parent="." unique_id=276155856]
 z_index = -99
