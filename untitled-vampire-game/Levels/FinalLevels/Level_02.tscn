@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://kjx4sjwtkgui" path="res://Levels/door.tscn" id="6_exfpd"]
 [ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="10_0v2nc"]
 [ext_resource type="PackedScene" uid="uid://cklmtejug5xhr" path="res://Misc/ButtonInstruction.tscn" id="11_ri7ki"]
+[ext_resource type="PackedScene" uid="uid://cax43ypapfiyo" path="res://Misc/Round Button Instruction/roundButtonBlue.tscn" id="13_pok7v"]
+[ext_resource type="PackedScene" uid="uid://bw6jm4h51oxq6" path="res://Misc/Round Button Instruction/roundButtonYellow.tscn" id="14_f8wxh"]
+[ext_resource type="PackedScene" uid="uid://dadimckeexa36" path="res://Misc/Round Button Instruction/roundButtonRed.tscn" id="15_c0uei"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m34yy"]
 shader = ExtResource("3_xm0fc")
@@ -305,5 +308,23 @@ position = Vector2(140, 159)
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("6_exfpd")]
 position = Vector2(-137, 125)
+
+[node name="Sprite2D" parent="." unique_id=1236658858 instance=ExtResource("13_pok7v")]
+position = Vector2(114, -31)
+
+[node name="Sprite2D2" parent="." unique_id=760158507 instance=ExtResource("14_f8wxh")]
+position = Vector2(65, -31)
+
+[node name="Sprite2D3" parent="." unique_id=1745204775 instance=ExtResource("15_c0uei")]
+position = Vector2(15, -30)
+
+[node name="Sprite2D4" parent="." unique_id=276205218 instance=ExtResource("13_pok7v")]
+position = Vector2(115, 17)
+
+[node name="Sprite2D5" parent="." unique_id=1878212519 instance=ExtResource("14_f8wxh")]
+position = Vector2(65, 17)
+
+[node name="Sprite2D6" parent="." unique_id=829140528 instance=ExtResource("15_c0uei")]
+position = Vector2(15, 18)
 
 [editable path="Player"]
