@@ -39,6 +39,14 @@ func _ready() -> void:
 func start_level() -> void:
 	changing_level = false
 	print("LEVEL MANAGER READY IN SCENE:", get_tree().current_scene.name)
+	var current_file: String = get_tree().current_scene.scene_file_path.get_file()
+	var found_index: int = levels.find(current_file)
+
+	if found_index != -1:
+		curr_level_index = found_index
+		print("Current level index set to:", curr_level_index, "from file:", current_file)
+	else:
+		print("Current scene not found in levels list:", current_file)
 	animals_remaining = get_tree().get_nodes_in_group("animals").size()
 	print("Animals in level:", animals_remaining)
 

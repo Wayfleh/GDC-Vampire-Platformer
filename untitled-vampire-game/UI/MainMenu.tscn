@@ -37,14 +37,17 @@ theme_override_font_sizes/font_size = 48
 text = "                           "
 
 [node name="PlayButton" type="TextureButton" parent="CenterContainer/VBoxContainer" unique_id=1059689758]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("3_8aown")
 
 [node name="QuitButton2" type="TextureButton" parent="CenterContainer/VBoxContainer" unique_id=207464797]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("4_t6syg")
 
 [node name="CreditsButton" type="TextureButton" parent="CenterContainer/VBoxContainer" unique_id=1248020181]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("5_y6s48")
 
