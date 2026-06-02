@@ -26,7 +26,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventKey and event.is_pressed():
+	if event is InputEventKey and event.is_pressed() and not event.is_echo():
+		if event.is_action_pressed("arcade_start") and sequence_index == 0:
+			get_viewport().set_input_as_handled()
+			start_game()
+			return
+		
 		if event.is_action(chinese_sequence[sequence_index]):
 			sequence_index += 1
 			print(sequence_index)
@@ -40,11 +45,14 @@ func _unhandled_input(event: InputEvent) -> void:
 			sequence_index = 0
 
 
-func _on_play_button_pressed() -> void:
+func start_game() -> void:
 	get_tree().change_scene_to_file("res://Misc/opening_cutscene.tscn")
 	GlobalMusic.ChangeTrack("overworld")
 	GlobalMusic.SFX_Bookhit()
-#goes to level01 if pressed
+
+
+func _on_play_button_pressed() -> void:
+	start_game()
 
 
 func _on_quit_button_2_pressed() -> void:

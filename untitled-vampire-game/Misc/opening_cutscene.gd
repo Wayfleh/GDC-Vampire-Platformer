@@ -5,10 +5,15 @@ extends Control
 
 var curr_scroll: float = 0
 var button_pressed: bool = false
+var can_skip: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	button_pressed = false
+	can_skip = false
+	
+	await get_tree().create_timer(0.3).timeout
+	can_skip = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 	
 func _process(delta: float) -> void:
@@ -22,6 +27,8 @@ func _process(delta: float) -> void:
 		GlobalData.next_level()
 
 func _unhandled_input(event: InputEvent) -> void:
+	if !can_skip or button_pressed:
+		return
 	if event is InputEventKey && !button_pressed:
 		button_pressed = true
 		GlobalMusic.SFX_Bookhit()
