@@ -287,3 +287,5 @@ position = Vector2(209, -30)
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("7_ae5et")]
 position = Vector2(101, -62)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=777707533]
