@@ -1,21 +1,31 @@
 extends Node
 
-var quit_hold_time:= 0.0
+var key_1_held := false
+var key_2_held := false
+
+var quit_hold_time := 0.0
 const HOLD_REQUIRED := 1.0
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	pass # Replace with function body.
+	print("ArcadeQuit autoload is running")
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.physical_keycode == KEY_1 or event.keycode == KEY_1:
+			key_1_held = event.pressed
+			print("key 1 held: ", key_1_held)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float)
-	var key_1_pressed = Input.is.physical_key_pressed(KEY_1)
-	var key_2_pressed = Input.is.physical_key_pressed(KEY_2)
-	
-	if key_1_pressed and key_2_pressed:
+		if event.physical_keycode == KEY_2 or event.keycode == KEY_2:
+			key_2_held = event.pressed
+			print("key 2 held: ", key_2_held)
+
+func _process(delta: float) -> void:
+	if key_1_held and key_2_held:
 		quit_hold_time += delta
-		
-	if quit_hold_time >= HOLD_REQUIRED:
-		get_tree().quit()
+		print("both held: ", quit_hold_time)
+
+		if quit_hold_time >= HOLD_REQUIRED:
+			print("quitting now")
+			get_tree().quit()
 	else:
 		quit_hold_time = 0.0
