@@ -133,5 +133,6 @@ position = Vector2(-157, 238)
 letter = "A"
 
 [node name="Fog" parent="." unique_id=1507834529 instance=ExtResource("8_50qp1")]
+position = Vector2(-16, 0)
 
 [node name="WorldEnvironment" parent="." unique_id=1101015796 instance=ExtResource("9_33yo7")]
