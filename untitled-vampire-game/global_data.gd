@@ -11,6 +11,7 @@ var restarted: bool = false
 
 var levels_path: String = "res://Levels/FinalLevels"
 var ch_levels_path: String = "res://Levels/ChallengeLevels/"
+var changing_level: bool = false
 
 var curr_path: String = levels_path
 
@@ -36,6 +37,7 @@ func _ready() -> void:
 
 
 func start_level() -> void:
+	changing_level = false
 	print("LEVEL MANAGER READY IN SCENE:", get_tree().current_scene.name)
 	animals_remaining = get_tree().get_nodes_in_group("animals").size()
 	print("Animals in level:", animals_remaining)
@@ -69,6 +71,10 @@ func blood_cycle():
 	return
 
 func next_level():
+	if changing_level:
+		print("Duplicate next_level() ignored")
+		return
+	changing_level = true
 	blood_chamber.clear()
 	charges = 0
 	curr_level_index += 1
