@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://deywo0q4v1kj8" path="res://Levels/door.gd" id="1_c5cab"]
 [ext_resource type="Texture2D" uid="uid://dhf8xaawmn15n" path="res://Art/Custom Icons/anim_gate.png" id="3_o6o21"]
 [ext_resource type="FontFile" uid="uid://clomxcxkqvoww" path="res://Art/UI/PixelifySans-VariableFont_wght.ttf" id="3_ppseb"]
-[ext_resource type="Shader" uid="uid://bo2cbvgqvg3dx" path="res://UI/level_no_anti_alias.gdshader" id="3_tf1mp"]
+[ext_resource type="Shader" uid="uid://bo2cbvgqvg3dx" path="res://UI/utility/level_no_anti_alias.gdshader" id="3_tf1mp"]
 [ext_resource type="AudioStream" uid="uid://b01i8t583rqe7" path="res://Sounds/enviornment/DoorOpening.wav" id="4_tf1mp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_obau8"]

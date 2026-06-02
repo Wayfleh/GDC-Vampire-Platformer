@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cvkwjdraycyer"]
+
+[ext_resource type="Texture2D" uid="uid://cxhu7rfhklp6s" path="res://Art/UI/buttons/roundbuttons/controlbutton_green.png" id="1_odq5b"]
+
+[node name="Sprite2D" type="Sprite2D" unique_id=1236658858]
+texture_filter = 1
+texture = ExtResource("1_odq5b")

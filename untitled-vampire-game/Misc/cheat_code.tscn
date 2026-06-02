@@ -4,7 +4,7 @@
 [ext_resource type="Shader" uid="uid://cj5iqnfyfk82" path="res://Misc/opening_cutscene.gdshader" id="2_2wk86"]
 [ext_resource type="Texture2D" uid="uid://bykteu7q3meb" path="res://Art/creditscene_sized.png" id="2_8cdsj"]
 [ext_resource type="FontFile" uid="uid://clomxcxkqvoww" path="res://Art/UI/PixelifySans-VariableFont_wght.ttf" id="4_63rdk"]
-[ext_resource type="Shader" uid="uid://bo2cbvgqvg3dx" path="res://UI/level_no_anti_alias.gdshader" id="4_pkws5"]
+[ext_resource type="Shader" uid="uid://bo2cbvgqvg3dx" path="res://UI/utility/level_no_anti_alias.gdshader" id="4_pkws5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jomyl"]
 shader = ExtResource("2_2wk86")

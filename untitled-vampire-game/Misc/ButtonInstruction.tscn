@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cklmtejug5xhr"]
 
 [ext_resource type="Script" uid="uid://62622c8y6k6y" path="res://Misc/button_instruction.gd" id="1_04ad0"]
-[ext_resource type="LabelSettings" uid="uid://bycc0xodltluf" path="res://UI/keyboardSpriteLabel.tres" id="1_tmy18"]
+[ext_resource type="LabelSettings" uid="uid://bycc0xodltluf" path="res://UI/utility/keyboardSpriteLabel.tres" id="1_tmy18"]
 [ext_resource type="Texture2D" uid="uid://cjjdhhb5v5yq3" path="res://Art/UI/controlbutton.png" id="2_04ad0"]
 
 [node name="ButtonInstruction" type="Node2D" unique_id=984686626]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://da4x5la3k57k5"]
 
-[ext_resource type="Script" uid="uid://qjjp4ms5kaln" path="res://UI/blood_container.gd" id="1_k8fm1"]
+[ext_resource type="Script" uid="uid://qjjp4ms5kaln" path="res://UI/scripts/blood_container.gd" id="1_k8fm1"]
 
 [node name="BloodContainer" type="Node2D" unique_id=270348821]
 script = ExtResource("1_k8fm1")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cyf1k4i72icfy"]
 
-[ext_resource type="Script" uid="uid://cr74mr723eeyf" path="res://UI/credits.gd" id="1_ftffn"]
+[ext_resource type="Script" uid="uid://cr74mr723eeyf" path="res://UI/scripts/credits.gd" id="1_ftffn"]
 [ext_resource type="Texture2D" uid="uid://bykteu7q3meb" path="res://Art/creditscene_sized.png" id="1_kk2ga"]
 [ext_resource type="FontFile" uid="uid://bojfmb0iv5fhc" path="res://Art/UI/Jacquard12-Regular.ttf" id="2_2g780"]
 [ext_resource type="FontFile" uid="uid://clomxcxkqvoww" path="res://Art/UI/PixelifySans-VariableFont_wght.ttf" id="3_ftffn"]
