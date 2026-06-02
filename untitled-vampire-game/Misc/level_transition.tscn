@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://brehqgom45bim"]
 
 [ext_resource type="Shader" uid="uid://c0edk8ulq3gcj" path="res://Misc/level_transition.gdshader" id="1_gij4a"]
-[ext_resource type="Script" uid="uid://brscv60so3yax" path="res://Misc/level_transition.gd" id="1_n72g2"]
+[ext_resource type="Script" path="res://Misc/level_transition.gd" id="1_n72g2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n72g2"]
 shader = ExtResource("1_gij4a")

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cyf1k4i72icfy"]
 
-[ext_resource type="Script" uid="uid://cr74mr723eeyf" path="res://UI/scripts/credits.gd" id="1_t26vu"]
-[ext_resource type="Texture2D" uid="uid://bykteu7q3meb" path="res://Art/creditscene_sized.png" id="2_s4ewu"]
-[ext_resource type="FontFile" uid="uid://bojfmb0iv5fhc" path="res://Art/UI/Jacquard12-Regular.ttf" id="3_bpsyc"]
-[ext_resource type="PackedScene" uid="uid://cunoymdxr6fm2" path="res://Misc/pause_menu_button.tscn" id="4_vvxx8"]
-[ext_resource type="FontFile" uid="uid://clomxcxkqvoww" path="res://Art/UI/PixelifySans-VariableFont_wght.ttf" id="5_pvn2y"]
+[ext_resource type="Script" uid="uid://cr74mr723eeyf" path="res://UI/scripts/credits.gd" id="1_ah2pj"]
+[ext_resource type="Texture2D" uid="uid://bykteu7q3meb" path="res://Art/creditscene_sized.png" id="2_afmrr"]
+[ext_resource type="FontFile" uid="uid://bojfmb0iv5fhc" path="res://Art/UI/Jacquard12-Regular.ttf" id="3_ce3hp"]
+[ext_resource type="PackedScene" uid="uid://cunoymdxr6fm2" path="res://Misc/pause_menu_button.tscn" id="4_dqctc"]
+[ext_resource type="FontFile" uid="uid://clomxcxkqvoww" path="res://Art/UI/PixelifySans-VariableFont_wght.ttf" id="5_nxkb4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ehabf"]
 
@@ -12,13 +12,13 @@
 custom_minimum_size = Vector2(928, 512)
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_t26vu")
+script = ExtResource("1_ah2pj")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1216192855]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_s4ewu")
+texture = ExtResource("2_afmrr")
 
 [node name="CreditTitle" type="Label" parent="." unique_id=193549946]
 material = SubResource("ShaderMaterial_ehabf")
@@ -29,11 +29,11 @@ offset_right = 327.0
 offset_bottom = 151.0
 theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
 theme_override_constants/outline_size = 5
-theme_override_fonts/font = ExtResource("3_bpsyc")
+theme_override_fonts/font = ExtResource("3_ce3hp")
 theme_override_font_sizes/font_size = 100
 text = "Credits"
 
-[node name="Return" parent="." unique_id=1955878795 instance=ExtResource("4_vvxx8")]
+[node name="Return" parent="." unique_id=1955878795 instance=ExtResource("4_dqctc")]
 process_mode = 3
 layout_mode = 0
 offset_left = 454.0
@@ -57,13 +57,13 @@ theme_override_constants/separation = 15
 
 [node name="ProgramTitle" type="Label" parent="HFlowContainer/Programmers" unique_id=1471983536]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_bpsyc")
+theme_override_fonts/font = ExtResource("3_ce3hp")
 theme_override_font_sizes/font_size = 40
 text = "Programmers"
 
 [node name="ProgramNames" type="Label" parent="HFlowContainer/Programmers" unique_id=179443330]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_pvn2y")
+theme_override_fonts/font = ExtResource("5_nxkb4")
 theme_override_font_sizes/font_size = 20
 text = "Cristal Herrera
 Rafael Caculba
@@ -75,13 +75,13 @@ theme_override_constants/separation = 15
 
 [node name="ArtistsTitle" type="Label" parent="HFlowContainer/Artists" unique_id=87793751]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_bpsyc")
+theme_override_fonts/font = ExtResource("3_ce3hp")
 theme_override_font_sizes/font_size = 40
 text = "Artists"
 
 [node name="ArtistsNames" type="Label" parent="HFlowContainer/Artists" unique_id=713471923]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_pvn2y")
+theme_override_fonts/font = ExtResource("5_nxkb4")
 theme_override_font_sizes/font_size = 20
 text = "Caustic Kat
 iinochu"
@@ -92,12 +92,12 @@ theme_override_constants/separation = 15
 
 [node name="SoundTitle" type="Label" parent="HFlowContainer/VBoxContainer" unique_id=1170353699]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_bpsyc")
+theme_override_fonts/font = ExtResource("3_ce3hp")
 theme_override_font_sizes/font_size = 40
 text = "Sound Designer"
 
 [node name="Sounder" type="Label" parent="HFlowContainer/VBoxContainer" unique_id=2066014292]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("5_pvn2y")
+theme_override_fonts/font = ExtResource("5_nxkb4")
 theme_override_font_sizes/font_size = 20
 text = "Crowbar Circus"
