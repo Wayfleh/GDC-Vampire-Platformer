@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cjtm3eb8pmfeo"]
+
+[ext_resource type="SpriteFrames" uid="uid://cyp67wt6pcg2t" path="res://Misc/Round Button Instruction/6buttonlayout.tres" id="1_ols6c"]
+
+[node name="6buttonControlsBiteDash" type="Node2D" unique_id=1032759364]
+
+[node name="redUp" type="AnimatedSprite2D" parent="." unique_id=1242733693]
+texture_filter = 1
+sprite_frames = ExtResource("1_ols6c")
+animation = &"darkRed"
+
+[node name="redDown" type="AnimatedSprite2D" parent="." unique_id=1473014621]
+texture_filter = 1
+position = Vector2(0, 33)
+sprite_frames = ExtResource("1_ols6c")
+animation = &"darkRed"
+
+[node name="yellowUp" type="AnimatedSprite2D" parent="." unique_id=1103778812]
+texture_filter = 1
+position = Vector2(33, 0)
+sprite_frames = ExtResource("1_ols6c")
+animation = &"flashYellow"
+autoplay = "flashYellow"
+frame_progress = 0.9025337
+
+[node name="yellowDown" type="AnimatedSprite2D" parent="." unique_id=180595093]
+texture_filter = 1
+position = Vector2(33, 33)
+sprite_frames = ExtResource("1_ols6c")
+animation = &"darkYellow"
+
+[node name="blueUp" type="AnimatedSprite2D" parent="." unique_id=2070888852]
+texture_filter = 1
+position = Vector2(66, 0)
+sprite_frames = ExtResource("1_ols6c")
+animation = &"darkBlue"
+
+[node name="blueDown" type="AnimatedSprite2D" parent="." unique_id=2113084134]
+texture_filter = 1
+position = Vector2(66, 33)
+sprite_frames = ExtResource("1_ols6c")
+animation = &"darkBlue"

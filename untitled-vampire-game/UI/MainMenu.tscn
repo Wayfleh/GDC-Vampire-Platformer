@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://bojfmb0iv5fhc" path="res://Art/UI/Jacquard12-Regular.ttf" id="6_otjfi"]
 [ext_resource type="FontFile" uid="uid://clomxcxkqvoww" path="res://Art/UI/PixelifySans-VariableFont_wght.ttf" id="6_t4ff4"]
 [ext_resource type="Texture2D" uid="uid://cw64amx7tlrag" path="res://Art/round buttons/controlbutton_01.png" id="7_obtq6"]
+[ext_resource type="SpriteFrames" uid="uid://cyp67wt6pcg2t" path="res://Misc/Round Button Instruction/6buttonlayout.tres" id="9_w5vcv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_obtq6"]
 
@@ -71,6 +72,7 @@ theme_override_font_sizes/font_size = 100
 text = "Press         to start"
 
 [node name="Sprite2D" type="Sprite2D" parent="CreditTitle" unique_id=520111849]
+visible = false
 position = Vector2(381.33276, 62.656677)
 scale = Vector2(3, 3)
 texture = ExtResource("7_obtq6")
@@ -91,6 +93,14 @@ theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("6_otjfi")
 theme_override_font_sizes/font_size = 100
 text = "to start"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CreditTitle" unique_id=86909941]
+texture_filter = 1
+position = Vector2(377.5, 62.49994)
+scale = Vector2(3, 3)
+sprite_frames = ExtResource("9_w5vcv")
+animation = &"flashRed"
+autoplay = "flashRed"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton2" to="." method="_on_quit_button_2_pressed"]

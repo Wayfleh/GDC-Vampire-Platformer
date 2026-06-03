@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c2w1do66c54or"]
+
+[ext_resource type="SpriteFrames" uid="uid://cyp67wt6pcg2t" path="res://Misc/Round Button Instruction/6buttonlayout.tres" id="1_toh2x"]
+
+[node name="6buttonControls" type="Node2D" unique_id=1032759364]
+
+[node name="redUp" type="AnimatedSprite2D" parent="." unique_id=1242733693]
+texture_filter = 1
+sprite_frames = ExtResource("1_toh2x")
+animation = &"flashGreen"
+autoplay = "flashGreen"
