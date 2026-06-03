@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bojfmb0iv5fhc" path="res://Art/UI/Jacquard12-Regular.ttf" id="3_ce3hp"]
 [ext_resource type="PackedScene" uid="uid://cunoymdxr6fm2" path="res://Misc/pause_menu_button.tscn" id="4_dqctc"]
 [ext_resource type="FontFile" uid="uid://clomxcxkqvoww" path="res://Art/UI/PixelifySans-VariableFont_wght.ttf" id="5_nxkb4"]
+[ext_resource type="Texture2D" uid="uid://dv43yeanw53x6" path="res://Art/Al_LeCarte_QR.png" id="6_0ccpq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ehabf"]
 
@@ -35,6 +36,7 @@ text = "Credits"
 
 [node name="Return" parent="." unique_id=1955878795 instance=ExtResource("4_dqctc")]
 process_mode = 3
+visible = false
 layout_mode = 0
 offset_left = 454.0
 offset_top = 374.0
@@ -101,3 +103,17 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("5_nxkb4")
 theme_override_font_sizes/font_size = 20
 text = "Crowbar Circus"
+
+[node name="QR Code" type="Sprite2D" parent="." unique_id=670907723]
+position = Vector2(445, 395)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_0ccpq")
+
+[node name="Itch_io" type="Label" parent="QR Code" unique_id=1730147322]
+offset_left = -300.0
+offset_top = -388.0
+offset_right = 189.0
+offset_bottom = -300.0
+theme_override_fonts/font = ExtResource("5_nxkb4")
+theme_override_font_sizes/font_size = 72
+text = "Link to Itch.io"
