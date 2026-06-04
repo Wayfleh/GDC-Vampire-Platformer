@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cy7xnhnawsqe0" path="res://Levels/MatLevels/world_environment.tscn" id="9_33yo7"]
 [ext_resource type="PackedScene" uid="uid://67gixd6ltdn1" path="res://Misc/Round Button Instruction/6_button_controlsJump.tscn" id="10_50qp1"]
 [ext_resource type="PackedScene" uid="uid://c2w1do66c54or" path="res://Misc/Round Button Instruction/6_button_controlsReset.tscn" id="11_33yo7"]
+[ext_resource type="PackedScene" uid="uid://chh8g3tt1ahvr" path="res://Misc/Round Button Instruction/joystickMove.tscn" id="12_gtrnd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gtrnd"]
 shader = ExtResource("3_vg2hb")
@@ -120,6 +121,7 @@ text = "     W
 A   S   D"
 
 [node name="WASD" type="Node2D" parent="." unique_id=1458660883]
+visible = false
 position = Vector2(-257, -34)
 
 [node name="ButtonInstructionW" parent="WASD" unique_id=984686626 instance=ExtResource("7_fmgos")]
@@ -140,7 +142,10 @@ position = Vector2(-16, 0)
 [node name="WorldEnvironment" parent="." unique_id=1101015796 instance=ExtResource("9_33yo7")]
 
 [node name="6buttonControlsJump" parent="." unique_id=1032759364 instance=ExtResource("10_50qp1")]
-position = Vector2(82, 185)
+position = Vector2(-419, 193)
 
 [node name="6buttonControls" parent="." unique_id=375679416 instance=ExtResource("11_33yo7")]
-position = Vector2(-112, 202)
+position = Vector2(-111, 201)
+
+[node name="JoystickInstructionMove" parent="." unique_id=1967242741 instance=ExtResource("12_gtrnd")]
+position = Vector2(-386, 147)

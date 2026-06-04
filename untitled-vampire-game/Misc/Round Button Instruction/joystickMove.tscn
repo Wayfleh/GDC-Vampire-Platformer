@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://chh8g3tt1ahvr"]
+
+[ext_resource type="Texture2D" uid="uid://ds02gqf1swg3m" path="res://Art/UI/buttons/roundbuttons/anim_joystick_rev2.png" id="1_3xs48"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cu8mn"]
+atlas = ExtResource("1_3xs48")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqje0"]
+atlas = ExtResource("1_3xs48")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqcor"]
+atlas = ExtResource("1_3xs48")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v7347"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cu8mn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqje0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cu8mn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fqcor")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.5
+}]
+
+[node name="JoystickInstructionMove" type="Node2D" unique_id=1967242741]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=137876194]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_v7347")
+autoplay = "default"
+frame_progress = 0.0850865
