@@ -91,7 +91,7 @@ func next_level():
 		hilarious_blood_chamber_bit = true
 	level_path = curr_path + "/" + levels.get(curr_level_index)
 	if curr_level_index >= levels.size():
-		level_path = "res://UI/credits.tscn" if challenge else "res://UI/credits.tsc"
+		level_path = "res://UI/credits.tscn" # if challenge else "res://UI/credits.tsc"
 	LevelTransition.transitionOut()
 	await get_tree().create_timer(.32).timeout
 	var level_to_load = load(level_path)

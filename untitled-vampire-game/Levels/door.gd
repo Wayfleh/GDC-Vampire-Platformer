@@ -39,7 +39,7 @@ func _ready() -> void:
 
 func check_level_complete(body: Node2D) -> void:
 	if body is Player and door_open:
-		get_tree().change_scene_to_file("res://UI/credits.tscn")
+		GlobalData.next_level()
 
 func update_animal_number() -> void:
 	animal_number.text = str(GlobalData.animals_remaining)
