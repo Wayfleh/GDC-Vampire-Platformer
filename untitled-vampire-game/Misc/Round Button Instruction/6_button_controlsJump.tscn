@@ -32,7 +32,7 @@ animation = &"darkYellow"
 texture_filter = 1
 position = Vector2(66, 0)
 sprite_frames = ExtResource("1_vmtgq")
-animation = &"darkBlue"
+animation = &"flashBlue"
 
 [node name="blueDown" type="AnimatedSprite2D" parent="." unique_id=2113084134]
 texture_filter = 1

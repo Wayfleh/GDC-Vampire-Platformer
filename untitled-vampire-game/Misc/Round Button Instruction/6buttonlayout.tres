@@ -1,15 +1,15 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://cyp67wt6pcg2t"]
 
 [ext_resource type="Texture2D" uid="uid://b11j0gb54r5bc" path="res://Art/UI/buttons/roundbuttons/smallbuttonDRed.png" id="1_2ibix"]
-[ext_resource type="Texture2D" uid="uid://dpcs76341hrm1" path="res://Art/UI/buttons/roundbuttons/smallButtonDBlue.png" id="1_cjod8"]
+[ext_resource type="Texture2D" uid="uid://dv0rbx6c16f2q" path="res://Art/UI/buttons/roundbuttons/controlbutton_blue1.png" id="1_cjod8"]
 [ext_resource type="Texture2D" uid="uid://dsfc3sef4yivg" path="res://Art/UI/buttons/roundbuttons/smallbuttonRed.png" id="2_xbn35"]
 [ext_resource type="Texture2D" uid="uid://0f6332111861" path="res://Art/UI/buttons/roundbuttons/smallbuttonDYellow.png" id="3_0psq5"]
-[ext_resource type="Texture2D" uid="uid://bv4uasoc7onms" path="res://Art/UI/buttons/roundbuttons/smallButtonBlue.png" id="4_sbest"]
+[ext_resource type="Texture2D" uid="uid://di73xbwjsvyl0" path="res://Art/UI/buttons/roundbuttons/controlbutton_blue0.png" id="4_0psq5"]
 [ext_resource type="Texture2D" uid="uid://cp4c7q3w4pc7e" path="res://Art/UI/buttons/roundbuttons/smallbuttonDGreen.png" id="5_bjn3v"]
 [ext_resource type="Texture2D" uid="uid://bb2ngjno3qcm3" path="res://Art/UI/buttons/roundbuttons/smallbuttonGreen.png" id="6_f71jp"]
 [ext_resource type="Texture2D" uid="uid://cirgu5x3cnlxx" path="res://Art/UI/buttons/roundbuttons/smallbuttonYellow.png" id="8_1udnp"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u44nm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbest"]
 atlas = ExtResource("1_cjod8")
 region = Rect2(0, 0, 40, 40)
 
@@ -21,12 +21,12 @@ region = Rect2(0, 0, 40, 40)
 atlas = ExtResource("3_0psq5")
 region = Rect2(0, 0, 40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mtwxm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjn3v"]
 atlas = ExtResource("1_cjod8")
 region = Rect2(0, 0, 40, 40)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cjod8"]
-atlas = ExtResource("4_sbest")
+[sub_resource type="AtlasTexture" id="AtlasTexture_f71jp"]
+atlas = ExtResource("4_0psq5")
 region = Rect2(0, 0, 40, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ms74b"]
@@ -57,7 +57,7 @@ region = Rect2(0, 0, 40, 40)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u44nm")
+"texture": SubResource("AtlasTexture_sbest")
 }],
 "loop": true,
 "name": &"darkBlue",
@@ -81,10 +81,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mtwxm")
+"texture": SubResource("AtlasTexture_bjn3v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cjod8")
+"texture": SubResource("AtlasTexture_f71jp")
 }],
 "loop": true,
 "name": &"flashBlue",
