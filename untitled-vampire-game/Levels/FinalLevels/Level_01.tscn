@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b1k3vejyw11ab" path="res://Levels/MatLevels/fog.tscn" id="8_50qp1"]
 [ext_resource type="PackedScene" uid="uid://cy7xnhnawsqe0" path="res://Levels/MatLevels/world_environment.tscn" id="9_33yo7"]
 [ext_resource type="PackedScene" uid="uid://67gixd6ltdn1" path="res://Misc/Round Button Instruction/6_button_controlsJump.tscn" id="10_50qp1"]
+[ext_resource type="PackedScene" uid="uid://c2w1do66c54or" path="res://Misc/Round Button Instruction/6_button_controlsReset.tscn" id="11_33yo7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gtrnd"]
 shader = ExtResource("3_vg2hb")
@@ -140,3 +141,6 @@ position = Vector2(-16, 0)
 
 [node name="6buttonControlsJump" parent="." unique_id=1032759364 instance=ExtResource("10_50qp1")]
 position = Vector2(82, 185)
+
+[node name="6buttonControls" parent="." unique_id=375679416 instance=ExtResource("11_33yo7")]
+position = Vector2(-112, 202)

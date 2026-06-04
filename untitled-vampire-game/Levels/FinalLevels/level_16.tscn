@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cvd3m0d2hvnbx" path="res://Animals/frog.tscn" id="7_qb46w"]
 [ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="8_vhsq0"]
 [ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="9_ma2q2"]
+[ext_resource type="PackedScene" uid="uid://bu25huqfb5cab" path="res://Misc/Round Button Instruction/6_button_controlsCycle.tscn" id="13_juhmu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_juhmu"]
 shader = ExtResource("2_362qy")
@@ -174,6 +175,7 @@ tile_map_data = PackedByteArray("AAD9//v/BAABAAMAAAD9//z/BAABAAQAAAD+//z/BAADAAQ
 tile_set = ExtResource("2_6drxt")
 
 [node name="ButtonInstruction" parent="Tilemaps" unique_id=984686626 instance=ExtResource("6_ki88o")]
+visible = false
 position = Vector2(-251, 125)
 letter = "Q"
 
@@ -219,3 +221,6 @@ other_hole = NodePath("../RatHoleA5")
 
 [node name="Door" parent="." unique_id=1512673174 instance=ExtResource("5_lkd0j")]
 position = Vector2(190, 190)
+
+[node name="6buttonControlsCycle" parent="." unique_id=1032759364 instance=ExtResource("13_juhmu")]
+position = Vector2(-242, 103)

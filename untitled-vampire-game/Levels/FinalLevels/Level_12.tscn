@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://y404sm5m3lg3"]
 
-[ext_resource type="Script" path="res://Levels/level.gd" id="1_jnbb5"]
+[ext_resource type="Script" uid="uid://v8cmstrdotrt" path="res://Levels/level.gd" id="1_jnbb5"]
 [ext_resource type="Texture2D" uid="uid://b1nsq1cs3vntd" path="res://Art/bg1.png" id="2_0bxjh"]
 [ext_resource type="PackedScene" uid="uid://d3oa5wxafbr2p" path="res://Art/tileSet/backgroundTiles.tscn" id="3_0bngy"]
 [ext_resource type="TileSet" uid="uid://bkks64xk7pou6" path="res://Art/tileSet/BlueGreenTiles.tres" id="3_3vrqk"]
@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://dv8kjhi3m6bl3" path="res://Player/player.tscn" id="9_rjv3q"]
 [ext_resource type="PackedScene" uid="uid://chki8nvl10xvh" path="res://UI/ui_layer.tscn" id="10_h0i70"]
 [ext_resource type="PackedScene" uid="uid://cklmtejug5xhr" path="res://Misc/ButtonInstruction.tscn" id="11_rwj5m"]
+[ext_resource type="PackedScene" uid="uid://c2w1do66c54or" path="res://Misc/Round Button Instruction/6_button_controlsReset.tscn" id="17_0eyd5"]
+[ext_resource type="PackedScene" uid="uid://cjtm3eb8pmfeo" path="res://Misc/Round Button Instruction/6_button_controlsBiteDash.tscn" id="18_x8uo1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n271t"]
 shader = ExtResource("4_tfss3")
@@ -585,14 +587,22 @@ unique_name_in_owner = true
 z_index = 10
 
 [node name="ButtonInstructionJ" parent="." unique_id=984686626 instance=ExtResource("11_rwj5m")]
+visible = false
 z_index = 10
 position = Vector2(-199, -215)
 letter = "J"
 
 [node name="ButtonInstructionR" parent="." unique_id=1243346540 instance=ExtResource("11_rwj5m")]
+visible = false
 z_index = 10
 position = Vector2(-104, 190)
 letter = "R"
+
+[node name="6buttonControls" parent="." unique_id=1032759364 instance=ExtResource("17_0eyd5")]
+position = Vector2(-104, 129)
+
+[node name="6buttonControlsBiteDash" parent="." unique_id=180311240 instance=ExtResource("18_x8uo1")]
+position = Vector2(-289, -223)
 
 [editable path="Tilemaps/Fog"]
 [editable path="Tilemaps/Fog2"]

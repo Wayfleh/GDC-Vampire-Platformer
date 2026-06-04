@@ -202,7 +202,7 @@ tile_map_data = PackedByteArray("AAAHAP3/AgAAAAAAAAAMAPv/AgAAAAAAAAAJAPz/AgAAAAA
 tile_set = SubResource("TileSet_65lwb")
 
 [node name="Rat" parent="." unique_id=1621375151 instance=ExtResource("8_57ye7")]
-position = Vector2(-39, 203)
+position = Vector2(-39, 212)
 
 [node name="Animals" type="Node2D" parent="." unique_id=1319809549]
 
@@ -219,13 +219,13 @@ position = Vector2(-70, -112)
 position = Vector2(-120, 199)
 
 [node name="HoleAbove" parent="." unique_id=1798485280 node_paths=PackedStringArray("other_hole") instance=ExtResource("13_hmw5x")]
-position = Vector2(158, 9)
+position = Vector2(158, 10)
 other_hole = NodePath("../HoleUnder1")
 
 [node name="HoleUnder1" parent="." unique_id=1707893841 node_paths=PackedStringArray("other_hole") instance=ExtResource("13_hmw5x")]
-position = Vector2(172, 201)
+position = Vector2(172, 202)
 other_hole = NodePath("../HoleUnder2")
 
 [node name="HoleUnder2" parent="." unique_id=1590920239 node_paths=PackedStringArray("other_hole") instance=ExtResource("13_hmw5x")]
-position = Vector2(367, 105)
+position = Vector2(367, 106)
 other_hole = NodePath("../HoleAbove")

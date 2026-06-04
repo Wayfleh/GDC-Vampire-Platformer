@@ -220,3 +220,5 @@ func _process(delta):
 		jump_buffered = false
 	if Input.is_action_just_pressed("jump") && !jump_buffered:
 		jump_buffered = true
+		
+	

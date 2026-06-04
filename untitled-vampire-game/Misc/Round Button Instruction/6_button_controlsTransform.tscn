@@ -24,6 +24,7 @@ sprite_frames = ExtResource("1_7x5yl")
 animation = &"darkYellow"
 
 [node name="blueUp" type="AnimatedSprite2D" parent="." unique_id=2070888852]
+texture_filter = 1
 position = Vector2(66, 0)
 sprite_frames = ExtResource("1_7x5yl")
 animation = &"flashBlue"

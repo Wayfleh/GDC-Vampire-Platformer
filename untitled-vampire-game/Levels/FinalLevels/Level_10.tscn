@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cklmtejug5xhr" path="res://Misc/ButtonInstruction.tscn" id="11_wvh53"]
 [ext_resource type="PackedScene" uid="uid://cy7xnhnawsqe0" path="res://Levels/MatLevels/world_environment.tscn" id="14_6sglf"]
 [ext_resource type="PackedScene" uid="uid://b1k3vejyw11ab" path="res://Levels/MatLevels/fog.tscn" id="15_jr5m4"]
+[ext_resource type="PackedScene" uid="uid://67gixd6ltdn1" path="res://Misc/Round Button Instruction/6_button_controlsJump.tscn" id="18_kkqhm"]
 
 [sub_resource type="Shader" id="Shader_j8580"]
 code = "shader_type canvas_item;
@@ -445,6 +446,7 @@ offset_bottom = 24.0
 text = "W"
 
 [node name="ButtonInstruction" parent="." unique_id=984686626 instance=ExtResource("11_wvh53")]
+visible = false
 position = Vector2(-226, 68)
 letter = "W"
 
@@ -453,3 +455,6 @@ letter = "W"
 [node name="Fog" parent="." unique_id=763216912 instance=ExtResource("15_jr5m4")]
 position = Vector2(-22, 49)
 scale = Vector2(1.1204219, 1.0799981)
+
+[node name="6buttonControlsJump" parent="." unique_id=1032759364 instance=ExtResource("18_kkqhm")]
+position = Vector2(-292, 3)

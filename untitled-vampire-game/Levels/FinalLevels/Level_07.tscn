@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cklmtejug5xhr" path="res://Misc/ButtonInstruction.tscn" id="12_46dt4"]
 [ext_resource type="PackedScene" uid="uid://b1k3vejyw11ab" path="res://Levels/MatLevels/fog.tscn" id="13_43rgy"]
 [ext_resource type="PackedScene" uid="uid://cy7xnhnawsqe0" path="res://Levels/MatLevels/world_environment.tscn" id="14_le7dr"]
+[ext_resource type="PackedScene" uid="uid://c2w1do66c54or" path="res://Misc/Round Button Instruction/6_button_controlsReset.tscn" id="18_ir8a4"]
 
 [sub_resource type="Shader" id="Shader_542dv"]
 code = "shader_type canvas_item;
@@ -481,6 +482,7 @@ unique_name_in_owner = true
 position = Vector2(222, -5)
 
 [node name="ButtonInstruction" parent="." unique_id=984686626 instance=ExtResource("12_46dt4")]
+visible = false
 position = Vector2(178, 89)
 letter = "R"
 
@@ -512,5 +514,8 @@ z_index = -2
 z_index = -5
 
 [node name="WorldEnvironment" parent="." unique_id=1101015796 instance=ExtResource("14_le7dr")]
+
+[node name="6buttonControls" parent="." unique_id=1032759364 instance=ExtResource("18_ir8a4")]
+position = Vector2(174, 86)
 
 [editable path="Fog"]

@@ -12,7 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://cvsfc0rgfdeih" path="res://Misc/rat_hole.tscn" id="9_h7iq3"]
 [ext_resource type="PackedScene" uid="uid://batcm66j50quy" path="res://Animals/rat.tscn" id="10_4la7o"]
 [ext_resource type="PackedScene" uid="uid://cklmtejug5xhr" path="res://Misc/ButtonInstruction.tscn" id="11_f4oyo"]
-[ext_resource type="Texture2D" uid="uid://cw64amx7tlrag" path="res://Art/round buttons/controlbutton_01.png" id="13_b3c67"]
+[ext_resource type="PackedScene" uid="uid://67gixd6ltdn1" path="res://Misc/Round Button Instruction/6_button_controlsJump.tscn" id="13_ppdmh"]
+[ext_resource type="PackedScene" uid="uid://bbfb55cm6q2py" path="res://Misc/Round Button Instruction/6_button_controlsTransform.tscn" id="14_sybu7"]
+[ext_resource type="PackedScene" uid="uid://c2w1do66c54or" path="res://Misc/Round Button Instruction/6_button_controlsReset.tscn" id="15_sybu7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ppdmh"]
 shader = ExtResource("2_wf6xf")
@@ -282,7 +284,7 @@ unique_name_in_owner = true
 position = Vector2(0, 26)
 
 [node name="Player" parent="." unique_id=644735785 instance=ExtResource("7_npl2t")]
-position = Vector2(-335, 47)
+position = Vector2(-352, 47)
 
 [node name="Rat" parent="." unique_id=1621375151 instance=ExtResource("10_4la7o")]
 position = Vector2(-129, 59)
@@ -318,15 +320,22 @@ position = Vector2(-15, 145)
 other_hole = NodePath("../RatHoleA1")
 
 [node name="ButtonInstructionW" parent="." unique_id=984686626 instance=ExtResource("11_f4oyo")]
+visible = false
 position = Vector2(-27, 3)
 letter = "W"
 
 [node name="ButtonInstructionE" parent="." unique_id=1160192943 instance=ExtResource("11_f4oyo")]
+visible = false
 position = Vector2(155, 131)
 letter = "E"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2085821136]
-position = Vector2(-339, 127)
-texture = ExtResource("13_b3c67")
+[node name="6buttonControlsJump" parent="." unique_id=1032759364 instance=ExtResource("13_ppdmh")]
+position = Vector2(-59, -28)
+
+[node name="6buttonControlsTransform" parent="." unique_id=517663119 instance=ExtResource("14_sybu7")]
+position = Vector2(10, 187)
+
+[node name="6buttonControls" parent="." unique_id=688389291 instance=ExtResource("15_sybu7")]
+position = Vector2(-352, 100)
 
 [editable path="Player"]
